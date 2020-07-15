@@ -1,6 +1,10 @@
+<p align="center">
+    <a href="https://jblaha.art/sketchbook"><img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=300></a>
+</p>
+
 # Web
 
-Static web built with Middleman and Slim
+Personal static web built with [Middleman](middlemanapp.com) and [Slim](slim-lang.com).
 
 ## Building notes
 
