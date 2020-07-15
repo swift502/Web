@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://jblaha.art/sketchbook"><img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=300></a>
+    <img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=300>
 </p>
 
 # Web
