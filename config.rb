@@ -1,9 +1,11 @@
 require 'slim'
 
-# With no layout
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+
+# Source directory for the web server
+set :source, 'src'
 
 # Build config
 configure :build do
