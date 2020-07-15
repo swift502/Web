@@ -4,7 +4,7 @@
 
 # Web
 
-Personal static web built with [Middleman](middlemanapp.com) and [Slim](slim-lang.com).
+Personal static web built with [Middleman](https://middlemanapp.com/) and [Slim](http://slim-lang.com/).
 
 ## Building notes
 
