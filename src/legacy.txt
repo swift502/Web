@@ -1,0 +1,13 @@
+<div>Email: <a href="mailto:blaha.j502@gmail.com">blaha.j502@gmail.com</a></div>
+<div>Youtube: <a href="https://www.youtube.com/user/swifterik">youtube.com/user/swifterik</a></div>
+<div>Github: <a href="https://github.com/swift502">github.com/swift502</a></div>
+
+<div class="content">
+    <div style="text-align: center;">
+        <h3>Sketchbook archive</h3>
+        <div><a href="sketchbook/0.1/index.html">0.1</a></div>
+        <div><a href="sketchbook/0.2/examples/characters.html">0.2</a></div>
+        <div><a href="sketchbook/0.3/index.html">0.3</a></div>
+        <div><a href="sketchbook/0.4/index.html">0.4</a></div>
+    </div>
+</div>
