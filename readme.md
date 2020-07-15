@@ -1,10 +1,10 @@
 <p align="center">
-    <img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=300>
+    <img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=200>
 </p>
 
 # Web
 
-Personal static web built using [Middleman](https://middlemanapp.com/) and [Slim](http://slim-lang.com/), hosted via GitHub Pages. Thanks GitHub! :wink:
+Static web built using [Middleman](https://middlemanapp.com/) and [Slim](http://slim-lang.com/), hosted via GitHub Pages. Thanks GitHub! :wink:
 
 ## Building notes
 
