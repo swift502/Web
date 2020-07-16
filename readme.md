@@ -4,7 +4,7 @@
 
 # Web
 
-Static web built using [Middleman](https://middlemanapp.com/) and [Slim](http://slim-lang.com/), hosted via [GitHub Pages](https://pages.github.com/). Thanks GitHub! :wink:
+Static web built using [Middleman](https://middlemanapp.com/) and [Slim](http://slim-lang.com/). Hosted using [GitHub Pages](https://pages.github.com/).
 
 ## Building notes
 
