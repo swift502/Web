@@ -1,17 +1,16 @@
 @charset "utf-8";
-@import "normalize";
 @import url('https://fonts.googleapis.com/css2?family=Averia+Libre&family=Catamaran:wght@800&display=swap');
 
 * {
     font-family: 'Averia Libre', cursive;
     font-size: 22px;
-    // font-weight: 300;
+    /* font-weight: 300; */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Catamaran', sans-serif;
     font-size: 30px;
-    // font-weight: 800;
+    /* font-weight: 800; */
 }
 
 .navbar {

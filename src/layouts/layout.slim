@@ -8,8 +8,12 @@ html
     title = current_page.data.title
 
     == favicon_tag 'images/favicon.ico'
-    == stylesheet_link_tag 'global'
+
+    == stylesheet_link_tag 'normalize'
+    == stylesheet_link_tag 'site'
+
     == javascript_include_tag  'app'
+    
     == partial 'partials/analytics'
 
   body class="#{page_classes}"
