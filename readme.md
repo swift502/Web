@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=200>
+    <img src="https://github.com/swift502/Web/blob/master/src/images/ghost.png?raw=true" height=180>
 </p>
 
 # Web
