@@ -1,1 +1,2 @@
+*.slim linguist-detectable=true
 *.slim linguist-documentation=false
