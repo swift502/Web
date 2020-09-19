@@ -1,8 +1,5 @@
-require 'slim'
-
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
+page '/*.yml', layout: false
+page '/*.md', layout: false
 
 # Source directory for the web server
 set :source, 'src'

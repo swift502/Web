@@ -1,0 +1,18 @@
+---
+title: "jblaha.art"
+tab: "projects"
+---
+<div class="center">
+    <h3>Projects</h3>
+    <div><%= link_to 'Sketchbook', 'sketchbook' %></div>
+</div>
+
+<div class="projects">
+	<% data.projects.each do |project| %>
+		<%= partial('partials/project_tile', :locals => {
+			:title => project.title,
+			:description => project.description,
+			:link => project.link
+		}) %>
+	<% end %>
+</div>
