@@ -1,53 +1,81 @@
 - title: World of Airports
-  date: 2017
-  tags: Commercial
+  tags:
+    - Unity
+    - C#
+    - Blender
   image: ralu.jpg
   link: projects/characters
 
 - title: Sketchbook
-  date: 2017
-  tags: Personal
+  tags:
+    - three.js
+    - JS
+    - TS
+    - Webpack
   image: ralu.jpg
   link: projects/characters
 
 - title: AirportPRG
-  date: 2017
-  tags: Commercial
+  tags:
+    - Unity
+    - C#
+    - Blender
   image: ralu.jpg
   link: projects/airportprg
 
 - title: Liberty City in BeamNG
-  date: 2017
-  tags: Personal
+  tags:
+    - Blender
+    - Python
   image: ralu.jpg
   link: projects/characters
 
 - title: Chloe
-  date: 2015
-  tags: Personal
+  tags:
+    - Blender
+    - GIMP
   image: ralu.jpg
   link: projects/characters
 
 - title: Hogwarts
-  date: 2017
-  tags: Personal
+  tags:
+    - Blender
   image: ralu.jpg
   link: projects/characters
 
 - title: Liz
-  date: 2017
-  tags: Personal
+  tags:
+    - Blender
+    - GIMP
   image: ralu.jpg
   link: projects/characters
 
 - title: Skoda
-  date: 2017
-  tags: Personal
+  tags:
+    - Blender
   image: ralu.jpg
   link: projects/characters
 
 - title: Legacy works
-  date: 2017
-  tags: Personal
+  tags:
+    - Blender
   image: ralu.jpg
   link: projects/characters
+
+- title: ''
+  tags:
+    - ''
+  image: ''
+  link: ''
+
+- title: ''
+  tags:
+    - ''
+  image: ''
+  link: ''
+
+- title: ''
+  tags:
+    - ''
+  image: ''
+  link: ''

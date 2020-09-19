@@ -1,8 +1,13 @@
 <div class="project-tile">
-	<a href="<%= link %>" class="project-tile-inner">
-		<div class="project-tile-image" style="background-image: url('images/<%= image %>');"></div>
-		<div class="project-tile-title"><%= title %></div>
-		<div class="badge badge-left"><%= date %></div>
-		<div class="badge badge-right <%= type.downcase %>"><%= type %></div>
+	<% if link.length > 0 %>
+		<a href="<%= link %>">
+	<% end %>
+		<div class="project-tile-inner">
+			<div class="project-tile-image" style="background-image: url('images/<%= image %>');"></div>
+			<div class="project-tile-title"><%= title %></div>
+			<% tags.each do |tag| %>
+				<div class="badge <%= tag.downcase %>"><%= tag %></div>
+			<% end %>
+		</div>
 	</a>
 </div>

@@ -71,8 +71,6 @@ a {
 }
 
 .project-tile-inner {
-	position: relative;
-	display: block;
 	padding: 10px;
 }
 
@@ -85,7 +83,7 @@ a {
 
 .project-tile-title {
 	margin-top: 10px;
-	margin-bottom: 32px;
+	margin-bottom: 3px;
 	font-weight: 700;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -93,26 +91,10 @@ a {
 }
 
 .badge {
-	position: absolute;
+	display: inline-block;
 	bottom: 10px;
 	font-size: 14px;
 	background: #eee;
 	padding: 3px 5px;
 	border-radius: 3px;
 }
-
-.badge-left {
-	left: 10px;
-}
-
-.badge-right {
-	right: 10px;
-}
-
-/* .badge.personal {
-	background: #ffe8cc;
-}
-
-.badge.commercial {
-	background: #ccf1ff;
-} */
