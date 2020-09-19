@@ -1,12 +1,15 @@
 - title: World of Airports
+  year: '2020'
   tags:
     - Unity
     - C#
     - Blender
+    - Commercial
   image: ralu.jpg
   link: projects/characters
 
 - title: Sketchbook
+  year: '2018'
   tags:
     - three.js
     - JS
@@ -16,14 +19,17 @@
   link: projects/characters
 
 - title: AirportPRG
+  year: '2018'
   tags:
     - Unity
     - C#
     - Blender
+    - Commercial
   image: ralu.jpg
   link: projects/airportprg
 
 - title: Liberty City in BeamNG
+  year: '2018'
   tags:
     - Blender
     - Python
@@ -31,6 +37,7 @@
   link: projects/characters
 
 - title: Chloe
+  year: '2018'
   tags:
     - Blender
     - GIMP
@@ -61,21 +68,3 @@
     - Blender
   image: ralu.jpg
   link: projects/characters
-
-- title: ''
-  tags:
-    - ''
-  image: ''
-  link: ''
-
-- title: ''
-  tags:
-    - ''
-  image: ''
-  link: ''
-
-- title: ''
-  tags:
-    - ''
-  image: ''
-  link: ''

@@ -12,6 +12,7 @@ tab: "projects"
 	<% data.projects.each do |project| %>
 		<%= partial('partials/project_tile', :locals => {
 			:title => project.title,
+			:year => project.year,
 			:image => project.image,
 			:link => project.link,
 			:tags => project.tags
