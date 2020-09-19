@@ -1,7 +1,3 @@
-page '/*.yml', layout: false
-page '/*.md', layout: false
-
-# Source directory for the web server
 set :source, 'src'
 
 configure :development do
