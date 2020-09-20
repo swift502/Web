@@ -52,20 +52,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content {
-	margin-top: 63px;
+	/* margin-top: 63px; */
 }
 
-.about {
+.main-center {
 	max-width: 1000px;
-	margin: 130px auto 50px;
+    margin: auto;
+}
+
+.about-card {
+    background: white;
+    padding: 30px 50px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 3px #ccc, 0 1px 2px 3px rgba(0,0,0,0.5), 0 4px 13px 3px rgba(0,0,0,0.1);
+}
+
+.projects-button-wrapper {
+	display: flex;
+	z-index: 1;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 50px auto 0;
+}
+
+.projects-button {
+	position: relative;
+	background: #ffb900;
+    border: none;
+    padding: 22px 36px;
+    color: #523b00;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 0 rgb(228 158 0), 0 6px 4px 0px rgba(0,0,0,0.4), 0 10px 12px 0px rgba(0,0,0,0.1);
+}
+
+.projects-button-text {
+	font-weight: 700;
+    font-size: 28px;
+	margin-right: 40px;
+}
+
+.projects-button-icon {
+    width: 40px;
+    position: absolute;
+    right: 22px;
+    top: 18px;
 }
 
 .main-image {
 	background-image: url('/images/main_screen/original.png');
 	background-position: center;
 	background-size: cover;
-	height: 600px;
+
+	/* background: -webkit-linear-gradient(top,#568db5,#ccdde8);
+    background: -linear-gradient(top,#568db5 0,#ccdde8 100%);
+	background: -moz-linear-gradient(top,#568db5 0,#ccdde8 100%); */
+	
+	height: 100vh;
 	border-radius: 3px;
+	display: flex;
 }
 
 .project-grid {
@@ -88,18 +136,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-tile, .project-tile {
 	background: white;
-	padding: 16px;
+	border: #ccc solid 1px;
+	padding: 14px 16px;
 	border-radius: 3px;
 	box-shadow: 0px 0px 0px 0px #fff;
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.project-tile {
-	border: #ccc solid 1px;
-}
-
-.social-tile {
-	border: #999 solid 1px;
 }
 
 .social-tile:hover, .project-tile:hover {
@@ -120,9 +161,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-tile-text {
+	color: #333;
 	margin-left: 46px;
     font-size: 24px;
     line-height: 32px;
+}
+
+.projects-button {
+	display: block;
 }
 
 .project-tile-image {
@@ -141,6 +187,15 @@ h1, h2, h3, h4, h5, h6 {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.badge {
+	display: inline-block;
+	color: #333;
+	bottom: 10px;
+	background: #eee;
+	padding: 3px 8px;
+	border-radius: 3px;
 }
 
 .project-tile-badge {

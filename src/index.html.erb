@@ -2,8 +2,29 @@
 title: "jblaha.art"
 tab: "home"
 ---
-<div class="about">
-	<h1>Jan Bláha</h1>
-	<div class="main-image"></div>
-	<%= partial 'partials/social_bar' %>
+<div class="main-image">
+	<div class="main-center">
+		<div class="about-card">
+			<div class="center">
+				<h1>Jan Bláha</h1>
+				<div class="badge-bar" style="margin-bottom: 20px">
+				<span class="badge art">Blender</span>
+				<span class="badge art">GIMP</span>
+				<span class="badge engine">Unity</span>
+				<span class="badge language">C#</span>
+				<span class="badge language">JavaScript</span>
+				<span class="badge language">TypeScript</span>
+				<span class="badge language">Python</span>
+				<span class="badge language">PHP</span>
+				</div>
+			</div>
+			<%= partial 'partials/social_bar' %>
+		</div>
+		<div class="projects-button-wrapper">
+			<a class="projects-button">
+				<span class="projects-button-text">View projects</span>
+				<img src="images/svg/hand-point-right.svg" class="projects-button-icon">
+			</a>
+		</div>
+	</div>
 </div>
