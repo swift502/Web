@@ -1,0 +1,20 @@
+<div class="social-bar">
+	<%= partial 'partials/social_tile', :locals => {
+		:icon => 'images/svg/envelope.svg',
+		:text => 'Email',
+		:link => nil,
+		:onclick => 'emailToClipboard();'
+	} %>
+	<%= partial 'partials/social_tile', :locals => {
+		:icon => 'images/svg/github.svg',
+		:text => 'GitHub',
+		:link => '/',
+		:onclick => nil
+	} %>
+	<%= partial 'partials/social_tile', :locals => {
+		:icon => 'images/svg/youtube.svg',
+		:text => 'Youtube',
+		:link => '/',
+		:onclick => nil
+	} %>
+</div>

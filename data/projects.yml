@@ -7,16 +7,16 @@
     - Blender
     - HLSL
   image: woa.png
-  link: projects/characters
+  link: woa
 
 - title: Sketchbook
-  year: '2018 - present'
+  year: '2020'
   tags:
     - JavaScript
     - TypeScript
     - Webpack
   image: sketchbook.png
-  link: projects/characters
+  link: sketchbook
 
 - title: AirportPRG
   year: '2018'
@@ -27,7 +27,7 @@
     - Blender
     - HLSL
   image: airportprg.png
-  link: projects/airportprg
+  link: airportprg
 
 - title: Liberty City in BeamNG
   year: '2018'
@@ -35,7 +35,7 @@
     - Python
     - Blender
   image: libertycity.png
-  link: projects/characters
+  link: libertycity
 
 - title: Chloe
   year: '2018'
@@ -43,30 +43,30 @@
     - Blender
     - GIMP
   image: chloe.png
-  link: projects/characters
+  link: chloe
 
 - title: Hogwarts
   tags:
     - Blender
   image: hogwarts.png
-  link: projects/characters
+  link: hogwarts
 
 - title: Liz
   tags:
     - Blender
     - GIMP
   image: liz.png
-  link: projects/characters
+  link: liz
 
 - title: Skoda
   tags:
     - Blender
   image: skoda.png
-  link: projects/characters
+  link: skoda
 
 - title: Legacy works
   year: 2010 - 2015
   tags:
     - Blender
   image: karosa.png
-  link: projects/characters
+  link: legacy

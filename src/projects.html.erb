@@ -4,13 +4,13 @@ tab: "projects"
 ---
 <div class="project-grid">
 	<% data.projects.each do |project| %>
-		<%= partial('partials/project_tile', :locals => {
+		<%= partial 'partials/project_tile', :locals => {
 			:title => project.title,
 			:year => project.year,
 			:commercial => project.commercial,
 			:image => project.image,
 			:link => project.link,
 			:tags => project.tags
-		}) %>
+		} %>
 	<% end %>
 </div>
