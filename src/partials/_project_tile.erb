@@ -1,17 +1,22 @@
-<div class="project-tile">
+<div class="project-tile-wrapper">
 	<% if link.present? %>
 		<a href="<%= link %>">
 	<% end %>
-		<div class="project-tile-inner">
-			<div class="project-tile-image" style="background-image: url('images/<%= image %>');">
+		<div class="project-tile">
+			<div class="project-tile-image" style="background-image: url('images/project_thumbs/<%= image %>');">
 				<% if year.present? %>
-					<div class="year"><%= year %></div>
+					<div class="project-tile-year"><%= year %></div>
+				<% end %>
+				<% if commercial.present? %>
+					<div class="project-tile-commercial">Commercial</div>
 				<% end %>
 			</div>
 			<div class="project-tile-title"><%= title %></div>
 			<% tags.each do |tag| %>
-				<div class="badge <%= tag.downcase %>"><%= tag %></div>
+				<div class="project-tile-badge <%= tag.downcase %>"><%= tag %></div>
 			<% end %>
 		</div>
-	</a>
+	<% if link.present? %>
+		</a>
+	<% end %>
 </div>

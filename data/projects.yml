@@ -1,39 +1,40 @@
 - title: World of Airports
-  year: '2020'
+  year: '2019 - present'
+  commercial: true
   tags:
     - Unity
     - C#
     - Blender
-    - Commercial
-  image: ralu.jpg
+    - HLSL
+  image: woa.png
   link: projects/characters
 
 - title: Sketchbook
-  year: '2018'
+  year: '2018 - present'
   tags:
-    - three.js
-    - JS
-    - TS
+    - JavaScript
+    - TypeScript
     - Webpack
-  image: ralu.jpg
+  image: sketchbook.png
   link: projects/characters
 
 - title: AirportPRG
   year: '2018'
+  commercial: true
   tags:
     - Unity
     - C#
     - Blender
-    - Commercial
-  image: ralu.jpg
+    - HLSL
+  image: airportprg.png
   link: projects/airportprg
 
 - title: Liberty City in BeamNG
   year: '2018'
   tags:
-    - Blender
     - Python
-  image: ralu.jpg
+    - Blender
+  image: libertycity.png
   link: projects/characters
 
 - title: Chloe
@@ -41,30 +42,31 @@
   tags:
     - Blender
     - GIMP
-  image: ralu.jpg
+  image: chloe.png
   link: projects/characters
 
 - title: Hogwarts
   tags:
     - Blender
-  image: ralu.jpg
+  image: hogwarts.png
   link: projects/characters
 
 - title: Liz
   tags:
     - Blender
     - GIMP
-  image: ralu.jpg
+  image: liz.png
   link: projects/characters
 
 - title: Skoda
   tags:
     - Blender
-  image: ralu.jpg
+  image: skoda.png
   link: projects/characters
 
 - title: Legacy works
+  year: 2010 - 2015
   tags:
     - Blender
-  image: ralu.jpg
+  image: karosa.png
   link: projects/characters

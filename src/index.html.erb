@@ -1,21 +1,9 @@
 ---
 title: "jblaha.art"
-tab: "projects"
+tab: "home"
 ---
-<!-- 
 <div class="center">
-    <h3>Projects</h3>
+    <h3>Links</h3>
     <div><%= link_to 'Sketchbook', 'sketchbook' %></div>
-</div>
--->
-<div class="projects">
-	<% data.projects.each do |project| %>
-		<%= partial('partials/project_tile', :locals => {
-			:title => project.title,
-			:year => project.year,
-			:image => project.image,
-			:link => project.link,
-			:tags => project.tags
-		}) %>
-	<% end %>
+	<div><%= link_to 'Projects', 'projects' %></div>
 </div>
