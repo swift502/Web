@@ -2,29 +2,48 @@
 title: "jblaha.art"
 tab: "home"
 ---
-<div class="main-image">
-	<div class="main-center">
-		<div class="about-card">
-			<div class="center">
-				<h1>Jan Bláha</h1>
-				<div class="badge-bar" style="margin-bottom: 20px">
-				<span class="badge art">Blender</span>
-				<span class="badge art">GIMP</span>
-				<span class="badge engine">Unity</span>
-				<span class="badge language">C#</span>
-				<span class="badge language">JavaScript</span>
-				<span class="badge language">TypeScript</span>
-				<span class="badge language">Python</span>
-				<span class="badge language">PHP</span>
+<div class="homepage">
+	<h1 class="center homepage-title">Jan Bláha</h1>
+	<div class="banner">
+		<div class="banner-left">
+			<div class="model-viewer">
+			</div>
+		</div>
+		<div class="banner-right">
+			<div class="link-column">
+				<!-- View projects -->
+				<!--<div class="projects-button-wrapper">-->
+					<a href="projects" class="projects-button">
+						<span class="projects-button-text">View projects</span>
+						<img src="images/svg/hand-point-right.svg" class="projects-button-icon">
+					</a>
+				<!--</div>-->
+				<!-- Youtube -->
+				<div class="tile-wrapper">
+					<a href="https://youtube.com/c/swifterik" target="_blank">
+					<div class="tile">
+						<div class="social-tile-icon"><img src="images/svg/youtube.svg"></div>
+						<div class="social-tile-text">YouTube</div>
+					</div>
+					</a>
+				</div>
+				<!-- GitHub -->
+				<div class="tile-wrapper">
+					<a href="https://github.com/swift502" target="_blank">
+					<div class="tile">
+						<div class="social-tile-icon"><img src="images/svg/github.svg"></div>
+						<div class="social-tile-text">GitHub</div>
+					</div>
+					</a>
+				</div>
+				<!-- Email -->
+				<div id="email-copy" class="tile-wrapper" onclick="emailToClipboard();">
+					<div class="tile">
+						<div class="social-tile-icon"><img src="images/svg/envelope.svg"></div>
+						<div class="social-tile-text">Email</div>
+					</div>
 				</div>
 			</div>
-			<%= partial 'partials/social_bar' %>
-		</div>
-		<div class="projects-button-wrapper">
-			<a href="projects" class="projects-button">
-				<span class="projects-button-text">View projects</span>
-				<img src="images/svg/hand-point-right.svg" class="projects-button-icon">
-			</a>
 		</div>
 	</div>
 </div>
