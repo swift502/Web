@@ -2,48 +2,41 @@
 title: "jblaha.art"
 tab: "home"
 ---
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+<script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+<script src="https://unpkg.com/focus-visible@5.0.1/dist/focus-visible.js" defer></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <div class="homepage">
-	<h1 class="center homepage-title">Jan Bláha</h1>
-	<div class="banner">
-		<div class="banner-left">
-			<div class="model-viewer">
+	<h1 class="homepage-title">Jan Bláha</h1>
+	<model-viewer src="models/boxman.glb"
+		auto-rotate
+		auto-rotate-delay="0"
+		autoplay
+	></model-viewer>
+	<div class="link-row">
+		<div id="email-copy" class="tile-wrapper" onclick="emailToClipboard();">
+			<div class="tile">
+				<div class="social-tile-icon"><img src="images/svg/envelope.svg"></div>
 			</div>
-		</div>
-		<div class="banner-right">
-			<div class="link-column">
-				<!-- View projects -->
-				<!--<div class="projects-button-wrapper">-->
-					<a href="projects" class="projects-button">
-						<span class="projects-button-text">View projects</span>
-						<img src="images/svg/hand-point-right.svg" class="projects-button-icon">
-					</a>
-				<!--</div>-->
-				<!-- Youtube -->
-				<div class="tile-wrapper">
-					<a href="https://youtube.com/c/swifterik" target="_blank">
-					<div class="tile">
-						<div class="social-tile-icon"><img src="images/svg/youtube.svg"></div>
-						<div class="social-tile-text">YouTube</div>
-					</div>
-					</a>
+		</div><div class="tile-wrapper">
+			<a href="https://github.com/swift502" target="_blank">
+				<div class="tile">
+					<div class="social-tile-icon"><img src="images/svg/github.svg"></div>
 				</div>
-				<!-- GitHub -->
-				<div class="tile-wrapper">
-					<a href="https://github.com/swift502" target="_blank">
-					<div class="tile">
-						<div class="social-tile-icon"><img src="images/svg/github.svg"></div>
-						<div class="social-tile-text">GitHub</div>
-					</div>
-					</a>
+			</a>
+		</div><div class="tile-wrapper">
+			<a href="https://youtube.com/c/swifterik" target="_blank">
+				<div class="tile">
+					<div class="social-tile-icon"><img src="images/svg/youtube.svg"></div>
 				</div>
-				<!-- Email -->
-				<div id="email-copy" class="tile-wrapper" onclick="emailToClipboard();">
-					<div class="tile">
-						<div class="social-tile-icon"><img src="images/svg/envelope.svg"></div>
-						<div class="social-tile-text">Email</div>
-					</div>
-				</div>
-			</div>
+			</a>
+		</div><div class="projects-button-wrapper">
+			<a href="projects" class="projects-button">
+				<span class="projects-button-text">View projects</span>
+				<img src="images/svg/hand-point-right.svg" class="projects-button-icon">
+			</a>
 		</div>
 	</div>
 </div>
