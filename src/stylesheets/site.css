@@ -169,7 +169,7 @@ model-viewer {
 /* Projects */
 
 .project-grid {
-	margin: 60px auto -50px;
+	margin: 60px auto -10px;
 	max-width: 1300px;
 	display: flex;
 	justify-content: center;
@@ -179,8 +179,12 @@ model-viewer {
 /* Tiles */
 
 .tile-wrapper {
-	margin: 50px 5px;
 	display: inline-block;
+	margin: 10px;
+}
+
+.link-row .tile-wrapper {
+	margin: 50px 5px;
 }
 
 .tile {
