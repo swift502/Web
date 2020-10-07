@@ -61,7 +61,7 @@ a {
 
 .content {
 	padding-top: 63px;
-	min-height: calc(100vh - 164px);
+	min-height: calc(100vh - 224px);
 }
 
 /* Homepage */
@@ -169,7 +169,7 @@ model-viewer {
 /* Projects */
 
 .project-grid {
-	margin: 60px auto 30px;
+	margin: 60px auto -50px;
 	max-width: 1300px;
 	display: flex;
 	justify-content: center;
@@ -179,7 +179,7 @@ model-viewer {
 /* Tiles */
 
 .tile-wrapper {
-	margin: 20px 10px;
+	margin: 50px 5px;
 	display: inline-block;
 }
 

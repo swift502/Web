@@ -12,11 +12,33 @@ function emailToClipboard()
 }
 
 var aText = [
-"hi, i'm ron",
-"a web developer",
-"based in riga, latvia",
-"i drink a lot of tea",
-"and build beautiful websites"
+	"test"
+// "game development",
+// "game logic",
+// "game feel",
+// "3d modelling",
+// "rigging",
+// "animation",
+// "blender",
+// "unity",
+// "gimp",
+// "javascript",
+// "typescript",
+// "c#",
+// "python",
+
+// "hi, i'm jan",
+// "game developer",
+// "based in czech republic",
+// "i love 3d modelling",
+// "rigging and animation",
+// "writing game logic",
+// "tuning game feel",
+// "quaternions",
+// "matrices",
+// "shaders",
+// "graphics programming",
+// "and more"
 ];
 
 var iSpeed = 100; 
@@ -32,18 +54,30 @@ function typewriter()
 	if (iTextPos++ == iArrLength)
 	{
 		iTextPos = 0;
+		let delay = 500;
 		const archiveText = aText[iIndex];
-		iIndex++;
-		if (iIndex == aText.length) iIndex = 0;
+		iIndex = getRandomInt(0, aText.length - 1);
+		// iIndex++;
+		// if (iIndex == aText.length)
+		// {
+		// 	iIndex = 0;
+		// 	delay = 2000;
+		// }
 		iArrLength = aText[iIndex].length;
 		setTimeout(() => {
 			pushArchive(archiveText);
 			typewriter();
-		}, 500);
+		}, delay);
 	} else
 	{
 		setTimeout("typewriter()", iSpeed);
 	}
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 typewriter();
