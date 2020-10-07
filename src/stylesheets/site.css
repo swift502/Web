@@ -108,12 +108,19 @@ a {
 model-viewer {
 	width: 100%;
 	height: 100%;
-	/* box-shadow: 0px 0px 0px 1px #ccc; */
 	border-radius: 3px;
 }
 
-.typewriter div {
+#typewriter-history div, #typewriter {
 	font-size: 30px;
+	white-space: nowrap;
+}
+
+#typewriter-history {
+	height: 34px;
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .projects-button-wrapper {
