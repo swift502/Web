@@ -1,16 +1,3 @@
-function emailToClipboard()
-{
-	const el = document.createElement('textarea');
-	el.value = 'blaha.j502@gmail.com';
-	document.body.appendChild(el);
-	el.select();
-	document.execCommand('copy');
-	document.body.removeChild(el);
-
-	// document.getElementById('copy-email');
-	// aria-label="Whats up!" data-balloon-pos="up"
-}
-
 var aText = [
 	"test"
 // "game development",
@@ -54,30 +41,17 @@ function typewriter()
 	if (iTextPos++ == iArrLength)
 	{
 		iTextPos = 0;
-		let delay = 500;
 		const archiveText = aText[iIndex];
-		iIndex = getRandomInt(0, aText.length - 1);
-		// iIndex++;
-		// if (iIndex == aText.length)
-		// {
-		// 	iIndex = 0;
-		// 	delay = 2000;
-		// }
+		if (++iIndex == aText.length) iIndex = 0;
 		iArrLength = aText[iIndex].length;
 		setTimeout(() => {
 			pushArchive(archiveText);
 			typewriter();
-		}, delay);
+		}, 500);
 	} else
 	{
-		setTimeout("typewriter()", iSpeed);
+		setTimeout(typewriter, iSpeed);
 	}
-}
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 typewriter();

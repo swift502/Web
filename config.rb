@@ -1,5 +1,7 @@
 set :source, 'src'
 
+page "/projects/*", :layout => "project"
+
 configure :development do
     activate :directory_indexes
 end
