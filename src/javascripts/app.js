@@ -23,13 +23,13 @@ function emailToClipboard()
 
 	const copied = document.createElement('div');
 	copied.classList.add('copied');
-	copied.innerText = 'email\ncopied!';
+	copied.innerText = 'copied!';
 	document.getElementById('email-copy').appendChild(copied);
 
-	copied.addEventListener('animationend', () => removeCopiedPopup(copied));
-	copied.addEventListener('webkitAnimationEnd', () => removeCopiedPopup(copied));
-	copied.addEventListener('oAnimationEnd', () => removeCopiedPopup(copied));
-	copied.addEventListener('MSAnimationEnd', () => removeCopiedPopup(copied));
+	copied.addEventListener('animationend', function() {removeCopiedPopup(copied)});
+	copied.addEventListener('webkitAnimationEnd', function() {removeCopiedPopup(copied)});
+	copied.addEventListener('oAnimationEnd', function() {removeCopiedPopup(copied)});
+	copied.addEventListener('MSAnimationEnd', function() {removeCopiedPopup(copied)});
 }
 
 function removeCopiedPopup(copied)

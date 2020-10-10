@@ -1,18 +1,18 @@
 var aText = [
-	"test"
-// "game development",
+"game development",
 // "game logic",
 // "game feel",
-// "3d modelling",
-// "rigging",
-// "animation",
-// "blender",
-// "unity",
-// "gimp",
-// "javascript",
-// "typescript",
-// "c#",
-// "python",
+"3d modelling",
+"rigging",
+"animation",
+"javascript",
+"typescript",
+"c#",
+"python",
+"ruby",
+"blender",
+"unity",
+"gimp",
 
 // "hi, i'm jan",
 // "game developer",
@@ -44,7 +44,7 @@ function typewriter()
 		const archiveText = aText[iIndex];
 		if (++iIndex == aText.length) iIndex = 0;
 		iArrLength = aText[iIndex].length;
-		setTimeout(() => {
+		setTimeout(function() {
 			pushArchive(archiveText);
 			typewriter();
 		}, 500);
@@ -60,7 +60,7 @@ const archive = [];
 
 function pushArchive(str)
 {
-	let div = document.createElement('div');
+	var div = document.createElement('div');
 	div.innerText = str;
 	document.getElementById('typewriter-history').appendChild(div);
 	archive.unshift(div);
@@ -70,9 +70,9 @@ function pushArchive(str)
 
 function refreshTransparency()
 {
-	for (let i = 0; i < archive.length; i++)
+	for (var i = 0; i < archive.length; i++)
 	{
-		let opacity = 1 - (0.25 * (i + 1));
+		var opacity = 1 - (0.25 * (i + 1));
 		archive[i].style.opacity = opacity;
 	}
 
