@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= partial 'partials/head' %>
+</head>
+<body class="<%= page_classes %>">
+    <%= partial 'partials/navbar' %>
+	<div class="content">
+		<div class="project-detail-wrapper">
+			<div class="project-detail">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+	<%= partial 'partials/footer' %>
+</body>
+</html>

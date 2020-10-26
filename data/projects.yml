@@ -8,7 +8,6 @@
     - HLSL
   image: thumb_woa.png
   link: /projects/woa
-  wip: true
 
 - title: Sketchbook
   year: '2020'
@@ -25,7 +24,6 @@
     - Blender
   image: thumb_hogwarts.png
   link: /projects/hogwarts
-  wip: true
 
 - title: Liberty City in BeamNG
   year: '2019'
@@ -34,7 +32,6 @@
     - Blender
   image: thumb_libertycity.png
   link: /projects/libertycity
-  wip: true
 
 - title: Skoda 110R
   year: '2019'
@@ -42,7 +39,6 @@
     - Blender
   image: thumb_skoda.png
   link: /projects/skoda
-  wip: true
 
 - title: AirportPRG
   year: '2018'
@@ -54,16 +50,14 @@
     - HLSL
   image: thumb_airportprg.png
   link: /projects/airportprg
-  wip: true
 
 - title: Chloe
   year: '2018'
   tags:
     - Blender
     - GIMP
-  image: thumb_chloe.png
+  image: chloe/thumb.png
   link: /projects/chloe
-  wip: true
 
 - title: Liz
   year: '2017'
@@ -72,7 +66,6 @@
     - GIMP
   image: thumb_liz.png
   link: /projects/liz
-  wip: true
 
 - title: Karosa
   year: '2015'
@@ -81,24 +74,21 @@
     - GIMP
   image: thumb_karosa.png
   link: /projects/karosa
-  wip: true
 
 - title: Grand piano
   year: '2015'
   tags:
     - Blender
     - GIMP
-  image: thumb_piano.png
+  image: thumb_karosa.png
   link: /projects/piano
-  wip: true
 
 - title: Legacy works
   year: 2010 - 2015
   tags:
     - Blender
-  image: thumb_legacy.png
+  image: thumb_karosa.png
   link: /projects/legacy
-  wip: true
 
 - {
   tags: []
