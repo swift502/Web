@@ -6,7 +6,7 @@ tab: "projects"
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <div class="project-grid">
-	<% data.projects.each do |project| %>
+	<% data.projects.each do |key, project| %>
 		<%= partial 'partials/project_tile', :locals => {
 			:project => project
 		} %>

@@ -22,6 +22,11 @@ a {
 	text-decoration: inherit;
 }
 
+hr {
+	border: none;
+	border-top: 1px solid #aaa;
+}
+
 .center {
     text-align: center;
 }
@@ -221,6 +226,7 @@ model-viewer {
 
 .projects-button {
 	position: relative;
+	top: 0px;
 	display: inline-block;
 	user-select: none;
 	background: #ffb900;
@@ -229,6 +235,12 @@ model-viewer {
     outline: none;
     cursor: pointer;
 	box-shadow: 0 6px 0 0 rgb(228, 158, 0);
+	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.projects-button:active {
+	top: 6px;
+	box-shadow: 0 0px 0 0 rgb(228, 158, 0);
 }
 
 .projects-button-text {
@@ -344,6 +356,10 @@ model-viewer {
 	max-width: 100%;
 	max-height: calc(100vh - 300px);
 }
+
+/* .project-detail p {
+	text-align: center;
+} */
 
 
 /* Other */

@@ -4,17 +4,10 @@
 	<% end %>
 		<div class="project-tile<% if not project.link.present? %> inactive<% end %>">
 			<div class="project-tile-image" style="background-image: url('/images/projects/<%= project.image %>');">
-				<% if project.year.present? %>
-					<!-- <div class="project-tile-year"><%= project.year %></div>-->
-				<% end %>
 				<% if project.commercial.present? %>
 					<div class="project-tile-commercial">Commercial</div>
 				<% end %>
 			</div>
-			<!-- <div class="project-tile-title"><%= project.title %></div> -->
-			<% project.tags.each do |tag| %>
-				<!-- <div class="project-tile-badge <%= tag.downcase %>"><%= tag %></div> -->
-			<% end %>
 		</div>
 	<% if project.link.present? %>
 		</a>

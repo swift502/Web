@@ -1,6 +1,10 @@
 set :source, 'src'
 
-page "/projects/*", :layout => "project"
+# page "/projects/*", :layout => "project"
+
+data.projects.each do |name, project|
+	proxy "/projects/#{name}/index.html", "/projects/template.html", :locals => { :project => project }, :ignore => true
+end
 
 configure :development do
     activate :directory_indexes

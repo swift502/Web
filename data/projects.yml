@@ -1,95 +1,10 @@
-- title: World of Airports
-  year: '2019 - present'
-  commercial: true
-  tags:
-    - Unity
-    - C#
-    - Blender
-    - HLSL
-  image: thumb_woa.png
-  link: /projects/woa
-
-- title: Sketchbook
-  year: '2020'
-  tags:
-    - JavaScript
-    - TypeScript
-    - Webpack
-  image: thumb_sketchbook.png
-  link: /sketchbook
-
-- title: Hogwarts
-  year: '2020'
-  tags:
-    - Blender
-  image: thumb_hogwarts.png
-  link: /projects/hogwarts
-
-- title: Liberty City in BeamNG
-  year: '2019'
-  tags:
-    - Python
-    - Blender
-  image: thumb_libertycity.png
-  link: /projects/libertycity
-
-- title: Skoda 110R
-  year: '2019'
-  tags:
-    - Blender
-  image: thumb_skoda.png
-  link: /projects/skoda
-
-- title: AirportPRG
-  year: '2018'
-  commercial: true
-  tags:
-    - Unity
-    - C#
-    - Blender
-    - HLSL
-  image: thumb_airportprg.png
-  link: /projects/airportprg
-
-- title: Chloe
-  year: '2018'
-  tags:
-    - Blender
-    - GIMP
+chloe:
   image: chloe/thumb.png
   link: /projects/chloe
-
-- title: Liz
-  year: '2017'
-  tags:
-    - Blender
-    - GIMP
-  image: thumb_liz.png
-  link: /projects/liz
-
-- title: Karosa
-  year: '2015'
-  tags:
-    - Blender
-    - GIMP
-  image: thumb_karosa.png
-  link: /projects/karosa
-
-- title: Grand piano
-  year: '2015'
-  tags:
-    - Blender
-    - GIMP
-  image: thumb_karosa.png
-  link: /projects/piano
-
-- title: Legacy works
-  year: 2010 - 2015
-  tags:
-    - Blender
-  image: thumb_karosa.png
-  link: /projects/legacy
-
-- {
-  tags: []
-}
+  content:
+    - type: image
+      link: chloe/chloe_a.jpg
+    - type: text
+      text: hello
+    - type: video
+      id: aaa
