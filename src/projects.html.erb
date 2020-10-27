@@ -13,4 +13,12 @@ tab: "projects"
 			:project_name => key
 		} %>
 	<% end %>
+	<%
+		columns = 3
+		orphans = data.projects.length % columns
+		while orphans < columns do
+	%>
+		<%= partial 'partials/dummy_project_tile' %>
+		<% orphans += 1 %>
+	<% end %>
 </div>
