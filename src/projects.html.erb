@@ -5,6 +5,7 @@ tab: "projects"
 
 <div class="project-grid">
 	<%
+		# Sort projects and emit project tiles
 		sorted = data.projects.sort_by { |key, project| -project.year }
 		sorted.each do |key, project|
 	%>
@@ -14,11 +15,12 @@ tab: "projects"
 		} %>
 	<% end %>
 	<%
+		# Fill the rest of the last row with dummy tiles
 		columns = 3
-		orphans = data.projects.length % columns
-		while orphans < columns do
+		gaps = columns - (data.projects.length % columns)
+		while gaps > 0 do
 	%>
 		<%= partial 'partials/dummy_project_tile' %>
-		<% orphans += 1 %>
+		<% gaps -= 1 %>
 	<% end %>
 </div>
