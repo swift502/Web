@@ -1,6 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Solway:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600;900&family=Roboto+Condensed:wght@700&family=Solway:wght@400;500;700&display=swap');
 
 /* Global */
 
@@ -15,6 +14,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Catamaran', sans-serif;
+	font-weight: 900;
 }
 
 a {
@@ -42,13 +42,13 @@ hr {
 	background: white;
 	border: #ccc solid 1px;
 	padding: 14px 16px;
-	box-shadow: 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .tile:not(.inactive):hover {
 	border-color: #888;
-	box-shadow: 0px 0px 0px 4px #eee;
+	box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.07);
 }
 
 .wip-overlay {
@@ -110,30 +110,17 @@ hr {
 
 /* Footer */
 
-.link-row {
-	position: relative;
-	text-align: center;
+.footer {
+	margin: 50px 0;
 }
 
-.link-row .tile-wrapper {
-	display: inline-block;
-	margin: 50px 5px;
-}
-
-.social-tile-icon {
+.footer .tile-icon {
     height: 31px;
 }
 
-.social-tile-icon img {
+.footer .tile-icon img {
 	height: 31px;
 	width: 31px;
-}
-
-.social-tile-text {
-	color: #333;
-	margin-left: 46px;
-    font-size: 24px;
-    line-height: 32px;
 }
 
 #email-copy {
@@ -285,35 +272,6 @@ model-viewer {
 	box-shadow: inset 0 0 0 10px white;
 }
 
-.project-tile-title {
-	margin-top: 12px;
-	margin-bottom: 8px;
-	font-weight: 700;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.project-tile-badge {
-	display: inline-block;
-	bottom: 10px;
-	font-size: 14px;
-	background: #eee;
-	padding: 3px 5px;
-	border-radius: 3px;
-}
-
-.project-tile-year {
-	position: absolute;
-	background: white;
-	border-radius: 0 3px 0 0;
-	bottom: 0;
-	left: 0;
-	padding: 6px 8px 0 8px;
-	font-size: 14px;
-	font-weight: 500;
-}
-
 .project-tile-commercial {
 	position: absolute;
     background: #3b64a0;
@@ -334,7 +292,8 @@ model-viewer {
 }
 
 .project-detail {
-	padding: 30px 52px;
+	margin: 30px 0;
+	padding: 0 52px;
 	text-align: center;
 }
 
@@ -350,19 +309,84 @@ model-viewer {
 	border: none;
 }
 
-.project-detail-wrapper img {
-	display: block;
-	margin: 30px auto;
-	max-width: 100%;
-	max-height: calc(100vh - 300px);
+.project-detail p {
+	padding: 18px 32px;
+    background: #eee;
+    box-shadow: 0 2px 0 0 #ccc;
 }
 
-/* .project-detail p {
-	text-align: center;
-} */
+.project-detail-image-wrapper {
+	margin: 30px auto;
+}
 
+.project-detail-image {
+	position: relative;
+	display: inline-block;
+}
+
+.project-detail-image img{
+	display: block;
+	max-width: 100%;
+	max-height: calc(100vh - 380px);
+}
+
+.image-controls {
+	position: absolute;
+	width: 100%;
+	bottom: 5px;
+
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.project-detail-image:hover .image-controls {
+	opacity: 1;
+}
+
+.image-controls .tile {
+	padding: 12px 14px;
+}
+
+.image-controls .tile-icon {
+    height: 21px;
+}
+
+.image-controls .tile-icon img {
+	height: 21px;
+	width: 21px;
+}
+
+.project-title {
+	margin: 0.2em 0;
+}
+
+.project-tags {
+	margin-bottom: 30px;
+}
+
+.project-tag {
+	font-family: 'Catamaran', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    bottom: 10px;
+    font-size: 18px;
+    background: #eee;
+    box-shadow: 0 2px 0 0 #ccc;
+    color: #333;
+    padding: 4px 8px;
+}
 
 /* Other */
+
+.link-row {
+	position: relative;
+	text-align: center;
+}
+
+.link-row .tile-wrapper {
+	display: inline-block;
+	margin: 0 5px;
+}
 
 .sketchbook-archive {
 	text-align: center;

@@ -6,7 +6,10 @@ tab: "projects"
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <div class="project-grid">
-	<% data.projects.each do |key, project| %>
+	<%
+		sorted = data.projects.sort_by { |key, project| -project.year }
+		sorted.each do |key, project|
+	%>
 		<%= partial 'partials/project_tile', :locals => {
 			:project => project
 		} %>
