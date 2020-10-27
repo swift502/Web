@@ -322,6 +322,7 @@ model-viewer {
 .project-detail-image {
 	position: relative;
 	display: inline-block;
+	line-height: 0;
 }
 
 .project-detail-image img{
@@ -333,9 +334,9 @@ model-viewer {
 .image-controls {
 	position: absolute;
 	width: 100%;
-	bottom: 5px;
+	bottom: 10px;
 
-	opacity: 0;
+	opacity: 1;
 	transition: opacity 0.5s ease;
 }
 
