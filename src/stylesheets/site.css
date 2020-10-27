@@ -239,8 +239,8 @@ model-viewer {
 .projects-button-icon {
     width: 28px;
     position: absolute;
-    right: 22px;
-    top: 14px;
+    right: 20px;
+    top: 18px;
 }
 
 /* Projects */
@@ -311,21 +311,28 @@ model-viewer {
 
 .project-detail p {
 	padding: 18px 32px;
+	margin: 30px 0;
     background: #eee;
     box-shadow: 0 2px 0 0 #ccc;
 }
 
-.project-detail-image-wrapper {
-	margin: 30px auto;
+.project-detail p.project-description {
+	margin-top: 0px;
+	margin-bottom: 20px;
 }
 
-.project-detail-image {
+.project-detail-image-center {
+	margin: 30px auto;
+	line-height: 0;
+}
+
+.project-detail-image-wrapper {
 	position: relative;
 	display: inline-block;
 	line-height: 0;
 }
 
-.project-detail-image img{
+.project-detail-image {
 	display: block;
 	max-width: 100%;
 	max-height: calc(100vh - 380px);
@@ -340,7 +347,7 @@ model-viewer {
 	transition: opacity 0.5s ease;
 }
 
-.project-detail-image:hover .image-controls {
+.project-detail-image-wrapper:hover .image-controls {
 	opacity: 1;
 }
 

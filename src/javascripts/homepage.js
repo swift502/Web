@@ -9,7 +9,7 @@ var aText = [
 "typescript",
 "c#",
 "python",
-"ruby",
+// "ruby",
 "blender",
 "unity",
 "gimp",

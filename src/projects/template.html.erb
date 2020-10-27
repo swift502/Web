@@ -1,20 +1,20 @@
 <div class="project-detail-wrapper">
 	<div class="project-detail">
 		<h1 class="project-title"><%= project.title %></h1>
+		<p class="project-description"><%= project.description %></p>
 		<div class="project-tags">
 			<% project.tags.each do |tag| %>
 				<div class="project-tag"><%= tag %></div>
 			<% end %>
 		</div>
-		<!-- <div class="project-year"><%= project.yearLabel %></div> -->
 		<% project.content.each do |item| %>
 			<% case item.type %>
 				<% when "text" %>
 					<p><%= item.data %></p>
 				<% when "image" %>
-					<div class="project-detail-image-wrapper">
-						<div class="project-detail-image">
-							<img src="/images/projects/<%= item.data %>">
+					<div class="project-detail-image-center">
+						<div class="project-detail-image-wrapper">
+							<img class="project-detail-image" src="/images/projects/<%= item.data %>">
 							<div class="image-controls">
 								<div class="link-row">
 									<div class="tile-wrapper">
@@ -38,5 +38,11 @@
 					<iframe width="640" height="320" src="https://www.youtube.com/embed/<%= item.data %>"></iframe>
 			<% end %>
 		<% end %>
+		<div class="projects-button-wrapper">
+			<a href="/projects" class="projects-button">
+				<span class="projects-button-text">Back to projects</span>
+				<img src="/images/svg/folder-open.svg" class="projects-button-icon">
+			</a>
+		</div>
 	</div>
 </div>

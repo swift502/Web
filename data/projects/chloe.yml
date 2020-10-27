@@ -1,4 +1,5 @@
 title: Chloe
+description: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
 year: 2018
 tags:
   - 2018
@@ -9,8 +10,8 @@ link: /projects/chloe
 content:
   - type: image
     data: chloe/chloe_a.jpg
-  - type: text
-    data: Study of the character creation process with a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
+  # - type: text
+    # data: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
   - type: image
     data: chloe/chloe_b.jpg
   - type: image
