@@ -6,7 +6,6 @@ tags:
   - Blender
   - GIMP
 image: chloe/thumb.png
-link: /projects/chloe
 content:
   - type: image
     data: chloe/chloe_a.jpg

@@ -46,7 +46,7 @@ hr {
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.tile:not(.inactive):hover {
+.tile:hover {
 	border-color: #888;
 	box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.07);
 }

@@ -1,15 +1,11 @@
 <div class="tile-wrapper">
-	<% if project.link.present? %>
-		<a href="<%= project.link %>">
-	<% end %>
-		<div class="project-tile<% if not project.link.present? %> inactive<% end %>">
+	<a href="/projects/<%= project_name %>">
+		<div class="project-tile">
 			<div class="project-tile-image" style="background-image: url('/images/projects/<%= project.image %>');">
 				<% if project.commercial.present? %>
 					<div class="project-tile-commercial">Commercial</div>
 				<% end %>
 			</div>
 		</div>
-	<% if project.link.present? %>
-		</a>
-	<% end %>
+	</a>
 </div>

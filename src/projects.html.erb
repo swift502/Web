@@ -3,15 +3,14 @@ title: "Projects"
 tab: "projects"
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
 <div class="project-grid">
 	<%
 		sorted = data.projects.sort_by { |key, project| -project.year }
 		sorted.each do |key, project|
 	%>
 		<%= partial 'partials/project_tile', :locals => {
-			:project => project
+			:project => project,
+			:project_name => key
 		} %>
 	<% end %>
 </div>
