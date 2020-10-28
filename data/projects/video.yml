@@ -4,10 +4,10 @@ tags:
   - 2018
   - Blender
   - GIMP
-image: thumb_liz.png
-content:
+thumb: thumb_liz.png
+page:
   - type: video
     data: 9SJdowHJAPE
-    description: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
+    desc: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
   - type: image
     data: chloe/wire.jpg

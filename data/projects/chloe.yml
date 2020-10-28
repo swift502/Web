@@ -4,15 +4,11 @@ tags:
   - 2018
   - Blender
   - GIMP
-image: chloe/thumb.png
-main:
-  - type: image
-    data: 
-    description: 
-content:
+thumb: chloe/thumb.png
+page:
   - type: image
     data: chloe/chloe_a.jpg
-    description: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
+    desc: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
   - type: image
     data: chloe/chloe_b.jpg
   - type: image

@@ -6,7 +6,7 @@
 				<div class="project-tag"><%= tag %></div>
 			<% end %>
 		</div>
-		<% project.content.each_with_index  do |item, index| %>
+		<% project.page.each_with_index  do |item, index| %>
 			<% case item.type %>
 				<% when "text" %>
 					<p><%= item.data %></p>

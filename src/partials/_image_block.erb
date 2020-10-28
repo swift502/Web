@@ -1,5 +1,4 @@
-<% height = item.description.present? ? '360px' : '240px' %>
-
+<% height = item.desc.present? ? '360px' : '240px' %>
 <div class="project-detail-image-center">
 	<div class="project-detail-image-wrapper">
 		<img id="img-<%= index %>" class="project-detail-image" style="max-height: calc(100vh - <%= height %>);" src="/images/projects/<%= item.data %>">
@@ -21,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<% if item.description.present? %>
-		<p class="content-description" data-target="img-<%= index %>"><%= item.description %></p>
+	<% if item.desc.present? %>
+		<p class="content-description" data-target="img-<%= index %>"><%= item.desc %></p>
 	<% end %>
 </div>
