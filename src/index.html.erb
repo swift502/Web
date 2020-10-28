@@ -26,12 +26,9 @@ tab: "home"
 			<div class="homepage-right-panel">
 				<div id="typewriter-history"></div>
 				<div id="typewriter"></div>
-				<div class="projects-button-wrapper">
-					<a href="/projects" class="projects-button">
-						<span class="projects-button-text">View projects</span>
-						<img src="/images/svg/folder-open.svg" class="projects-button-icon">
-					</a>
-				</div>
+				<%= partial 'partials/projects_button', :locals => {
+					:text => 'View projects'
+				} %>
 			</div>
 		</div>
 	</div>

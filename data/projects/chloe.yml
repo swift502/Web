@@ -1,16 +1,18 @@
 title: Chloe
-description: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
 year: 2018
 tags:
   - 2018
   - Blender
   - GIMP
 image: chloe/thumb.png
+main:
+  - type: image
+    data: 
+    description: 
 content:
   - type: image
     data: chloe/chloe_a.jpg
-  # - type: text
-    # data: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
+    description: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
   - type: image
     data: chloe/chloe_b.jpg
   - type: image
