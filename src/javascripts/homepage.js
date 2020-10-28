@@ -82,3 +82,15 @@ function refreshTransparency()
 		archive.pop();
 	}
 }
+
+const modelViewer = document.querySelector('model-viewer');
+modelViewer.addEventListener('load', function(evt)
+	{
+		document.getElementById('model-viewer-wrapper').style.borderColor = '#fff';
+	}
+);
+modelViewer.addEventListener('model-visibility', function(evt)
+	{
+		document.getElementById('model-viewer-wrapper').style.borderColor = '#fff';
+	}
+);

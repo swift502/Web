@@ -176,6 +176,9 @@ hr {
 
 .homepage-split.left {
 	left: 0;
+
+	border: 1px solid #ccc;
+	transition: border 1s ease-in;
 }
 
 .homepage-split.right {
