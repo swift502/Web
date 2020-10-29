@@ -2,12 +2,12 @@ set :source, 'src'
 activate :directory_indexes
 
 data.projects.each do |name, project|
-	proxy "/projects/#{name}/index.html", "/projects/template.html", :locals => { :project => project }, :ignore => true
+	proxy "/projects/#{name}/index.html", "/project_detail.html", :locals => { :project => project }, :ignore => true
 end
 
 configure :build do
-    activate :minify_css
-    activate :minify_javascript
+	activate :minify_css
+	activate :minify_javascript
 end
 
 helpers do

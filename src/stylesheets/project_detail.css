@@ -1,0 +1,139 @@
+/* Project detail */
+
+.project-detail-wrapper {
+	max-width: 1200px;
+	margin: 30px auto;
+}
+
+.project-detail {
+	padding: 0 52px;
+	text-align: center;
+}
+
+.project-detail h1 {
+	text-align: center;
+}
+
+.aspect-ratio {
+	overflow: hidden;
+	position: relative;
+	max-width: 100%;
+	margin: auto;
+	
+	background: #eee;
+	background-image: url('/images/projects/empty.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 2100px) {
+	.aspect-ratio {
+		max-width: 80%;
+	}
+}
+
+@media (max-width: 1200px) {
+	.aspect-ratio {
+		max-width: 100%;
+	}
+}
+
+.aspect-ratio::after {
+	padding-top: 56.25%;
+	display: block;
+	content: '';
+}
+
+.project-detail iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.project-detail p {
+	padding: 18px 32px;
+	margin: 30px 0;
+	background: #eee;
+	box-shadow: 0 2px 0 0 #ccc;
+}
+
+.project-detail .content-description {
+	margin-top: 0px;
+	line-height: initial;
+	margin: auto;
+}
+
+.project-detail p.project-description {
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.project-detail-image-center {
+	margin: 30px auto;
+	line-height: 0;
+}
+
+.project-detail-image-wrapper {
+	position: relative;
+	display: inline-block;
+	line-height: 0;
+}
+
+.project-detail-image {
+	display: block;
+	max-width: 100%;
+	min-height: 300px;
+}
+
+.back-to-projects-wrapper {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.image-controls {
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.project-detail-image-wrapper:hover .image-controls {
+	opacity: 1;
+}
+
+.image-controls .tile {
+	padding: 12px 14px;
+}
+
+.image-controls .tile-icon {
+	height: 21px;
+}
+
+.image-controls .tile-icon img {
+	height: 21px;
+	width: 21px;
+}
+
+.project-title {
+	margin: 0.2em 0;
+}
+
+.project-tags {
+	margin-bottom: 20px;
+}
+
+.project-tag {
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 600;
+	display: inline-block;
+	bottom: 10px;
+	font-size: 18px;
+	background: #eee;
+	box-shadow: 0 2px 0 0 #ccc;
+	color: #333;
+	padding: 4px 8px;
+}

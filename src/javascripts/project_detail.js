@@ -9,4 +9,5 @@ function onWindowResize()
 }
 
 window.addEventListener('resize', onWindowResize);
+window.addEventListener('load', onWindowResize);
 onWindowResize();

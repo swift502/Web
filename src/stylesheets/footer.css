@@ -1,0 +1,38 @@
+/* Footer */
+
+.footer {
+	margin: 50px 0;
+}
+
+.footer .tile-icon {
+	height: 31px;
+}
+
+.footer .tile-icon img {
+	height: 31px;
+	width: 31px;
+}
+
+#email-copy {
+	position: relative;
+	cursor: pointer;
+}
+
+@keyframes fadeOutUp {
+	from {
+	opacity: 1;
+	}
+
+	to {
+	opacity: 0;
+	transform: translate3d(0, -100%, 0);
+	}
+}
+  
+.copied {
+	position: absolute;
+	top: -32px;
+	animation-name: fadeOutUp;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+}
