@@ -16,7 +16,7 @@ tab: "projects"
 	<%
 		# Fill the rest of the last row with dummy tiles
 		columns = 3
-		gaps = columns - (data.projects.length % columns)
+		gaps = (columns - (data.projects.length % columns)) % columns
 		while gaps > 0 do
 	%>
 		<%= partial 'partials/dummy_project_tile' %>

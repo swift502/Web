@@ -8,6 +8,7 @@
 .project-detail {
 	padding: 0 52px;
 	text-align: center;
+	min-height: calc(100vh - 364px);
 }
 
 .project-detail h1 {

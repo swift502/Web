@@ -11,6 +11,7 @@
 .project-tile {
 	transition: all 0.1s ease;
 	padding: 10px;
+	/* opacity: 0; */
 }
 
 .project-tile-image {

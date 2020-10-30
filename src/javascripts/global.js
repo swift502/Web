@@ -1,5 +1,3 @@
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction()
 {
 	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
@@ -11,6 +9,7 @@ function scrollFunction()
 		document.getElementById("navbar").style.borderColor = "#fff";
 	}
 }
+window.addEventListener('scroll', scrollFunction);
 
 function emailToClipboard()
 {

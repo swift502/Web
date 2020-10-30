@@ -27,8 +27,7 @@
 
 .homepage-split.left {
 	left: 0;
-
-	border: 1px solid #ccc;
+	border: 2px dashed #aaa;
 	transition: border 1s ease-in;
 }
 
