@@ -34,6 +34,7 @@ hr {
 .content {
 	padding-top: 64px;
 	min-height: calc(100vh - 225px);
+	animation: fadeIn 0.1s ease-out;
 }
 
 /* Tiles */
@@ -116,10 +117,6 @@ hr {
 .sketchbook-archive .tile-wrapper {
 	width: 100%;
 	margin: 16px auto;
-}
-
-.fadeIn {
-	animation: fadeIn 0.1s ease-out;
 }
 
 @keyframes fadeIn {
