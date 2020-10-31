@@ -3,8 +3,12 @@
 .homepage {
 	max-width: calc(100vh - 300px);
 	min-width: 600px;
+	min-height: 620px;
 	margin: auto;
-	margin-top: 70px;
+	height: calc(100vh - 265px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .homepage-title {
