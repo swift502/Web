@@ -1,9 +1,10 @@
 <%
 	video_path = "/assets/projects/#{project_name}/#{item.data}"
+	aspect = item.aspect.present? ? item.aspect : 'wide'
 %>
 <div class="video-wrapper">
-	<div class="aspect-ratio">
-		<video id="video-<%= index %>" autoplay muted loop>
+	<div class="aspect-ratio <%= aspect %>">
+		<video id="video-<%= index %>" autoplay mute loop>
 			<source src="<%= video_path %>" type="video/webm">
 		</video>
 	</div>

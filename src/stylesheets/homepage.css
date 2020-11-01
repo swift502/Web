@@ -20,6 +20,7 @@
 	position: relative;
 	height: calc(100vh - 500px);
 	min-height: 364px;
+	/* max-height: 700px; */
 }
 
 .homepage-split {
