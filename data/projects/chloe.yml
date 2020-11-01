@@ -12,6 +12,8 @@ page:
     data: chloe_2.jpg
   - type: image
     data: chloe_3.jpg
+  - type: image
+    data: chloe_4.jpg
   - type: youtube
     data: JgvhZwMJHYQ
     desc: A cherry on the top was an experimental eyes and eyelids rig designed for ease of use and to solve some of the usual eyelid clipping issues.

@@ -1,12 +1,17 @@
 <% content_for(:title, "Sketchbook") %>
-<br><br><br>
-<div class="center">
-	<h1>Sketchbook demo archive</h1>
+<div class="sketchbook-archive-wrapper">
+	<div class="center">
+		<h1>Sketchbook demo archive</h1>
+	</div>
+	<div class="sketchbook-archive">
+		<div class="tile-wrapper"><a href="/sketchbook/0.4"><div class="tile">0.4</div></a></div>
+		<div class="tile-wrapper"><a href="/sketchbook/0.3"><div class="tile">0.3</div></a></div>
+		<div class="tile-wrapper"><a href="/sketchbook/0.2"><div class="tile">0.2</div></a></div>
+		<div class="tile-wrapper"><a href="/sketchbook/0.1"><div class="tile">0.1</div></a></div>
+	</div>
 </div>
-
-<div class="sketchbook-archive">
-    <div class="tile-wrapper"><a href="/sketchbook/0.4"><div class="tile">0.4</div></a></div>
-    <div class="tile-wrapper"><a href="/sketchbook/0.3"><div class="tile">0.3</div></a></div>
-    <div class="tile-wrapper"><a href="/sketchbook/0.2"><div class="tile">0.2</div></a></div>
-    <div class="tile-wrapper"><a href="/sketchbook/0.1"><div class="tile">0.1</div></a></div>
+<div class="back-to-projects-wrapper">
+	<%= partial 'partials/projects_button', :locals => {
+		:text => 'Back to projects'
+	} %>
 </div>

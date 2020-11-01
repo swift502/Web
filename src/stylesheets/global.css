@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	color: #295888;
+	color: #005896;
 	text-decoration: inherit;
 	font-weight: 600;
 }
@@ -38,6 +38,17 @@ hr {
 	animation: fadeIn 0.1s ease-out;
 }
 
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translate(0px, -3px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
+
 /* Tiles */
 
 .tile {
@@ -48,6 +59,9 @@ hr {
 	padding: 14px 16px;
 	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	color: initial;
+	font-weight: initial;
 }
 
 .tile:hover {
@@ -57,6 +71,16 @@ hr {
 
 .tile:hover .wip-overlay {
 	opacity: 1;
+}
+
+.link-row {
+	position: relative;
+	text-align: center;
+}
+
+.link-row .tile-wrapper {
+	display: inline-block;
+	margin: 0 5px;
 }
 
 /* Projects button */
@@ -95,42 +119,4 @@ hr {
 	position: absolute;
 	right: 20px;
 	top: 18px;
-}
-
-/* Other */
-
-.link-row {
-	position: relative;
-	text-align: center;
-}
-
-.link-row .tile-wrapper {
-	display: inline-block;
-	margin: 0 5px;
-}
-
-.sketchbook-archive {
-	text-align: center;
-	max-width: 320px;
-	margin: auto;
-}
-
-.sketchbook-archive div {
-	color: black;
-}
-
-.sketchbook-archive .tile-wrapper {
-	width: 100%;
-	margin: 16px auto;
-}
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-		transform: translate(0px, -3px);
-	}
-	100% {
-		opacity: 1;
-		transform: translate(0px, 0px);
-	}
 }

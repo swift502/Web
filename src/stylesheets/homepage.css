@@ -5,7 +5,7 @@
 	min-width: 600px;
 	min-height: 620px;
 	margin: auto;
-	height: calc(100vh - 265px);
+	height: calc(100vh - 225px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,7 @@
 
 .homepage-split-container {
 	position: relative;
-	height: calc(100vh - 500px);
+	height: calc(80vh - 280px);
 	min-height: 364px;
 	/* max-height: 700px; */
 }
