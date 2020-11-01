@@ -4,4 +4,15 @@ tags:
   - 2019
   - Blender
   - GIMP
-page: {}
+page:
+  - type: image
+    data: skoda_1.jpg
+    desc: A Skoda 110R model designed for real-time application use, hence the noticeably low polycount in some areas. However still designed with PBR workflow in mind.
+  - type: image
+    data: skoda_2.jpg
+  - type: image
+    data: skoda_3.jpg
+  - type: image
+    data: skoda_4.jpg
+  - type: video
+    data: skoda_5.webm

@@ -6,9 +6,12 @@ tags:
   - GIMP
 page:
   - type: image
-    data: chloe/chloe_a.jpg
+    data: chloe_1.jpg
     desc: Study of the character creation process of a stylized character. Additional focus on clean topology, rigging, shader work and final composition.
   - type: image
-    data: chloe/chloe_b.jpg
+    data: chloe_2.jpg
   - type: image
-    data: chloe/wire.jpg
+    data: chloe_3.jpg
+  - type: youtube
+    data: JgvhZwMJHYQ
+    desc: A cherry on the top was an experimental eyes and eyelids rig designed for ease of use and to solve some of the usual eyelid clipping issues.

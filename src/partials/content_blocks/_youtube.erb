@@ -1,0 +1,8 @@
+<div class="video-wrapper">
+	<div class="aspect-ratio">
+		<iframe id="video-<%= index %>" frameborder="0" src="https://www.youtube.com/embed/<%= item.data %>?rel=0" allowfullscreen></iframe>
+	</div>
+	<% if item.desc.present? %>
+		<p class="content-description" data-target="video-<%= index %>"><%= item.desc %></p>
+	<% end %>
+</div>

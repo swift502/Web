@@ -1,6 +1,11 @@
+<%
+	video_path = "/assets/projects/#{project_name}/#{item.data}"
+%>
 <div class="video-wrapper">
 	<div class="aspect-ratio">
-		<iframe id="video-<%= index %>" frameborder="0" src="https://www.youtube.com/embed/<%= item.data %>" allowfullscreen></iframe>
+		<video id="video-<%= index %>" autoplay muted loop>
+			<source src="<%= video_path %>" type="video/webm">
+		</video>
 	</div>
 	<% if item.desc.present? %>
 		<p class="content-description" data-target="video-<%= index %>"><%= item.desc %></p>

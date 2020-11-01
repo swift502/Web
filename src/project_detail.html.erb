@@ -8,20 +8,11 @@
 			<% end %>
 		</div>
 		<% project.page.each_with_index  do |item, index| %>
-			<% case item.type %>
-				<% when "text" %>
-					<p><%= item.data %></p>
-				<% when "image" %>
-					<%= partial 'partials/image_block', :locals => {
-						:item => item,
-						:index => index
-					} %>
-				<% when "video" %>
-					<%= partial 'partials/video_block', :locals => {
-						:item => item,
-						:index => index
-					} %>
-			<% end %>
+			<%= partial "partials/content_blocks/#{item.type}", :locals => {
+				:project_name => project_name,
+				:item => item,
+				:index => index
+			} %>
 		<% end %>
 	</div>
 </div>

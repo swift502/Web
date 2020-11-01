@@ -1,7 +1,13 @@
-title: Karosa
+title: Karosa C734
 year: 2015.1
 tags:
   - 2015
   - Blender
   - GIMP
-page: {}
+page:
+  - type: youtube
+    data: s3pSHwxGa7U
+    desc: Model of a Karosa C734, and a fun animation showcasing a custom vehicle rig and some simple physics simulation.
+  - type: youtube
+    data: cS-3eqxlU4o
+    desc: Utilizing a simple physics based vehicle rig designed to solve the problem of wheel sliding as well as automating steering wheel and wheel rotation animation.

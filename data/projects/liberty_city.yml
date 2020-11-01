@@ -1,7 +1,10 @@
-title: Liberty City mod for BeamNG
+title: Liberty City mod for BeamNG.drive
 year: 2019.2
 tags:
   - 2019
   - Python
   - Blender
-page: {}
+page:
+  - type: youtube
+    data: 9SJdowHJAPE
+    desc: BeamNG.drive port of GTA 3's Liberty City. I first extended <a href="https://github.com/Parik27/DragonFF">DragonFF</a>, an open source dff importer to be able to import entire map segments. The conversion process then involved a lot of script automated data structure conversion, road path generation and geometry and material cleanup work. A lot of fun to work on.

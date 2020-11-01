@@ -22,7 +22,7 @@ function emailToClipboard()
 
 	const copied = document.createElement('div');
 	copied.classList.add('copied');
-	copied.innerText = 'copied!';
+	copied.innerText = 'Copied!';
 	document.getElementById('email-copy').appendChild(copied);
 
 	copied.addEventListener('animationend', function() {removeCopiedPopup(copied)});
