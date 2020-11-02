@@ -7,4 +7,21 @@ tags:
   - C#
   - Blender
   - HLSL
-page: {}
+page:
+  - type: text
+    data: '<a href="https://play.google.com/store/apps/details?id=com.HaugLand.AirportPRG">Google Play</a> | <a href="https://apps.apple.com/app/id1285078879">App Store</a>'
+  - type: image
+    data: prg_1.jpg
+    desc: AirportPRG is a mobile airport management game focused on controlling the air traffic and airport staff. Taking place throughout the history of Ruzyne International Airport starting from grassy runways to a complex system of concrete ones.
+  - type: image
+    data: prg_2.jpg
+    desc: I was in charge of establishing the game's art style, creating all 3D assets, writing shaders, writing movement and pathfinding logic for passenger, and creating the introductory tutorial.
+  - type: image
+    data: prg_3.jpg
+    desc: I modelled and textured 11 unique airplanes with simple metallic mask implementation and normal maps.
+  - type: image
+    data: prg_4.jpg
+  - type: image
+    data: prg_5.jpg
+  - type: image
+    data: prg_6.jpg
