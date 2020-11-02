@@ -10,10 +10,10 @@ page:
     data: '<a href="/sketchbook/latest">Latest demo</a> | <a href="/sketchbook">Demo archive</a> | <a href="https://github.com/swift502/Sketchbook">Github page</a>'
   - type: image
     data: sketchbook_1.jpg
-    desc: A hobby project utilising modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it yourself using any modern browser <a href="/sketchbook/latest">here</a>.
+    desc: A hobby project utilizing modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it yourself using any modern browser <a href="/sketchbook/latest">here</a>.
   - type: youtube
     data: S0FDfh0Ft8c
-    desc: Characters are utilizing a general state system and are optionally driven by an AI behavior. Vehicles are physics based and fully interactive. Utilizing <a href="https://github.com/mrdoob/three.js">three.js</a> for rendering and <a href="https://github.com/schteppe/cannon.js">cannon.js</a> for physics, my logic connects everything together to form an interactive sandbox which runs on the web.
+    desc: Characters adopt a general state system and are optionally driven by an AI behavior. Vehicles are physics based and fully interactive. Using <a href="https://github.com/mrdoob/three.js">three.js</a> for rendering and <a href="https://github.com/schteppe/cannon.js">cannon.js</a> for physics, my logic connects everything together to form an interactive sandbox which runs on the web.
   - type: image
     data: sketchbook_2.jpg
-    desc: Environemnts can be created in Blender. The engine merely reads a gltf scene, which includes all graphical assets, spawn points and scenario definitions.
+    desc: Environemnts can be created in Blender. All graphical assets, spawn points and scenario definitions are embedded in a gltf scene, which is read by the engine.

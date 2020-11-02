@@ -1,31 +1,19 @@
 var aText = [
-"game development",
-// "game logic",
-// "game feel",
 "3d modelling",
+"texturing",
 "rigging",
 "animation",
+"python",
+"blender",
+"gimp",
+"c#",
+"hlsl",
+"unity",
+"html",
+"css",
 "javascript",
 "typescript",
-"c#",
-"python",
-// "ruby",
-"blender",
-"unity",
-"gimp",
-
-// "hi, i'm jan",
-// "game developer",
-// "based in czech republic",
-// "i love 3d modelling",
-// "rigging and animation",
-// "writing game logic",
-// "tuning game feel",
-// "quaternions",
-// "matrices",
-// "shaders",
-// "graphics programming",
-// "and more"
+"web"
 ];
 
 var iSpeed = 100; 
