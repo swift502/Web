@@ -7,9 +7,12 @@ tags:
   - C#
   - Blender
   - HLSL
+links:
+  - title: Google Play
+    link: https://play.google.com/store/apps/details?id=com.HaugLand.AirportPRG
+  - title: App Store
+    link: https://apps.apple.com/app/id1285078879
 page:
-  - type: text
-    data: '<a href="https://play.google.com/store/apps/details?id=com.HaugLand.AirportPRG">Google Play</a> | <a href="https://apps.apple.com/app/id1285078879">App Store</a>'
   - type: image
     data: prg_1.jpg
     desc: AirportPRG is a mobile airport management game focused on controlling the air traffic and airport staff. Taking place throughout the history of Ruzyne International Airport starting from grassy runways to a complex system of concrete ones.

@@ -5,9 +5,14 @@ tags:
   - TypeScript
   - Webpack
   - Blender
+links:
+  - title: Latest demo
+    link: /sketchbook/latest
+  - title: Demo archive
+    link: /sketchbook
+  - title: Github page
+    link: https://github.com/swift502/Sketchbook
 page:
-  - type: text
-    data: '<a href="/sketchbook/latest">Latest demo</a> | <a href="/sketchbook">Demo archive</a> | <a href="https://github.com/swift502/Sketchbook">Github page</a>'
   - type: image
     data: sketchbook_1.jpg
     desc: A hobby project utilizing modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it yourself using any modern browser <a href="/sketchbook/latest">here</a>.

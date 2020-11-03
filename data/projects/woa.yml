@@ -7,9 +7,12 @@ tags:
   - C#
   - Blender
   - HLSL
+links:
+  - title: Google Play
+    link: https://play.google.com/store/apps/details?id=com.haugland.woa
+  - title: App Store
+    link: https://apps.apple.com/app/id1462642534
 page:
-  - type: text
-    data: '<a href="https://play.google.com/store/apps/details?id=com.haugland.woa">Google Play</a> | <a href="https://apps.apple.com/app/id1462642534">App Store</a>'
   - type: image
     data: woa_1.jpg
     desc: World of Airports is a mobile airport management game. I was in charge of establishing the game's art style, creating all 3D assets, writing shaders, creating interactive minigames, and was involved in many of the game's integral systems.
