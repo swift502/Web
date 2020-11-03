@@ -1,9 +1,9 @@
 @import "normalize.css";
 
-@import "footer.css";
 @import "global.css";
-@import "homepage.css";
 @import "navbar.css";
+@import "footer.css";
+@import "homepage.css";
 @import "project_detail.css";
 @import "projects.css";
 @import "sketchbook_archive.css";

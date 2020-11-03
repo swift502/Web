@@ -57,10 +57,6 @@
 		display: block;
 	}
 
-	.project-tile {
-		padding: 0;
-	}
-
 	.project-tile.inactive {
 		display: none;
 	}
