@@ -40,6 +40,25 @@
 	right: 0;
 }
 
+@media (max-width: 776px) {
+	.homepage {
+		min-width: unset;
+	}
+
+	.homepage-split {
+		position: relative;
+		width: 100%;
+	}
+
+	.homepage-split.right {
+		display: none;
+	}
+
+	.homepage-split.left {
+		border: none;
+	}
+}
+
 .homepage-right-panel {
 	height: 100%;
 	padding-left: 40px;
