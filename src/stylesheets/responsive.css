@@ -28,6 +28,10 @@
 		width: 100%;
 	}
 
+	.homepage-split-container {
+		height: calc(100vh - 226px);
+	}
+
 	.homepage-split.left {
 		display: none;
 	}
@@ -70,7 +74,7 @@
 		padding: 0;
 	}
 
-	.project-detail p, .project-detail-image-center, .video-wrapper {
+	.project-detail p, .project-detail-image-center, .video-wrapper, .project-detail-wrapper {
 		margin: 0;
 	}
 
@@ -79,6 +83,7 @@
 		box-shadow: none;
 		padding: 22px 22px;
 		width: calc(100% - 44px) !important;
+		text-align: left;
 	}
 	
 	.project-tag {
@@ -87,6 +92,7 @@
 
 	.project-detail p.link-box {
 		padding-top: 0;
+		text-align: center;
 	}
 
 	.link-item {
