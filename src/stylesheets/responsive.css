@@ -57,6 +57,10 @@
 		display: block;
 	}
 
+	.project-tile {
+		padding-bottom: 0;
+	}
+
 	.project-tile.inactive {
 		display: none;
 	}
@@ -105,5 +109,9 @@
 
 	.link-separator {
 		display: none;
+	}
+
+	.aspect-ratio {
+		background-size: 70%;
 	}
 }
