@@ -97,9 +97,8 @@
 		margin: 4px auto;
 	}
 
-	.project-detail p.link-box {
-		padding-top: 0;
-		text-align: center;
+	.project-detail .link-box {
+		padding: 0px 10px;
 	}
 
 	.link-item {
@@ -113,5 +112,9 @@
 
 	.aspect-ratio {
 		background-size: 70%;
+	}
+
+	.project-detail-image-center {
+		margin-bottom: 20px;
 	}
 }

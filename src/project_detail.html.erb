@@ -5,24 +5,21 @@
 		<!-- Title -->
 		<h1 class="project-title"><%= project.title %></h1>
 
+		<!-- Links -->
+		<% if project.links.present? %>
+			<div class="link-box">
+			<% project.links.each  do |link| %>
+				<a href=<%= link.link %> class="link-item tile"><%= link.title %></a>
+			<% end %>
+			</div>
+		<% end %>
+		
 		<!-- Tags -->
 		<div class="project-tags">
 			<% project.tags.each do |tag| %>
 				<div class="project-tag"><%= tag %></div>
 			<% end %>
 		</div>
-
-		<!-- Links -->
-		<% if project.links.present? %>
-			<p class="link-box">
-			<% project.links.each  do |link| %>
-				<a href=<%= link.link %> class="link-item"><%= link.title %></a>
-				<% if link != project.links.last %>
-					<span class="link-separator">|</span>
-				<% end %>
-			<% end %>
-			</p>
-		<% end %>
 
 		<!-- Content blocks -->
 		<% project.page.each_with_index  do |item, index| %>

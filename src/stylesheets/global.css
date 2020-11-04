@@ -53,6 +53,7 @@ hr {
 
 .tile {
 	position: relative;
+	display: inline-block;
 	user-select: none;
 	background: white;
 	border: #ccc solid 1px;

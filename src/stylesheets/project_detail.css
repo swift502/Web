@@ -67,8 +67,12 @@
 
 .project-detail p:not(.link-box) {
 	text-align: left;
-	border-top: none;
 }
+
+.link-box {
+	margin-bottom: 20px;
+}
+
 
 .project-detail .content-description {
 	margin-top: 0px;
