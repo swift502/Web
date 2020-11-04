@@ -16,7 +16,7 @@
 
 	.homepage {
 		display: block;
-		min-width: none;
+		min-width: 0;
 		max-width: none;
 		min-height: 320px;
 		height: calc(100vh - 225px);
@@ -123,10 +123,6 @@
 	.aspect-ratio {
 		background-size: 70%;
 	}
-
-	/* .content-block { */
-		/* margin-bottom: 1px; */
-	/* } */
 
 	.project-detail-image {
 		max-height: none !important;
