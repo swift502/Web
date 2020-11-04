@@ -24,4 +24,4 @@ page:
     desc: Characters adopt a general state system and are optionally driven by an AI behavior. Vehicles are physics based and fully interactive. Using <a href="https://github.com/mrdoob/three.js">three.js</a> for rendering and <a href="https://github.com/schteppe/cannon.js">cannon.js</a> for physics, my logic connects everything together to form an interactive sandbox which runs on the web.
   - type: image
     data: sketchbook_2.jpg
-    desc: Environemnts can be created in Blender. All graphical assets, spawn points and scenario definitions are embedded in a gltf scene, which is read by the engine.
+    desc: Environments can be created in Blender. All graphical assets, spawn points and scenario definitions are embedded in a gltf scene, which is read by the engine.

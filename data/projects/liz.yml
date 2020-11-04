@@ -7,7 +7,7 @@ tags:
 page:
   - type: image
     data: liz_1.jpg
-    desc: Character model based on ambient musician Liz Harris. Guitar model and bass amps were borrowed from Blend Swap.
+    desc: Character model based on musician Liz Harris. Guitar model and bass amps were borrowed from Blend Swap.
   - type: image
     data: liz_2.jpg
   - type: video
@@ -15,4 +15,4 @@ page:
     aspect: square
   - type: video
     data: liz_4.webm
-    desc: While never used, I did experiment with dynamic clothes using Blender's cloth and soft body simlation.
+    desc: While never used, I did experiment with dynamic clothes using Blender's cloth and soft body simulation.
