@@ -94,8 +94,9 @@
 
 .project-detail .content-description {
 	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
 	line-height: initial;
-	margin: auto;
 }
 
 .project-detail p.project-description {

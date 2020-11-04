@@ -93,8 +93,8 @@
 		background: none;
 		border: none;
 		padding: 22px 22px;
-		/* padding-bottom: 0; */
-		/* margin-bottom: 20px; */
+		padding-bottom: 0;
+		margin-bottom: 20px;
 		width: calc(100% - 44px) !important;
 		text-align: left;
 	}
