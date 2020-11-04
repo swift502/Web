@@ -1,7 +1,3 @@
-# Web
-
-Static web built with [Middleman](https://middlemanapp.com/).
-
 ## Building notes
 
 1. Get Ruby
