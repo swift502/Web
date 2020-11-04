@@ -9,11 +9,16 @@
 		<% if project.links.present? %>
 			<div class="link-box">
 			<% project.links.each  do |link| %>
-				<a href=<%= link.link %> class="link-item tile"><%= link.title %></a>
+				<a href=<%= link.link %> class="link-item tile">
+					<% if link.icon.present? %>
+						<div class="tile-icon"><img src="/assets/svg/<%= link.icon %>"></div>
+					<% end %>
+					<%= link.title %>
+				</a>
 			<% end %>
 			</div>
 		<% end %>
-		
+
 		<!-- Tags -->
 		<div class="project-tags">
 			<% project.tags.each do |tag| %>

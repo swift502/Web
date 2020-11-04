@@ -5,7 +5,7 @@
 
 * {
 	font-family: 'Solway', serif;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 html {
@@ -53,7 +53,7 @@ hr {
 
 .tile {
 	position: relative;
-	display: inline-block;
+	display: block;
 	user-select: none;
 	background: white;
 	border: #ccc solid 1px;

@@ -10,8 +10,10 @@ tags:
 links:
   - title: Google Play
     link: https://play.google.com/store/apps/details?id=com.HaugLand.AirportPRG
+    icon: google-play.svg
   - title: App Store
     link: https://apps.apple.com/app/id1285078879
+    icon: app-store.svg
 page:
   - type: image
     data: prg_1.jpg

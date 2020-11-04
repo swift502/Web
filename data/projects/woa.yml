@@ -10,8 +10,10 @@ tags:
 links:
   - title: Google Play
     link: https://play.google.com/store/apps/details?id=com.haugland.woa
+    icon: google-play.svg
   - title: App Store
     link: https://apps.apple.com/app/id1462642534
+    icon: app-store.svg
 page:
   - type: image
     data: woa_1.jpg

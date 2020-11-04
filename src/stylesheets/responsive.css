@@ -85,10 +85,16 @@
 		margin: 0;
 	}
 
+	.project-title {
+		font-size: 36px;
+	}
+
 	.project-detail p {
 		background: none;
 		border: none;
 		padding: 22px 22px;
+		padding-bottom: 0;
+		margin-bottom: 20px;
 		width: calc(100% - 44px) !important;
 		text-align: left;
 	}
@@ -99,6 +105,10 @@
 
 	.project-detail .link-box {
 		padding: 0px 10px;
+	}
+
+	.project-detail .link-box .tile {
+		display: block;
 	}
 
 	.link-item {
@@ -116,5 +126,22 @@
 
 	.project-detail-image-center {
 		margin-bottom: 20px;
+	}
+
+	/* Project detail back to projects button */
+
+	.back-to-projects-wrapper .projects-button {
+		padding: 12px 18px;
+	}
+
+	.back-to-projects-wrapper .projects-button-text {
+		font-size: 22px;
+		margin-right: 34px;
+	}
+
+	.back-to-projects-wrapper .projects-button-icon {
+		width: 24px;
+		right: 18px;
+		top: 15px;
 	}
 }

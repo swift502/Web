@@ -65,6 +65,12 @@
 	border: 1px solid #ccc;
 }
 
+/* @media (max-width: 2100px) {
+	.project-detail p {
+		font-size: 18px;
+	}
+} */
+
 .project-detail p:not(.link-box) {
 	text-align: left;
 }
@@ -73,6 +79,19 @@
 	margin-bottom: 20px;
 }
 
+.link-box .tile {
+	display: inline-block;
+}
+
+.link-box .tile-icon {
+	display: inline-block;
+    width: 17px;
+    height: 17px;
+    position: relative;
+	top: 2px;
+	margin-right: 10px;
+	float: left;
+}
 
 .project-detail .content-description {
 	margin-top: 0px;
@@ -134,6 +153,7 @@
 
 .project-title {
 	margin: 0.2em 0;
+	font-size: 45px;
 }
 
 .project-tags {
