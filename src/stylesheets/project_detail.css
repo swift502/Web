@@ -58,7 +58,7 @@
 }
 
 .project-detail p {
-	padding: 22px 32px;
+	padding: 20px 30px;
 	margin: 30px 0;
 	color: #222;
 	background: #fafafa;
@@ -84,7 +84,6 @@
 }
 
 .link-box .tile-icon {
-	display: inline-block;
     width: 17px;
     height: 17px;
     position: relative;

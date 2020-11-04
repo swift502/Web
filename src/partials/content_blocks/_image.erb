@@ -2,7 +2,7 @@
 	height = item.desc.present? ? '360px' : '240px'
 	image_path = "/assets/projects/#{project_name}/#{item.data}"
 %>
-<div class="project-detail-image-center">
+<div class="project-detail-image-center content-block">
 	<div class="project-detail-image-wrapper">
 		<img id="img-<%= index %>" class="project-detail-image" style="max-height: max(calc(100vh - <%= height %>), 500px);" src="<%= image_path %>">
 		<div class="image-controls">

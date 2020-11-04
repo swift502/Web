@@ -5,7 +5,7 @@ function onWindowResize()
 	for (var i = 0; i < descs.length; i++)
 	{
 		var width = document.getElementById(descs[i].dataset.target).offsetWidth;
-		descs[i].style.width = (width - 66) + 'px';
+		descs[i].style.width = (width - 62) + 'px';
 	};
 }
 
