@@ -1,5 +1,22 @@
+var touchDevice = ('ontouchstart' in document.documentElement);
+var prevScrollpos = window.pageYOffset;
+
 function scrollFunction()
 {
+	if (touchDevice)
+	{
+		var currentScrollPos = window.pageYOffset;
+		if (prevScrollpos > currentScrollPos)
+		{
+			document.getElementById("navbar").style.top = "0";
+		}
+		else
+		{
+			document.getElementById("navbar").style.top = "-64px";
+		}
+		prevScrollpos = currentScrollPos;
+	}
+
 	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
 	{
 		document.getElementById("navbar").style.borderColor = "#ccc";
@@ -10,28 +27,3 @@ function scrollFunction()
 	}
 }
 window.addEventListener('scroll', scrollFunction);
-
-function emailToClipboard()
-{
-	const ta = document.createElement('textarea');
-	ta.value = 'blaha.j502@gmail.com';
-	document.body.appendChild(ta);
-	ta.select();
-	document.execCommand('copy');
-	document.body.removeChild(ta);
-
-	const copied = document.createElement('div');
-	copied.classList.add('copied');
-	copied.innerText = 'Copied!';
-	document.getElementById('email-copy').appendChild(copied);
-
-	copied.addEventListener('animationend', function() {removeCopiedPopup(copied)});
-	copied.addEventListener('webkitAnimationEnd', function() {removeCopiedPopup(copied)});
-	copied.addEventListener('oAnimationEnd', function() {removeCopiedPopup(copied)});
-	copied.addEventListener('MSAnimationEnd', function() {removeCopiedPopup(copied)});
-}
-
-function removeCopiedPopup(copied)
-{
-	document.getElementById('email-copy').removeChild(copied);
-}
