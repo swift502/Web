@@ -3,20 +3,16 @@ tab: "projects"
 ---
 <% content_for(:title, "Projects") %>
 <div class="project-grid">
-	<%
-		# Sort projects and emit project tiles
-		sorted = data.projects.sort_by { |key, project| -project.year }
-		sorted.each do |key, project|
-	%>
+	<% data.project_index.each do |project_name| %>
 		<%= partial 'partials/project_tile', :locals => {
-			:project => project,
-			:project_name => key
+			:project => data.projects[project_name],
+			:project_name => project_name
 		} %>
 	<% end %>
 	<%
 		# Fill the rest of the last row with dummy tiles
 		columns = 3
-		gaps = (columns - (data.projects.length % columns)) % columns
+		gaps = (columns - (data.project_index.length % columns)) % columns
 		while gaps > 0 do
 	%>
 		<%= partial 'partials/dummy_project_tile' %>
