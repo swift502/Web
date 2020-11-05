@@ -12,30 +12,3 @@
 	height: 31px;
 	width: 31px;
 }
-
-#email-copy {
-	position: relative;
-	cursor: pointer;
-}
-
-@keyframes fadeOutUp {
-	from {
-	opacity: 1;
-	}
-
-	to {
-	opacity: 0;
-	transform: translate3d(0, -100%, 0);
-	}
-}
-  
-.copied {
-	position: absolute;
-	top: -32px;
-	width: 200%;
-    left: -50%;
-	text-align: center;
-	pointer-events: none;
-	user-select: none;
-	animation: fadeOutUp 1.5s ease-out;
-}

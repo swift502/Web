@@ -3,8 +3,12 @@
 @import "global.css";
 @import "navbar.css";
 @import "footer.css";
+@import "tiles.css";
+@import "projects_button.css";
+
 @import "homepage.css";
-@import "project_detail.css";
 @import "projects.css";
+@import "project_detail.css";
 @import "sketchbook_archive.css";
+
 @import "responsive.css";

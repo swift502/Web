@@ -1,0 +1,34 @@
+/* Tiles */
+
+.tile {
+	position: relative;
+	display: block;
+	user-select: none;
+	background: white;
+	border: #ccc solid 1px;
+	padding: 14px 16px;
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	color: initial;
+	font-weight: initial;
+}
+
+.tile:hover {
+	border-color: #888;
+	box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.07);
+}
+
+.tile:hover .wip-overlay {
+	opacity: 1;
+}
+
+.link-row {
+	position: relative;
+	text-align: center;
+}
+
+.link-row .tile-wrapper {
+	display: inline-block;
+	margin: 0 5px;
+}
