@@ -4,4 +4,4 @@
 2. Get RubyGems
 3. Get Bundler `gem install bundler`
 4. Run `bundle install`
-5. Run `bundle exec middleman build`
+5. Run `dev` and `build` tasks
