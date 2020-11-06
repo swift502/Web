@@ -1,3 +1,7 @@
+---
+layout: false
+---
+
 <!DOCTYPE html>
 <html>
 
@@ -9,15 +13,9 @@
 
     <link rel="icon" href="../favicon.ico">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75336960-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-75336960-1');
-    </script>
+    <% if build? %>
+		<%= partial 'partials/analytics' %>
+	<% end %>
 </head>
 
 <body>
