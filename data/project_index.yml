@@ -1,4 +1,8 @@
-# Define project tile order
+# Project index
+# Defines what tiles are displayed on the "projects" page
+# and in what order. Items listed here need to have a yml
+# data file with the same name in the data/projects/ folder.
+
 - sketchbook
 - woa
 - liberty_city
