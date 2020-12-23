@@ -60,6 +60,9 @@
 .project-detail p {
 	padding: 20px 30px;
 	margin: 30px 0;
+}
+
+.label {
 	color: #222;
 	background: #fafafa;
 	border: 1px solid #ccc;
@@ -73,22 +76,8 @@
 	margin-bottom: 20px;
 }
 
-.link-box .tile {
-	display: inline-block;
-	padding: 12px 16px;
-	margin: 0px 1px;
-}
-
-.link-box .tile-icon {
-	width: 17px;
-	height: 17px;
-	position: relative;
-	top: 2px;
-	margin-right: 10px;
-	float: left;
-}
-
 .project-detail .content-description {
+	/* border-radius: 0px 0px 3px 3px; */
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
@@ -100,12 +89,12 @@
 	margin-bottom: 20px;
 }
 
-.project-detail-image-center {
+.image-center {
 	margin: 30px auto;
 	line-height: 0;
 }
 
-.project-detail-image-wrapper {
+.image-wrapper {
 	position: relative;
 	display: inline-block;
 	line-height: 0;
@@ -121,7 +110,7 @@
 	margin-top: 50px;
 }
 
-.image-controls {
+.media-controls {
 	position: absolute;
 	width: 100%;
 	bottom: 10px;
@@ -130,19 +119,20 @@
 	transition: opacity 0.5s ease;
 }
 
-.project-detail-image-wrapper:hover .image-controls {
+.image-wrapper:hover .media-controls,
+.video-wrapper:hover .media-controls {
 	opacity: 1;
 }
 
-.image-controls .tile {
+.media-controls .tile {
 	padding: 12px 14px;
 }
 
-.image-controls .tile-icon {
+.media-controls .tile-icon {
 	height: 21px;
 }
 
-.image-controls .tile-icon img {
+.media-controls .tile-icon img {
 	height: 21px;
 	width: 21px;
 }
@@ -152,18 +142,51 @@
 	font-size: 45px;
 }
 
-.project-tags {
+.tag-wrapper {
 	margin-bottom: 20px;
+	display: flex;
+    justify-content: center;
 }
 
-.project-tag {
-	font-family: 'Catamaran', sans-serif;
-	font-weight: 600;
-	display: inline-block;
-	bottom: 10px;
-	font-size: 18px;
-	background: #eee;
-	box-shadow: 0 2px 0 0 #ccc;
-	color: #333;
+.tag-row {
 	padding: 4px 8px;
+}
+
+.tag {
+    position: relative;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 18px;
+    padding: 4px 8px;
+}
+
+.tag.link {
+    background: #eee;
+    box-shadow: 0 2px 0 0 #ccc;
+	color: #333;
+	margin: 0px 4px;
+    padding: 8px 14px;
+    top: 0px;
+    transition: all 0.1s ease;
+    border: none;
+}
+
+.tag-icon {
+    position: absolute;
+    width: 14px;
+    top: 11px;
+    left: 13px;
+}
+
+.tag-text {
+	margin-left: 22px;
+}
+
+.border-radius-top {
+	border-radius: 3px 3px 0px 0px;
+}
+
+.border-radius-full {
+	border-radius: 3px;
 }

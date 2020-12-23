@@ -4,34 +4,37 @@
 	margin-top: 20px;
 }
 
-.projects-button {
+.big-button {
 	position: relative;
 	top: 0px;
 	display: inline-block;
 	user-select: none;
-	background: #ffb900;
 	padding: 16px 22px;
-	color: #523b00;
 	outline: none;
 	cursor: pointer;
-	box-shadow: 0 6px 0 0 rgb(228, 158, 0);
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.big-button-text {
+	font-weight: 700;
+	font-size: 24px;
+	margin-left: 40px;
+}
+
+.big-button-icon {
+	width: 28px;
+	position: absolute;
+    left: 22px;
+    top: 17px;
+}
+
+.projects-button {
+	background: #ffb900;
+	color: #523b00;
+	box-shadow: 0 6px 0 0 rgb(228, 158, 0);
 }
 
 .projects-button:active {
 	top: 6px;
 	box-shadow: 0 0px 0 0 rgb(228, 158, 0);
-}
-
-.projects-button-text {
-	font-weight: 700;
-	font-size: 24px;
-	margin-right: 40px;
-}
-
-.projects-button-icon {
-	width: 28px;
-	position: absolute;
-	right: 20px;
-	top: 18px;
 }

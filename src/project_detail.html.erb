@@ -9,23 +9,23 @@
 
 		<!-- Links -->
 		<% if project.links.present? %>
-			<div class="link-box">
-			<% project.links.each  do |link| %>
-				<a href=<%= link.link %> class="link-item tile">
-					<% if link.icon.present? %>
-						<div class="tile-icon"><img src="/assets/svg/<%= link.icon %>"></div>
-					<% end %>
-					<%= link.title %>
-				</a>
+		<div class="tag-wrapper">
+			<% project.links.each do |link| %>
+			<a class="tag link" href="<%= link.link %>" target="_blank">
+				<img class="tag-icon" src="/assets/svg/external-link-alt.svg">
+				<div class="tag-text"><%= link.title %></div>
+			</a>
 			<% end %>
-			</div>
+		</div>
 		<% end %>
 
 		<!-- Tags -->
-		<div class="project-tags">
+		<div class="tag-wrapper">
+			<div class="tag-row label">
 			<% project.tags.each do |tag| %>
-				<div class="project-tag"><%= tag %></div>
+				<div class="tag"><%= tag %></div>
 			<% end %>
+			</div>
 		</div>
 
 		<!-- Content blocks -->

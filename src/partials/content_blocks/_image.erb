@@ -1,29 +1,17 @@
 <%
 	height = item.desc.present? ? '360px' : '240px'
+	border_class = item.desc.present? ? 'border-radius-top' : 'border-radius-full'
 	image_path = "/assets/projects/#{project_name}/#{item.data}"
 %>
-<div class="project-detail-image-center content-block">
-	<div class="project-detail-image-wrapper">
-		<img id="img-<%= index %>" class="project-detail-image" style="max-height: max(calc(100vh - <%= height %>), 500px);" src="<%= image_path %>">
-		<div class="image-controls">
-			<div class="link-row">
-				<div class="tile-wrapper">
-					<a download="<%= item.data %>" href="<%= image_path %>" target="_blank">
-						<div class="tile">
-							<div class="tile-icon"><img src="/assets/svg/download.svg"></div>
-						</div>
-					</a>
-				</div><div class="tile-wrapper">
-					<a href="<%= image_path %>" target="_blank">
-						<div class="tile">
-							<div class="tile-icon"><img src="/assets/svg/fullscreen.svg"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
+<div class="image-center content-block">
+	<div class="image-wrapper">
+		<img id="img-<%= index %>" class="project-detail-image <%= border_class %>" style="max-height: max(calc(100vh - <%= height %>), 500px);" src="<%= image_path %>">
+		<%= partial "partials/media_controls", :locals => {
+			:name => item.data,
+			:path => image_path
+		} %>
 	</div>
 	<% if item.desc.present? %>
-		<p class="content-description" data-target="img-<%= index %>"><%= item.desc %></p>
+		<p class="content-description label" data-target="img-<%= index %>"><%= item.desc %></p>
 	<% end %>
 </div>

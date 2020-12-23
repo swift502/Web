@@ -81,7 +81,7 @@
 		padding: 0;
 	}
 
-	.project-detail p, .project-detail-image-center, .video-wrapper, .project-detail-wrapper, .back-to-projects-wrapper {
+	.project-detail p, .image-center, .video-wrapper, .project-detail-wrapper, .back-to-projects-wrapper {
 		margin: 0;
 	}
 
@@ -99,7 +99,7 @@
 		text-align: left;
 	}
 	
-	.project-tag {
+	.tag {
 		margin: 4px auto;
 	}
 
@@ -107,13 +107,9 @@
 		padding: 0px 10px;
 	}
 
-	.project-detail .link-box .tile {
+	.project-detail .link-box .big-button {
 		display: block;
-	}
-
-	.link-box .link-item {
-		display: block;
-		margin: 10px auto;
+		margin: 12px auto;
 	}
 
 	.link-separator {
@@ -134,16 +130,16 @@
 
 	/* Project detail back to projects button */
 
-	.back-to-projects-wrapper .projects-button {
+	.big-button {
 		padding: 15px 22px;
 	}
 
-	.back-to-projects-wrapper .projects-button-text {
+	.big-button-text {
 		font-size: 22px;
-		margin-right: 34px;
+		margin-left: 34px;
 	}
 
-	.back-to-projects-wrapper .projects-button-icon {
+	.big-button-icon {
 		width: 24px;
 		right: 20px;
 		top: 18px;

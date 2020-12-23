@@ -1,8 +1,11 @@
+<%
+	border_class = item.desc.present? ? 'border-radius-top' : 'border-radius-full'
+%>
 <div class="video-wrapper content-block">
 	<div class="aspect-ratio wide">
-		<iframe id="video-<%= index %>" frameborder="0" src="https://www.youtube.com/embed/<%= item.data %>?rel=0" allowfullscreen></iframe>
+		<iframe id="video-<%= index %>" class="<%= border_class %>" frameborder="0" src="https://www.youtube.com/embed/<%= item.data %>?rel=0" allowfullscreen></iframe>
 	</div>
 	<% if item.desc.present? %>
-		<p class="content-description" data-target="video-<%= index %>"><%= item.desc %></p>
+		<p class="content-description label" data-target="video-<%= index %>"><%= item.desc %></p>
 	<% end %>
 </div>
