@@ -79,7 +79,6 @@
 }
 
 .project-detail .content-description {
-	/* border-radius: 0px 0px 3px 3px; */
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
@@ -186,9 +185,9 @@
 }
 
 .border-radius-top {
-	border-radius: 3px 3px 0px 0px;
+	border-radius: 4px 4px 0px 0px;
 }
 
 .border-radius-full {
-	border-radius: 3px;
+	border-radius: 4px;
 }
