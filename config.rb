@@ -3,6 +3,7 @@ activate :directory_indexes
 
 # Exceptions
 page '/404.html', :layout => false
+page "/404.html", :directory_index => false
 
 # Set project page proxies
 data.projects.each do |name, project|
