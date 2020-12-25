@@ -11,7 +11,7 @@
 		<div class="tag-wrapper">
 			<div class="tag-row">
 			<% project.tags.each do |tag| %>
-				<div class="tag label"><%= tag %></div>
+				<div class="tag"><%= tag %></div>
 			<% end %>
 			</div>
 		</div>
@@ -20,9 +20,9 @@
 		<% if project.links.present? %>
 		<div class="tag-wrapper">
 			<% project.links.each do |link| %>
-			<a class="tag link" href="<%= link.link %>" target="_blank">
-				<img class="tag-icon" src="/assets/svg/external-link-alt.svg">
-				<div class="tag-text"><%= link.title %></div>
+			<a class="tile link" href="<%= link.link %>" target="_blank">
+				<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg">
+				<div class="link-tile-text"><%= link.title %></div>
 			</a>
 			<% end %>
 		</div>
@@ -40,7 +40,7 @@
 	</div>
 </div>
 <div class="back-to-projects-wrapper">
-	<%= partial 'partials/projects_button', :locals => {
+	<%= partial 'partials/buttons/projects', :locals => {
 		:text => 'Back to projects'
 	} %>
 </div>

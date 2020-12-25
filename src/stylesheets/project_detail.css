@@ -65,7 +65,9 @@
 .label {
 	color: #222;
 	background: #fafafa;
-	border: 1px solid #ccc;
+	border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #ccc;
 }
 
 .project-detail p:not(.link-box) {
@@ -158,28 +160,28 @@
     font-weight: 600;
     display: inline-block;
     font-size: 18px;
-    padding: 4px 8px;
+	padding: 4px 8px;
+	color: #333;
+	background: #f0f0f0;
 }
 
-.tag.link {
-    background: #eee;
-    box-shadow: 0 2px 0 0 #ccc;
-	color: #333;
-	margin: 0px 4px;
-    padding: 10px 18px;
+.tile.link {
+	font-family: 'Catamaran', sans-serif;
+    font-weight: 600;
+	margin: 0px 6px;
+	padding: 12px 20px;
     top: 0px;
     transition: all 0.1s ease;
-    border: none;
 }
 
-.tag-icon {
+.link-tile-icon {
     position: absolute;
-    width: 14px;
-    top: 11px;
-    left: 13px;
+    width: 15px;
+    top: 14px;
+    left: 17px;
 }
 
-.tag-text {
+.link-tile-text {
 	margin-left: 22px;
 }
 
