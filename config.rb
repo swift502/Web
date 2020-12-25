@@ -1,6 +1,9 @@
 set :source, 'src'
 activate :directory_indexes
 
+# Exceptions
+page '/404.html', :layout => false
+
 # Set project page proxies
 data.projects.each do |name, project|
 	proxy "/projects/#{name}/index.html", "/project_detail.html",

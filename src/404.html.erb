@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta charset="utf-8">
+	<title>Page Not Found</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta property="og:image" content="https://jblaha.art/assets/social.jpg"/>
+	<meta property="og:image:width" content="1024"/>
+	<meta property="og:image:height" content="1024"/>
+	<%= favicon_tag '/assets/favicon.ico' %>
+	<%= stylesheet_link_tag '404' %>
+	<%= stylesheet_link_tag 'big_buttons' %>
+</head>
+<body>
+	<div class="pnf-content">
+		<model-viewer
+		src="models/404.glb"
+		environment-image="assets/bg.hdr"
+		exposure="1.1"
+		autoplay
+		disable-zoom
+		min-camera-orbit="auto 80deg auto"
+		max-camera-orbit="auto 80deg auto"
+		camera-target="-0.47m 0.8m 0.08m"
+		shadow-intensity="1"
+		shadow-softness="0.3">
+		</model-viewer>
+	</div>
+	<div class="pnf-text-container">
+		<div class="pnf-title">404</div>
+		<div class="pnf-text">Page not found.</div>
+		<br>
+		<%= partial 'partials/projects_button', :locals => {
+			:text => 'Back to projects',
+		} %>
+	</div>
+	<%= partial 'partials/model_viewer' %>
+</body>
+</html>
