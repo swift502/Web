@@ -7,6 +7,15 @@
 		<!-- Title -->
 		<h1 class="project-title"><%= project.title %></h1>
 
+		<!-- Tags -->
+		<div class="tag-wrapper">
+			<div class="tag-row">
+			<% project.tags.each do |tag| %>
+				<div class="tag label"><%= tag %></div>
+			<% end %>
+			</div>
+		</div>
+		
 		<!-- Links -->
 		<% if project.links.present? %>
 		<div class="tag-wrapper">
@@ -18,15 +27,6 @@
 			<% end %>
 		</div>
 		<% end %>
-
-		<!-- Tags -->
-		<div class="tag-wrapper">
-			<div class="tag-row label">
-			<% project.tags.each do |tag| %>
-				<div class="tag"><%= tag %></div>
-			<% end %>
-			</div>
-		</div>
 
 		<!-- Content blocks -->
 		<% project.page.each_with_index  do |item, index| %>

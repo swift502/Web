@@ -9,20 +9,34 @@ tab: "home"
 <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
 <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
 <script src="https://unpkg.com/focus-visible@5.0.1/dist/focus-visible.js" defer></script>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script type="module" src="javascripts/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+<%
+	model = rand(1..9).to_s + '.glb'
+%>
 
 <div class="homepage">
 	<h1 class="homepage-title">Jan Bláha</h1>
 	<div class="homepage-split-container">
 		<div id="model-viewer-wrapper" class="homepage-split left">
-			<model-viewer src="models/boxman.glb"
-				auto-rotate
-				auto-rotate-delay="0"
-				autoplay
-				shadow-intensity="1"
-				shadow-softness="0"
-			></model-viewer>
+			<model-viewer
+			src="models/<%= model %>"
+			environment-image="assets/bg.hdr"
+			exposure="1.1"
+			autoplay
+			animation-name="Animation"
+			auto-rotate
+			auto-rotate-delay="0"
+			rotation-per-second="-5deg"
+			min-camera-orbit="auto 80deg auto"
+			max-camera-orbit="auto 80deg auto"
+			camera-controls
+			interaction-prompt="none"
+			disable-zoom
+			shadow-intensity="1"
+			shadow-softness="0.3">
+			</model-viewer>
 		</div>
 		<div class="homepage-split right">
 			<div class="homepage-right-panel">
