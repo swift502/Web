@@ -9,9 +9,9 @@
 	<meta property="og:image" content="https://jblaha.art/assets/social.jpg"/>
 	<meta property="og:image:width" content="1024"/>
 	<meta property="og:image:height" content="1024"/>
-	<%= favicon_tag '/assets/favicon.ico' %>
-	<%= stylesheet_link_tag '404' %>
-	<%= stylesheet_link_tag 'big_buttons' %>
+	<link href="/assets/favicon.ico" rel="icon" type="image/ico" />
+	<link href="/stylesheets/404.css" rel="stylesheet" />
+	<link href="/stylesheets/big_buttons.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="pnf-content">
@@ -32,10 +32,16 @@
 		<div class="pnf-title">404</div>
 		<div class="pnf-text">Page not found.</div>
 		<br>
-		<%= partial 'partials/buttons/home', :locals => {
-			:text => 'Return home',
-		} %>
+		<a href="/" class="big-button projects-button">
+			<span class="big-button-text">Return home</span>
+			<img src="/assets/svg/home.svg" class="big-button-icon">
+		</a>
 	</div>
-	<%= partial 'partials/model_viewer' %>
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+	<script src="https://unpkg.com/focus-visible@5.0.1/dist/focus-visible.js" defer></script>
+	<script type="module" src="javascripts/model-viewer.min.js"></script>
+	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 </body>
 </html>
