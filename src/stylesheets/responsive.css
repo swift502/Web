@@ -164,4 +164,9 @@
 	.homepage-info-panel {
 		margin-left: 53%;
 	}
+
+	.model-viewer-container {
+		left: -300px;
+		width: calc(100% + 300px);
+	}
 }
