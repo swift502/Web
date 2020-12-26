@@ -27,27 +27,17 @@
 		margin-bottom: 0;
 	}
 
-	.homepage-split {
-		position: relative;
-		width: 100%;
-	}
-
-	.homepage-split-container {
-		height: calc(100vh - 186px);
-	}
-
-	.homepage-split.left {
+	.model-viewer-container {
 		display: none;
 	}
 
-	.homepage-split.left {
-		border: none;
+	.homepage-info-panel {
+		margin-left: 0px;
+		align-items: center;
 	}
-
-	.homepage-right-panel {
-		width: 248px;
-		padding: 0;
-		margin: auto;
+	
+	.typewriter-container {
+		width: 227px;
 	}
 
 	/* Projects */
@@ -169,5 +159,9 @@
 @media (min-width: 2101px) {
 	.project-detail p {
 		font-size: 20px;
+	}
+
+	.homepage-info-panel {
+		margin-left: 53%;
 	}
 }

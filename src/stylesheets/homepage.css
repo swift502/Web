@@ -1,9 +1,8 @@
 /* Homepage */
 
 .homepage {
-	max-width: calc(100vh - 300px);
-	min-width: 600px;
-	min-height: 620px;
+	position: relative;
+	min-height: 420px;
 	margin: auto;
 	height: calc(100vh - 225px);
     display: flex;
@@ -12,54 +11,49 @@
 }
 
 .homepage-title {
+	z-index: 10;
 	font-size: 60px;
 	text-align: center;
+	pointer-events: none;
 }
 
-.homepage-split-container {
-	position: relative;
-	height: calc(80vh - 280px);
-	min-height: 364px;
-	/* max-height: 700px; */
-}
-
-.homepage-split {
-	height: 100%;
-	width: 50%;
-	position: absolute;
-	top: 0;
-}
-
-.homepage-split.left {
-	left: 0;
-	border: 2px dashed #aaa;
-	transition: border 1s ease-in;
-}
-
-.homepage-split.right {
-	right: 0;
-}
-
-.homepage-right-panel {
-	height: 100%;
-	padding-left: 40px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.model-viewer-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+	width: calc(100% - 250px);
+	height: calc(100% + 161px);
 }
 
 model-viewer {
 	width: 100%;
 	height: 100%;
+	--progress-bar-height: 0px;
+	outline: none !important;
+}
+
+.homepage-info-panel {
+	height: 100%;
+	margin-left: 52%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.typewriter-container {
+	z-index: 10;
+	pointer-events: none;
+	user-select: none;
 }
 
 #typewriter-history div, #typewriter {
+	z-index: 10;
 	font-size: 30px;
 	white-space: nowrap;
 }
 
 #typewriter-history {
-	height: 34px;
+	height: 0px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;

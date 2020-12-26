@@ -6,9 +6,8 @@ tab: "home"
 
 <div class="homepage">
 	<h1 class="homepage-title">Jan Bláha</h1>
-	<div class="homepage-split-container">
-		<div id="model-viewer-wrapper" class="homepage-split left">
-			<model-viewer
+	<div class="model-viewer-container">
+		<model-viewer
 			environment-image="assets/env.hdr"
 			exposure="1.1"
 			autoplay
@@ -17,23 +16,23 @@ tab: "home"
 			rotation-per-second="-5deg"
 			min-camera-orbit="auto 80deg auto"
 			max-camera-orbit="auto 80deg auto"
+			min-field-of-view="60deg"
 			camera-controls
 			interaction-prompt="none"
 			disable-zoom
 			shadow-intensity="1"
 			shadow-softness="0.3">
-			</model-viewer>
+		</model-viewer>
+	</div>
+	<div class="homepage-info-panel">
+		<div class="typewriter-container">
+			<div id="typewriter-history"></div>
+			<div id="typewriter">_</div>
 		</div>
-		<div class="homepage-split right">
-			<div class="homepage-right-panel">
-				<div id="typewriter-history"></div>
-				<div id="typewriter">_</div>
-				<div class="projects-button-wrapper">
-				<%= partial 'partials/buttons/projects', :locals => {
-					:text => 'View projects',
-				} %>
-				</div>
-			</div>
+		<div class="projects-button-wrapper">
+		<%= partial 'partials/buttons/projects', :locals => {
+			:text => 'View projects',
+		} %>
 		</div>
 	</div>
 </div>
