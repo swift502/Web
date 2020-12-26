@@ -7,7 +7,7 @@ tags:
 page:
   - type: image
     data: skoda_1.jpg
-    desc: A Skoda 110R model designed for real-time application use, hence the noticeably low polycount in some areas. However still designed with PBR workflow in mind.
+    desc: A Skoda 110R model designed for real-time application use with PBR workflow in mind, created entirely in Blender. While ultimately never used in any project, it was a great excercise at vehicle art.
   - type: image
     data: skoda_2.jpg
   - type: image

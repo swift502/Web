@@ -1,16 +1,27 @@
 title: Character experiments
 description: An experimental project focused on exploring various character designs and art styles.
 tags:
-  - 2018
+  - 2020
   - Blender
   - GIMP
 page:
   - type: image
-    data: char_1.jpg
-    desc: An experimental project focused on exploring various character designs and art styles. One of these characters eventually became <a href="/projects/chloe">Chloe</a>, which was the only character I saw through to completion.
+    data: all.jpg
+    desc: An experimental project focused on exploring various character designs and art styles. One of these characters eventually became <a href="/projects/chloe">Chloe</a>, while the rest gradually evolved over time and ended up on this website's <a href="/">homepage</a>.
   - type: image
-    data: char_2.jpg
-    desc: Second iteration. More conservative color palette and more realistic proportions.
+    data: char_1.jpg
+    desc: Beginning in 2018, I started expreimenting with very simple character designs. The goal was the ability to quickly iterate upon designs and not spend months on a single character.
   - type: image
     data: char_3.jpg
-    desc: High poly renditions of few of the characters. I ultimately felt this direction was too realistic in style compared to what I originally wanted to explore, and so I abandoned the project for the time being. Though I learned a lot and still intend on continuing this project some day.
+    desc: High poly renditions of few of the characters. This turned out to be too ambitious and an evolution away from the simple and cartoony direction I originally intended to take.
+  - type: youtube
+    data: Vt5oqP2qmSE
+    desc: While working on a different project, I had to quickly come up with two low poly characters. Building upon what I learned in the previous attempts, this art style accidentally turned out to be quite appealing.
+  - type: youtube
+    data: Au4KNlfHo_Q
+    desc: From there, I began reworking old designs, giving them personality through animation, distinct outfits and possessions.
+  - type: youtube
+    data: NCif1HgjjgI
+  - type: youtube
+    data: q-BO0eFN48s
+    desc: Feel free to explore all the models up close on the <a href="/">homepage</a>.
