@@ -164,26 +164,6 @@
 	background: #f0f0f0;
 }
 
-.tile.link {
-	font-family: 'Catamaran', sans-serif;
-    font-weight: 600;
-	margin: 0px 6px;
-	padding: 12px 20px;
-    top: 0px;
-    transition: all 0.1s ease;
-}
-
-.link-tile-icon {
-    position: absolute;
-    width: 15px;
-    top: 14px;
-    left: 17px;
-}
-
-.link-tile-text {
-	margin-left: 22px;
-}
-
 .border-radius-top {
 	border-radius: 4px 4px 0px 0px;
 }

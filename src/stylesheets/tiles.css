@@ -1,6 +1,7 @@
 /* Tiles */
 
 .tile {
+	font-weight: 600;
 	position: relative;
 	display: block;
 	user-select: none;
@@ -11,7 +12,6 @@
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 	color: initial;
-	font-weight: initial;
 }
 
 .tile:hover {
@@ -31,4 +31,22 @@
 .link-row .tile-wrapper {
 	display: inline-block;
 	margin: 0 5px;
+}
+
+.tile.link {
+	margin: 0px 6px;
+	padding: 12px 20px;
+    top: 0px;
+    transition: all 0.1s ease;
+}
+
+.link-tile-icon {
+    position: absolute;
+    width: 15px;
+    top: 14px;
+    left: 17px;
+}
+
+.link-tile-text {
+	margin-left: 22px;
 }

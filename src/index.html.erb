@@ -3,15 +3,13 @@ tab: "home"
 ---
 <% content_for(:title, "Jan Bláha: 3D art and programming") %>
 <% content_for(:description, "Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.") %>
-<% model = rand(1..9).to_s + '.glb' %>
 
 <div class="homepage">
 	<h1 class="homepage-title">Jan Bláha</h1>
 	<div class="homepage-split-container">
 		<div id="model-viewer-wrapper" class="homepage-split left">
 			<model-viewer
-			src="models/<%= model %>"
-			environment-image="assets/bg.hdr"
+			environment-image="assets/env.hdr"
 			exposure="1.1"
 			autoplay
 			auto-rotate
@@ -40,4 +38,5 @@ tab: "home"
 	</div>
 </div>
 <%= javascript_include_tag  'homepage' %>
+<%= javascript_include_tag  'typewriter' %>
 <%= partial 'partials/model_viewer' %>

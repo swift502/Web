@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600;900&family=Solway:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Solway:wght@400;500;700&display=swap');
 
 * {
 	font-family: 'Solway', serif;
@@ -6,9 +6,7 @@
 }
 
 a {
-	color: #005896;
 	text-decoration: inherit;
-	font-weight: 600;
 }
 
 body {
@@ -71,8 +69,8 @@ model-viewer {
 	}
 
 	.pnf-title {
-		font-size: 200px;
-		line-height: 160px;
+		font-size: 150px;
+		line-height: 140px;
 	}
 
 	.pnf-text-container {

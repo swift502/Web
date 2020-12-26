@@ -85,6 +85,10 @@
 		margin: 0;
 	}
 
+	.back-to-projects-wrapper {
+		margin-top: 20px;
+	}
+
 	.project-title {
 		font-size: 36px;
 	}
@@ -101,6 +105,10 @@
 	
 	.tag {
 		margin: 4px auto;
+	}
+
+	.tag-wrapper {
+		flex-direction: column;
 	}
 
 	.project-detail .link-box {
@@ -123,6 +131,18 @@
 	.project-detail-image {
 		max-height: none !important;
 		width: 100%;
+	}
+
+	.tile.link {
+		margin: 3px 6px;
+	}
+
+	.border-radius-top {
+		border-radius: 0px;
+	}
+	
+	.border-radius-full {
+		border-radius: 0px;
 	}
 }
 
