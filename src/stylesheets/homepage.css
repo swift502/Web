@@ -29,7 +29,6 @@ model-viewer {
 	width: 100%;
 	height: 100%;
 	--progress-bar-height: 0px;
-	outline: none !important;
 }
 
 .homepage-info-panel {
