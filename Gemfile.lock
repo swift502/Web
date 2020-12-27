@@ -29,6 +29,7 @@ GEM
     hashie (3.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    image_size (2.1.0)
     kramdown (2.3.0)
       rexml
     listen (3.0.8)
@@ -97,6 +98,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  image_size (~> 2.0)
   middleman (>= 4.0.0)
   wdm (>= 0.1.0)
 

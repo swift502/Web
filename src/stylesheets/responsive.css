@@ -118,10 +118,10 @@
 		background-size: 70%;
 	}
 
-	.project-detail-image {
+	/* .project-detail-image {
 		max-height: none !important;
 		width: 100%;
-	}
+	} */
 
 	.tile.link {
 		margin: 3px 6px;

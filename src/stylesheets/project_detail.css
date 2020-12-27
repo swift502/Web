@@ -99,11 +99,17 @@
 	position: relative;
 	display: inline-block;
 	line-height: 0;
+	
+	background: #eee;
+	background-image: url('/assets/loading.png');
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .project-detail-image {
 	display: block;
-	max-width: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .back-to-projects-wrapper {
