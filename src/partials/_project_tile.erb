@@ -2,8 +2,9 @@
 	<a href="/projects/<%= project_name %>">
 		<div class="project-tile" style="<%= partial "partials/loading" %>">
 			<img
-				class="project-tile-image"
 				src="/assets/projects/<%= project_name %>/thumb.jpg"
+				alt="<%= project_name %>"
+				class="project-tile-image"
 				onload="fadeIn(this)"
 			>
 			<% if project.commercial.present? %>
