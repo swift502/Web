@@ -42,6 +42,6 @@ function fadeIn(el){
 	  if (!((val += .1) > 1)) {
 		el.style.opacity = val;
 		requestAnimationFrame(fade);
-	  } 
+	  } else {el.style.opacity = 1;}
 	})();
   }
