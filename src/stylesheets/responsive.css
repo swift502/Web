@@ -47,18 +47,19 @@
 		display: block;
 	}
 
-	.project-tile {
-		padding-bottom: 0;
-	}
-
 	.project-tile.inactive {
 		display: none;
 	}
 
-	.project-grid .tile-wrapper, .project-tile-image {
-		width: 100%;
+	.project-tile {
+		width: calc(100% - 20px);
+		padding-bottom: 0;
 		max-width: 360px;
 		margin: auto;
+	}
+
+	.project-tile::before {
+		bottom: -10px;
 	}
 
 	.project-tile:not(.inactive):hover .project-tile-image {

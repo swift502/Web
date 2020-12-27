@@ -5,16 +5,16 @@
 	image_size = ImageSize.path('./src' + image_path)
 %>
 <div class="image-center content-block">
-	<div id="img-<%= index %>" class="image-wrapper">
+	<div id="img-<%= index %>" class="image-wrapper" style="<%= partial "partials/loading" %>">
 		<img
 			alt="<%= project_name %>"
 			class="project-detail-image <%= border_class %>"
-			style="display: none;"
 			src="<%= image_path %>"
 			onload="fadeIn(this)"
 			data-width="<%= image_size.w %>"
 			data-height="<%= image_size.h %>"
-			data-padding="<%= height_padding %>">
+			data-padding="<%= height_padding %>"
+		>
 		<%= partial "partials/media_controls", :locals => {
 			:name => item.data,
 			:path => image_path

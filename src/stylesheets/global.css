@@ -67,6 +67,10 @@ hr {
 		top 0.25s ease;
 }
 
+.navigation {
+	white-space: nowrap;
+}
+
 .navigation-item {
 	user-select: none;
 	display: inline-block;

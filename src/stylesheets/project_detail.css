@@ -32,7 +32,6 @@
 	margin: auto;
 	
 	background: #eee;
-	background-image: url('/assets/loading.png');
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -101,13 +100,12 @@
 	line-height: 0;
 	
 	background: #eee;
-	background-image: url('/assets/loading.png');
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
 .project-detail-image {
-	display: block;
+	display: none;
 	width: 100%;
 	height: 100%;
 }
