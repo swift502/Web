@@ -11,6 +11,9 @@
 	<%= favicon_tag '/assets/favicon.ico' %>
 	<%= stylesheet_link_tag '404' %>
 	<%= stylesheet_link_tag 'big_buttons' %>
+	<% if build? %>
+		<%= partial 'partials/analytics' %>
+	<% end %>
 </head>
 <body>
 	<div class="pnf-content">
