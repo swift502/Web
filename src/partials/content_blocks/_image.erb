@@ -5,7 +5,7 @@
 	image_size = ImageSize.path('./src' + image_path)
 %>
 <div class="image-center content-block">
-	<div id="img-<%= index %>" class="image-wrapper" style="<%= partial "partials/loading" %>">
+	<div id="img-<%= index %>" class="image-wrapper <%= border_class %>" style="<%= partial "partials/loading" %>">
 		<img
 			alt="<%= project_name %>"
 			class="project-detail-image <%= border_class %>"
