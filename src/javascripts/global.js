@@ -44,4 +44,4 @@ function fadeIn(el){
 		requestAnimationFrame(fade);
 	  } else {el.style.opacity = 1;}
 	})();
-  }
+}
