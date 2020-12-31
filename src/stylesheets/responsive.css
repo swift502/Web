@@ -63,6 +63,10 @@
 	.project-tile:not(.inactive):hover::before {
 		box-shadow: inset 0 0 0 17px white;
 	}
+
+	.project-grid {
+		margin: 50px auto 20px;
+	}
 }
 
 @media (max-width: 776px) {
