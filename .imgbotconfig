@@ -1,3 +1,6 @@
 {
+	"ignoredFiles": [
+        "src/sketchbook/*"
+    ],
     "aggressiveCompression": "true"
 }
