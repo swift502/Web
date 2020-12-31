@@ -1,5 +1,4 @@
 @media (max-width: 776px) {
-
 	body {
 		min-width: 260px;
 	}
@@ -56,14 +55,15 @@
 		padding-bottom: 0;
 		max-width: 360px;
 		margin: auto;
+		overflow: hidden;
 	}
 
 	.project-tile::before {
 		bottom: -10px;
 	}
 
-	.project-tile:not(.inactive):hover .project-tile-image {
-		box-shadow: none;
+	.project-tile:not(.inactive):hover::before {
+		box-shadow: inset 0px 0px 0px 10px white;
 	}
 
 	/* Project detail */
@@ -115,15 +115,6 @@
 		display: none;
 	}
 
-	.aspect-ratio {
-		background-size: 70%;
-	}
-
-	/* .project-detail-image {
-		max-height: none !important;
-		width: 100%;
-	} */
-
 	.tile.link {
 		margin: 3px 6px;
 	}
@@ -135,12 +126,13 @@
 	.border-radius-full {
 		border-radius: 0px;
 	}
+
+	.image-wrapper, .aspect-ratio {
+		background-size: 25%;
+	}
 }
 
 @media (max-width: 2100px) {
-
-	/* Project detail back to projects button */
-
 	.big-button {
 		padding: 15px 22px;
 	}
