@@ -47,6 +47,7 @@
 }
 
 .project-tile-ghost {
+	background-size: cover;
 	width: 360px;
 	height: 260px;
 }
