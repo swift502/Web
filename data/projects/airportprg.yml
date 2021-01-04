@@ -20,7 +20,7 @@ page:
     desc: AirportPRG is a mobile airport management game focused on controlling the air traffic and airport staff. Taking place throughout the history of Ruzyne International Airport starting from grassy runways to a complex system of concrete ones.
   - type: image
     data: prg_2.jpg
-    desc: I was in charge of establishing the game's art style, creating all 3D assets, writing shaders, writing movement and pathfinding logic for passenger, and creating the introductory tutorial.
+    desc: I was in charge of establishing the game's art style, creating all 3D assets, writing shaders, writing movement and pathfinding logic for passengers, and creating the introductory tutorial.
   - type: image
     data: prg_3.jpg
     desc: I modelled and textured 11 unique airplanes with simple metallic mask implementation and normal maps.
