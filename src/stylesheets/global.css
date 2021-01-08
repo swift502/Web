@@ -34,7 +34,7 @@ hr {
 
 .content {
 	padding-top: 64px;
-	min-height: calc(100vh - 225px);
+	min-height: calc(100vh - 227px);
 	animation: fadeIn 0.1s ease-out;
 }
 

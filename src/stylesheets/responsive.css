@@ -40,7 +40,7 @@
 	}
 
 	.tile {
-		padding: 13px 15px;
+		padding: 14px 15px;
 	}
 
 	.footer {
@@ -57,7 +57,11 @@
 	}
 	
 	.content {
-		min-height: calc(100vh - 200px);
+		min-height: calc(100vh - 202px);
+	}
+
+	.homepage {
+		/* height: calc(100vh - 202px); */
 	}
 
 	.project-tile:not(.inactive):hover::before {
@@ -66,6 +70,10 @@
 
 	.project-grid {
 		margin: 50px auto 20px;
+	}
+
+	.sketchbook-archive-wrapper {
+		min-height: calc(100vh - 307px);
 	}
 }
 
@@ -89,7 +97,7 @@
 		min-width: 0;
 		max-width: none;
 		min-height: 320px;
-		height: calc(100vh - 225px);
+		height: calc(100vh - 227px);
 	}
 
 	.homepage-title {

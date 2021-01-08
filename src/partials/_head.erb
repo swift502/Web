@@ -1,8 +1,14 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta charset="utf-8">
+
 <title><%= yield_content(:title) %></title>
 <meta name="description" content="<%= yield_content(:description) %>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+<meta property="og:title" content="<%= yield_content(:title) %>">
+<meta property="og:url" content="https://jblaha.art<%= current_page.url %>">
+<meta property="og:description" content="<%= yield_content(:description) %>">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://jblaha.art/assets/social.jpg"/>
 <meta property="og:image:width" content="1024"/>
 <meta property="og:image:height" content="1024"/>
