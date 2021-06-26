@@ -150,7 +150,7 @@
 		padding: 0;
 	}
 
-	.project-detail p, .image-center, .video-wrapper, .project-detail-wrapper, .back-to-projects-wrapper {
+	.project-detail p, .image-center, .project-detail-wrapper, .back-to-projects-wrapper {
 		margin: 0;
 	}
 
@@ -173,20 +173,11 @@
 	}
 	
 	.tag {
-		margin: 4px auto;
+		margin: 3px auto;
 	}
 
 	.tag-wrapper {
 		flex-direction: column;
-	}
-
-	.project-detail .link-box {
-		padding: 0px 10px;
-	}
-
-	.project-detail .link-box .big-button {
-		display: block;
-		margin: 12px auto;
 	}
 
 	.link-separator {
@@ -205,7 +196,7 @@
 		border-radius: 0px;
 	}
 
-	.image-wrapper, .aspect-ratio {
+	.aspect-container, .aspect-ratio {
 		background-size: 25%;
 	}
 }

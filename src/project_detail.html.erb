@@ -33,7 +33,8 @@
 			<%= partial "partials/content_blocks/#{item.type}", :locals => {
 				:project_name => project_name,
 				:item => item,
-				:index => index
+				:index => index,
+				:links_exist => project.links.present?
 			} %>
 		<% end %>
 

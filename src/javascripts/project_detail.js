@@ -1,41 +1,44 @@
-var images = document.getElementsByClassName("image-wrapper");
+var aspectContainers = document.getElementsByClassName("aspect-container");
 var descs = document.getElementsByClassName("content-description");
 
 function onWindowResize()
 {
-	updateImages();
+	updateAspectContainers();
 }
 
-function updateImages()
+function updateAspectContainers()
 {
-	for (var i = 0; i < images.length; i++)
+	for (var i = 0; i < aspectContainers.length; i++)
 	{
-		var wrapper = images[i];
-		var image = wrapper.getElementsByTagName('img')[0];
-		var aspectRatio = image.dataset.width / image.dataset.height;
+		var container = aspectContainers[i];
+		var aspectRatio = container.dataset.width / container.dataset.height;
+
+		var padding = 260;
+		if (container.dataset.desc_padding === 'true') padding += 110;
+		if (container.dataset.links_padding === 'true') padding += 100;
 
 		if (window.innerWidth > 776)
 		{
 			//Desktop
-			var maxWidth = wrapper.parentElement.offsetWidth;
-			var imgHeight = Math.max(window.innerHeight - image.dataset.padding, 500);
-			var imgWidth = (imgHeight * aspectRatio);
+			var maxWidth = container.parentElement.offsetWidth;
+			var height = Math.max(window.innerHeight - padding, 400);
+			var width = (height * aspectRatio);
 
-			if (imgWidth > maxWidth)
+			if (width > maxWidth)
 			{
-				imgWidth = maxWidth;
-				imgHeight = imgWidth / aspectRatio;
+				width = maxWidth;
+				height = width / aspectRatio;
 			}
 		}
 		else
 		{
 			// Mobile
-			imgWidth = window.innerWidth;
-			imgHeight = imgWidth / aspectRatio;
+			width = window.innerWidth;
+			height = width / aspectRatio;
 		}
 
-		wrapper.style.height = imgHeight + 'px';
-		wrapper.style.width = imgWidth + 'px';
+		container.style.height = height + 'px';
+		container.style.width = width + 'px';
 	}
 
 	// Descriptions update
@@ -49,4 +52,4 @@ function updateImages()
 
 window.addEventListener('resize', onWindowResize);
 // window.addEventListener('load', onWindowResize);
-updateImages();
+updateAspectContainers();

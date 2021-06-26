@@ -1,10 +1,18 @@
 <%
+	width = item.width.present? ? item.width : '16'
+	height = item.height.present? ? item.height : '9'
 	border_class = item.desc.present? ? 'border-radius-top' : 'border-radius-full'
 %>
-<div class="video-wrapper content-block">
-	<div class="aspect-ratio wide <%= border_class %>" style="<%= partial "partials/loading" %>">
+<div class="content-block">
+	<div
+		id="video-<%= index %>"
+		class="aspect-container <%= border_class %>"
+		style="<%= partial "partials/loading" %>"
+		data-width="<%= width %>"
+		data-height="<%= height %>"
+		data-desc_padding="<%= item.desc.present? %>"
+		data-links_padding="<%= links_exist and index == 0 %>">
 		<iframe
-			id="video-<%= index %>"
 			frameborder="0"
 			src="https://www.youtube.com/embed/<%= item.data %>?rel=0"
 			allowfullscreen

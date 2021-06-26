@@ -1,17 +1,25 @@
 <%
 	video_path = "/assets/projects/#{project_name}/#{item.data}"
-	aspect = item.aspect.present? ? item.aspect : 'wide'
+	width = item.width.present? ? item.width : '16'
+	height = item.height.present? ? item.height : '9'
 	border_class = item.desc.present? ? 'border-radius-top' : 'border-radius-full'
 %>
-<div class="video-wrapper content-block">
-	<div class="image-wrapper <%= aspect %> <%= border_class %>" style="<%= partial "partials/loading" %>">
-		<video id="video-<%= index %>" autoplay mute loop>
+<div class="content-block">
+	<div
+		id="video-<%= index %>"
+		class="aspect-container <%= border_class %>"
+		style="<%= partial "partials/loading" %>"
+		data-width="<%= width %>"
+		data-height="<%= height %>"
+		data-desc_padding="<%= item.desc.present? %>"
+		data-links_padding="<%= links_exist and index == 0 %>">
+		<video autoplay mute loop>
 			<source src="<%= video_path %>" type="video/webm">
 		</video>
 		<%= partial "partials/media_controls", :locals => {
 			:name => item.data,
 			:path => video_path,
-			:has_description => item.desc.present?
+			:desc => item.desc.present?
 		} %>
 	</div>
 	<% if item.desc.present? %>
