@@ -4,6 +4,8 @@
 @import "tiles.css";
 @import "big_buttons.css";
 
+@import "navbar.css";
+@import "footer.css";
 @import "homepage.css";
 @import "projects.css";
 @import "project_detail.css";

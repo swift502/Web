@@ -1,0 +1,14 @@
+/* Footer */
+
+.footer {
+	margin: 40px 0px;
+}
+
+.footer .tile-icon {
+	height: 28px;
+}
+
+.footer .tile-icon img {
+	width: 28px;
+	height: 28px;
+}
