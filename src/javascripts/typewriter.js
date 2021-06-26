@@ -9,11 +9,11 @@ var aText = [
 	"c#",
 	"hlsl",
 	"unity",
+	"godot",
 	"html",
 	"css",
 	"javascript",
-	"typescript",
-	"web"
+	"typescript"
 	];
 	
 	var iSpeed = 100; 
