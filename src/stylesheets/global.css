@@ -27,6 +27,10 @@ hr {
 	border: none;
 	border-top: 1px solid #ccc;
 }
+/* 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 6px 0 rgb(0 0 0 / 10%) */
+/* body {
+	background: #fafafa;
+} */
 
 .center {
 	text-align: center;
@@ -34,7 +38,7 @@ hr {
 
 .content {
 	padding-top: 64px;
-	min-height: calc(100vh - 227px);
+	min-height: calc(100vh - 202px);
 	animation: fadeIn 0.1s ease-out;
 }
 
@@ -61,10 +65,14 @@ hr {
 	display: flex;
 	z-index: 100;
 	justify-content: center;
-	border-bottom: 1px solid #fff;
+	/* border-bottom: 1px solid #fff; */
 	transition:
-		border-bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
 		top 0.25s ease;
+}
+
+.navbar.shadow {
+	box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 20%), 0px 2px 6px 0px rgb(0 0 0 / 10%);
 }
 
 .navigation {
@@ -96,14 +104,14 @@ hr {
 /* Footer */
 
 .footer {
-	margin: 50px 0;
+	margin: 40px 0px;
 }
 
 .footer .tile-icon {
-	height: 31px;
+	height: 28px;
 }
 
 .footer .tile-icon img {
-	height: 31px;
-	width: 31px;
+	width: 28px;
+	height: 28px;
 }

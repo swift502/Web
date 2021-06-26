@@ -1,7 +1,7 @@
 /* Projects */
 
 .project-grid {
-	margin: 60px auto 20px;
+	margin: 50px auto 20px;
 	max-width: 1140px;
 	display: flex;
 	justify-content: center;
@@ -14,14 +14,16 @@
 
 	position: relative;
 	padding: 10px;
-	width: 360px;
-	height: 260px;
+	width: 320px;
+	height: 231px;
 
-	background: #eee;
+	background: #f0f0f0;
 	background-image: url('/assets/loading.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100px;
+
+	border-radius: 30px;
 }
 
 .project-tile::before {
@@ -34,31 +36,34 @@
 	z-index: 10;
 	box-shadow: inset 0 0 0 10px white;
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	border-radius: 15px;
 }
 
 .project-tile:not(.inactive):hover::before {
-	box-shadow: inset 0 0 0 20px white;
+	box-shadow: inset 0 0 0 17px white;
+	border-radius: 22px;
 }
 
 .project-tile-image {
 	display: none;
-	width: 360px;
-	height: 260px;
+	width: 320px;
+	height: 231px;
 }
 
 .project-tile-ghost {
 	background-size: cover;
-	width: 360px;
-	height: 260px;
+	width: 320px;
+	height: 231px;
 }
 
 .project-tile-commercial {
 	position: absolute;
 	background: #3b64a0;
 	color: white;
-	top: 20px;
-	left: 20px;
+	top: 17px;
+	left: 17px;
 	padding: 5px 8px 3px 8px;
 	font-size: 14px;
 	font-weight: 500;
+	border-radius: 5px;
 }

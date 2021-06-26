@@ -3,27 +3,33 @@ var prevScrollpos = window.pageYOffset;
 
 function scrollFunction()
 {
+	let navbar = document.getElementById("navbar");
+
 	if (touchDevice)
 	{
 		var currentScrollPos = window.pageYOffset;
 		if (prevScrollpos > currentScrollPos)
 		{
-			document.getElementById("navbar").style.top = "0";
+			navbar.style.top = "0";
 		}
 		else
 		{
-			document.getElementById("navbar").style.top = "-64px";
+			navbar.style.top = "-64px";
 		}
 		prevScrollpos = currentScrollPos;
 	}
 
+	let navbarShadowClass = "shadow";
 	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
 	{
-		document.getElementById("navbar").style.borderColor = "#ccc";
+		if (!navbar.classList.contains(navbarShadowClass))
+		{
+			navbar.classList.add(navbarShadowClass);
+		}
 	}
-	else
+	else if (navbar.classList.contains(navbarShadowClass))
 	{
-		document.getElementById("navbar").style.borderColor = "#fff";
+		navbar.classList.remove(navbarShadowClass);
 	}
 }
 window.addEventListener('scroll', scrollFunction);
@@ -36,7 +42,7 @@ if(window.navigator.userAgent.match(/(MSIE|Trident)/))
 function fadeIn(el){
 	el.style.opacity = 0;
 	el.style.display = "block";
-  
+
 	(function fade() {
 	  var val = parseFloat(el.style.opacity);
 	  if (!((val += .1) > 1)) {

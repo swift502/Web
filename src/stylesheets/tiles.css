@@ -7,10 +7,10 @@
 	user-select: none;
 	background: white;
 	border: #ccc solid 1px;
-	padding: 15px 16px;
+	padding: 14px 15px;
 	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
+	border-radius: 5px;
 	color: initial;
 }
 

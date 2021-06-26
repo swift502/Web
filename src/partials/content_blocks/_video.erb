@@ -4,13 +4,14 @@
 	border_class = item.desc.present? ? 'border-radius-top' : 'border-radius-full'
 %>
 <div class="video-wrapper content-block">
-	<div class="aspect-ratio <%= aspect %> <%= border_class %>" style="<%= partial "partials/loading" %>">
+	<div class="image-wrapper <%= aspect %> <%= border_class %>" style="<%= partial "partials/loading" %>">
 		<video id="video-<%= index %>" autoplay mute loop>
 			<source src="<%= video_path %>" type="video/webm">
 		</video>
 		<%= partial "partials/media_controls", :locals => {
 			:name => item.data,
-			:path => video_path
+			:path => video_path,
+			:has_description => item.desc.present?
 		} %>
 	</div>
 	<% if item.desc.present? %>

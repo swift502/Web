@@ -1,0 +1,14 @@
+title: Paint wars
+description: A simple 2D game written in C#.
+tags:
+  - 2015
+  - C#
+  - Windows Forms
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/PaintWars
+    icon: github.svg
+page:
+  - type: video
+    data: paint_wars.webm
+    desc: Kill enemies and descend downwards to increase your level, score multiplier and difficulty. Enemies drop health pick-ups when killed. One of my first programming projects made for a school assignment in October 2015.

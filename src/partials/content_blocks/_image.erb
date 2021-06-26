@@ -17,7 +17,8 @@
 		>
 		<%= partial "partials/media_controls", :locals => {
 			:name => item.data,
-			:path => image_path
+			:path => image_path,
+			:has_description => item.desc.present?
 		} %>
 	</div>
 	<% if item.desc.present? %>
