@@ -10,6 +10,7 @@
 		style="<%= partial "partials/loading" %>"
 		data-width="<%= image_size.w %>"
 		data-height="<%= image_size.h %>"
+		data-first_padding="<%= index == 0 %>"
 		data-desc_padding="<%= item.desc.present? %>"
 		data-links_padding="<%= links_exist and index == 0 %>">
 		<img

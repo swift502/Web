@@ -13,8 +13,9 @@ function updateAspectContainers()
 		var container = aspectContainers[i];
 		var aspectRatio = container.dataset.width / container.dataset.height;
 
-		var padding = 260;
-		if (container.dataset.desc_padding === 'true') padding += 110;
+		var padding = 180;
+		if (container.dataset.first_padding === 'true') padding += 100;
+		if (container.dataset.desc_padding === 'true') padding += 100;
 		if (container.dataset.links_padding === 'true') padding += 100;
 
 		if (window.innerWidth > 776)
