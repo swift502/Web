@@ -13,4 +13,4 @@ page:
     data: paint_wars.webm
     width: 800
     height: 560
-    desc: Kill enemies and descend downwards to increase your level, score multiplier and difficulty. Enemies drop health pick-ups when killed. One of my first programming projects made for a school assignment in October 2015.
+    desc: Simple 2D game written in C# and Windows Forms. One of my first programming projects made for a school assignment in October 2015. While simple in nature, the project features custom entity collision detection, particle physics, enemy AI and a chunk based, randomized, repeating world. An entirely separate Windows Forms application was used as a world editor to design the world chunks.<br><br>Source code and a playable build are available at the <a href="https://github.com/swift502/PaintWars">GitHub repository</a>.

@@ -12,7 +12,8 @@ page:
     data: liz_2.jpg
   - type: video
     data: liz_3.webm
-    aspect: square
+    width: 1
+    height: 1
   - type: video
     data: liz_4.webm
     desc: While never used, I did experiment with dynamic clothes using Blender's cloth and soft body simulation.
