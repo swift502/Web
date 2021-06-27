@@ -2,6 +2,7 @@ require "base64"
 
 # Project structure
 set :source, 'src'
+set :domain, 'https://jblaha.art'
 activate :directory_indexes
 
 # Exceptions

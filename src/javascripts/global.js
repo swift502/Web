@@ -3,7 +3,7 @@ var prevScrollpos = window.pageYOffset;
 
 function scrollFunction()
 {
-	let navbar = document.getElementById("navbar");
+	var navbar = document.getElementById("navbar");
 
 	if (touchDevice)
 	{
@@ -19,7 +19,7 @@ function scrollFunction()
 		prevScrollpos = currentScrollPos;
 	}
 
-	let navbarShadowClass = "shadow";
+	var navbarShadowClass = "shadow";
 	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
 	{
 		if (!navbar.classList.contains(navbarShadowClass))
