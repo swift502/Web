@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= partial 'partials/head' %>
+	<%= partial 'partials/system/head' %>
 </head>
 <body class="<%= page_classes %>">
-	<%= partial 'partials/navbar' %>
+	<%= partial 'partials/components/navbar' %>
 	<div class="content">
 		<%= yield %>
 	</div>
-	<%= partial 'partials/footer' %>
+	<%= partial 'partials/components/footer' %>
 </body>
 </html>

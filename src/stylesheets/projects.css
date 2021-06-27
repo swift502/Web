@@ -56,9 +56,8 @@
 	height: 231px;
 }
 
-.project-tile-commercial {
+.project-badge {
 	position: absolute;
-	background: #3b64a0;
 	color: white;
 	top: 17px;
 	left: 17px;
@@ -66,4 +65,12 @@
 	font-size: 14px;
 	font-weight: 500;
 	border-radius: 5px;
+}
+
+.project-badge.commercial {
+	background: #3b64a0;
+}
+
+.project-badge.blog {
+	background: #e0391bec;
 }

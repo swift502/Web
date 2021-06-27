@@ -2,6 +2,11 @@
 
 .footer {
 	margin: 40px 0px;
+	pointer-events: none;
+}
+
+.footer .tile-wrapper {
+	pointer-events: all;
 }
 
 .footer .tile-icon {

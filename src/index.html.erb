@@ -30,12 +30,12 @@ tab: "home"
 			<div id="typewriter">_</div>
 		</div>
 		<div class="projects-button-wrapper">
-		<%= partial 'partials/buttons/projects', :locals => {
-			:text => 'View projects',
+		<%= partial 'partials/components/projects_button', :locals => {
+			:text => 'View projects'
 		} %>
 		</div>
 	</div>
 </div>
 <%= javascript_include_tag  'homepage' %>
 <%= javascript_include_tag  'typewriter' %>
-<%= partial 'partials/model_viewer' %>
+<%= partial 'partials/components/model_viewer' %>

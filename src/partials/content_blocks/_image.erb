@@ -7,7 +7,7 @@
 	<div 
 		id="img-<%= index %>"
 		class="aspect-container <%= border_class %>"
-		style="<%= partial "partials/loading" %>"
+		style="<%= partial "partials/system/loading" %>"
 		data-width="<%= image_size.w %>"
 		data-height="<%= image_size.h %>"
 		data-first_padding="<%= index == 0 %>"
@@ -19,7 +19,7 @@
 			src="<%= image_path %>"
 			onload="fadeIn(this)"
 		>
-		<%= partial "partials/media_controls", :locals => {
+		<%= partial "partials/components/media_controls", :locals => {
 			:name => item.data,
 			:path => image_path,
 			:desc => item.desc.present?

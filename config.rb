@@ -1,3 +1,6 @@
+require "base64"
+
+# Project structure
 set :source, 'src'
 activate :directory_indexes
 
@@ -25,10 +28,15 @@ end
 helpers do
 	def tab_highlight(tab_name)
 		if current_page.data.tab == tab_name
-			return "highlighted"
+			'highlighted'
 		else
-			return ""
+			''
+		end
+	end
+	def img64(path)
+		File.open(path, 'rb') do |img|
+		  'data:image/png;base64,' + Base64.strict_encode64(img.read)
 		end
 	end
 end
-  
+

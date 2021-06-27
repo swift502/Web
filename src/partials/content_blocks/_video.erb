@@ -8,7 +8,7 @@
 	<div
 		id="video-<%= index %>"
 		class="aspect-container <%= border_class %>"
-		style="<%= partial "partials/loading" %>"
+		style="<%= partial "partials/system/loading" %>"
 		data-width="<%= width %>"
 		data-height="<%= height %>"
 		data-first_padding="<%= index == 0 %>"
@@ -17,7 +17,7 @@
 		<video autoplay mute loop>
 			<source src="<%= video_path %>" type="video/webm">
 		</video>
-		<%= partial "partials/media_controls", :locals => {
+		<%= partial "partials/components/media_controls", :locals => {
 			:name => item.data,
 			:path => video_path,
 			:desc => item.desc.present?
