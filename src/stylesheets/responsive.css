@@ -121,6 +121,7 @@
 
 	.project-grid {
 		margin: 0;
+		margin-top: 10px;
 		display: block;
 	}
 
@@ -130,9 +131,9 @@
 
 	.project-tile {
 		width: calc(100% - 20px);
-		padding-bottom: 0;
+		padding: 0 10px;
 		max-width: 320px;
-		margin: auto;
+		margin: -10px auto;
 		overflow: hidden;
 	}
 
@@ -141,10 +142,15 @@
 	}
 
 	.project-tile:not(.inactive):hover::before {
-		box-shadow: inset 0px 0px 0px 10px white;
+		box-shadow: inset 0px 0px 0px 20px white;
+		border-radius: 25px;
 	}
 
 	/* Project detail */
+
+	.content-block {
+		margin: 0;
+	}
 
 	.project-detail {
 		padding: 0;
@@ -188,11 +194,12 @@
 		margin: 3px 6px;
 	}
 
-	.border-radius-top {
-		border-radius: 0px;
-	}
-	
-	.border-radius-full {
+	.border-radius-top,
+	.border-radius-top iframe,
+	.border-radius-top video,
+	.border-radius-full,
+	.border-radius-full iframe,
+	.border-radius-full video {
 		border-radius: 0px;
 	}
 
