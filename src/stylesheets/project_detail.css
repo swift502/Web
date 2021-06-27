@@ -21,29 +21,6 @@
 	text-align: center;
 }
 
-/* .aspect-ratio {
-	overflow: hidden;
-	position: relative;
-	max-width: 100%;
-	margin: auto;
-	
-	background: #eee;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-.aspect-ratio.wide::after {
-	padding-top: 56.25%;
-	display: block;
-	content: '';
-}
-
-.aspect-ratio.square::after {
-	padding-top: 100%;
-	display: block;
-	content: '';
-} */
-
 .project-detail iframe, .project-detail video {
 	position: absolute;
 	top: 0;
@@ -59,7 +36,7 @@
 	top: -5px;
 }
 
-.label {
+.textarea {
 	color: #222;
 	background: #fff;
     border: 1px solid #ccc;
