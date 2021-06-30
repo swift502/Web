@@ -28,6 +28,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.6.0)
+    htmlcompressor (0.2.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     image_size (2.1.0)
@@ -70,6 +71,9 @@ GEM
       toml
       uglifier (~> 3.0)
       webrick
+    middleman-minify-html (3.4.1)
+      htmlcompressor (~> 0.2.0)
+      middleman-core (>= 3.2)
     minitest (5.14.4)
     padrino-helpers (0.15.1)
       i18n (>= 0.6.7, < 2)
@@ -106,6 +110,7 @@ PLATFORMS
 DEPENDENCIES
   image_size (~> 2.1)
   middleman (~> 4.4)
+  middleman-minify-html
   wdm (~> 0.1.1)
 
 BUNDLED WITH
