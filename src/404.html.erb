@@ -1,3 +1,9 @@
+---
+noindex: true
+layout: false
+directory_index: false
+---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,14 +11,14 @@
 	<meta charset="utf-8">
 
 	<title>Page Not Found</title>
-	<meta name="description" content="Error 404: Page Not Found">
+	<meta name="robots" content="noindex">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 	<meta property="og:title" content="Page Not Found">
-	<meta property="og:url" content="<%= config.domain %>/404/">
+	<meta property="og:url" content="https://<%= config.domain %>/404/">
 	<meta property="og:description" content="Error 404: Page Not Found">
 	<meta property="og:type" content="website">
-	<meta property="og:image" content="<%= config.domain %>/assets/social.jpg"/>
+	<meta property="og:image" content="https://<%= config.domain %>/assets/social.jpg"/>
 
 	<%= favicon_tag '/assets/favicon.ico' %>
 	<%= stylesheet_link_tag '404' %>

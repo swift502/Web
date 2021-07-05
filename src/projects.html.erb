@@ -1,9 +1,11 @@
 ---
 tab: "projects"
+priority: "0.80"
 ---
+
 <% content_for(:title, "Projects") %>
 <% content_for(:description, "Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.") %>
-<% content_for(:page_image, "#{config.domain}/assets/social.jpg") %>
+<% content_for(:page_image, "https://#{config.domain}/assets/social.jpg") %>
 
 <div class="project-grid">
 	<% data.project_index.each do |project_name| %>

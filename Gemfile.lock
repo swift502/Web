@@ -10,6 +10,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     backports (3.21.0)
+    builder (3.2.4)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -108,10 +109,11 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  image_size (~> 2.1)
+  builder
+  image_size
   middleman (~> 4.4)
   middleman-minify-html
-  wdm (~> 0.1.1)
+  wdm
 
 BUNDLED WITH
    2.1.4

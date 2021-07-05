@@ -2,12 +2,8 @@ require "base64"
 
 # Project structure
 set :source, 'src'
-set :domain, 'https://jblaha.art'
+set :domain, 'jblaha.art'
 activate :directory_indexes
-
-# Exceptions
-page '/404.html', :layout => false
-page "/404.html", :directory_index => false
 
 # Set project page proxies
 data.projects.each do |name, project|
