@@ -15,8 +15,7 @@ directory_index: false
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 	<%= favicon_tag '/assets/favicon.ico' %>
-	<%= stylesheet_link_tag '404' %>
-	<%= stylesheet_link_tag 'big_buttons' %>
+	<%= stylesheet_link_tag '404', 'big_buttons', 'responsive' %>
 	<% if build? %>
 		<%= partial 'partials/system/analytics' %>
 	<% end %>
