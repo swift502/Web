@@ -1,0 +1,26 @@
+<div class="content-block">
+	<div
+		class="aspect-container border-radius-full"
+		style="<%= partial "partials/system/loading" %>"
+		data-width="16"
+		data-height="9"
+		data-desc_padding="<%= item.desc.present? %>">
+		<div class="sketchfab-embed-wrapper">
+			<iframe
+				id="sketchfab-<%= index %>"
+				title="Sketchfab viewer"
+				frameborder="0"
+				allowfullscreen
+				mozallowfullscreen="true"
+				webkitallowfullscreen="true"
+				allow="autoplay; fullscreen; xr-spatial-tracking"
+				xr-spatial-tracking
+				web-share
+				src="https://sketchfab.com/models/<%= item.data %>/embed?camera=0">
+			</iframe>
+		</div>
+	</div>
+	<% if item.desc.present? %>
+		<p class="content-description textarea" data-target="video-<%= index %>"><%= item.desc %></p>
+	<% end %>
+</div>
