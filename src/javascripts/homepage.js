@@ -43,16 +43,16 @@ var fovs = {
 	1: 52,
 	2: 57,
 	3: 58,
-	4: 62,
+	4: 60,
 	5: 62,
 	6: 57,
 	7: 60,
 	8: 57,
 	9: 59,
 	10: 55,
-	11: 59,
-	12: 60,
-	13: 57,
+	11: 58,
+	12: 53,
+	13: 56,
 	14: 60
 };
 document.querySelector('model-viewer').setAttribute('min-field-of-view', fovs[modelNumber] + 'deg');

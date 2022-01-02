@@ -1,10 +1,9 @@
 ## Building notes
 
 1. Get Ruby
-2. Get RubyGems
-3. Get Bundler `gem install bundler`
-4. Run `bundle install`
-5. Run `dev` and `build` tasks
+2. Get Bundler `gem install bundler`
+3. Run `bundle install`
+4. Use `dev` and `build` tasks
 
 ## Viewing a specific model
 Pass the `character` URL parameter on the homepage to read a specific glb model. E.g.:

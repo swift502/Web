@@ -1,5 +1,5 @@
-title: Character dioramas
-description: 3D dioramas made in Blender and published on Sketchfab
+title: Sketchfab character series
+description: 3D character models made in Blender and published on Sketchfab
 tags:
   - 2021
   - Blender
@@ -7,7 +7,7 @@ tags:
 page:
   - type: youtube
     data: edT0hQghBTk
-    desc: A collection of 3D character-focused dioramas published <a href="https://sketchfab.com/swift502/collections/dioramas">on Sketchfab</a>. Their art style is an evolution of the techniques used in the <a href="/projects/characters">Character experiments</a> project with less restrictions on poly count, yet still striving to retain the classic low poly aesthetic.
+    desc: A collection of 3D character-focused dioramas published <a href="https://sketchfab.com/swift502/collections/girls">on Sketchfab</a>. Their art style is an evolution of the techniques used in the <a href="/projects/characters">Character experiments</a> project with less restrictions on poly count, yet still striving to retain the classic low poly aesthetic.
   - type: sketchfab
     data: 86c9769146104e6ea317e755fd601c37
   - type: sketchfab
