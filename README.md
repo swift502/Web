@@ -1,6 +1,6 @@
 ## Building notes
 
-1. Get Ruby
+1. Get Ruby 2.7
 2. Get Bundler `gem install bundler`
 3. Run `bundle install`
 4. Use `dev` and `build` tasks

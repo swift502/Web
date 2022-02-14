@@ -9,10 +9,10 @@ page:
     data: edT0hQghBTk
     desc: A collection of 3D character-focused dioramas published <a href="https://sketchfab.com/swift502/collections/girls">on Sketchfab</a>. Their art style is an evolution of the techniques used in the <a href="/projects/characters">Character experiments</a> project with less restrictions on poly count, yet still striving to retain the classic low poly aesthetic.
   - type: sketchfab
-    data: 86c9769146104e6ea317e755fd601c37
-  - type: sketchfab
     data: 131092e5c4e74440ac276fd9062517e9
   - type: sketchfab
     data: 2166104a6c974f22aba31801d33d4c83
   - type: sketchfab
     data: 91041b64313d48c79958de96a5d43ad4
+  - type: sketchfab
+    data: 86c9769146104e6ea317e755fd601c37
