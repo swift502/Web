@@ -2,7 +2,7 @@ function getUrlModelNumber()
 {
 	var URLparams = getUrlParams();
 	if ('character' in URLparams) return URLparams['character'];
-	else return getRandomInt(1, 14);
+	else return getRandomInt(1, 15);
 }
 
 function getUrlParams()
