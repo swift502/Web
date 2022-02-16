@@ -1,8 +1,26 @@
+var modelFOVs = {
+	1: 52,
+	2: 57,
+	3: 58,
+	4: 60,
+	5: 62,
+	6: 57,
+	7: 60,
+	8: 57,
+	9: 59,
+	10: 55,
+	11: 62,
+	12: 53,
+	13: 56,
+	14: 60,
+	15: 57
+};
+
 function getUrlModelNumber()
 {
 	var URLparams = getUrlParams();
 	if ('character' in URLparams) return URLparams['character'];
-	else return getRandomInt(1, 15);
+	else return getRandomInt(1, Object.keys(modelFOVs).length);
 }
 
 function getUrlParams()
@@ -39,21 +57,4 @@ var modelPath = 'models/' + modelNumber + '.glb';
 document.querySelector('model-viewer').setAttribute('src', modelPath);
 
 // Set FOV
-var fovs = {
-	1: 52,
-	2: 57,
-	3: 58,
-	4: 60,
-	5: 62,
-	6: 57,
-	7: 60,
-	8: 57,
-	9: 59,
-	10: 55,
-	11: 62,
-	12: 53,
-	13: 56,
-	14: 60,
-	15: 57
-};
-document.querySelector('model-viewer').setAttribute('min-field-of-view', fovs[modelNumber] + 'deg');
+document.querySelector('model-viewer').setAttribute('min-field-of-view', modelFOVs[modelNumber] + 'deg');
