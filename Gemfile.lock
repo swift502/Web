@@ -1,44 +1,8 @@
-GEM
-  remote: https://rubygems.org/
+GIT
+  remote: https://github.com/middleman/middleman.git
+  revision: 718df1f66f06df7df40b54a758d8c9929571efa6
+  branch: 4.x
   specs:
-    activesupport (6.1.4.1)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 1.6, < 2)
-      minitest (>= 5.1)
-      tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
-    backports (3.21.0)
-    builder (3.2.4)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.9)
-    contracts (0.13.0)
-    dotenv (2.7.6)
-    erubis (2.7.0)
-    execjs (2.8.1)
-    fast_blank (1.0.1)
-    fastimage (2.2.5)
-    ffi (1.15.4-x64-mingw32)
-    haml (5.2.2)
-      temple (>= 0.8.0)
-      tilt
-    hamster (3.0.0)
-      concurrent-ruby (~> 1.0)
-    hashie (3.6.0)
-    htmlcompressor (0.2.0)
-    i18n (1.6.0)
-      concurrent-ruby (~> 1.0)
-    image_size (3.0.1)
-    kramdown (2.3.1)
-      rexml
-    listen (3.0.8)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-    memoist (0.16.2)
     middleman (4.4.2)
       coffee-script (~> 2.2)
       haml (>= 4.0.5)
@@ -68,14 +32,56 @@ GEM
       rack (>= 1.4.5, < 3)
       sassc (~> 2.0)
       servolux
+      terser (~> 1.1)
       tilt (~> 2.0.9)
       toml
-      uglifier (~> 3.0)
       webrick
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (6.1.4.6)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    backports (3.23.0)
+    builder (3.2.4)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
+    concurrent-ruby (1.1.9)
+    contracts (0.13.0)
+    dotenv (2.7.6)
+    erubis (2.7.0)
+    execjs (2.8.1)
+    fast_blank (1.0.1)
+    fastimage (2.2.6)
+    ffi (1.15.5-x64-mingw32)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
+    hamster (3.0.0)
+      concurrent-ruby (~> 1.0)
+    hashie (3.6.0)
+    htmlcompressor (0.2.0)
+    i18n (1.6.0)
+      concurrent-ruby (~> 1.0)
+    image_size (3.0.1)
+    kramdown (2.3.1)
+      rexml
+    listen (3.0.8)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    memoist (0.16.2)
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
-    minitest (5.14.4)
+    minitest (5.15.0)
     padrino-helpers (0.15.1)
       i18n (>= 0.6.7, < 2)
       padrino-support (= 0.15.1)
@@ -85,7 +91,7 @@ GEM
     parslet (2.0.0)
     public_suffix (4.0.6)
     rack (2.2.3)
-    rb-fsevent (0.11.0)
+    rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
@@ -93,17 +99,17 @@ GEM
       ffi (~> 1.9)
     servolux (0.13.0)
     temple (0.8.2)
-    thor (1.1.0)
+    terser (1.1.8)
+      execjs (>= 0.3.0, < 3)
+    thor (1.2.1)
     tilt (2.0.10)
     toml (0.3.0)
       parslet (>= 1.8.0, < 3.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uglifier (3.2.0)
-      execjs (>= 0.3.0, < 3)
     wdm (0.1.1)
     webrick (1.7.0)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   x64-mingw32
@@ -111,9 +117,10 @@ PLATFORMS
 DEPENDENCIES
   builder
   image_size
-  middleman (~> 4.4)
+  middleman!
   middleman-minify-html
+  terser
   wdm
 
 BUNDLED WITH
-   2.1.4
+   2.3.7

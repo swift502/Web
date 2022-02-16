@@ -1,6 +1,7 @@
 ## Building notes
 
-1. Get Ruby 2.7
+1. Get lastest Ruby
+2. Get latest Node (for JS minification)
 2. Get Bundler `gem install bundler`
 3. Run `bundle install`
 4. Use `dev` and `build` tasks
