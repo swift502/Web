@@ -1,6 +1,6 @@
 ## Building notes
 
-1. Get lastest Ruby
+1. Get latest Ruby
 2. Get latest Node (for JS minification)
 2. Get Bundler `gem install bundler`
 3. Run `bundle install`
