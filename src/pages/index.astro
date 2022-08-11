@@ -1,0 +1,106 @@
+---
+import '../styles/normalize.css';
+import '../styles/global.css';
+import '../styles/tiles.css';
+import '../styles/big_buttons.css';
+
+import ProjectsButton from '../components/components/ProjectsButton.astro';
+import Layout from '../layouts/layout.astro';
+
+tab: "home"
+---
+<Layout>
+	<div class="homepage">
+		<h1 class="homepage-title">Jan Bláha</h1>
+		<div class="model-viewer-container">
+			<model-viewer
+				environment-image="/assets/env.hdr"
+				exposure="1.1"
+				autoplay
+				auto-rotate
+				auto-rotate-delay="0"
+				rotation-per-second="-5deg"
+				min-camera-orbit="auto 80deg auto"
+				max-camera-orbit="auto 80deg auto"
+				camera-controls
+				interaction-prompt="none"
+				disable-zoom
+				shadow-intensity="1"
+				shadow-softness="0.3">
+			</model-viewer>
+		</div>
+		<div class="homepage-info-panel">
+			<div class="typewriter-container">
+				<div id="typewriter-history"></div>
+				<div id="typewriter">_</div>
+			</div>
+			<div class="projects-button-wrapper">
+			<ProjectsButton text = "View projects" />
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script is:inline src="/src/javascripts/homepage.js"></script>
+<script is:inline src="/src/javascripts/typewriter.js"></script>
+<script is:inline type="module" src="/src/javascripts/model-viewer.min.js"></script>
+
+<style>
+	.homepage {
+		position: relative;
+		min-height: 420px;
+		margin: auto;
+		height: calc(100vh - 227px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.homepage-title {
+		z-index: 10;
+		font-size: 60px;
+		text-align: center;
+		pointer-events: none;
+	}
+
+	.model-viewer-container {
+		position: absolute;
+		left: -260px;
+		top: 0;
+		width: calc(100% + 260px);
+		height: calc(100% + 161px);
+	}
+
+	model-viewer {
+		width: 100%;
+		height: 100%;
+		--progress-bar-height: 0px;
+	}
+
+	.homepage-info-panel {
+		height: 100%;
+		margin-left: 52%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.typewriter-container {
+		z-index: 10;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	#typewriter-history div, #typewriter {
+		z-index: 10;
+		font-size: 30px;
+		white-space: nowrap;
+	}
+
+	#typewriter-history {
+		height: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+</style>

@@ -1,0 +1,19 @@
+---
+import Head from '../components/system/Head.astro';
+import Navbar from '../components/components/Navbar.astro';
+import Footer from '../components/components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<Head />
+</head>
+<body class="<%= page_classes %>">
+	<Navbar />
+	<div class="content">
+		<slot />
+	</div>
+	<Footer />
+</body>
+</html>
