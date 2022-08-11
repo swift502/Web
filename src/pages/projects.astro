@@ -2,56 +2,40 @@
 tab: "projects"
 priority: "0.80"
 
-// import  * as YAML from 'js-yaml';
-// const fs = require('fs');
-
-// // Get document, or throw exception on error
-// try {
-//   const doc = yaml.load(fs.readFileSync('/home/ixti/example.yml', 'utf8'));
-//   console.log(doc);
-// } catch (e) {
-//   console.log(e);
-// }
-
 const data = await Astro.glob('../data/project_index.yml');
-console.log(data);
-// import * as test from aaa;
+import Layout from '../layouts/layout.astro';
+import ProjectTile from '../components/components/ProjectTile.astro';
+import DummyProjectTile from '../components/components/DummyProjectTile.astro';
+
+const projects = data[0]["default"];
+let columns = 3;
+let gaps = (columns - (projects.length % columns)) % columns;
 ---
-
-
-
-<!-- let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-<section aria-label="Blog post list">
-	{allPosts.map((p) => <BlogPostPreview post={p} />)}
-</section> -->
-
 
 <!-- <% content_for(:title, "Projects") %> -->
 <!-- <% content_for(:description, "Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.") %> -->
 <!-- <% content_for(:page_image, "https://#{config.domain}/assets/social.jpg") %> -->
 
+<Layout>
 <div class="project-grid">
-	<div>Hello</div>
-	<div>
-    {data[0]["default"].map(function(object, i){
-        return <div>{i}: {object}</div>;
+    {projects.map(function(object, i){
+		return <ProjectTile project_name={object} />;
     })}
-	</div>
-	<!-- <% data.project_index.each do |project_name| %>
-		<%= partial 'partials/components/project_tile', :locals => {
-			:project_name => project_name,
-			:project => data.projects[project_name]
-		} %>
-	<% end %>
-	<%
-		# Fill the rest of the last row with dummy tiles
-		columns = 3
-		gaps = (columns - (data.project_index.length % columns)) % columns
-		while gaps > 0 do
-	%>
-		<%= partial 'partials/components/dummy_project_tile' %>
-		<% gaps -= 1 %>
-	<% end %> -->
+
+	{[...Array(gaps)].map((x, i) =>
+		<DummyProjectTile />
+	)}
 </div>
+</Layout>
+
+<script is:inline src="/src/javascripts/global.js"></script>
+
+<style>
+	.project-grid {
+		margin: 50px auto 20px;
+		max-width: 1140px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+</style>
