@@ -1,33 +1,32 @@
 ---
-tab: "projects"
-priority: "0.80"
-
 let title = 'Projects'
 const data = await Astro.glob('../data/project_index.yml');
-import Layout from '../layouts/layout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 import ProjectTile from '../components/components/ProjectTile.astro';
 import DummyProjectTile from '../components/components/DummyProjectTile.astro';
 
 let description = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
 let page_image = `${import.meta.env.SITE}assets/social.jpg`;
-console.log(page_image);
+// console.log(page_image);
 
 const projects = data[0]["default"];
 let columns = 3;
 let gaps = (columns - (projects.length % columns)) % columns;
 ---
 
-<Layout title={title} description={description} image={page_image}>
+<MainLayout title={title} description={description} image={page_image}>
 <div class="project-grid">
-    {projects.map(function(object, i){
-		return <ProjectTile project_name={object} />;
+	<!-- foreach (x in projects) -->
+    {projects.map(function(x, i){
+		return <ProjectTile project_name={x} />;
     })}
 
+	<!-- for (i = 0; i < gaps; i++) -->
 	{[...Array(gaps)].map((x, i) =>
 		<DummyProjectTile />
 	)}
 </div>
-</Layout>
+</MainLayout>
 
 <script is:inline src="/src/javascripts/global.js"></script>
 

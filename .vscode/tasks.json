@@ -18,6 +18,13 @@
 			"problemMatcher": [],
 			"label": "build",
 			"detail": "astro build"
+		},
+		{
+			"type": "npm",
+			"script": "preview",
+			"problemMatcher": [],
+			"label": "preview",
+			"detail": "astro preview"
 		}
 	]
 }

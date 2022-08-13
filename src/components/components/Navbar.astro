@@ -1,9 +1,26 @@
+---
+let tab = Astro.url.pathname.split('/')[1];
+
+function tabHighlight(tabName: string)
+{
+	if (tab == tabName) return ' highlighted';
+	else return '';
+}
+
+function tabClasses(tabName: string)
+{
+	return 'navigation-item' + tabHighlight(tabName);
+}
+---
+
 <div id="navbar" class="navbar">
 	<div class="navigation">
-		<!-- <%= link_to 'Home', '/', :class => "navigation-item #{tab_highlight "home"}" %> -->
-		<!-- <%= link_to 'Projects', '/projects', :class => "navigation-item #{tab_highlight "projects"}" %> -->
-		<a href="/" class="navigation-item highlighted">Home</a>
-		<a href="/projects" class="navigation-item">Projects</a>
+		<a href="/" class={tabClasses("")}>
+			Home
+		</a>
+		<a href="/projects" class={tabClasses("projects")}>
+			Projects
+		</a>
 	</div>
 </div>
 

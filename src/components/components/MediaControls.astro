@@ -1,17 +1,18 @@
-<%
-	description_class = desc ? ' has-description' : ''
-%>
+---
+	const {name, path, desc} = Astro.props;
+	const description_class = desc ? ' has-description' : '';
+---
 
-<div class="media-controls<%= description_class %>">
+<div class={"media-controls" + {description_class}}>
 	<div class="link-row">
 		<div class="tile-wrapper">
-			<a download="<%= name %>" href="<%= path %>" target="_blank">
+			<a download={name} href={path} target="_blank">
 				<div class="tile">
 					<div class="tile-icon"><img src="/assets/svg/download.svg"></div>
 				</div>
 			</a>
 		</div><div class="tile-wrapper">
-			<a href="<%= path %>" target="_blank">
+			<a href={path} target="_blank">
 				<div class="tile">
 					<div class="tile-icon"><img src="/assets/svg/fullscreen.svg"></div>
 				</div>

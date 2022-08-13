@@ -1,10 +1,8 @@
 ---
 import ProjectsButton from '../components/components/ProjectsButton.astro';
-import Layout from '../layouts/layout.astro';
-
-tab: "home"
+import MainLayout from '../layouts/MainLayout.astro';
 ---
-<Layout>
+<MainLayout>
 	<div class="homepage">
 		<h1 class="homepage-title">Jan Bláha</h1>
 		<div class="model-viewer-container">
@@ -34,7 +32,7 @@ tab: "home"
 			</div>
 		</div>
 	</div>
-</Layout>
+</MainLayout>
 
 <script is:inline src="/src/javascripts/homepage.js"></script>
 <script is:inline src="/src/javascripts/typewriter.js"></script>

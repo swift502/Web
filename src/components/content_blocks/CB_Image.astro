@@ -1,0 +1,37 @@
+---
+const {src, desc, index} = Astro.props;
+
+import MediaControls from "../components/MediaControls.astro";
+const border_class = desc ? " border-radius-top" : " border-radius-full";
+// const image_path = `/assets/projects/${project_name}/${url}`
+// const image_size = ImageSize.path('./src' + image_path)
+---
+
+<div class="content-block">
+	<div 
+		id={"img-" + {index}}
+		class={"aspect-container" + border_class}
+		data-first_padding={index == 0}
+	>
+		<!-- style="<%= partial "partials/system/loading" %>" -->
+		<!-- data-width={image_size.w} -->
+		<!-- data-height={image_size.h} -->
+		<!-- data-desc_padding="<%= item.desc.present? %>" -->
+		<!-- data-links_padding="<%= links_exist and index == 0 %>" -->
+		<img
+			class={"project-detail-image" + border_class}
+			src={src}
+			onload="fadeIn(this)"
+		>
+
+		<MediaControls />
+		<!-- <%= partial "partials/components/media_controls", :locals => {
+			:name => item.url,
+			:path => image_path,
+			:desc => item.desc.present?
+		} %> -->
+	</div>
+	<!-- <% if item.desc.present? %>
+		<p class="content-description textarea" data-target="img-<%= index %>"><%= item.desc %></p>
+	<% end %> -->
+</div>

@@ -2,7 +2,7 @@
 const {project_name} = Astro.props
 ---
 <div class="tile-wrapper">
-	<a href={"/projects/" + {project_name}}>
+	<a href={"/projects/" + project_name}>
 		<div class="project-tile" style="<%= partial partials/system/loading %>">
 			<img
 				src={"/assets/projects/" + project_name + "/thumb.jpg"}
