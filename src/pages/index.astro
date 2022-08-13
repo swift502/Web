@@ -18,6 +18,8 @@ const modelPath = 'models/' + modelNumber + '.glb';
 // Set FOV
 const minFov = modelSettings[modelNumber].fov + 'deg';
 
+// Read typewriter strings
+const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
 ---
 <MainLayout>
 	<div class="homepage">
@@ -53,10 +55,12 @@ const minFov = modelSettings[modelNumber].fov + 'deg';
 	</div>
 </MainLayout>
 
-<script is:inline src="/src/javascripts/typewriter.js"></script>
-<script is:inline type="module" src="/src/javascripts/model-viewer.min.js"></script>
-
-
+<script is:inline define:vars={{typewriterStrings}}>
+	// Expose typewriter strings to the typewriter script
+	window.typewriterStrings = typewriterStrings;
+</script>
+<script is:inline src="/src/javascripts/typewriter.js" />
+<script is:inline type="module" src="/src/javascripts/model-viewer.min.js"/>
 
 <style>
 	.homepage {

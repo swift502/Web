@@ -1,31 +1,13 @@
-var aText = [
-	"3d modelling",
-	"texturing",
-	"rigging",
-	"animation",
-	"python",
-	"blender",
-	"gimp",
-	"c#",
-	"hlsl",
-	"unity",
-	"godot",
-	"html",
-	"css",
-	"javascript",
-	"typescript"
-];
-
-	
-var iSpeed = 100;
-var iIndex = 0;
-var iArrLength = aText[0].length;
-var iTextPos = 0;
+const aText = window.typewriterStrings;
+const iSpeed = 100;
+let iIndex = 0;
+let iArrLength = aText[0].length;
+let iTextPos = 0;
 const archive = [];
 
 function typewriter()
 {
-	var destination = document.getElementById("typewriter");
+	const destination = document.getElementById("typewriter");
 
 	destination.innerHTML = aText[iIndex].substring(0, iTextPos) + "_";
 	if (iTextPos++ == iArrLength)
@@ -47,7 +29,7 @@ function typewriter()
 
 function pushArchive(str)
 {
-	var div = document.createElement('div');
+	const div = document.createElement('div');
 	div.innerText = str;
 	document.getElementById('typewriter-history').appendChild(div);
 	archive.unshift(div);
@@ -57,9 +39,9 @@ function pushArchive(str)
 
 function refreshTransparency()
 {
-	for (var i = 0; i < archive.length; i++)
+	for (let i = 0; i < archive.length; i++)
 	{
-		var opacity = 1 - (0.25 * (i + 1));
+		const opacity = 1 - (0.25 * (i + 1));
 		archive[i].style.opacity = opacity;
 	}
 
