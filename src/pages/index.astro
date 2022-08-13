@@ -55,12 +55,14 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 	</div>
 </MainLayout>
 
-<script is:inline define:vars={{typewriterStrings}}>
-	// Expose typewriter strings to the typewriter script
+<script is:inline define:vars={{modelSettings, typewriterStrings}}>
+	// Expose astro data to client scripts
+	window.modelSettings = modelSettings;
 	window.typewriterStrings = typewriterStrings;
 </script>
 <script is:inline src="/src/javascripts/typewriter.js" />
 <script is:inline type="module" src="/src/javascripts/model-viewer.min.js"/>
+<script is:inline src="/src/javascripts/model-viewer-debug.js"/>
 
 <style>
 	.homepage {
@@ -122,5 +124,38 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+	}
+
+	#model-debug-wrapper {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		pointer-events: none;
+		display: flex;
+		justify-content: center;
+		opacity: 0;
+		transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	#model-debug-list {
+		display: flex;
+		padding: 4px 8px;
+		border-radius: 3px;
+		background: #0001;
+		border: 1px solid #0002;
+	}
+
+	#model-debug-list div {
+		display: flex;
+		width: 28px;
+		height: 25px;
+		font-size: 17px;
+		justify-content: center;
+		align-items: center;
+		color: #333;
+		padding: 6px;
+		margin: 3px;
+		pointer-events: all;
+		cursor: pointer;
 	}
 </style>
