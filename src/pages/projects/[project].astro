@@ -3,26 +3,37 @@
 // <% content_for(:description, project.description) %>
 // <% content_for(:page_image, "https://#{config.domain}/assets/projects/#{project_name}/thumb.jpg") %>
 
+import MainLayout from '../../layouts/MainLayout.astro';
+import ProjectsButton from '../../components/core/ProjectsButton.astro';
+import CBImage from '../../components/content_blocks/CB_Image.astro';
+import CBText from '../../components/content_blocks/CB_Text.astro';
+import CBVideo from '../../components/content_blocks/CB_Video.astro';
+import CBSketchfab from '../../components/content_blocks/CB_Sketchfab.astro';
+import CBYoutube from '../../components/content_blocks/CB_YouTube.astro';
+import LogError from '../../javascripts/logging';
 
-import MainLayout from "../../layouts/MainLayout.astro";
-import CBImage from "../../components/content_blocks/CB_Image.astro";
-
+// Dynamic routing
 export async function getStaticPaths() {
-	const projectList = (await Astro.glob('../../data/project_index.yml'))[0]["default"];
-	const projectData = import.meta.glob('../../data/projects/*');
+	const projectsList = (await Astro.glob('../../data/project_index.yml'))[0]["default"];
+	const projectsData = import.meta.glob('../../data/projects/*.yml');
 
 	let paths = [];
-	for (let i = 0; i < projectList.length; i++)
+	for (let i = 0; i < projectsList.length; i++)
 	{
-		const projectName = projectList[i];
+		const projectName = projectsList[i];
 		const dataPath = '../../data/projects/' + projectName + '.yml';
+
+		if (!(dataPath in projectsData)) {
+			LogError('Data file not found for project: "' + projectName + '".');
+			continue;
+		}
 
 		paths.push({
 			params: {
 				project: projectName,
 			},
 			props: {
-				data: await projectData[dataPath]()
+				projectData: await projectsData[dataPath]()
 			}
 		});
 	}
@@ -30,27 +41,31 @@ export async function getStaticPaths() {
 	return paths;
 }
 
+// Content block pre-processing
 const {project} = Astro.params;
-const {data} = Astro.props;
+const {projectData} = Astro.props;
 
-const contentBlockComponents = {
-	'image': CBImage
+const componentLibrary = {
+	'image': CBImage,
+	'text': CBText,
+	'video': CBVideo,
+	'sketchfab': CBSketchfab,
+	'youtube': CBYoutube
 }
 
 let contentBlocks = [];
-for (let i = 0; i < data.page.length; i++)
+for (let i = 0; i < projectData.page.length; i++)
 {
-	const inData = data.page[i];
-	// console.log(inData.type);
-	if (!(inData.type in contentBlockComponents))
-	{
-		console.error('Unknown content block type: "' + inData.type + '".');
+	const inData = projectData.page[i];
+	
+	if (!(inData.type in componentLibrary)) {
+		LogError('Unknown content block type: "' + inData.type + '".');
 		continue;
 	}
 
 	const outData = {};
-	outData['component'] = contentBlockComponents[inData.type];
-	outData['item'] = inData;
+	outData['component'] = componentLibrary[inData.type];
+	outData['properties'] = inData;
 
 	contentBlocks.push(outData);
 }
@@ -62,22 +77,22 @@ for (let i = 0; i < data.page.length; i++)
 	<div class="project-detail">
 
 		<!-- Title -->
-		<h1 class="project-title">{data.title}</h1>
+		<h1 class="project-title">{projectData.title}</h1>
 
 		<!-- Tags -->
 		<div class="tag-wrapper">
 			<div class="tag-row">
-			{data.tags.map((tag) => {
+			{projectData.tags.map((tag) => {
 				return <div class="tag">{tag}</div>
 			})}
 			</div>
 		</div>
 		
 		<!-- Links -->
-		{data.links && (
+		{projectData.links && (
 			<div>
 				<div class="tag-wrapper">
-				{data.links.map((link) => (
+				{projectData.links.map((link) => (
 					<>
 						<a class="tile link" href={link.link} target="_blank">
 							<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg"/>
@@ -90,27 +105,24 @@ for (let i = 0; i < data.page.length; i++)
 		)}
 
 		<!-- Content blocks -->
-
 		{contentBlocks.map((block, index) => {
 			let Component = block.component;
 			return <Component
-				item={block.item}
+				properties={block.properties}
 				project={project}
 				index={index}
-				links_exist={'links' in data}
+				links_exist={'links' in projectData}
 			/>
 		})}
 	</div>
 </div>
 <div class="back-to-projects-wrapper">
-	<!-- <%= partial 'partials/components/projects_button', :locals => {
-		:text => 'Back to projects'
-	} %> -->
+	<ProjectsButton text="Back to projects" />
 </div>
 
 </MainLayout>
 
-<script is:inline src="/src/javascripts/project_detail.js"></script>
+<script is:inline src="/src/javascripts/project-detail.js"></script>
 
 <style is:global>
 .project-detail-wrapper {
@@ -254,6 +266,7 @@ for (let i = 0; i < data.page.length; i++)
 	color: #333;
 	background: #f0f0f0;
 	border-radius: 4px;
+	margin: 0px 3px;
 }
 
 .border-radius-top,

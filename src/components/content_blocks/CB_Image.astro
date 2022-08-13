@@ -1,34 +1,34 @@
 ---
-const {item, project, index, links_exist} = Astro.props;
+const {properties, project, index, links_exist} = Astro.props;
 
-import MediaControls from "../components/MediaControls.astro";
+import MediaControls from '../core/MediaControls.astro';
 import { imageSize } from 'image-size';
 
-const border_class = item.desc ? " border-radius-top" : " border-radius-full";
-const image_path = `/assets/projects/${project}/${item.data}`
+const borderClass = properties.desc ? ' border-radius-top' : ' border-radius-full';
+const image_path = `/assets/projects/${project}/${properties.data}`
 let image_size = imageSize('./public/' + image_path);
 ---
 <div class="content-block">
 	<!-- style="<%= partial "partials/system/loading" %>" -->
 	<div 
 		id={"img-" + index}
-		class={"aspect-container" + border_class}
+		class={"aspect-container" + borderClass}
 		data-width={image_size.width}
 		data-height={image_size.height}
-		data-first_padding={index == 0}
-		data-desc_padding={'desc' in item ? 'true' : 'false'}
+		data-first_padding={index == 0 ? 'true' : 'false'}
+		data-desc_padding={'desc' in properties ? 'true' : 'false'}
 		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}
 	>
 		<img
-			class={"project-detail-image" + border_class}
+			class={"project-detail-image" + borderClass}
 			src={image_path}
-			onload="fadeIn(this)"
 		>
+			<!-- onload="fadeIn(this)" -->
 
-		<MediaControls name={item.data} path={image_path} desc={'desc' in item}/>
+		<MediaControls name={properties.data} path={image_path} desc={'desc' in properties}/>
 	</div>
 
-	{'desc' in item && (
-		<p class="content-description textarea" data-target={"img-" + index}>{item.desc}</p>
+	{'desc' in properties && (
+		<p class="content-description textarea" data-target={"img-" + index} set:html={properties.desc}/>
 	)}
 </div>

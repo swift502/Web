@@ -1,29 +1,32 @@
-<%
-	video_path = "/assets/projects/#{project_name}/#{item.data}"
-	width = item.width.present? ? item.width : '16'
-	height = item.height.present? ? item.height : '9'
-	border_class = item.desc.present? ? 'border-radius-top' : 'border-radius-full'
-%>
+---
+import MediaControls from "../core/MediaControls.astro";
+
+const {properties, project, index, links_exist} = Astro.props;
+
+const videoPath = `/assets/projects/${project}/${properties.data}`;
+const width = 'width' in properties ? properties.width : '16';
+// console.log(width);
+const height = 'height' in properties ? properties.height : '9';
+const borderClass = 'desc' in properties ? ' border-radius-top' : ' border-radius-full';;
+---
 <div class="content-block">
+	<!-- style="<%= partial "partials/system/loading" %>" -->
 	<div
-		id="video-<%= index %>"
-		class="aspect-container <%= border_class %>"
-		style="<%= partial "partials/system/loading" %>"
-		data-width="<%= width %>"
-		data-height="<%= height %>"
-		data-first_padding="<%= index == 0 %>"
-		data-desc_padding="<%= item.desc.present? %>"
-		data-links_padding="<%= links_exist and index == 0 %>">
-		<video autoplay mute loop>
-			<source src="<%= video_path %>" type="video/webm">
+		id={"video-" + index}
+		class={"aspect-container" + borderClass}
+		data-width={width}
+		data-height={height}
+		data-first_padding={index == 0 ? 'true' : 'false'}
+		data-desc_padding={'desc' in properties ? 'true' : 'false'}
+		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}
+	>
+		<video autoplay muted loop>
+			<source src={videoPath} type="video/webm"/>
 		</video>
-		<%= partial "partials/components/media_controls", :locals => {
-			:name => item.data,
-			:path => video_path,
-			:desc => item.desc.present?
-		} %>
+
+		<MediaControls name={properties.data} path={videoPath} desc={'desc' in properties}/>
 	</div>
-	<% if item.desc.present? %>
-		<p class="content-description textarea" data-target="video-<%= index %>"><%= item.desc %></p>
-	<% end %>
+	{'desc' in properties && (
+		<p class="content-description textarea" data-target={"video-" + index} set:html={properties.desc}/>
+	)}
 </div>

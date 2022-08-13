@@ -1,27 +1,32 @@
 ---
-const {item} = Astro.props
+const {properties, project, index, links_exist} = Astro.props;
 
-const width = 'width' in item ? item.width : '16';
-const height = 'height' in item ? item.height : '9';
-const border_class = 'desc' in item ? 'border-radius-top' : 'border-radius-full';
+const width = 'width' in properties ? properties.width : '16';
+const height = 'height' in properties ? properties.height : '9';
+const borderClass = 'desc' in properties ? ' border-radius-top' : ' border-radius-full';
 ---
 <div class="content-block">
+	<!-- style="<%= partial "partials/system/loading" %>" -->
 	<div
-		id="video-<%= index %>"
-		class="aspect-container <%= border_class %>"
-		style="<%= partial "partials/system/loading" %>"
+		id={"video-" + index}
+		class={"aspect-container" + borderClass}
 		data-width={width}
 		data-height={height}
-		data-first_padding="<%= index == 0 %>"
-		data-desc_padding="<%= item.desc.present? %>"
-		data-links_padding="<%= links_exist and index == 0 %>">
+		data-first_padding={index == 0 ? 'true' : 'false'}
+		data-desc_padding={'desc' in properties ? 'true' : 'false'}
+		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}>
 		<iframe
 			frameborder="0"
-			src="https://www.youtube.com/embed/<%= item.data %>?rel=0"
+			src={`https://www.youtube.com/embed/${properties.data}?rel=0`}
 			allowfullscreen
 		></iframe>
 	</div>
-	<% if item.desc.present? %>
+
+	{'desc' in properties && (
+	<p class="content-description textarea" data-target={"video-" + index} set:html={properties.desc}/>
+	)}
+
+	<!-- <% if item.desc.present? %>
 		<p class="content-description textarea" data-target="video-<%= index %>">{item.desc}</p>
-	<% end %>
+	<% end %> -->
 </div>

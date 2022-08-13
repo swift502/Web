@@ -3,13 +3,14 @@ const {project_name} = Astro.props
 ---
 <div class="tile-wrapper">
 	<a href={"/projects/" + project_name}>
-		<div class="project-tile" style="<%= partial partials/system/loading %>">
+		<!-- style="<%= partial partials/system/loading %>" -->
+		<div class="project-tile">
 			<img
 				src={"/assets/projects/" + project_name + "/thumb.jpg"}
 				alt={project_name}
 				class="project-tile-image"
-				onload="fadeIn(this)"
 				/>
+				<!-- onload="fadeIn(this)" -->
 			<!-- <% if project.badge.present? %>
 				<div class="project-badge <%= project.badge.downcase %>"><%= project.badge %></div>
 			<% end %> -->
@@ -55,7 +56,7 @@ const {project_name} = Astro.props
 	}
 
 	.project-tile-image {
-		display: none;
+		/* display: none; */
 		width: 320px;
 		height: 231px;
 	}

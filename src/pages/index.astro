@@ -1,5 +1,5 @@
 ---
-import ProjectsButton from '../components/components/ProjectsButton.astro';
+import ProjectsButton from '../components/core/ProjectsButton.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 <MainLayout>
@@ -77,14 +77,17 @@ import MainLayout from '../layouts/MainLayout.astro';
 		flex-direction: column;
 		justify-content: center;
 	}
+</style>
 
+<style is:global>
 	.typewriter-container {
 		z-index: 10;
 		pointer-events: none;
 		user-select: none;
 	}
 
-	#typewriter-history div, #typewriter {
+	#typewriter-history div,
+	#typewriter {
 		z-index: 10;
 		font-size: 30px;
 		white-space: nowrap;
