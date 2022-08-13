@@ -1,26 +1,32 @@
-var modelFOVs = {
-	1: 52,
-	2: 57,
-	3: 58,
-	4: 60,
-	5: 62,
-	6: 57,
-	7: 60,
-	8: 57,
-	9: 59,
-	10: 55,
-	11: 62,
-	12: 53,
-	13: 56,
-	14: 60,
-	15: 57
-};
+// var modelFOVs = {
+// 	1: 52,
+// 	2: 57,
+// 	3: 58,
+// 	4: 60,
+// 	5: 62,
+// 	6: 57,
+// 	7: 60,
+// 	8: 57,
+// 	9: 59,
+// 	10: 55,
+// 	11: 62,
+// 	12: 53,
+// 	13: 56,
+// 	14: 60,
+// 	15: 57
+// };
+
+async function getModelFovs()
+{
+	const glob = import.meta.glob('/src/data/model_settings.yml');
+	return await glob[Object.keys(glob)[0]]();
+}
 
 function getUrlModelNumber()
 {
 	var URLparams = getUrlParams();
 	if ('character' in URLparams) return URLparams['character'];
-	else return getRandomInt(1, Object.keys(modelFOVs).length);
+	else return getRandomInt(1, Object.keys(modelFovs).length);
 }
 
 function getUrlParams()
@@ -51,10 +57,13 @@ function getRandomInt(min, max)
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+const modelFovs = await getModelFovs();
+
 // Set model path
 var modelNumber = getUrlModelNumber();
 var modelPath = 'models/' + modelNumber + '.glb';
 document.querySelector('model-viewer').setAttribute('src', modelPath);
 
 // Set FOV
-document.querySelector('model-viewer').setAttribute('min-field-of-view', modelFOVs[modelNumber] + 'deg');
+console.log(modelFovs[modelNumber]);
+document.querySelector('model-viewer').setAttribute('min-field-of-view', modelFovs[modelNumber] + 'deg');

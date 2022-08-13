@@ -15,6 +15,7 @@ var aText = [
 	"javascript",
 	"typescript"
 ];
+
 	
 var iSpeed = 100;
 var iIndex = 0;

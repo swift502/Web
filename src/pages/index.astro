@@ -1,12 +1,30 @@
 ---
 import ProjectsButton from '../components/core/ProjectsButton.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+import { extractYml } from '../javascripts/utilities';
+
+function getRandomInt(min, max)
+{
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// Get model settings
+const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));
+
+// Set model path
+const modelNumber = getRandomInt(1, Object.keys(modelSettings).length);
+const modelPath = 'models/' + modelNumber + '.glb';
+
+// Set FOV
+const minFov = modelSettings[modelNumber].fov + 'deg';
+
 ---
 <MainLayout>
 	<div class="homepage">
 		<h1 class="homepage-title">Jan Bláha</h1>
 		<div class="model-viewer-container">
 			<model-viewer
+				src={modelPath}
 				environment-image="/assets/env.hdr"
 				exposure="1.1"
 				autoplay
@@ -15,6 +33,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 				rotation-per-second="-5deg"
 				min-camera-orbit="auto 80deg auto"
 				max-camera-orbit="auto 80deg auto"
+				min-field-of-view={minFov}
 				camera-controls
 				interaction-prompt="none"
 				disable-zoom
@@ -34,9 +53,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 	</div>
 </MainLayout>
 
-<script is:inline src="/src/javascripts/homepage.js"></script>
 <script is:inline src="/src/javascripts/typewriter.js"></script>
 <script is:inline type="module" src="/src/javascripts/model-viewer.min.js"></script>
+
+
 
 <style>
 	.homepage {
