@@ -1,5 +1,6 @@
+---
+const {item} = Astro.props;
+---
 <div class="content-block border-radius-full">
-	<p class="textarea">
-		<%= item.data %>
-	</p>
+	<p class="textarea">{item.data}</p>
 </div>

@@ -5,21 +5,11 @@
 
 
 import MainLayout from "../../layouts/MainLayout.astro";
+import CBImage from "../../components/content_blocks/CB_Image.astro";
 
 export async function getStaticPaths() {
-
-// 	async function yml(path)
-// {
-// 	return (await Astro.glob(path))[0]["default"];
-// }
-
 	const projectList = (await Astro.glob('../../data/project_index.yml'))[0]["default"];
-	// console.log(projectList);
-
-	// const projectFolder = '../../data/projects/';
-	// const projectData = (await Astro.glob('../../data/projects/*'));
 	const projectData = import.meta.glob('../../data/projects/*');
-	// console.log(await projectData['../../data/projects/airportprg.yml']());
 
 	let paths = [];
 	for (let i = 0; i < projectList.length; i++)
@@ -27,43 +17,48 @@ export async function getStaticPaths() {
 		const projectName = projectList[i];
 		const dataPath = '../../data/projects/' + projectName + '.yml';
 
-		// if (!(dataPath in projectData))
-		// {
-		// 	console.log(dataPath + " not found in projectData");
-		// }
-		// else
-		// {
-			paths.push(
-				{
-					params: {
-						project: projectName,
-						// data: dataPath
-					},
-					props: {
-						data: await projectData[dataPath]()
-					}
-				}
-			);
-		// }
+		paths.push({
+			params: {
+				project: projectName,
+			},
+			props: {
+				data: await projectData[dataPath]()
+			}
+		});
 	}
 
-	// console.log(paths);
-
 	return paths;
-
-//   return [
-//     // Generates: /dogs/clifford
-//     {params: {project: 'clifford'}},
-//     // Generates: /dogs/rover
-//     {params: {project: 'rover'}},
-//     // Generates: /dogs/spot
-//     {params: {project: 'spot'}},
-//   ];
 }
 
 const {project} = Astro.params;
 const {data} = Astro.props;
-console.log(data.links);
+// console.log(data.page);
+
+const contentBlockComponents = {
+	'image': CBImage
+}
+
+let contentBlocks = [];
+for (let i = 0; i < data.page.length; i++)
+{
+	const inData = data.page[i];
+	// console.log(inData.type);
+	if (!(inData.type in contentBlockComponents))
+	{
+		console.error('Unknown content block type: ' + inData.type);
+		continue;
+	}
+
+	const outData = {};
+	outData['component'] = contentBlockComponents[inData.type];
+	outData['item'] = inData;
+
+	contentBlocks.push(outData);
+}
+
+// console.log(contentBlocks);
+// console.log(data.page);
+
 ---
 
 <MainLayout>
@@ -88,29 +83,29 @@ console.log(data.links);
 			<div>
 				<div class="tag-wrapper">
 				{data.links.map((link) => (
-					<Fragment>
+					<>
 						<a class="tile link" href={link.link} target="_blank">
 							<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg"/>
 							<div class="link-tile-text">{link.title}</div>
 						</a>
-					</Fragment>
+					</>
 				))}
 				</div>
 			</div>
 		)}
 
-		<!-- <% if project.links.present? %>
-		<div class="tag-wrapper">
-			<% project.links.each do |link| %>
-			<a class="tile link" href="<%= link.link %>" target="_blank">
-				<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg">
-				<div class="link-tile-text"><%= link.title %></div>
-			</a>
-			<% end %>
-		</div>
-		<% end %> -->
-
 		<!-- Content blocks -->
+
+		{contentBlocks.map((block, index) => {
+			let Component = block.component;
+			return <Component
+				item={block.item}
+				project={project}
+				index={index}
+				links_exist={'links' in data}
+			/>
+		})}
+
 		<!-- <% project.page.each_with_index  do |item, index| %>
 			<%= partial "partials/content_blocks/#{item.type}", :locals => {
 				:project_name => project_name,

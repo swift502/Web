@@ -1,12 +1,11 @@
 ---
-const {src, desc, index} = Astro.props;
+const {item, project, index, links_exist} = Astro.props;
 
 import MediaControls from "../components/MediaControls.astro";
-const border_class = desc ? " border-radius-top" : " border-radius-full";
-// const image_path = `/assets/projects/${project_name}/${url}`
+const border_class = item.desc ? " border-radius-top" : " border-radius-full";
+const image_path = `/assets/projects/${project}/${item.data}`
 // const image_size = ImageSize.path('./src' + image_path)
 ---
-
 <div class="content-block">
 	<div 
 		id={"img-" + index}
@@ -20,7 +19,7 @@ const border_class = desc ? " border-radius-top" : " border-radius-full";
 		<!-- data-links_padding="<%= links_exist and index == 0 %>" -->
 		<img
 			class={"project-detail-image" + border_class}
-			src={src}
+			src={image_path}
 			onload="fadeIn(this)"
 		>
 
