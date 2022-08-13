@@ -2,35 +2,33 @@
 const {item, project, index, links_exist} = Astro.props;
 
 import MediaControls from "../components/MediaControls.astro";
+import { imageSize } from 'image-size';
+
 const border_class = item.desc ? " border-radius-top" : " border-radius-full";
 const image_path = `/assets/projects/${project}/${item.data}`
-// const image_size = ImageSize.path('./src' + image_path)
+let image_size = imageSize('./public/' + image_path);
 ---
 <div class="content-block">
+	<!-- style="<%= partial "partials/system/loading" %>" -->
 	<div 
 		id={"img-" + index}
 		class={"aspect-container" + border_class}
+		data-width={image_size.width}
+		data-height={image_size.height}
 		data-first_padding={index == 0}
+		data-desc_padding={'desc' in item ? 'true' : 'false'}
+		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}
 	>
-		<!-- style="<%= partial "partials/system/loading" %>" -->
-		<!-- data-width={image_size.w} -->
-		<!-- data-height={image_size.h} -->
-		<!-- data-desc_padding="<%= item.desc.present? %>" -->
-		<!-- data-links_padding="<%= links_exist and index == 0 %>" -->
 		<img
 			class={"project-detail-image" + border_class}
 			src={image_path}
 			onload="fadeIn(this)"
 		>
 
-		<MediaControls />
-		<!-- <%= partial "partials/components/media_controls", :locals => {
-			:name => item.url,
-			:path => image_path,
-			:desc => item.desc.present?
-		} %> -->
+		<MediaControls name={item.data} path={image_path} desc={'desc' in item}/>
 	</div>
-	<!-- <% if item.desc.present? %>
-		<p class="content-description textarea" data-target="img-<%= index %>"><%= item.desc %></p>
-	<% end %> -->
+
+	{'desc' in item && (
+		<p class="content-description textarea" data-target={"img-" + index}>{item.desc}</p>
+	)}
 </div>
