@@ -3,10 +3,67 @@
 // <% content_for(:description, project.description) %>
 // <% content_for(:page_image, "https://#{config.domain}/assets/projects/#{project_name}/thumb.jpg") %>
 
-import MainLayout from "./MainLayout.astro";
 
-const {title, tags, links} = Astro.props;
+import MainLayout from "../../layouts/MainLayout.astro";
 
+export async function getStaticPaths() {
+
+// 	async function yml(path)
+// {
+// 	return (await Astro.glob(path))[0]["default"];
+// }
+
+	const projectList = (await Astro.glob('../../data/project_index.yml'))[0]["default"];
+	// console.log(projectList);
+
+	// const projectFolder = '../../data/projects/';
+	// const projectData = (await Astro.glob('../../data/projects/*'));
+	const projectData = import.meta.glob('../../data/projects/*');
+	// console.log(await projectData['../../data/projects/airportprg.yml']());
+
+	let paths = [];
+	for (let i = 0; i < projectList.length; i++)
+	{
+		const projectName = projectList[i];
+		const dataPath = '../../data/projects/' + projectName + '.yml';
+
+		// if (!(dataPath in projectData))
+		// {
+		// 	console.log(dataPath + " not found in projectData");
+		// }
+		// else
+		// {
+			paths.push(
+				{
+					params: {
+						project: projectName,
+						// data: dataPath
+					},
+					props: {
+						data: await projectData[dataPath]()
+					}
+				}
+			);
+		// }
+	}
+
+	// console.log(paths);
+
+	return paths;
+
+//   return [
+//     // Generates: /dogs/clifford
+//     {params: {project: 'clifford'}},
+//     // Generates: /dogs/rover
+//     {params: {project: 'rover'}},
+//     // Generates: /dogs/spot
+//     {params: {project: 'spot'}},
+//   ];
+}
+
+const {project} = Astro.params;
+const {data} = Astro.props;
+console.log(data.links);
 ---
 
 <MainLayout>
@@ -15,18 +72,33 @@ const {title, tags, links} = Astro.props;
 	<div class="project-detail">
 
 		<!-- Title -->
-		<h1 class="project-title">{title}</h1>
+		<h1 class="project-title">{data.title}</h1>
 
 		<!-- Tags -->
 		<div class="tag-wrapper">
 			<div class="tag-row">
-			<!-- <% project.tags.each do |tag| %>
-				<div class="tag"><%= tag %></div>
-			<% end %> -->
+			{data.tags.map((tag) => {
+				return <div class="tag">{tag}</div>
+			})}
 			</div>
 		</div>
 		
 		<!-- Links -->
+		{data.links && (
+			<div>
+				<div class="tag-wrapper">
+				{data.links.map((link) => (
+					<Fragment>
+						<a class="tile link" href={link.link} target="_blank">
+							<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg"/>
+							<div class="link-tile-text">{link.title}</div>
+						</a>
+					</Fragment>
+				))}
+				</div>
+			</div>
+		)}
+
 		<!-- <% if project.links.present? %>
 		<div class="tag-wrapper">
 			<% project.links.each do |link| %>
@@ -39,7 +111,6 @@ const {title, tags, links} = Astro.props;
 		<% end %> -->
 
 		<!-- Content blocks -->
-        <slot/>
 		<!-- <% project.page.each_with_index  do |item, index| %>
 			<%= partial "partials/content_blocks/#{item.type}", :locals => {
 				:project_name => project_name,
@@ -61,7 +132,7 @@ const {title, tags, links} = Astro.props;
 
 <script is:inline src="/src/javascripts/project_detail.js"></script>
 
-<style>
+<style is:global>
 .project-detail-wrapper {
 	max-width: 1000px;
 	margin: 30px auto;
@@ -138,7 +209,7 @@ const {title, tags, links} = Astro.props;
 }
 
 .project-detail-image {
-	display: none;
+	/* display: none; */
 	width: 100%;
 	height: 100%;
 }
