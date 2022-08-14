@@ -38,7 +38,8 @@ document.addEventListener('keypress', (event) => {
             });
 
             setTimeout(() => {
-                wrapper.style.opacity = 1;
+                wrapper.style.opacity = '1';
+                wrapper.style.bottom = '-50px';
             }, 0);
         }
     }
