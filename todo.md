@@ -1,0 +1,5 @@
+- loading
+- content
+- github deployment
+- project tags
+- project titles in the project grid
