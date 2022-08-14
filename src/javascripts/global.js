@@ -1,13 +1,13 @@
-var touchDevice = ('ontouchstart' in document.documentElement);
-var prevScrollpos = window.pageYOffset;
+let touchDevice = ('ontouchstart' in document.documentElement);
+let prevScrollpos = window.pageYOffset;
 
 function scrollFunction()
 {
-	var navbar = document.getElementById("navbar");
+	let navbar = document.getElementById("navbar");
 
 	if (touchDevice)
 	{
-		var currentScrollPos = window.pageYOffset;
+		let currentScrollPos = window.pageYOffset;
 		if (prevScrollpos > currentScrollPos)
 		{
 			navbar.style.top = "0";
@@ -19,7 +19,7 @@ function scrollFunction()
 		prevScrollpos = currentScrollPos;
 	}
 
-	var navbarShadowClass = "shadow";
+	let navbarShadowClass = "shadow";
 	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
 	{
 		if (!navbar.classList.contains(navbarShadowClass))
@@ -46,7 +46,7 @@ function fadeIn(el)
 	el.style.display = "block";
 
 	(function fade() {
-	  var val = parseFloat(el.style.opacity);
+	  let val = parseFloat(el.style.opacity);
 	  if (!((val += .1) > 1)) {
 		el.style.opacity = val;
 		requestAnimationFrame(fade);

@@ -5,7 +5,7 @@ document.addEventListener('keypress', (event) => {
 
     if (!debugEnabled)
     {
-        var code = event.code;
+        let code = event.code;
     
         if (level == 0 && code == 'KeyD') level++;
         else if (level == 1 && code == 'KeyE') level++;

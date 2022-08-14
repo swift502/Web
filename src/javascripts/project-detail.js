@@ -1,5 +1,5 @@
-var aspectContainers = document.getElementsByClassName("aspect-container");
-var descs = document.getElementsByClassName("content-description");
+let aspectContainers = document.getElementsByClassName("aspect-container");
+let descs = document.getElementsByClassName("content-description");
 
 function onWindowResize()
 {
@@ -8,12 +8,12 @@ function onWindowResize()
 
 function updateAspectContainers()
 {
-	for (var i = 0; i < aspectContainers.length; i++)
+	for (let i = 0; i < aspectContainers.length; i++)
 	{
-		var container = aspectContainers[i];
-		var aspectRatio = container.dataset.width / container.dataset.height;
+		let container = aspectContainers[i];
+		let aspectRatio = container.dataset.width / container.dataset.height;
 
-		var padding = 180;
+		let padding = 180;
 		if (container.dataset.first_padding === 'true') padding += 100;
 		if (container.dataset.desc_padding === 'true') padding += 100;
 		if (container.dataset.links_padding === 'true') padding += 100;
@@ -21,9 +21,9 @@ function updateAspectContainers()
 		if (window.innerWidth > 776)
 		{
 			//Desktop
-			var maxWidth = container.parentElement.offsetWidth;
-			var height = Math.max(window.innerHeight - padding, 400);
-			var width = (height * aspectRatio);
+			let maxWidth = container.parentElement.offsetWidth;
+			let height = Math.max(window.innerHeight - padding, 400);
+			let width = (height * aspectRatio);
 
 			if (width > maxWidth)
 			{
@@ -43,10 +43,10 @@ function updateAspectContainers()
 	}
 
 	// Descriptions update
-	for (var i = 0; i < descs.length; i++)
+	for (let i = 0; i < descs.length; i++)
 	{
-		var desc = descs[i]
-		var target = document.getElementById(desc.dataset.target);
+		let desc = descs[i]
+		let target = document.getElementById(desc.dataset.target);
 		desc.style.width = (target.offsetWidth - 62) + 'px';
 	}
 }
