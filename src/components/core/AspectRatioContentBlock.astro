@@ -1,12 +1,13 @@
 ---
 const { project, contentBlock, width, height } = Astro.props;
 
+const idPrefix = "aspect-ratio-content-block-";
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 ---
 <div class="content-block">
 	<!-- style="<%= partial "partials/system/loading" %>" -->
 	<div 
-		id={"aspect-ratio-content-block-" + contentBlock.index}
+		id={idPrefix + contentBlock.index}
 		class={"aspect-container" + borderClass}
 		data-width={width}
 		data-height={height}
@@ -20,7 +21,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 	{'desc' in contentBlock.properties && (
 		<p
 			class="content-description textarea"
-			data-target={"img-" + contentBlock.index}
+			data-target={idPrefix + contentBlock.index}
 			set:html={contentBlock.properties.desc}
 		/>
 	)}

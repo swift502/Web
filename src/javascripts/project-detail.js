@@ -18,12 +18,14 @@ function updateAspectContainers()
 		if (container.dataset.desc_padding === 'true') padding += 100;
 		if (container.dataset.links_padding === 'true') padding += 100;
 
+		let width, height;
+
 		if (window.innerWidth > 776)
 		{
 			//Desktop
 			let maxWidth = container.parentElement.offsetWidth;
-			let height = Math.max(window.innerHeight - padding, 400);
-			let width = (height * aspectRatio);
+			height = Math.max(window.innerHeight - padding, 400);
+			width = (height * aspectRatio);
 
 			if (width > maxWidth)
 			{
@@ -45,7 +47,7 @@ function updateAspectContainers()
 	// Descriptions update
 	for (let i = 0; i < descs.length; i++)
 	{
-		let desc = descs[i]
+		let desc = descs[i];
 		let target = document.getElementById(desc.dataset.target);
 		desc.style.width = (target.offsetWidth - 62) + 'px';
 	}
