@@ -26,7 +26,7 @@ document.addEventListener('keypress', (event) => {
             list.id = 'model-debug-list';
             wrapper.appendChild(list);
 
-            Object.keys(window.modelSettings).forEach(item => {
+            Object.keys(ASTRO_modelSettings).forEach(item => {
                 let button = document.createElement('div');
                 button.classList.add('tile');
                 button.innerHTML += item;

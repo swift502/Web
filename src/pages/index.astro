@@ -12,11 +12,12 @@ function getRandomInt(min, max)
 const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));
 
 // Set model path
-const modelNumber = getRandomInt(1, Object.keys(modelSettings).length);
-const modelPath = 'models/' + modelNumber + '.glb';
+const modelIndex = getRandomInt(1, Object.keys(modelSettings).length);
+const modelKey = Object.keys(modelSettings)[modelIndex];
+const modelPath = 'models/' + modelKey + '.glb';
 
 // Set FOV
-const minFov = modelSettings[modelNumber].fov + 'deg';
+const modelFov = modelSettings[modelKey].fov + 'deg';
 
 // Read typewriter strings
 const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
@@ -35,7 +36,7 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 				rotation-per-second="-5deg"
 				min-camera-orbit="auto 80deg auto"
 				max-camera-orbit="auto 80deg auto"
-				min-field-of-view={minFov}
+				min-field-of-view={modelFov}
 				camera-controls
 				interaction-prompt="none"
 				disable-zoom
@@ -57,8 +58,8 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 
 <script is:inline define:vars={{modelSettings, typewriterStrings}}>
 	// Expose astro data to client scripts
-	window.modelSettings = modelSettings;
-	window.typewriterStrings = typewriterStrings;
+	window.ASTRO_modelSettings = modelSettings;
+	window.ASTRO_typewriterStrings = typewriterStrings;
 </script>
 <script is:inline src="/src/javascripts/typewriter.js" />
 <script is:inline type="module" src="/src/javascripts/model-viewer.min.js"/>

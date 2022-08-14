@@ -1,4 +1,4 @@
-const aText = window.typewriterStrings;
+const aText = ASTRO_typewriterStrings;
 const iSpeed = 100;
 let iIndex = 0;
 let iArrLength = aText[0].length;
