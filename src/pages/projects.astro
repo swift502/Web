@@ -17,15 +17,15 @@ pageInfo['image'] = 'assets/social.jpg';
 ---
 
 <MainLayout pageInfo={pageInfo}>
-<div class="project-grid">
-    {projects.map(function(x, i){
-		return <ProjectTile project_name={x} />;
-    })}
+	<div class="project-grid">
+		{projects.map(function(x, i){
+			return <ProjectTile project_name={x} />;
+		})}
 
-	{[...Array(gaps)].map((x, i) =>
-		<DummyProjectTile />
-	)}
-</div>
+		{[...Array(gaps)].map((x, i) =>
+			<DummyProjectTile />
+		)}
+	</div>
 </MainLayout>
 
 <script is:inline src="/src/javascripts/global.js"></script>

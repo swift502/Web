@@ -29,6 +29,7 @@ pageInfo['title'] = 'Jan Bláha: 3D art and programming'
 pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
 pageInfo['image'] = 'assets/social.jpg';
 ---
+
 <MainLayout pageInfo={pageInfo}>
 	<div class="homepage">
 		<h1 class="homepage-title">Jan Bláha</h1>
@@ -72,9 +73,9 @@ pageInfo['image'] = 'assets/social.jpg';
 	window.ASTRO_modelSettings = modelSettings;
 	window.ASTRO_typewriterStrings = typewriterStrings;
 </script>
-<script is:inline src="/src/javascripts/typewriter.js" />
-<script is:inline type="module" src="/src/javascripts/model-viewer.min.js"/>
-<script is:inline src="/src/javascripts/model-viewer-debug.js"/>
+<script src="../javascripts/typewriter.js" />
+<script type="module" src="../javascripts/model-viewer.min.js"/>
+<script src="../javascripts/model-viewer-debug.js"/>
 
 <style>
 	.homepage {

@@ -1,0 +1,55 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import BigButton from "../../components/core/BigButton.astro";
+
+const pageInfo = {};
+pageInfo['title'] = 'Sketchbook demo archive'
+pageInfo['description'] = 'Browse through the demo history of Sketchbook, the three.js 3D playground.'
+pageInfo['image'] = 'assets/social.jpg';
+---
+
+<MainLayout pageInfo={pageInfo}>
+	<div class="sketchbook-archive-wrapper">
+		<div class="center">
+			<h1>Sketchbook demo archive</h1>
+		</div>
+		<div class="sketchbook-archive">
+			<div class="tile-wrapper"><a href="/sketchbook/0.4"><div class="tile">0.4</div></a></div>
+			<div class="tile-wrapper"><a href="/sketchbook/0.3"><div class="tile">0.3</div></a></div>
+			<div class="tile-wrapper"><a href="/sketchbook/0.2"><div class="tile">0.2</div></a></div>
+			<div class="tile-wrapper"><a href="/sketchbook/0.1"><div class="tile">0.1</div></a></div>
+		</div>
+	</div>
+	<div class="return-home-wrapper">
+		<BigButton
+			text="Return home"
+			link="/"
+			icon="/assets/svg/home.svg"
+		/>
+	</div>
+</MainLayout>
+
+<style>
+	.sketchbook-archive-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: calc(100vh - 307px);
+	}
+
+	.sketchbook-archive {
+		text-align: center;
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;
+	}
+
+	.sketchbook-archive .tile-wrapper {
+		width: 100%;
+		margin: 16px auto;
+	}
+	.return-home-wrapper {
+		text-align: center;
+		margin: 44px 0px 50px;
+	}
+</style>
