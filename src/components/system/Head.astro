@@ -1,20 +1,20 @@
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+---
+import Analytics from "./Analytics.astro";
+
+const { pageInfo } = Astro.props;
+const pageImage = import.meta.env.SITE + pageInfo.image;
+---
 <meta charset="utf-8">
 
-<!-- <title><%= yield_content(:title) %></title> -->
-<!-- <meta name="description" content="<%= yield_content(:description) %>"> -->
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>{pageInfo.title}</title>
+<meta name="description" content={pageInfo.description}>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<!-- <meta property="og:title" content="<%= yield_content(:title) %>"> -->
-<!-- <meta property="og:url" content="https://<%= config.domain + current_page.url %>"> -->
-<!-- <meta property="og:description" content="<%= yield_content(:description) %>"> -->
-<meta property="og:type" content="website">
-<meta property="og:image" content="<%= yield_content(:page_image) %>"/>
+<meta property="og:title" content={pageInfo.title}>
+<meta property="og:url" content={Astro.url}>
+<meta property="og:description" content={pageInfo.description}>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content={pageImage}>
 
-<!-- <%= favicon_tag '/assets/favicon.ico' %>
-<%= stylesheet_link_tag 'main' %>
-<%= javascript_include_tag  'global' %>
-
-<% if build? %>
-	<%= partial 'partials/system/analytics' %>
-<% end %> -->
+<!-- <%= favicon_tag '/assets/favicon.ico' %> -->
+<Analytics/>

@@ -18,6 +18,10 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 	</div>
 
 	{'desc' in contentBlock.properties && (
-		<p class="content-description textarea" data-target={"img-" + contentBlock.index} set:html={contentBlock.properties.desc}/>
+		<p
+			class="content-description textarea"
+			data-target={"img-" + contentBlock.index}
+			set:html={contentBlock.properties.desc}
+		/>
 	)}
 </div>

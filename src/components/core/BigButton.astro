@@ -1,0 +1,44 @@
+---
+const {text, link, icon} = Astro.props
+---
+
+<a href={link} class="big-button">
+    <span class="big-button-text">{text}</span>
+    <img src={icon} class="big-button-icon">
+</a>
+
+<style>
+    .big-button {
+        position: relative;
+        top: 0px;
+        background: #ffb900;
+        color: #523b00;
+        box-shadow: 0 6px 0 0 rgb(228, 158, 0);
+        display: inline-block;
+        user-select: none;
+        padding: 15px 22px;
+        outline: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .big-button:active {
+        top: 6px;
+        box-shadow: 0 0px 0 0 rgb(228, 158, 0);
+    }
+
+    .big-button-text {
+        font-weight: 700;
+        font-size: 22px;
+        margin-left: 34px;
+    }
+
+    .big-button-icon {
+        width: 24px;
+        /* right: 20px; */
+        left: 22px;
+        top: 18px;
+        position: absolute;
+    }
+</style>

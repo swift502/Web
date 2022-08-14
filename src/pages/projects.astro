@@ -1,27 +1,27 @@
 ---
-let title = 'Projects'
-const data = await Astro.glob('../data/project-index.yml');
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectTile from '../components/core/ProjectTile.astro';
 import DummyProjectTile from '../components/core/DummyProjectTile.astro';
 
-let description = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
-let page_image = `${import.meta.env.SITE}assets/social.jpg`;
-// console.log(page_image);
-
+// Project grid
+const data = await Astro.glob('../data/project-index.yml');
 const projects = data[0]['default'];
-let columns = 3;
-let gaps = (columns - (projects.length % columns)) % columns;
+const columns = 3;
+const gaps = (columns - (projects.length % columns)) % columns;
+
+// Layout variables
+const pageInfo = {};
+pageInfo['title'] = 'Projects'
+pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
+pageInfo['image'] = 'assets/social.jpg';
 ---
 
-<MainLayout title={title} description={description} image={page_image}>
+<MainLayout pageInfo={pageInfo}>
 <div class="project-grid">
-	<!-- foreach (x in projects) -->
     {projects.map(function(x, i){
 		return <ProjectTile project_name={x} />;
     })}
 
-	<!-- for (i = 0; i < gaps; i++) -->
 	{[...Array(gaps)].map((x, i) =>
 		<DummyProjectTile />
 	)}

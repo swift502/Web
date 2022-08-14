@@ -1,20 +1,20 @@
 ---
-import '../styles/normalize.css';
-import '../styles/global.css';
-import '../styles/tiles.css';
-import '../styles/big_buttons.css';
-
 import Head from '../components/system/Head.astro';
 import Navbar from '../components/core/Navbar.astro';
 import Footer from '../components/core/Footer.astro';
+import '../styles/normalize.css';
+import '../styles/global.css';
+import '../styles/responsive.css';
+
+const { pageInfo } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<Head />
+	<Head pageInfo={pageInfo} />
 </head>
-<body class="<%= page_classes %>">
+<body>
 	<Navbar />
 	<div class="content">
 		<slot />

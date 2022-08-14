@@ -1,6 +1,8 @@
 ---
-	const {name, path, desc} = Astro.props;
-	const description_class = desc ? ' has-description' : '';
+import '../../styles/tiles.css';
+
+const {name, path, desc} = Astro.props;
+const description_class = desc ? ' has-description' : '';
 ---
 
 <div class={"media-controls" + description_class}>

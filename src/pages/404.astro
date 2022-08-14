@@ -1,27 +1,22 @@
 ---
-// noindex: true
-// layout: false
-// directory_index: false
-import '../styles/big_buttons.css';
-
-import HomeButton from '../components/core/HomeButton.astro';
+import BigButton from '../components/core/BigButton.astro';
+import Analytics from '../components/system/Analytics.astro';
+import '../styles/normalize.css';
+import '../styles/global.css';
+import '../styles/responsive.css';
 ---
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 	<meta charset="utf-8">
 
 	<title>Page Not Found</title>
 	<meta name="robots" content="noindex">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	<!-- <%= favicon_tag '/assets/favicon.ico' %> -->
-	<!-- <%= stylesheet_link_tag '404', 'big_buttons', 'responsive' %> -->
-	<!-- <% if build? %>
-		<%= partial 'partials/system/analytics' %>
-	<% end %> -->
+	<Analytics/>
 </head>
 <body>
 	<div class="pnf-content">
@@ -42,7 +37,11 @@ import HomeButton from '../components/core/HomeButton.astro';
 		<div class="pnf-title">404</div>
 		<div class="pnf-text">Page not found.</div>
 		<br>
-		<HomeButton text="Return home" />
+		<BigButton
+			text="Return home"
+			link="/"
+			icon="/assets/svg/home.svg"
+		/>
 	</div>
 	<script is:inline type="module" src="/src/javascripts/model-viewer.min.js"></script>
 </body>

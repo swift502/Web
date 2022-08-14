@@ -1,7 +1,7 @@
 ---
-import ProjectsButton from '../components/core/ProjectsButton.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import { extractYml } from '../javascripts/utilities';
+import BigButton from '../components/core/BigButton.astro';
 
 function getRandomInt(min, max)
 {
@@ -21,8 +21,15 @@ const modelFov = modelSettings[modelKey].fov + 'deg';
 
 // Read typewriter strings
 const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
+
+// Layout variables
+
+const pageInfo = {};
+pageInfo['title'] = 'Jan Bláha: 3D art and programming'
+pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
+pageInfo['image'] = 'assets/social.jpg';
 ---
-<MainLayout>
+<MainLayout pageInfo={pageInfo}>
 	<div class="homepage">
 		<h1 class="homepage-title">Jan Bláha</h1>
 		<div class="model-viewer-container">
@@ -50,7 +57,11 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 				<div id="typewriter">_</div>
 			</div>
 			<div class="projects-button-wrapper">
-			<ProjectsButton text="View projects" />
+				<BigButton
+					text="View projects"
+					link="/projects"
+					icon="/assets/svg/folder-open.svg"
+				/>
 			</div>
 		</div>
 	</div>
@@ -103,6 +114,10 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+	}
+	
+	.projects-button-wrapper {
+		margin-top: 20px;
 	}
 </style>
 
