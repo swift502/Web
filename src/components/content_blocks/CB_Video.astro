@@ -1,32 +1,25 @@
 ---
+import AspectRatioContentBlock from "../core/AspectRatioContentBlock.astro";
 import MediaControls from "../core/MediaControls.astro";
 
-const {properties, project, index, links_exist} = Astro.props;
+const {project, contentBlock} = Astro.props;
 
-const videoPath = `/assets/projects/${project}/${properties.data}`;
-const width = 'width' in properties ? properties.width : '16';
-// console.log(width);
-const height = 'height' in properties ? properties.height : '9';
-const borderClass = 'desc' in properties ? ' border-radius-top' : ' border-radius-full';;
+const videoPath = `/assets/projects/${project.name}/${contentBlock.properties.data}`;
+const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
+const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
 ---
-<div class="content-block">
-	<!-- style="<%= partial "partials/system/loading" %>" -->
-	<div
-		id={"video-" + index}
-		class={"aspect-container" + borderClass}
-		data-width={width}
-		data-height={height}
-		data-first_padding={index == 0 ? 'true' : 'false'}
-		data-desc_padding={'desc' in properties ? 'true' : 'false'}
-		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}
-	>
-		<video autoplay muted loop>
-			<source src={videoPath} type="video/webm"/>
-		</video>
-
-		<MediaControls name={properties.data} path={videoPath} desc={'desc' in properties}/>
-	</div>
-	{'desc' in properties && (
-		<p class="content-description textarea" data-target={"video-" + index} set:html={properties.desc}/>
-	)}
-</div>
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width={width}
+	height={height}
+>
+	<video autoplay muted loop>
+		<source src={videoPath} type="video/webm"/>
+	</video>
+	<MediaControls
+		name={contentBlock.properties.data}
+		path={videoPath}
+		desc={contentBlock.properties.desc}
+	/>
+</AspectRatioContentBlock>

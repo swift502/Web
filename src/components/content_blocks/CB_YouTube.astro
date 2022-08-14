@@ -1,32 +1,20 @@
 ---
-const {properties, project, index, links_exist} = Astro.props;
+import AspectRatioContentBlock from "../core/AspectRatioContentBlock.astro";
 
-const width = 'width' in properties ? properties.width : '16';
-const height = 'height' in properties ? properties.height : '9';
-const borderClass = 'desc' in properties ? ' border-radius-top' : ' border-radius-full';
+const {project, contentBlock} = Astro.props;
+
+const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
+const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
 ---
-<div class="content-block">
-	<!-- style="<%= partial "partials/system/loading" %>" -->
-	<div
-		id={"video-" + index}
-		class={"aspect-container" + borderClass}
-		data-width={width}
-		data-height={height}
-		data-first_padding={index == 0 ? 'true' : 'false'}
-		data-desc_padding={'desc' in properties ? 'true' : 'false'}
-		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}>
-		<iframe
-			frameborder="0"
-			src={`https://www.youtube.com/embed/${properties.data}?rel=0`}
-			allowfullscreen
-		></iframe>
-	</div>
-
-	{'desc' in properties && (
-	<p class="content-description textarea" data-target={"video-" + index} set:html={properties.desc}/>
-	)}
-
-	<!-- <% if item.desc.present? %>
-		<p class="content-description textarea" data-target="video-<%= index %>">{item.desc}</p>
-	<% end %> -->
-</div>
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width={width}
+	height={height}
+>
+	<iframe
+		frameborder="0"
+		src={`https://www.youtube.com/embed/${contentBlock.properties.data}?rel=0`}
+		allowfullscreen
+	></iframe>
+</AspectRatioContentBlock>

@@ -1,35 +1,26 @@
 ---
-const {properties, project, index, links_exist} = Astro.props;
+import AspectRatioContentBlock from "../core/AspectRatioContentBlock.astro";
 
-//
+const {project, contentBlock} = Astro.props;
+
 ---
 
-<div class="content-block">
-	<!-- style="<%= partial "partials/system/loading" %>" -->
-	<div
-		class="aspect-container border-radius-full"
-		data-width="16"
-		data-height="9"
-		data-desc_padding={'desc' in properties ? 'true' : 'false'}>
-		<div class="sketchfab-embed-wrapper">
-			<iframe
-				id={"sketchfab-" + index}
-				title="Sketchfab viewer"
-				frameborder="0"
-				allowfullscreen
-				allow="autoplay; fullscreen; xr-spatial-tracking"
-				xr-spatial-tracking
-				web-share
-				src={`https://sketchfab.com/models/${properties.data}/embed?camera=0`}>
-			</iframe>
-		</div>
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width="16"
+	height="9"
+>
+	<div class="sketchfab-embed-wrapper">
+		<iframe
+			id={"sketchfab-" + contentBlock.index}
+			title="Sketchfab viewer"
+			frameborder="0"
+			allowfullscreen
+			allow="autoplay; fullscreen; xr-spatial-tracking"
+			xr-spatial-tracking
+			web-share
+			src={`https://sketchfab.com/models/${contentBlock.properties.data}/embed?camera=0`}>
+		</iframe>
 	</div>
-
-	{'desc' in properties && (
-	<p class="content-description textarea" data-target={"sketchfab-" + index} set:html={properties.desc}/>
-	)}
-
-	<!-- <% if item.desc.present? %>
-		<p class="content-description textarea" data-target="sketchfab-<%= index %>"><%= item.desc %></p>
-	<% end %> -->
-</div>
+</AspectRatioContentBlock>

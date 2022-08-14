@@ -56,18 +56,18 @@ const componentLibrary = {
 let contentBlocks = [];
 for (let i = 0; i < projectData.page.length; i++)
 {
-	const inData = projectData.page[i];
+	const CBProperties = projectData.page[i];
 	
-	if (!(inData.type in componentLibrary)) {
-		logError('Unknown content block type: "' + inData.type + '".');
+	if (!(CBProperties.type in componentLibrary)) {
+		logError('Unknown content block type: "' + CBProperties.type + '".');
 		continue;
 	}
 
-	const outData = {};
-	outData['component'] = componentLibrary[inData.type];
-	outData['properties'] = inData;
+	const CBData = {};
+	CBData['component'] = componentLibrary[CBProperties.type];
+	CBData['properties'] = CBProperties;
 
-	contentBlocks.push(outData);
+	contentBlocks.push(CBData);
 }
 ---
 
@@ -107,12 +107,26 @@ for (let i = 0; i < projectData.page.length; i++)
 		<!-- Content blocks -->
 		{contentBlocks.map((block, index) => {
 			let Component = block.component;
+
+			let ComponentContentBlockData = {};
+			ComponentContentBlockData['properties'] = block.properties;
+			ComponentContentBlockData['index'] = index;
+
+			let ComponentProjectData = {};
+			ComponentProjectData['name'] = project;
+			ComponentProjectData['hasLinks'] = 'links' in projectData;
+			
 			return <Component
-				properties={block.properties}
-				project={project}
-				index={index}
-				links_exist={'links' in projectData}
+				project={ComponentProjectData}
+				contentBlock={ComponentContentBlockData}
 			/>
+
+			// return <Component
+			// 	properties={block.properties}
+			// 	project={project}
+			// 	index={index}
+			// 	links_exist={'links' in projectData}
+			// />
 		})}
 	</div>
 </div>

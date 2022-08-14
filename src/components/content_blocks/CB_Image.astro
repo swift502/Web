@@ -1,34 +1,27 @@
 ---
-const {properties, project, index, links_exist} = Astro.props;
+const {project, contentBlock} = Astro.props;
 
 import MediaControls from '../core/MediaControls.astro';
 import { imageSize } from 'image-size';
+import AspectRatioContentBlock from '../core/AspectRatioContentBlock.astro';
 
-const borderClass = properties.desc ? ' border-radius-top' : ' border-radius-full';
-const image_path = `/assets/projects/${project}/${properties.data}`
-let image_size = imageSize('./public/' + image_path);
+const borderClass = contentBlock.properties.desc ? ' border-radius-top' : ' border-radius-full';
+const imagePath = `/assets/projects/${project.name}/${contentBlock.properties.data}`
+let size = imageSize('./public/' + imagePath);
 ---
-<div class="content-block">
-	<!-- style="<%= partial "partials/system/loading" %>" -->
-	<div 
-		id={"img-" + index}
-		class={"aspect-container" + borderClass}
-		data-width={image_size.width}
-		data-height={image_size.height}
-		data-first_padding={index == 0 ? 'true' : 'false'}
-		data-desc_padding={'desc' in properties ? 'true' : 'false'}
-		data-links_padding={links_exist && index == 0 ? 'true' : 'false'}
-	>
-		<img
-			class={"project-detail-image" + borderClass}
-			src={image_path}
-		>
-			<!-- onload="fadeIn(this)" -->
-
-		<MediaControls name={properties.data} path={image_path} desc={'desc' in properties}/>
-	</div>
-
-	{'desc' in properties && (
-		<p class="content-description textarea" data-target={"img-" + index} set:html={properties.desc}/>
-	)}
-</div>
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width={size.width}
+	height={size.height}
+>
+	<img
+		class={"project-detail-image" + borderClass}
+		src={imagePath}
+	/> <!-- onload="fadeIn(this)" -->
+	<MediaControls
+		name={contentBlock.properties.data}
+		path={imagePath}
+		desc={'desc' in contentBlock.properties}
+	/>
+</AspectRatioContentBlock>
