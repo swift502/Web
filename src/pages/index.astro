@@ -12,7 +12,7 @@ function getRandomInt(min, max)
 const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));
 
 // Set model path
-const modelIndex = getRandomInt(1, Object.keys(modelSettings).length);
+const modelIndex = getRandomInt(0, Object.keys(modelSettings).length - 1);
 const modelKey = Object.keys(modelSettings)[modelIndex];
 const modelPath = 'models/' + modelKey + '.glb';
 
@@ -23,7 +23,6 @@ const modelFov = modelSettings[modelKey].fov + 'deg';
 const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
 
 // Layout variables
-
 const pageInfo = {};
 pageInfo['title'] = 'Jan Bláha: 3D art and programming'
 pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
@@ -68,14 +67,16 @@ pageInfo['image'] = 'assets/social.jpg';
 	</div>
 </MainLayout>
 
-<script is:inline define:vars={{modelSettings, typewriterStrings}}>
+<script define:vars={{modelSettings, typewriterStrings}}>
 	// Expose astro data to client scripts
 	window.ASTRO_modelSettings = modelSettings;
 	window.ASTRO_typewriterStrings = typewriterStrings;
 </script>
-<script src="../javascripts/typewriter.js" />
 <script type="module" src="../javascripts/model-viewer.min.js"/>
-<script src="../javascripts/model-viewer-debug.js"/>
+<script>
+	import '../javascripts/typewriter.js';
+	import '../javascripts/model-viewer-debug.js';
+</script>
 
 <style>
 	.homepage {
