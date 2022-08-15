@@ -5,3 +5,4 @@
 - project titles in the project grid
 - rework 'onResize' and 'onScroll' event registration to use anonymous functions
 - try to implement the aspect ration component script into it's corresponding astro file
+- rework component folder structure, put generic components in top level folder
