@@ -8,4 +8,3 @@
 - rework component folder structure, put generic components in top level folder
 - remake model-settings into [ - name: 'abc' fov: 60 ] format
 - make fonts local
-- rename javascripts to scripts

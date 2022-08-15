@@ -3,21 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { extractYml } from '../scripts/utilities';
 import BigButton from '../components/core/BigButton.astro';
 
-function getRandomInt(min, max)
-{
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 // Get model settings
 const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));
-
-// Set model path
-const modelIndex = getRandomInt(0, Object.keys(modelSettings).length - 1);
-const modelKey = Object.keys(modelSettings)[modelIndex];
-const modelPath = 'models/' + modelKey + '.glb';
-
-// Set FOV
-const modelFov = modelSettings[modelKey].fov + 'deg';
 
 // Read typewriter strings
 const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
@@ -34,7 +21,6 @@ pageInfo['image'] = 'assets/social.jpg';
 		<h1 class="homepage-title">Jan Bláha</h1>
 		<div class="model-viewer-container">
 			<model-viewer
-				src={modelPath}
 				environment-image="/assets/env.hdr"
 				exposure="1.1"
 				autoplay
@@ -43,7 +29,6 @@ pageInfo['image'] = 'assets/social.jpg';
 				rotation-per-second="-5deg"
 				min-camera-orbit="auto 80deg auto"
 				max-camera-orbit="auto 80deg auto"
-				min-field-of-view={modelFov}
 				camera-controls
 				interaction-prompt="none"
 				disable-zoom
@@ -75,6 +60,7 @@ pageInfo['image'] = 'assets/social.jpg';
 <script type="module" src="../scripts/model-viewer.min.js"></script>
 <script>
 	import '../scripts/typewriter.js';
+	import '../scripts/model-viewer.js';
 	import '../scripts/model-viewer-debug.js';
 </script>
 
