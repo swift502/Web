@@ -7,7 +7,7 @@ import CBText from '../../components/content_blocks/CB_Text.astro';
 import CBVideo from '../../components/content_blocks/CB_Video.astro';
 import CBSketchfab from '../../components/content_blocks/CB_Sketchfab.astro';
 import CBYoutube from '../../components/content_blocks/CB_YouTube.astro';
-import { logError } from '../../javascripts/utilities';
+import { logError } from '../../scripts/utilities';
 
 // Dynamic routing
 export async function getStaticPaths() {
@@ -135,7 +135,7 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 </MainLayout>
 
 <script>
-	import '../../javascripts/project-detail.js';
+	import '../../scripts/project-detail.js';
 </script>
 
 <style is:global>
