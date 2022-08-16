@@ -1,4 +1,3 @@
-- loading
-- content
 - project titles in the project grid
+- content
 - github deployment
