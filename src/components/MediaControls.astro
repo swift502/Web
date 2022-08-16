@@ -2,10 +2,10 @@
 import '../styles/tiles.css';
 
 const {name, path, desc} = Astro.props;
-const description_class = desc ? ' has-description' : '';
+const descriptionClass = desc ? ' has-description' : '';
 ---
 
-<div class={"media-controls" + description_class}>
+<div class={"media-controls" + descriptionClass}>
 	<div class="link-row">
 		<div class="tile-wrapper">
 			<a download={name} href={path} target="_blank">

@@ -18,7 +18,8 @@ let size = imageSize('./public/' + imagePath);
 	<img
 		class={"project-detail-image" + borderClass}
 		src={imagePath}
-	/> <!-- onload="fadeIn(this)" -->
+		onload="fadeIn(this);"
+	/>
 	<MediaControls
 		name={contentBlock.properties.data}
 		path={imagePath}

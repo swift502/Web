@@ -5,9 +5,6 @@ import DummyProjectTile from '../components/DummyProjectTile.astro';
 import * as utilities from '../scripts/utilities';
 
 // Project grid
-// const data = await Astro.glob('../data/project-index.yml');
-// const projects = data[0]['default'];
-
 const projectsList = utilities.extractYml(await Astro.glob('../data/project-index.yml'));
 const projectsData = import.meta.glob('../data/projects/*.yml');
 

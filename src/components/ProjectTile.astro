@@ -3,20 +3,24 @@ const {projectName, projectData} = Astro.props
 ---
 <div class="tile-wrapper">
 	<a href={"/projects/" + projectName}>
-		<!-- style="<%= partial partials/system/loading %>" -->
 		<div class="project-tile">
 			<img
 				src={"/assets/projects/" + projectName + "/thumb.jpg"}
 				alt={projectName}
 				class="project-tile-image"
+				onload="fadeIn(this);"
 			/>
-				<!-- onload="fadeIn(this)" -->
+
 			{'badge' in projectData && (
 				<div class={`project-badge ${projectData.badge.toLowerCase()}`}>{projectData.badge}</div>
 			)}
 		</div>
 	</a>
 </div>
+
+<script>
+	fadeIn();
+</script>
 
 <style>
 	.project-tile {
@@ -29,12 +33,9 @@ const {projectName, projectData} = Astro.props
 		height: 231px;
 
 		background: #f0f0f0;
-		background-image: url('/assets/loading.png');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 100px;
-
-		/* border-radius: 30px; */
 	}
 
 	.project-tile::before {
@@ -56,7 +57,7 @@ const {projectName, projectData} = Astro.props
 	}
 
 	.project-tile-image {
-		/* display: none; */
+		display: none;
 		width: 320px;
 		height: 231px;
 	}
