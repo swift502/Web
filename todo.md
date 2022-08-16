@@ -3,4 +3,3 @@
 - github deployment
 - project tags
 - project titles in the project grid
-- make fonts local
