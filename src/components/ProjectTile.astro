@@ -1,19 +1,19 @@
 ---
-const {project_name} = Astro.props
+const {projectName, projectData} = Astro.props
 ---
 <div class="tile-wrapper">
-	<a href={"/projects/" + project_name}>
+	<a href={"/projects/" + projectName}>
 		<!-- style="<%= partial partials/system/loading %>" -->
 		<div class="project-tile">
 			<img
-				src={"/assets/projects/" + project_name + "/thumb.jpg"}
-				alt={project_name}
+				src={"/assets/projects/" + projectName + "/thumb.jpg"}
+				alt={projectName}
 				class="project-tile-image"
-				/>
+			/>
 				<!-- onload="fadeIn(this)" -->
-			<!-- <% if project.badge.present? %>
-				<div class="project-badge <%= project.badge.downcase %>"><%= project.badge %></div>
-			<% end %> -->
+			{'badge' in projectData && (
+				<div class={`project-badge ${projectData.badge.toLowerCase()}`}>{projectData.badge}</div>
+			)}
 		</div>
 	</a>
 </div>

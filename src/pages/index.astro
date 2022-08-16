@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { extractYml } from '../scripts/utilities';
 import BigButton from '../components/BigButton.astro';
+import { extractYml } from '../scripts/utilities';
 
 // Get model settings
 const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));

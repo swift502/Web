@@ -7,11 +7,11 @@ import CBText from '../../components/content_blocks/CB_Text.astro';
 import CBVideo from '../../components/content_blocks/CB_Video.astro';
 import CBSketchfab from '../../components/content_blocks/CB_Sketchfab.astro';
 import CBYoutube from '../../components/content_blocks/CB_YouTube.astro';
-import { logError } from '../../scripts/utilities';
+import * as utilities from '../../scripts/utilities';
 
 // Dynamic routing
 export async function getStaticPaths() {
-	const projectsList = (await Astro.glob('../../data/project-index.yml'))[0]["default"];
+	const projectsList = utilities.extractYml(await Astro.glob('../../data/project-index.yml'));
 	const projectsData = import.meta.glob('../../data/projects/*.yml');
 
 	let paths = [];
@@ -21,16 +21,18 @@ export async function getStaticPaths() {
 		const dataPath = '../../data/projects/' + projectName + '.yml';
 
 		if (!(dataPath in projectsData)) {
-			logError('Data file not found for project: "' + projectName + '".');
+			utilities.logError('Data file not found for project: "' + projectName + '".');
 			continue;
 		}
 
+		const projectData = await projectsData[dataPath]();
+
 		paths.push({
 			params: {
-				project: projectName,
+				project: projectName
 			},
 			props: {
-				projectData: await projectsData[dataPath]()
+				projectData: projectData
 			}
 		});
 	}
@@ -56,7 +58,7 @@ for (let i = 0; i < projectData.page.length; i++)
 	const CBProperties = projectData.page[i];
 	
 	if (!(CBProperties.type in componentLibrary)) {
-		logError('Unknown content block type: "' + CBProperties.type + '".');
+		utilities.logError('Unknown content block type: "' + CBProperties.type + '".');
 		continue;
 	}
 

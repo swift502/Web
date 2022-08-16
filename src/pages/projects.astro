@@ -2,12 +2,36 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectTile from '../components/ProjectTile.astro';
 import DummyProjectTile from '../components/DummyProjectTile.astro';
+import * as utilities from '../scripts/utilities';
 
 // Project grid
-const data = await Astro.glob('../data/project-index.yml');
-const projects = data[0]['default'];
+// const data = await Astro.glob('../data/project-index.yml');
+// const projects = data[0]['default'];
+
+const projectsList = utilities.extractYml(await Astro.glob('../data/project-index.yml'));
+const projectsData = import.meta.glob('../data/projects/*.yml');
+
+const projects = [];
+for (let i = 0; i < projectsList.length; i++)
+{
+	const projectName = projectsList[i];
+	const dataPath = '../data/projects/' + projectName + '.yml';
+
+	if (!(dataPath in projectsData)) {
+		utilities.logError('Data file not found for project: "' + projectName + '".');
+		continue;
+	}
+
+	const projectData = await projectsData[dataPath]();
+
+	projects.push({
+		'name': projectName,
+		'data': projectData
+	});
+};
+
 const columns = 3;
-const gaps = (columns - (projects.length % columns)) % columns;
+const gaps = (columns - (projectsList.length % columns)) % columns;
 
 // Layout variables
 const pageInfo = {};
@@ -18,11 +42,15 @@ pageInfo['image'] = 'assets/social.jpg';
 
 <MainLayout pageInfo={pageInfo}>
 	<div class="project-grid">
-		{projects.map(function(x, i){
-			return <ProjectTile project_name={x} />;
+		{projects.map((project) =>
+		{
+			return <ProjectTile
+				projectName={project.name}
+				projectData={project.data}
+			/>;
 		})}
 
-		{[...Array(gaps)].map((x, i) =>
+		{[...Array(gaps)].map(() =>
 			<DummyProjectTile />
 		)}
 	</div>
