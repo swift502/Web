@@ -1,11 +1,6 @@
 let aspectContainers = document.getElementsByClassName("aspect-container");
 let descs = document.getElementsByClassName("content-description");
 
-function onWindowResize()
-{
-	updateAspectContainers();
-}
-
 function updateAspectContainers()
 {
 	for (let i = 0; i < aspectContainers.length; i++)
@@ -53,6 +48,8 @@ function updateAspectContainers()
 	}
 }
 
-window.addEventListener('resize', onWindowResize);
-// window.addEventListener('load', onWindowResize);
+window.addEventListener('resize', () => {
+	updateAspectContainers();
+});
+
 updateAspectContainers();

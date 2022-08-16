@@ -1,7 +1,7 @@
 let touchDevice = ('ontouchstart' in document.documentElement);
 let prevScrollpos = window.pageYOffset;
 
-function scrollFunction()
+window.addEventListener('scroll', () =>
 {
 	let navbar = document.getElementById("navbar");
 
@@ -31,9 +31,7 @@ function scrollFunction()
 	{
 		navbar.classList.remove(navbarShadowClass);
 	}
-}
-
-window.addEventListener('scroll', scrollFunction);
+});
 
 if (window.navigator.userAgent.match(/(MSIE|Trident)/))
 {

@@ -134,9 +134,8 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 	</div>
 </MainLayout>
 
-<script>
-	import '../../scripts/project-detail.js';
-</script>
+<!-- Inline to instantly initialize all aspect containers -->
+<script is:inline src="../../scripts/project-detail.js"/>
 
 <style is:global>
 	.project-detail-wrapper {
