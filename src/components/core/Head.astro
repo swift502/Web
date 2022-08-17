@@ -1,0 +1,21 @@
+---
+import Analytics from "./Analytics.astro";
+
+const { pageInfo } = Astro.props;
+const pageImage = import.meta.env.SITE + pageInfo.image;
+---
+<meta charset="utf-8">
+
+<title>{pageInfo.title}</title>
+<meta name="description" content={pageInfo.description}>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta property="og:title" content={pageInfo.title}>
+<meta property="og:url" content={Astro.url}>
+<meta property="og:description" content={pageInfo.description}>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content={pageImage}>
+
+<script is:inline src="/scripts/global.js"/>
+
+<Analytics/>

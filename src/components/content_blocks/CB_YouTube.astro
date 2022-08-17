@@ -1,0 +1,20 @@
+---
+import AspectRatioContentBlock from "../AspectRatioContentBlock.astro";
+
+const {project, contentBlock} = Astro.props;
+
+const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
+const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
+---
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width={width}
+	height={height}
+>
+	<iframe
+		frameborder="0"
+		src={`https://www.youtube.com/embed/${contentBlock.properties.data}?rel=0`}
+		allowfullscreen
+	/>
+</AspectRatioContentBlock>

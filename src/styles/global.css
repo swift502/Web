@@ -1,0 +1,45 @@
+* {
+	font-family: 'Solway', serif;
+	font-size: 18px;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 900;
+}
+
+a {
+	color: #005896;
+	text-decoration: inherit;
+	font-weight: 700;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid #ccc;
+}
+
+.center {
+	text-align: center;
+}
+
+.content {
+	padding-top: 64px;
+	min-height: calc(100vh - 202px);
+	animation: fadeIn 0.1s ease-out;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translate(0px, -3px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}

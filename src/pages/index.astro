@@ -1,0 +1,167 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import BigButton from '../components/BigButton.astro';
+import { extractYml } from '../scripts/utilities';
+
+// Get model settings
+const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));
+
+// Read typewriter strings
+const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
+
+// Layout variables
+const pageInfo = {};
+pageInfo['title'] = 'Jan Bláha: 3D art and programming'
+pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
+pageInfo['image'] = 'assets/social.jpg';
+---
+
+<MainLayout pageInfo={pageInfo}>
+	<div class="homepage">
+		<h1 class="homepage-title">Jan Bláha</h1>
+		<div class="model-viewer-container">
+			<model-viewer
+				environment-image="/assets/env.hdr"
+				exposure="1.1"
+				autoplay
+				auto-rotate
+				auto-rotate-delay="0"
+				rotation-per-second="-5deg"
+				min-camera-orbit="auto 80deg auto"
+				max-camera-orbit="auto 80deg auto"
+				camera-controls
+				interaction-prompt="none"
+				disable-zoom
+				shadow-intensity="1"
+				shadow-softness="0.3">
+			</model-viewer>
+		</div>
+		<div class="homepage-info-panel">
+			<div class="typewriter-container">
+				<div id="typewriter-history"></div>
+				<div id="typewriter">_</div>
+			</div>
+			<div class="projects-button-wrapper">
+				<BigButton
+					text="View projects"
+					link="/projects"
+					icon="/assets/svg/folder-open.svg"
+				/>
+			</div>
+		</div>
+	</div>
+</MainLayout>
+
+<script define:vars={{modelSettings, typewriterStrings}}>
+	// Expose astro data to client scripts
+	window.ASTRO_modelSettings = modelSettings;
+	window.ASTRO_typewriterStrings = typewriterStrings;
+</script>
+<script type="module" src="../scripts/model-viewer.min.js"></script>
+<script>
+	import '../scripts/typewriter.js';
+	import '../scripts/model-viewer.js';
+	import '../scripts/model-viewer-debug.js';
+</script>
+
+<style>
+	.homepage {
+		position: relative;
+		min-height: 420px;
+		margin: auto;
+		height: calc(100vh - 227px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.homepage-title {
+		z-index: 10;
+		font-size: 60px;
+		text-align: center;
+		pointer-events: none;
+	}
+
+	.model-viewer-container {
+		position: absolute;
+		left: -260px;
+		top: 0;
+		width: calc(100% + 260px);
+		height: calc(100% + 161px);
+	}
+
+	model-viewer {
+		width: 100%;
+		height: 100%;
+		--progress-bar-height: 0px;
+	}
+
+	.homepage-info-panel {
+		height: 100%;
+		margin-left: 52%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	.projects-button-wrapper {
+		margin-top: 20px;
+	}
+</style>
+
+<style is:global>
+	.typewriter-container {
+		z-index: 10;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	#typewriter-history div,
+	#typewriter {
+		z-index: 10;
+		font-size: 30px;
+		white-space: nowrap;
+	}
+
+	#typewriter-history {
+		height: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	#model-debug-wrapper {
+		position: absolute;
+		width: 100%;
+		bottom: -70px;
+		pointer-events: none;
+		display: flex;
+		justify-content: center;
+		opacity: 0;
+		transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.0);
+	}
+
+	#model-debug-list {
+		display: flex;
+		padding: 5px 8px;
+		border-radius: 3px;
+		background: #0002;
+		border-radius: 500px;
+		/* border: 1px solid #0002; */
+	}
+
+	#model-debug-list div {
+		display: flex;
+		width: 28px;
+		height: 26px;
+		font-size: 17px;
+		border-radius: 500px;
+		justify-content: center;
+		align-items: center;
+		color: #333;
+		padding: 6px;
+		margin: 3px;
+		pointer-events: all;
+		cursor: pointer;
+	}
+</style>

@@ -1,0 +1,35 @@
+---
+import Head from '../components/core/Head.astro';
+import Navbar from '../components/core/Navbar.astro';
+import Footer from '../components/core/Footer.astro';
+
+import '@fontsource/catamaran/600.css';
+import '@fontsource/catamaran/900.css';
+import '@fontsource/solway/400.css';
+import '@fontsource/solway/500.css';
+import '@fontsource/solway/700.css';
+
+import '../styles/normalize.css';
+import '../styles/global.css';
+import '../styles/responsive.css';
+
+const { pageInfo } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<Head pageInfo={pageInfo} />
+</head>
+
+<body>
+	<Navbar />
+		<div class="content">
+			<slot />
+		</div>
+	<Footer />
+
+</body>
+
+</html>

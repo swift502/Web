@@ -1,0 +1,18 @@
+# Project index
+# Defines what tiles are displayed on the "projects" page
+# and in what order. Items listed here need to have a yml
+# data file with the same name in the data/projects/ folder.
+
+- dioramas
+- characters
+- sketchbook
+- woa
+- liberty-city
+- skoda
+- hogwarts
+- airportprg
+- chloe
+- liz
+- piano
+- karosa
+- paint-wars

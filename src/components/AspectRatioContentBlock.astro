@@ -1,0 +1,27 @@
+---
+const { project, contentBlock, width, height } = Astro.props;
+
+const containerId = "aspect-ratio-content-block-" + contentBlock.index;
+const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
+---
+<div class="content-block">
+	<div 
+		id={containerId}
+		class={"aspect-container" + borderClass}
+		data-width={width}
+		data-height={height}
+		data-first_padding={contentBlock.index == 0 ? 'true' : 'false'}
+		data-desc_padding={'desc' in contentBlock.properties ? 'true' : 'false'}
+		data-links_padding={project.hasLinks && contentBlock.index == 0 ? 'true' : 'false'}
+	>
+		<slot/>
+	</div>
+
+	{'desc' in contentBlock.properties && (
+		<p
+			class="content-description textarea"
+			data-target={containerId}
+			set:html={contentBlock.properties.desc}
+		/>
+	)}
+</div>

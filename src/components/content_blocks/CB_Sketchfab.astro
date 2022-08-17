@@ -1,0 +1,26 @@
+---
+import AspectRatioContentBlock from "../AspectRatioContentBlock.astro";
+
+const {project, contentBlock} = Astro.props;
+
+---
+
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width="16"
+	height="9"
+>
+	<div class="sketchfab-embed-wrapper">
+		<iframe
+			id={"sketchfab-" + contentBlock.index}
+			title="Sketchfab viewer"
+			frameborder="0"
+			allowfullscreen
+			allow="autoplay; fullscreen; xr-spatial-tracking"
+			xr-spatial-tracking
+			web-share
+			src={`https://sketchfab.com/models/${contentBlock.properties.data}/embed?camera=0`}>
+		</iframe>
+	</div>
+</AspectRatioContentBlock>

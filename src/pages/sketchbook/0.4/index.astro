@@ -1,0 +1,22 @@
+---
+import Analytics from "../../../components/core/Analytics.astro";
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sketchbook 0.4</title>
+	<meta name="robots" content="noindex">
+	<link rel="icon" href="../favicon.ico">
+	<Analytics/>
+</head>
+
+<body>
+	<script is:inline src="build/sketchbook.min.js"></script>
+	<script is:inline>
+		const world = new Sketchbook.World('build/assets/world.glb');
+	</script>
+</body>
+
+</html>

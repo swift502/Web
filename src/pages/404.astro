@@ -1,0 +1,130 @@
+---
+import BigButton from '../components/BigButton.astro';
+import Analytics from '../components/core/Analytics.astro';
+import '../styles/normalize.css';
+import '../styles/global.css';
+import '../styles/responsive.css';
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Page Not Found</title>
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<Analytics/>
+</head>
+<body>
+	<div class="pnf-content">
+		<model-viewer
+		src="/models/404.glb"
+		environment-image="/assets/env.hdr"
+		exposure="1.1"
+		autoplay
+		disable-zoom
+		min-camera-orbit="auto 80deg auto"
+		max-camera-orbit="auto 80deg auto"
+		camera-target="-0.47m 0.8m 0.08m"
+		shadow-intensity="1"
+		shadow-softness="0.3">
+		</model-viewer>
+	</div>
+	<div class="pnf-text-container">
+		<div class="pnf-title">404</div>
+		<div class="pnf-text">Page not found.</div>
+		<br>
+		<BigButton
+			text="Return home"
+			link="/"
+			icon="/assets/svg/home.svg"
+		/>
+	</div>
+	<script type="module" src="../scripts/model-viewer.min.js"></script>
+</body>
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Solway:wght@400;500;700&display=swap');
+
+	* {
+		font-family: 'Solway', serif;
+		font-size: 18px;
+	}
+
+	a {
+		text-decoration: inherit;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	.pnf-text-container {
+		position: absolute;
+		width: 77vw;
+		height: 88vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.pnf-title {
+		font-family: 'Catamaran', sans-serif;
+		font-weight: 600;
+		font-size: 240px;
+		color: #333;
+		line-height: 210px;
+	}
+
+	.pnf-text {
+		font-family: 'Catamaran', sans-serif;
+		font-weight: 600;
+		font-size: 30px;
+		color: #333;
+	}
+
+	.pnf-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	model-viewer {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media (min-width: 2101px) {
+		.pnf-title {
+			font-size: 320px;
+			line-height: 280px;
+		}
+
+		.pnf-text {
+			font-size: 40px;
+		}
+	}
+
+	@media (max-width: 776px) {
+		.pnf-content {
+			display: none;
+		}
+
+		.pnf-title {
+			font-size: 150px;
+			line-height: 140px;
+		}
+
+		.pnf-text-container {
+			width: 100vw;
+			height: 100vh;
+		}
+	}
+</style>

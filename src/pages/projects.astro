@@ -1,0 +1,64 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ProjectTile from '../components/ProjectTile.astro';
+import DummyProjectTile from '../components/DummyProjectTile.astro';
+import * as utilities from '../scripts/utilities';
+
+// Project grid
+const projectsList = utilities.extractYml(await Astro.glob('../data/project-index.yml'));
+const projectsData = import.meta.glob('../data/projects/*.yml');
+
+const projects = [];
+for (let i = 0; i < projectsList.length; i++)
+{
+	const projectName = projectsList[i];
+	const dataPath = '../data/projects/' + projectName + '.yml';
+
+	if (!(dataPath in projectsData)) {
+		utilities.logError('Data file not found for project: "' + projectName + '".');
+		continue;
+	}
+
+	const projectData = await projectsData[dataPath]();
+
+	projects.push({
+		'name': projectName,
+		'data': projectData
+	});
+};
+
+const columns = 3;
+const gaps = (columns - (projectsList.length % columns)) % columns;
+
+// Layout variables
+const pageInfo = {};
+pageInfo['title'] = 'Projects'
+pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
+pageInfo['image'] = 'assets/social.jpg';
+---
+
+<MainLayout pageInfo={pageInfo}>
+	<div class="project-grid">
+		{projects.map((project) =>
+		{
+			return <ProjectTile
+				projectName={project.name}
+				projectData={project.data}
+			/>;
+		})}
+
+		{[...Array(gaps)].map(() =>
+			<DummyProjectTile />
+		)}
+	</div>
+</MainLayout>
+
+<style>
+	.project-grid {
+		margin: 50px auto 20px;
+		max-width: 1140px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+</style>

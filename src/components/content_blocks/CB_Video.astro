@@ -1,0 +1,25 @@
+---
+import AspectRatioContentBlock from "../AspectRatioContentBlock.astro";
+import MediaControls from "../MediaControls.astro";
+
+const {project, contentBlock} = Astro.props;
+
+const videoPath = `/assets/projects/${project.name}/${contentBlock.properties.data}`;
+const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
+const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
+---
+<AspectRatioContentBlock
+	project={project}
+	contentBlock={contentBlock}
+	width={width}
+	height={height}
+>
+	<video autoplay muted loop>
+		<source src={videoPath} type="video/webm"/>
+	</video>
+	<MediaControls
+		name={contentBlock.properties.data}
+		path={videoPath}
+		desc={contentBlock.properties.desc}
+	/>
+</AspectRatioContentBlock>
