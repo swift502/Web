@@ -14,12 +14,6 @@ const {projectName, projectData} = Astro.props
 			{'badge' in projectData && (
 				<div class={`project-badge ${projectData.badge.toLowerCase()}`}>{projectData.badge}</div>
 			)}
-			
-			<!-- <div class="project-tile-description-wrapper">
-				<div class="project-tile-description">
-					{projectData.title}
-				</div>
-			</div> -->
 		</div>
 	</a>
 </div>
@@ -88,39 +82,4 @@ const {projectName, projectData} = Astro.props
 	.project-badge.blog {
 		background: #e0391bec;
 	}
-
-	/* .project-tile-description-wrapper {
-		z-index: 20;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		display:flex;
-		justify-content: center;
-	}
-
-	.project-tile-description {
-		position: relative;
-		white-space: nowrap;
-		border-radius: 5px;
-		padding: 0px 14px;
-		display: flex;
-		align-items: center;
-		
-		background: #fff;
-		color: #3330;
-		font-family: 'Catamaran', sans-serif;
-		font-weight: 800;
-
-		height: 0px;
-		bottom: -3px;
-		transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.0);
-	}
-
-	.project-tile:hover .project-tile-description {
-		height: 21px;
-		padding: 8px 14px;
-		color: #333;
-	} */
 </style>
