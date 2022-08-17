@@ -1,3 +1,3 @@
-- project titles in the project grid
+- fix responsivness
 - content
 - github deployment
