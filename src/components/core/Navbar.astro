@@ -1,5 +1,5 @@
 ---
-let tab = Astro.url.pathname.split('/')[1];
+let tab = Astro.url.pathname.split('/').at(-1);
 
 function tabHighlight(tabName: string)
 {

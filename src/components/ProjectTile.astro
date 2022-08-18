@@ -82,4 +82,21 @@ const {projectName, projectData} = Astro.props
 	.project-badge.blog {
 		background: #e0391bec;
 	}
+
+	@media (min-width: 2101px) {
+		.project-tile, .project-tile-image {
+			width: 360px;
+			height: 260px;
+		}
+
+		.project-tile:not(.inactive):hover::before {
+			box-shadow: inset 0 0 0 30px white;
+			border-radius: 35px;
+		}
+
+		.project-badge {
+			top: 20px;
+			left: 20px;
+		}
+	}
 </style>

@@ -32,3 +32,17 @@ const { pageInfo } = Astro.props;
 </body>
 
 </html>
+
+<style>
+	.content {
+		padding-top: 64px;
+		min-height: calc(100vh - 202px);
+		animation: fadeIn 0.1s ease-out;
+	}
+
+	@media (min-width: 2101px) {
+		.content {
+			min-height: calc(100vh - 227px);
+		}
+	}
+</style>

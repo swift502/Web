@@ -20,7 +20,7 @@ document.addEventListener('keypress', (event) => {
     
             let wrapper = document.createElement('div');
             wrapper.id = 'model-debug-wrapper';
-            document.querySelector('.homepage').appendChild(wrapper);
+            document.querySelector('.footer').appendChild(wrapper);
 
             let list = document.createElement('div');
             list.id = 'model-debug-list';
@@ -39,7 +39,7 @@ document.addEventListener('keypress', (event) => {
 
             setTimeout(() => {
                 wrapper.style.opacity = '1';
-                wrapper.style.bottom = '-50px';
+                wrapper.style.top = '-70px';
             }, 0);
         }
     }

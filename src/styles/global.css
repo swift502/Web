@@ -27,12 +27,6 @@ hr {
 	text-align: center;
 }
 
-.content {
-	padding-top: 64px;
-	min-height: calc(100vh - 202px);
-	animation: fadeIn 0.1s ease-out;
-}
-
 @keyframes fadeIn {
 	0% {
 		opacity: 0;

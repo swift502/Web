@@ -33,6 +33,7 @@ import '../../styles/tiles.css';
 
 <style>
 	.footer {
+		position: relative;
 		margin: 40px 0px;
 		pointer-events: none;
 	}
@@ -48,5 +49,20 @@ import '../../styles/tiles.css';
 	.footer .tile-icon img {
 		width: 28px;
 		height: 28px;
+	}
+
+	@media (min-width: 2101px) {
+		.footer {
+			margin: 50px 0;
+		}
+
+		.footer .tile-icon {
+			height: 31px;
+		}
+
+		.footer .tile-icon img {
+			width: 31px;
+			height: 31px;
+		}
 	}
 </style>

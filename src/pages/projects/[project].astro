@@ -144,12 +144,6 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 		margin: 30px auto;
 	}
 
-	@media (min-width: 2100px) {
-		.project-detail-wrapper {
-			max-width: 1200px;
-		}
-	}
-
 	.project-detail {
 		padding: 0 52px;
 		text-align: center;
@@ -192,6 +186,12 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 		border-radius: 4px;
 		margin: 0px 3px;
 	}
+
+	@media (min-width: 2101px) {
+		.project-detail-wrapper {
+			max-width: 1200px;
+		}
+	}
 </style>
 
 <style is:global>
@@ -219,5 +219,11 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 	.border-radius-full iframe,
 	.border-radius-full video {
 		border-radius: 5px;
+	}
+
+	@media (min-width: 2101px) {
+		p {
+			font-size: 20px;
+		}
 	}
 </style>

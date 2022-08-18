@@ -107,16 +107,14 @@ pageInfo['image'] = 'assets/social.jpg';
 	.projects-button-wrapper {
 		margin-top: 20px;
 	}
-</style>
 
-<style is:global>
 	.typewriter-container {
 		z-index: 10;
 		pointer-events: none;
 		user-select: none;
 	}
 
-	#typewriter-history div,
+	#typewriter-history :global(div),
 	#typewriter {
 		z-index: 10;
 		font-size: 30px;
@@ -129,11 +127,24 @@ pageInfo['image'] = 'assets/social.jpg';
 		flex-direction: column;
 		justify-content: flex-end;
 	}
+	
+	@media (min-width: 2101px) {
+		.homepage-info-panel {
+			margin-left: 53%;
+		}
 
+		.model-viewer-container {
+			left: -300px;
+			width: calc(100% + 300px);
+		}
+	}
+</style>
+
+<style is:global>
 	#model-debug-wrapper {
 		position: absolute;
 		width: 100%;
-		bottom: -70px;
+		top: -50px;
 		pointer-events: none;
 		display: flex;
 		justify-content: center;
@@ -147,7 +158,6 @@ pageInfo['image'] = 'assets/social.jpg';
 		border-radius: 3px;
 		background: #0002;
 		border-radius: 500px;
-		/* border: 1px solid #0002; */
 	}
 
 	#model-debug-list div {
