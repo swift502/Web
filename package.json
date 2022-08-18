@@ -9,6 +9,7 @@
     "@fontsource/solway": "^4.5.10",
     "@rollup/plugin-yaml": "^3.1.0",
     "astro": "^1.0.5",
-    "image-size": "^1.0.2"
+    "image-size": "^1.0.2",
+    "normalize.css": "^8.0.1"
   }
 }
