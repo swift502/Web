@@ -1,10 +1,12 @@
 ---
+import ContentBlock from './ContentBlock.astro';
+
 const { project, contentBlock, width, height } = Astro.props;
 
 const containerId = "aspect-ratio-content-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 ---
-<div class="content-block">
+<ContentBlock>
 	<div 
 		id={containerId}
 		class={"aspect-container" + borderClass}
@@ -24,4 +26,32 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 			set:html={contentBlock.properties.desc}
 		/>
 	)}
-</div>
+</ContentBlock>
+
+<style>
+	.aspect-container {
+		position: relative;
+		display: inline-block;
+		line-height: 0;
+		
+		background: #eee;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.aspect-container:hover :global(.media-controls)  {
+		opacity: 1;
+	}
+
+	.content-description {
+		margin-top: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: initial;
+	}
+
+	p {
+		margin: 0px 0px -5px;
+		top: -5px;
+	}
+</style>

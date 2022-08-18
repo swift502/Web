@@ -1,3 +1,3 @@
 - fix responsivness
-- content
 - github deployment
+- content

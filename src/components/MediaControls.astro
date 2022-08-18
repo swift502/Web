@@ -22,3 +22,31 @@ const descriptionClass = desc ? ' has-description' : '';
 		</div>
 	</div>
 </div>
+
+<style>
+	.media-controls {
+		position: absolute;
+		width: 100%;
+		bottom: 10px;
+
+		opacity: 0;
+		transition: opacity 0.5s ease;
+	}
+
+	.media-controls.has-description {
+		bottom: 15px;
+	}
+
+	.media-controls .tile {
+		padding: 12px 14px;
+	}
+
+	.media-controls .tile-icon {
+		height: 21px;
+	}
+
+	.media-controls .tile-icon img {
+		height: 21px;
+		width: 21px;
+	}
+</style>

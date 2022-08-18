@@ -138,7 +138,7 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 <!-- Inline to instantly initialize all aspect containers -->
 <script is:inline src="../../scripts/project-detail.js"/>
 
-<style is:global>
+<style>
 	.project-detail-wrapper {
 		max-width: 1000px;
 		margin: 30px auto;
@@ -156,103 +156,13 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 		min-height: calc(100vh - 366px);
 	}
 
-	.project-detail h1 {
+	h1 {
 		text-align: center;
-	}
-
-	.project-detail iframe, .project-detail video {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	.project-detail p {
-		padding: 22px 30px;
-		margin: 0px 0px -5px;
-		position: relative;
-		top: -5px;
-	}
-
-	.textarea {
-		color: #222;
-		background: #fff;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		line-height: normal;
-	}
-
-	.project-detail p {
-		text-align: left;
-	}
-
-	.project-detail .content-description {
-		margin-top: 0px;
-		margin-left: auto;
-		margin-right: auto;
-		line-height: initial;
-	}
-
-	.project-detail p.project-description {
-		margin-top: 0px;
-		margin-bottom: 20px;
-	}
-
-	.content-block {
-		margin: 30px auto;
-		line-height: 0;
-	}
-
-	.aspect-container {
-		position: relative;
-		display: inline-block;
-		line-height: 0;
-		
-		background: #eee;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
-	.project-detail-image {
-		display: none;
-		width: 100%;
-		height: 100%;
 	}
 
 	.back-to-projects-wrapper {
 		text-align: center;
 		margin: 44px 0px 50px;
-	}
-
-	.media-controls {
-		position: absolute;
-		width: 100%;
-		bottom: 10px;
-
-		opacity: 0;
-		transition: opacity 0.5s ease;
-	}
-
-	.media-controls.has-description {
-		bottom: 15px;
-	}
-
-	.aspect-container:hover .media-controls {
-		opacity: 1;
-	}
-
-	.media-controls .tile {
-		padding: 12px 14px;
-	}
-
-	.media-controls .tile-icon {
-		height: 21px;
-	}
-
-	.media-controls .tile-icon img {
-		height: 21px;
-		width: 21px;
 	}
 
 	.project-title {
@@ -281,6 +191,22 @@ pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
 		background: #f0f0f0;
 		border-radius: 4px;
 		margin: 0px 3px;
+	}
+</style>
+
+<style is:global>
+	p {
+		position: relative;
+		padding: 22px 30px;
+		text-align: left;
+	}
+
+	.textarea {
+		color: #222;
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		line-height: normal;
 	}
 
 	.border-radius-top,

@@ -1,6 +1,18 @@
 ---
+import ContentBlock from '../ContentBlock.astro';
+
 const {contentBlock} = Astro.props;
 ---
-<div class="content-block border-radius-full">
-	<p class="textarea">{contentBlock.properties.data}</p>
-</div>
+
+<ContentBlock>
+	<div class="text-block">
+		<p class="textarea">{contentBlock.properties.data}</p>
+	</div>
+</ContentBlock>
+
+<style>
+	.text-block {
+		display: flex;
+    	justify-content: center;
+	}
+</style>
