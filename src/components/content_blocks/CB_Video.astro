@@ -2,7 +2,7 @@
 import AspectRatioContentBlock from "../AspectRatioContentBlock.astro";
 import MediaControls from "../MediaControls.astro";
 
-const {project, contentBlock} = Astro.props;
+const { project, contentBlock } = Astro.props;
 
 const videoPath = `/assets/projects/${project.name}/${contentBlock.properties.data}`;
 const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
