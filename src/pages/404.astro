@@ -1,40 +1,41 @@
 ---
-import 'normalize.css';
-import '../styles/global.css';
-
 import BigButton from '../components/BigButton.astro';
 import Analytics from '../components/core/Analytics.astro';
+
+import '@fontsource/catamaran/600.css';
+import '@fontsource/solway/400.css';
+
+import 'normalize.css';
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-
 	<title>Page Not Found</title>
 	<meta name="robots" content="noindex">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-
 	<Analytics/>
 </head>
 <body>
-	<div class="pnf-content">
+	<div class="content">
 		<model-viewer
-		src="/models/404.glb"
-		environment-image="/assets/env.hdr"
-		exposure="1.1"
-		autoplay
-		disable-zoom
-		min-camera-orbit="auto 80deg auto"
-		max-camera-orbit="auto 80deg auto"
-		camera-target="-0.47m 0.8m 0.08m"
-		shadow-intensity="1"
-		shadow-softness="0.3">
+			src="/models/404.glb"
+			environment-image="/assets/env.hdr"
+			exposure="1.1"
+			autoplay
+			disable-zoom
+			min-camera-orbit="auto 80deg auto"
+			max-camera-orbit="auto 80deg auto"
+			camera-target="-0.47m 0.8m 0.08m"
+			shadow-intensity="1"
+			shadow-softness="0">
 		</model-viewer>
 	</div>
-	<div class="pnf-text-container">
-		<div class="pnf-title">404</div>
-		<div class="pnf-text">Page not found.</div>
+	<div class="text-container">
+		<div class="title">404</div>
+		<div class="text">Page not found.</div>
 		<BigButton
 			text="Return home"
 			link="/"
@@ -46,18 +47,7 @@ import Analytics from '../components/core/Analytics.astro';
 </html>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Solway:wght@400;500;700&display=swap');
-
-	/* a {
-		text-decoration: inherit;
-	} */
-
-	/* body {
-		margin: 0;
-		padding: 0;
-	} */
-
-	.pnf-text-container {
+	.text-container {
 		position: absolute;
 		width: 77vw;
 		height: 88vh;
@@ -67,7 +57,7 @@ import Analytics from '../components/core/Analytics.astro';
 		align-items: center;
 	}
 
-	.pnf-title {
+	.title {
 		font-family: 'Catamaran', sans-serif;
 		font-weight: 600;
 		font-size: 240px;
@@ -75,21 +65,21 @@ import Analytics from '../components/core/Analytics.astro';
 		line-height: 210px;
 	}
 
-	.pnf-text {
+	.text {
 		font-family: 'Catamaran', sans-serif;
 		font-weight: 600;
 		font-size: 30px;
 		color: #333;
-		margin-top: 10px;
-		margin-bottom: 40px;
+		margin-top: 0px;
+		margin-bottom: 30px;
 	}
 
-	.pnf-content {
+	.content {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100vw;
-		height: 100vh;
+		width: 100%;
+		height: 100%;
 	}
 
 	model-viewer {
@@ -97,30 +87,30 @@ import Analytics from '../components/core/Analytics.astro';
 		height: 100%;
 	}
 
-	@media (min-width: 2101px) {
-		.pnf-title {
-			font-size: 320px;
-			line-height: 280px;
-		}
-
-		.pnf-text {
-			font-size: 40px;
-		}
-	}
-
 	@media (max-width: 776px) {
-		.pnf-content {
+		.content {
 			display: none;
 		}
 
-		.pnf-title {
+		.title {
 			font-size: 150px;
 			line-height: 140px;
 		}
 
-		.pnf-text-container {
-			width: 100vw;
-			height: 100vh;
+		.text-container {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	@media (min-width: 2101px) {
+		.title {
+			font-size: 320px;
+			line-height: 280px;
+		}
+
+		.text {
+			font-size: 40px;
 		}
 	}
 </style>
