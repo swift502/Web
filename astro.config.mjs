@@ -5,7 +5,6 @@ import yaml from '@rollup/plugin-yaml';
 export default defineConfig(
 {
   site: 'https://jblaha.art',
-  base: '/dist',
   vite: {
     plugins: [yaml()]
   }
