@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectTile from '../components/ProjectTile.astro';
-import DummyProjectTile from '../components/DummyProjectTile.astro';
+import InactiveProjectTile from '../components/InactiveProjectTile.astro';
 import * as utilities from '../scripts/utilities';
 
 // Project grid
@@ -48,7 +48,7 @@ pageInfo['image'] = 'assets/social.jpg';
 		})}
 
 		{[...Array(gaps)].map(() =>
-			<DummyProjectTile />
+			<InactiveProjectTile/>
 		)}
 	</div>
 </MainLayout>
@@ -60,6 +60,14 @@ pageInfo['image'] = 'assets/social.jpg';
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+	}
+
+	@media (max-width: 776px) {
+		.project-grid {
+			margin: 0;
+			margin-top: 10px;
+			display: block;
+		}
 	}
 
 	@media (min-width: 2101px) {

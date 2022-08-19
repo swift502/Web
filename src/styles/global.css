@@ -37,3 +37,13 @@ hr {
 		transform: translate(0px, 0px);
 	}
 }
+
+@media (max-width: 776px) {
+	body {
+		min-width: 260px;
+	}
+
+	* {
+		font-size: 18px;
+	}
+}

@@ -83,6 +83,25 @@ const { projectName, projectData } = Astro.props
 		background: #e0391bec;
 	}
 
+	@media (max-width: 776px) {
+		.project-tile {
+			width: calc(100% - 20px);
+			padding: 0 10px;
+			max-width: 320px;
+			margin: -10px auto;
+			overflow: hidden;
+		}
+
+		.project-tile::before {
+			bottom: -10px;
+		}
+
+		.project-tile:hover::before {
+			box-shadow: inset 0px 0px 0px 20px white;
+			border-radius: 25px;
+		}
+	}
+
 	@media (min-width: 2101px) {
 		.project-tile, .project-tile-image {
 			width: 360px;

@@ -127,6 +127,34 @@ pageInfo['image'] = 'assets/social.jpg';
 		flex-direction: column;
 		justify-content: flex-end;
 	}
+
+	@media (max-width: 776px) {
+		.homepage {
+			display: block;
+			min-width: 0;
+			max-width: none;
+			min-height: 320px;
+			height: calc(100vh - 227px);
+		}
+
+		.homepage-title {
+			font-size: 56px;
+			margin-bottom: 0;
+		}
+
+		.model-viewer-container {
+			display: none;
+		}
+
+		.homepage-info-panel {
+			margin-left: 0px;
+			align-items: center;
+		}
+		
+		.typewriter-container {
+			width: 227px;
+		}
+	}
 	
 	@media (min-width: 2101px) {
 		.homepage-info-panel {

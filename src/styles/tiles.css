@@ -49,6 +49,12 @@
 	margin-left: 22px;
 }
 
+@media (max-width: 776px) {
+	.tile.link {
+		margin: 3px 6px;
+	}
+}
+
 @media (min-width: 2101px) {
 	.tile {
 		padding: 15px 16px;
