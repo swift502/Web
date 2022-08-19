@@ -1,8 +1,9 @@
 ---
-import BigButton from '../components/BigButton.astro';
-import Analytics from '../components/core/Analytics.astro';
 import 'normalize.css';
 import '../styles/global.css';
+
+import BigButton from '../components/BigButton.astro';
+import Analytics from '../components/core/Analytics.astro';
 ---
 
 <!DOCTYPE html>
@@ -34,7 +35,6 @@ import '../styles/global.css';
 	<div class="pnf-text-container">
 		<div class="pnf-title">404</div>
 		<div class="pnf-text">Page not found.</div>
-		<br>
 		<BigButton
 			text="Return home"
 			link="/"
@@ -48,19 +48,14 @@ import '../styles/global.css';
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Solway:wght@400;500;700&display=swap');
 
-	* {
-		font-family: 'Solway', serif;
-		font-size: 18px;
-	}
-
-	a {
+	/* a {
 		text-decoration: inherit;
-	}
+	} */
 
-	body {
+	/* body {
 		margin: 0;
 		padding: 0;
-	}
+	} */
 
 	.pnf-text-container {
 		position: absolute;
@@ -85,6 +80,8 @@ import '../styles/global.css';
 		font-weight: 600;
 		font-size: 30px;
 		color: #333;
+		margin-top: 10px;
+		margin-bottom: 40px;
 	}
 
 	.pnf-content {

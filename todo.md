@@ -1,3 +1,3 @@
-- fix responsivness
+- refactor 404
 - github deployment
 - content
