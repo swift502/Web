@@ -1,0 +1,12 @@
+title: Icon generator
+description: Simple python program that generates icons from a source svg file.
+tags:
+  - 2021
+  - Python
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/ucupaint-icons
+page:
+  - type: image
+    data: thumb.jpg
+    desc: Simple python program that generates icons from a source svg file.

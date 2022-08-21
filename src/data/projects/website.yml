@@ -1,0 +1,13 @@
+title: This website
+description: Simple python program that generates icons from a source svg file.
+tags:
+  - 2022
+  - HTML
+  - CSS
+  - JavaScript
+  - Middleman
+  - Astro
+page:
+  - type: image
+    data: thumb.jpg
+    desc: Simple python program that generates icons from a source svg file.

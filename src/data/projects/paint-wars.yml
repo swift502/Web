@@ -7,7 +7,6 @@ tags:
 links:
   - title: GitHub page
     link: https://github.com/swift502/PaintWars
-    icon: github.svg
 page:
   - type: video
     data: paint_wars.webm
