@@ -1,7 +1,21 @@
 ---
+import { logError } from "../../scripts/utilities";
 import AspectRatioContentBlock from "../AspectRatioContentBlock.astro";
 
 const { project, contentBlock } = Astro.props;
+
+const id = "sketchfab-" + contentBlock.index;
+let source;
+
+if ('model' in contentBlock.properties) {
+	source = `https://sketchfab.com/models/${contentBlock.properties.model}/embed`;
+}
+else if ('collection' in contentBlock.properties) {
+	source = `https://sketchfab.com/playlists/embed?collection=${contentBlock.properties.collection}`;
+}
+else {
+	logError(`Source was not defined for content block "${id}"`);
+}
 
 ---
 
@@ -13,15 +27,17 @@ const { project, contentBlock } = Astro.props;
 >
 	<div class="sketchfab-embed-wrapper">
 		<iframe
-			id={"sketchfab-" + contentBlock.index}
+			src={source}
+			id={id}
 			title="Sketchfab viewer"
 			frameborder="0"
 			allowfullscreen
 			allow="autoplay; fullscreen; xr-spatial-tracking"
 			xr-spatial-tracking
+			execution-while-out-of-viewport
+			execution-while-not-rendered
 			web-share
-			src={`https://sketchfab.com/models/${contentBlock.properties.data}/embed?camera=0`}>
-		</iframe>
+		/>
 	</div>
 </AspectRatioContentBlock>
 
