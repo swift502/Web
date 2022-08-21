@@ -1,4 +1,4 @@
-title: This website
+title: Astro framework rewrite
 description: Looking back at the history of this website.
 tags:
   - 2022
@@ -12,7 +12,7 @@ links:
 page:
   - type: image
     data: v1.png
-    desc: It all started when I realized  I needed a place to host the demos of my <a href="/projects/sketchbook">Sketchbook</a> project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos. And that's what the first version of this website was. Nothing special, just plain HTML and CSS with links to all the demo versions of Sketchbook.
+    desc: Back in 2020, I realized  I needed a place to host the demos of my <a href="/projects/sketchbook">Sketchbook</a> project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos. And that's what the first version of this website was. Nothing special, just plain HTML and CSS with links to all the demo versions of Sketchbook.
   - type: image
     data: v2.png
     desc: As time went on, the number of projects I wanted to showcase in different ways grew. And so I decided to rebuild the Sketchbook demo archive into a full website which would allow me to showcase all of the different kinds of projects I involve myself in, be it graphics, programming, or video creation.
