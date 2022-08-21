@@ -10,10 +10,8 @@ tags:
 links:
   - title: Google Play
     link: https://play.google.com/store/apps/details?id=com.haugland.woa
-    icon: google-play.svg
   - title: App Store
     link: https://apps.apple.com/app/id1462642534
-    icon: app-store.svg
 page:
   - type: image
     data: woa_1.jpg
@@ -22,11 +20,11 @@ page:
     data: woa_2.jpg
   - type: image
     data: woa_3.jpg
-    desc: The in-game hangar allows users to view all of their airplanes up close.
   - type: image
     data: woa_4.jpg
+    desc: An optimized billboard shader was applied on all of the small light sources, using UV data to locate each of the light's position in 3D space, enabling render batching and saving performance.
   - type: image
     data: woa_5.jpg
   - type: image
     data: woa_6.jpg
-    desc: Featuring a full day-night cycle, I created a custom post-processing pipeline allowing for mobile friendly night lighting. An optimized billboard shader was applied on all of the small light sources, using UV data to locate each of the light's position in 3D space, enabling render batching and saving performance.
+    desc: Featuring a full day-night cycle, I created a custom post-processing pipeline allowing for mobile friendly night lighting.

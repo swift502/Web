@@ -1,0 +1,18 @@
+title: Octarr
+description: Octree based system to facilitate an endless 3D array.
+tags:
+  - 2021
+  - C#
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/Octarr
+page:
+  - type: video
+    data: octarr.webm
+    desc: Octarr is an endless 3D array system based on an octree. While working on a Godot project, I needed a way to easily store voxels in an otherwise polygonal world. This seemed like an interesting solution and an opportunity to understand how octrees work.
+  - type: youtube
+    data: E7m61IGjSDc
+    desc: Soon enough I had a working iteration and could place voxel blocks in the world. The green lines show used octree nodes. Unlike multidimensional or jagged arrays, Octarr is memory friendly. You can write a data block at the 2^64 coordinate and not run out of memory. That was the main obstacle which I managed to overcome using this system.
+  - type: youtube
+    data: szhJG3i_F4Q
+    desc: To find a block placed at a 2^64 coordinate it takes roughly 64 octree node lookups (logarithmic complexity). A block placed that far begins to cause floating point precision errors in the debug rendering.

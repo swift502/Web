@@ -3,7 +3,10 @@
 # and in what order. Items listed here need to have a yml
 # data file with the same name in the data/projects/ folder.
 
+- website
+- milestone
 - dioramas
+- octarr
 - characters
 - sketchbook
 - woa

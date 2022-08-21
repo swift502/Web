@@ -8,13 +8,10 @@ tags:
 links:
   - title: Latest demo
     link: /sketchbook/latest
-    icon: play.svg
   - title: Demo archive
     link: /sketchbook
-    icon: history.svg
   - title: GitHub page
     link: https://github.com/swift502/Sketchbook
-    icon: github.svg
 page:
   - type: image
     data: sketchbook_1.jpg
