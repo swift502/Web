@@ -65,14 +65,18 @@ const { projectName, projectData } = Astro.props
 		display: none;
 		width: 320px;
 		height: 200px;
+		border-radius: 4px 4px 0px 0px;
 	}
 
 	.project-title {
+		position: relative;
 		font-family: 'Catamaran', sans-serif;
 		height: 23px;
 		margin: 12px 12px 0px;
 		color: #333;
 		font-size: 20px;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 
 	.project-tags {
@@ -83,7 +87,8 @@ const { projectName, projectData } = Astro.props
 		overflow: hidden;
 	}
 
-	.project-tags::before {
+	.project-tags::before,
+	.project-title::before {
 		content: "";
 		position: absolute;
 		z-index: 10;
