@@ -5,10 +5,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^1.0.0",
     "@fontsource/catamaran": "^4.5.8",
     "@fontsource/solway": "^4.5.10",
     "@rollup/plugin-yaml": "^3.1.0",
-    "astro": "^1.0.5",
+    "astro": "^1.0.6",
     "image-size": "^1.0.2",
     "normalize.css": "^8.0.1"
   }
