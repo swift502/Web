@@ -49,6 +49,7 @@ const { projectName, projectData } = Astro.props
 		
 		box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 		transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		transition-property: border, box-shadow;
 	}
 
 	.project-tile:hover {
@@ -134,8 +135,6 @@ const { projectName, projectData } = Astro.props
 		font-size: 14px;
 		border-radius: 5px;
 		margin: 0px 2px;
-
-		transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.0);
 	}
 
 	.badge.commercial {
@@ -144,37 +143,18 @@ const { projectName, projectData } = Astro.props
 
 	@media (max-width: 776px) {
 		.project-tile {
-			width: calc(100% - 20px);
-			padding: 0 10px;
-			max-width: 320px;
-			margin: -10px auto;
-			overflow: hidden;
-		}
-
-		.project-tile::before {
-			bottom: -10px;
-		}
-
-		.project-tile:hover::before {
-			box-shadow: inset 0px 0px 0px 20px white;
-			border-radius: 25px;
+			margin: 20px auto;
 		}
 	}
 
 	@media (min-width: 2101px) {
-		.project-tile, .project-tile-image {
+		.project-tile {
 			width: 360px;
-			height: 260px;
 		}
 
-		.project-tile:not(.inactive):hover::before {
-			box-shadow: inset 0 0 0 30px white;
-			border-radius: 35px;
-		}
-
-		.project-badge {
-			top: 20px;
-			left: 20px;
+		.project-image-frame, .project-image {
+			width: 360px;
+			height: 225px;
 		}
 	}
 </style>
