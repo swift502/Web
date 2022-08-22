@@ -57,13 +57,13 @@ if (window.navigator.userAgent.match(/(MSIE|Trident)/))
 function fadeIn(elemenet)
 {
 	elemenet.style.opacity = 1;
-	elemenet.style.animation = 'fadeIn 0.5s ease-out';
+	elemenet.style.animation = 'fadeIn 0.2s ease-out';
 }
 
 function fadeInMoving(elemenet)
 {
 	elemenet.style.opacity = 1;
-	elemenet.style.animation = 'fadeInMoving 0.5s ease-out';
+	elemenet.style.animation = 'fadeInMoving 0.2s ease-out';
 }
 
 document.fonts.ready.then(() =>

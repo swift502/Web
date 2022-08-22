@@ -19,7 +19,6 @@ const { projectName, projectData } = Astro.props
 				return <span class="tag">{tag}</span>;
 			})}
 		</div>
-
 		{'badge' in projectData && (
 			<Fragment>
 				<div class="project-badges">
@@ -114,6 +113,7 @@ const { projectName, projectData } = Astro.props
 		margin: 0px 3px;
 
 		transition: all 0.2s ease;
+		transition-property: color, background;
 	}
 
 	.project-tile:hover .tag {
