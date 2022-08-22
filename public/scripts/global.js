@@ -38,18 +38,42 @@ if (window.navigator.userAgent.match(/(MSIE|Trident)/))
 	alert("You seem to be using an outdated web browser and the website may not display correctly. Please view this website in a modern web browser for it to display as intended.");
 }
 
-function fadeIn(el)
-{
-	el.style.opacity = 0;
-	el.style.display = "block";
+// function fadeIn(el)
+// {
+// 	el.style.opacity = 0;
+// 	el.style.display = "block";
 
-	(function fade()
-	{
-		let val = parseFloat(el.style.opacity);
-		if (!((val += .1) > 1))
-		{
-			el.style.opacity = val;
-			requestAnimationFrame(fade);
-		} else { el.style.opacity = 1; }
-	})();
+// 	(function fade()
+// 	{
+// 		let val = parseFloat(el.style.opacity);
+// 		if (!((val += .1) > 1))
+// 		{
+// 			el.style.opacity = val;
+// 			requestAnimationFrame(fade);
+// 		} else { el.style.opacity = 1; }
+// 	})();
+// }
+
+function fadeIn(elemenet)
+{
+	elemenet.style.opacity = 1;
+	elemenet.style.animation = 'fadeIn 0.5s ease-out';
 }
+
+function fadeInMoving(elemenet)
+{
+	elemenet.style.opacity = 1;
+	elemenet.style.animation = 'fadeInMoving 0.5s ease-out';
+}
+
+document.fonts.ready.then(() =>
+{
+	fadeInMoving(document.querySelector('body'));
+});
+
+// document.fonts.ready.then(function () {
+// 	const body = document.querySelector('body');
+// 	body.style.opacity = 1;
+// 	body.style.animation = 'fadeIn 0.5s ease-out';
+// });
+  

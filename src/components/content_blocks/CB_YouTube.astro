@@ -16,11 +16,13 @@ const height = 'height' in contentBlock.properties ? contentBlock.properties.hei
 		frameborder="0"
 		src={`https://www.youtube.com/embed/${contentBlock.properties.data}?rel=0`}
 		allowfullscreen
+		onload="fadeIn(this);"
 	/>
 </AspectRatioContentBlock>
 
 <style>
 	iframe {
+		opacity: 0;
 		position: absolute;
 		top: 0;
 		left: 0;
