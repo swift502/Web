@@ -1,9 +1,9 @@
 ---
 const { project, contentBlock } = Astro.props;
 
-import MediaControls from '../MediaControls.astro';
+import MediaControls from '../project_detail/MediaControls.astro';
 import { imageSize } from 'image-size';
-import AspectRatioContentBlock from '../AspectRatioContentBlock.astro';
+import AspectRatioContentBlock from '../project_detail/AspectRatioContentBlock.astro';
 
 const borderClass = contentBlock.properties.desc ? ' border-radius-top' : ' border-radius-full';
 const imagePath = `/assets/projects/${project.name}/${contentBlock.properties.data}`
