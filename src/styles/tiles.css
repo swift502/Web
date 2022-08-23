@@ -23,11 +23,11 @@
 
 .link-row {
 	position: relative;
-	text-align: center;
+	display: flex;
+	justify-content: center;
 }
 
 .link-row .tile-wrapper {
-	display: inline-block;
 	margin: 0 5px;
 }
 
