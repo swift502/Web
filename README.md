@@ -4,7 +4,7 @@ Personal website built with [Astro](https://astro.build/).
 
 ## Features
 
-- using the [\<model-viewer\>](https://github.com/google/model-viewer/tree/master/packages/model-viewer) component to display 3D models
+- using the [\<model-viewer\>](https://modelviewer.dev/) component to display 3D models
 - pages are generated from YAML project definition files
 - custom aspect ratio container component inspired by ArtStation image rendering, which maximizes it's size while maintaining it's aspect ratio and ensuring it's always fully contained within the screen
 
