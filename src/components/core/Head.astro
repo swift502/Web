@@ -3,14 +3,18 @@ import Analytics from "./Analytics.astro";
 
 const { pageInfo } = Astro.props;
 const pageImage = import.meta.env.SITE + pageInfo.image;
+
+let pageTitle = 'Jan Bláha';
+if ('titlePrepend' in pageInfo) pageTitle = `${pageInfo['titlePrepend']} - ${pageTitle}`;
+if ('titleAppend' in pageInfo) pageTitle = `${pageTitle} - ${pageInfo['titleAppend']}`;
 ---
 <meta charset="utf-8">
 
-<title>{"Jan Bláha - " + pageInfo.title}</title>
+<title>{pageTitle}</title>
 <meta name="description" content={pageInfo.description}>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta property="og:title" content={pageInfo.title}>
+<meta property="og:title" content={pageTitle}>
 <meta property="og:url" content={Astro.url}>
 <meta property="og:description" content={pageInfo.description}>
 <meta property="og:type" content="website"/>
