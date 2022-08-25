@@ -15,4 +15,4 @@ page:
     desc: Soon enough I had a working iteration and could place voxel blocks in the world. The green lines show used octree nodes. Unlike multidimensional or jagged arrays, Octarr is memory friendly. You can write a data block at the 2^64 coordinate and not run out of memory. That was the main obstacle which I managed to overcome using this system.
   - type: youtube
     data: szhJG3i_F4Q
-    desc: To find a block placed at a 2^64 coordinate it takes roughly 64 octree node lookups (logarithmic complexity). A block placed that far begins to cause floating point precision errors in the debug rendering.
+    desc: To find a block placed at a 2^64 coordinate it takes roughly 64 octree node lookups (logarithmic complexity). A block placed that far begins to cause floating point precision errors in the debug rendering.<br><br>Feel free to check out the project's repository <a href="https://github.com/swift502/Octarr">on GitHub</a>!
