@@ -3,7 +3,7 @@
  */
 export function logError(message)
 {
-    console.error(`\u001b[91m${message}\u001b[0m`);
+	console.error(`\u001b[91m${message}\u001b[0m`);
 }
 
 /**
@@ -11,15 +11,14 @@ export function logError(message)
  */
 export function extractYml(glob)
 {
-    return glob[0]['default'];
+	return glob[0]['default'];
 }
 
 /**
  * This function:
  * - executes the async data reading functions obtained by globbing many data files
- * - creates an ordered name:data dictionary matching the order found in the project index
- * - prints a human readable error in case an indexed project has no corresponding data
  * - provides a callback which executes while iterating over individual projects
+ * - prints a human readable error in case an indexed project has no corresponding data
  */
 export async function forEachProject(projectCallback)
 {
@@ -42,8 +41,8 @@ export async function forEachProject(projectCallback)
 			continue;
 		}
 
-        const projectData = await projectsData[dataPath]();
+		const projectData = await projectsData[dataPath]();
 
-        projectCallback(projectName, projectData);
-    }
+		projectCallback(projectName, projectData);
+	}
 }
