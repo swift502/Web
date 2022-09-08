@@ -1,24 +1,19 @@
 ---
-let tab = Astro.url.pathname.split('/').at(-1);
+const { pageInfo } = Astro.props;
+const tab = pageInfo.tab;
 
 function tabHighlight(tabName: string)
 {
 	if (tab == tabName) return ' highlighted';
 	else return '';
 }
-
-function tabClasses(tabName: string)
-{
-	return 'navigation-item' + tabHighlight(tabName);
-}
 ---
-
 <div id="navbar" class="navbar">
 	<div class="navigation">
-		<a href="/" class={tabClasses("")}>
+		<a href="/" class={'navigation-item' + tabHighlight('home')}>
 			Home
 		</a>
-		<a href="/projects" class={tabClasses("projects")}>
+		<a href="/projects" class={'navigation-item' + tabHighlight('projects')}>
 			Projects
 		</a>
 	</div>
