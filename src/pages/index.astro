@@ -13,7 +13,6 @@ const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-string
 const pageInfo = {};
 pageInfo['titleAppend'] = '3D art and programming'
 pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
-pageInfo['image'] = 'assets/social.jpg';
 pageInfo['tab'] = 'home';
 ---
 
@@ -34,8 +33,8 @@ pageInfo['tab'] = 'home';
 				interaction-prompt="none"
 				disable-zoom
 				shadow-intensity="1"
-				shadow-softness="0">
-			</model-viewer>
+				shadow-softness="0"
+			/>
 		</div>
 		<div class="homepage-info-panel">
 			<div class="typewriter-container">

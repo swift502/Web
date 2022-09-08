@@ -2,10 +2,10 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectTile from '../components/projects/ProjectTile.astro';
 import InactiveProjectTile from '../components/projects/InactiveProjectTile.astro';
-import * as utilities from '../scripts/utilities';
+import * as Utilities from '../scripts/utilities';
 
 // Project grid
-const projectsList = utilities.extractYml(await Astro.glob('../data/project-index.yml'));
+const projectsList = Utilities.extractYml(await Astro.glob('../data/project-index.yml'));
 const projectsData = import.meta.glob('../data/projects/*.yml');
 
 const projects = [];
@@ -15,7 +15,7 @@ for (let i = 0; i < projectsList.length; i++)
 	const dataPath = '../data/projects/' + projectName + '.yml';
 
 	if (!(dataPath in projectsData)) {
-		utilities.logError('Data file not found for project: "' + projectName + '".');
+		Utilities.logError('Data file not found for project: "' + projectName + '".');
 		continue;
 	}
 
@@ -34,7 +34,6 @@ const gaps = (columns - (projectsList.length % columns)) % columns;
 const pageInfo = {};
 pageInfo['titlePrepend'] = 'Projects'
 pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
-pageInfo['image'] = 'assets/social.jpg';
 pageInfo['tab'] = 'projects';
 ---
 

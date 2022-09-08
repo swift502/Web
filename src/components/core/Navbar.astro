@@ -1,10 +1,9 @@
 ---
 const { pageInfo } = Astro.props;
-const tab = pageInfo.tab;
 
 function tabHighlight(tabName: string)
 {
-	if (tab == tabName) return ' highlighted';
+	if (pageInfo.tab == tabName) return ' highlighted';
 	else return '';
 }
 ---

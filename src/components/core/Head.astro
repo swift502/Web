@@ -2,11 +2,13 @@
 import Analytics from "./Analytics.astro";
 
 const { pageInfo } = Astro.props;
-const pageImage = import.meta.env.SITE + pageInfo.image;
 
 let pageTitle = 'Jan Bláha';
 if ('titlePrepend' in pageInfo) pageTitle = `${pageInfo['titlePrepend']} - ${pageTitle}`;
 if ('titleAppend' in pageInfo) pageTitle = `${pageTitle} - ${pageInfo['titleAppend']}`;
+
+let pageImageSource = pageInfo.image ?? 'assets/social.jpg';
+const pageImage = import.meta.env.SITE + pageImageSource;
 ---
 
 <meta charset="utf-8">

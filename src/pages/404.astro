@@ -11,40 +11,40 @@ import '../styles/global.css';
 
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Page Not Found</title>
-	<meta name="robots" content="noindex">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<Analytics/>
-	<script is:inline src="/scripts/global.js" />
-</head>
-<body>
-	<div class="content">
-		<model-viewer
-			src="/models/404.glb"
-			environment-image="/assets/env.hdr"
-			exposure="1.1"
-			autoplay
-			disable-zoom
-			min-camera-orbit="auto 80deg auto"
-			max-camera-orbit="auto 80deg auto"
-			camera-target="-0.47m 0.8m 0.08m"
-			shadow-intensity="1"
-			shadow-softness="0">
-		</model-viewer>
-	</div>
-	<div class="text-container">
-		<div class="title">404</div>
-		<div class="text">Page not found.</div>
-		<BigButton
-			text="Return home"
-			link="/"
-			icon="/assets/svg/home.svg"
-		/>
-	</div>
-	<script type="module" src="/scripts/model-viewer.min.js" />
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>Page Not Found</title>
+		<meta name="robots" content="noindex">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<Analytics/>
+		<script is:inline src="/scripts/global.js" />
+	</head>
+	<body>
+		<div class="content">
+			<model-viewer
+				src="/models/404.glb"
+				environment-image="/assets/env.hdr"
+				exposure="1.1"
+				autoplay
+				disable-zoom
+				min-camera-orbit="auto 80deg auto"
+				max-camera-orbit="auto 80deg auto"
+				camera-target="-0.47m 0.8m 0.08m"
+				shadow-intensity="1"
+				shadow-softness="0"
+			/>
+		</div>
+		<div class="text-container">
+			<div class="title">404</div>
+			<div class="text">Page not found.</div>
+			<BigButton
+				text="Return home"
+				link="/"
+				icon="/assets/svg/home.svg"
+			/>
+		</div>
+		<script type="module" src="/scripts/model-viewer.min.js" />
+	</body>
 </html>
 
 <style>
