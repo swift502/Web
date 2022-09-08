@@ -7,3 +7,28 @@ export function extractYml(glob)
 {
     return glob[0]['default'];
 }
+
+/**
+ * This function:
+ * - executes the async data reading functions obtained by globbing many data files
+ * - creates an ordered name:data dictionary matching the order found in the project index
+ * - prints a human readable error in case an indexed project has no corresponding data
+ * - provides a callback which executes while iterating over individual projects
+ */
+export async function forEachProject(projectsList, projectsData, projectCallback)
+{
+	for (let i = 0; i < projectsList.length; i++)
+	{
+		const projectName = projectsList[i];
+		const dataPath = '/src/data/projects/' + projectName + '.yml';
+
+		if (!(dataPath in projectsData)) {
+			logError('Data file not found for project: "' + projectName + '".');
+			continue;
+		}
+
+        const projectData = await projectsData[dataPath]();
+
+        projectCallback(projectName, projectData);
+    }
+}

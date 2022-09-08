@@ -4,10 +4,10 @@ import BigButton from '../components/core/BigButton.astro';
 import { extractYml } from '../scripts/utilities';
 
 // Get model settings
-const modelSettings = extractYml(await Astro.glob('../data/model-settings.yml'));
+const modelSettings = extractYml(await Astro.glob('/src/data/model-settings.yml'));
 
 // Read typewriter strings
-const typewriterStrings = extractYml(await Astro.glob('../data/typewriter-strings.yml'));
+const typewriterStrings = extractYml(await Astro.glob('/src/data/typewriter-strings.yml'));
 
 // Layout variables
 const pageInfo = {};

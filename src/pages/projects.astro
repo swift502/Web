@@ -5,27 +5,16 @@ import InactiveProjectTile from '../components/projects/InactiveProjectTile.astr
 import * as Utilities from '../scripts/utilities';
 
 // Project grid
-const projectsList = Utilities.extractYml(await Astro.glob('../data/project-index.yml'));
-const projectsData = import.meta.glob('../data/projects/*.yml');
+const projectsList = Utilities.extractYml(await Astro.glob('/src/data/project-index.yml'));
+const projectsData = import.meta.glob('/src/data/projects/*.yml');
 
 const projects = [];
-for (let i = 0; i < projectsList.length; i++)
-{
-	const projectName = projectsList[i];
-	const dataPath = '../data/projects/' + projectName + '.yml';
-
-	if (!(dataPath in projectsData)) {
-		Utilities.logError('Data file not found for project: "' + projectName + '".');
-		continue;
-	}
-
-	const projectData = await projectsData[dataPath]();
-
+await Utilities.forEachProject(projectsList, projectsData, (projectName, projectData) => {
 	projects.push({
 		'name': projectName,
 		'data': projectData
 	});
-};
+});
 
 const columns = 3;
 const gaps = (columns - (projectsList.length % columns)) % columns;
