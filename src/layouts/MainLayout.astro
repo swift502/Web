@@ -17,19 +17,16 @@ const { pageInfo } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<Head pageInfo={pageInfo} />
-</head>
-
-<body>
-	<Navbar pageInfo={pageInfo} />
+	<head>
+		<Head pageInfo={pageInfo} />
+	</head>
+	<body>
+		<Navbar pageInfo={pageInfo} />
 		<div class="content">
 			<slot />
 		</div>
-	<Footer />
-</body>
-
+		<Footer />
+	</body>
 </html>
 
 <style>
