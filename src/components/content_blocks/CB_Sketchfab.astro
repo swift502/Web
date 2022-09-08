@@ -7,16 +7,18 @@ const { project, contentBlock } = Astro.props;
 const id = "sketchfab-" + contentBlock.index;
 let source;
 
-if ('model' in contentBlock.properties) {
+if ('model' in contentBlock.properties)
+{
 	source = `https://sketchfab.com/models/${contentBlock.properties.model}/embed`;
 }
-else if ('collection' in contentBlock.properties) {
+else if ('collection' in contentBlock.properties)
+{
 	source = `https://sketchfab.com/playlists/embed?collection=${contentBlock.properties.collection}`;
 }
-else {
+else
+{
 	logError(`Source was not defined for content block "${id}"`);
 }
-
 ---
 
 <AspectRatioContentBlock

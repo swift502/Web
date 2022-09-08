@@ -6,6 +6,7 @@ const { project, contentBlock, width, height } = Astro.props;
 const containerId = "aspect-ratio-content-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 ---
+
 <ContentBlock>
 	<div 
 		id={containerId}
