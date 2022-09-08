@@ -10,11 +10,8 @@ import * as Utilities from '../../scripts/utilities';
 
 // Dynamic routing
 export async function getStaticPaths() {
-	const projectsList = Utilities.extractYml(await Astro.glob('/src/data/project-index.yml'));
-	const projectsData = import.meta.glob('/src/data/projects/*.yml');
-
 	let paths = [];
-	await Utilities.forEachProject(projectsList, projectsData, (projectName, projectData) => {
+	await Utilities.forEachProject((projectName, projectData) => {
 		paths.push({
 			params: { project: projectName },
 			props: { projectData: projectData }

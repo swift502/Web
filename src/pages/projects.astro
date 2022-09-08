@@ -5,11 +5,8 @@ import InactiveProjectTile from '../components/projects/InactiveProjectTile.astr
 import * as Utilities from '../scripts/utilities';
 
 // Project grid
-const projectsList = Utilities.extractYml(await Astro.glob('/src/data/project-index.yml'));
-const projectsData = import.meta.glob('/src/data/projects/*.yml');
-
 const projects = [];
-await Utilities.forEachProject(projectsList, projectsData, (projectName, projectData) => {
+await Utilities.forEachProject((projectName, projectData) => {
 	projects.push({
 		'name': projectName,
 		'data': projectData
@@ -17,7 +14,7 @@ await Utilities.forEachProject(projectsList, projectsData, (projectName, project
 });
 
 const columns = 3;
-const gaps = (columns - (projectsList.length % columns)) % columns;
+const gaps = (columns - (projects.length % columns)) % columns;
 
 // Layout variables
 const pageInfo = {};
