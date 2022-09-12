@@ -7,15 +7,15 @@ tags:
   - Blender
 links:
   - title: Latest demo
-    link: /sketchbook/latest
+    link: /sketchbook/latest/
   - title: Demo archive
-    link: /sketchbook
+    link: /sketchbook/
   - title: GitHub page
     link: https://github.com/swift502/Sketchbook
 page:
   - type: image
     data: sketchbook_1.jpg
-    desc: A hobby project utilizing modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it yourself using any modern browser <a href="/sketchbook/latest">here</a>.
+    desc: A hobby project utilizing modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it yourself using any modern browser <a href="/sketchbook/latest/">here</a>.
   - type: youtube
     data: S0FDfh0Ft8c
     desc: Characters adopt a general state system and are optionally driven by an AI behavior. Vehicles are physics based and fully interactive. Using <a href="https://github.com/mrdoob/three.js">three.js</a> for rendering and <a href="https://github.com/schteppe/cannon.js">cannon.js</a> for physics, my logic connects everything together to form an interactive sandbox which runs on the web.
