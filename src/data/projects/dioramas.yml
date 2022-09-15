@@ -10,6 +10,6 @@ links:
 page:
   - type: youtube
     data: edT0hQghBTk
-    desc: A collection of 3D character-focused dioramas published <a href="https://skfb.ly/oxq9M">on Sketchfab</a>. Their art style is an evolution of the techniques used in the <a href="/projects/characters">Character experiments</a> project with less restrictions on poly count, yet still striving to retain the classic low poly aesthetic.
+    desc: A collection of 3D character-focused dioramas published <a href="https://skfb.ly/oxq9M">on Sketchfab</a>. Their art style is an evolution of the techniques used in the <a href="/projects/characters/">Character experiments</a> project with less restrictions on poly count, yet still striving to retain the classic low poly aesthetic.
   - type: sketchfab
     collection: f4d521ff9ba140fe883e1aec28f245f6
