@@ -9,7 +9,8 @@ import CBYoutube from '../../components/content_blocks/CB_YouTube.astro';
 import * as Utilities from '../../scripts/utilities';
 
 // Dynamic routing
-export async function getStaticPaths() {
+export async function getStaticPaths()
+{
 	let paths = [];
 	await Utilities.forEachProject((projectName, projectData) => {
 		paths.push({
