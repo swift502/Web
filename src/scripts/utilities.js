@@ -7,14 +7,6 @@ export function logError(message)
 }
 
 /**
- * Extract data from an Astro.glob() yml data object
- */
-export function extractYml(glob)
-{
-	return glob[0]['default'];
-}
-
-/**
  * This function:
  * - executes the async data reading functions obtained by globbing many data files
  * - provides a callback which executes while iterating over individual projects
