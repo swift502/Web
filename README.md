@@ -15,5 +15,15 @@ Type `debug` on the main page to display a model selector.
 ## Build notes
 
 1. Get [Node.js](https://nodejs.org)
-2. Run `npm install`
+2. Run
+
+```shell
+npm install
+```
 3. Use `dev` and `build` tasks
+
+### Update dependencies
+
+```shell
+npm update --save
+```
