@@ -1,8 +1,11 @@
 {
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.0.3",
