@@ -27,5 +27,3 @@ npm install
 ```shell
 npm update --save
 ```
-
-https://docs.astro.build/en/guides/upgrade-to/v3/#changed-default-inlinestylesheets
