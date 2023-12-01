@@ -7,10 +7,6 @@ html {
 	overflow-y: scroll;
 }
 
-body {
-	opacity: 0;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Catamaran', sans-serif;
 	font-weight: 900;
@@ -37,17 +33,6 @@ hr {
 	}
 	100% {
 		opacity: 1;
-	}
-}
-
-@keyframes fadeInMoving {
-	0% {
-		opacity: 0;
-		transform: translate(0px, -3px);
-	}
-	100% {
-		opacity: 1;
-		transform: translate(0px, 0px);
 	}
 }
 
