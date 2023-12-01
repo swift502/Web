@@ -1,4 +1,3 @@
 - implement marvellous/wretched
 - add new projects
-- BeamNG Kotaku
 - remove deprecated scrollY and frameborder attributes
