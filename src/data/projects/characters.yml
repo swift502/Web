@@ -7,7 +7,7 @@ tags:
 page:
   - type: image
     data: all.jpg
-    desc: An experimental project focused on exploring various character designs and art styles. One of these characters eventually became <a href="/projects/chloe/">Chloe</a>, while the rest gradually evolved over time and ended up on this website's <a href="/">homepage</a>.
+    desc: An experimental project focused on exploring various character designs and art styles. One of these characters eventually became [Chloe](/projects/chloe/), while the rest gradually evolved over time and ended up on this website's [homepage](/).
   - type: image
     data: char_1.jpg
     desc: Beginning in 2018, I started experimenting with very simple character designs. The goal was the ability to quickly iterate upon designs and not spend months on a single character.
@@ -24,4 +24,4 @@ page:
     data: NCif1HgjjgI
   - type: youtube
     data: q-BO0eFN48s
-    desc: Feel free to explore all the models up close on the desktop version of the <a href="/">homepage</a>.
+    desc: Feel free to explore all the models up close on the desktop version of the [homepage](/).

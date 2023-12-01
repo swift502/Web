@@ -1,4 +1,2 @@
-- try to get rid of yml, use mdx or astro instead
-- move sketchbook index files from src to public
 - implement marvellous/wretched
 - add new projects
