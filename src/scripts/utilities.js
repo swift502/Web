@@ -8,9 +8,8 @@ export function logError(message)
 
 /**
  * This function:
- * - executes the async data reading functions obtained by globbing many data files
+ * - executes the async data reading functions obtained by globbing data files
  * - provides a callback which executes while iterating over individual projects
- * - prints a human readable error in case an indexed project has no corresponding data
  */
 export async function forEachProject(projectCallback)
 {

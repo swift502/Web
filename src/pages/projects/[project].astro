@@ -1,12 +1,14 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import BigButton from '../../components/core/BigButton.astro';
-import CBImage from '../../components/content_blocks/CB_Image.astro';
-import CBText from '../../components/content_blocks/CB_Text.astro';
-import CBVideo from '../../components/content_blocks/CB_Video.astro';
-import CBSketchfab from '../../components/content_blocks/CB_Sketchfab.astro';
-import CBYoutube from '../../components/content_blocks/CB_YouTube.astro';
 import * as Utilities from '../../scripts/utilities';
+
+// Content blocks
+import Image from '../../components/content_blocks/Image.astro';
+import Text from '../../components/content_blocks/Text.astro';
+import Video from '../../components/content_blocks/Video.astro';
+import Sketchfab from '../../components/content_blocks/Sketchfab.astro';
+import Youtube from '../../components/content_blocks/YouTube.astro';
 
 // Dynamic routing
 export async function getStaticPaths()
@@ -27,11 +29,11 @@ const { project } = Astro.params;
 const { projectData } = Astro.props;
 
 const componentLibrary = {
-	'image': CBImage,
-	'text': CBText,
-	'video': CBVideo,
-	'sketchfab': CBSketchfab,
-	'youtube': CBYoutube
+	'image': Image,
+	'text': Text,
+	'video': Video,
+	'sketchfab': Sketchfab,
+	'youtube': Youtube
 }
 
 let contentBlocks = [];
