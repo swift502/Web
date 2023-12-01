@@ -1,6 +1,4 @@
 ---
-import Analytics from "./Analytics.astro";
-
 const { pageInfo } = Astro.props;
 
 let pageTitle = 'Jan Bláha';
@@ -24,5 +22,3 @@ const pageImage = import.meta.env.SITE + pageImageSource;
 <meta property="og:image" content={pageImage}>
 
 <script is:inline src="/scripts/global.js"/>
-
-<Analytics/>
