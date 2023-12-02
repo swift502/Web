@@ -5,6 +5,9 @@ tags:
   - Godot
   - C#
   - Blender
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/Parkour
 page:
   - type: text
     data: Placeholder

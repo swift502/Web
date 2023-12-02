@@ -5,6 +5,9 @@ tags:
   - Python
   - Rich
   - NovelAI
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/TextAdventure
 page:
   - type: text
     data: Placeholder

@@ -3,6 +3,9 @@ description: Placeholder
 tags:
   - 2023
   - Blender
+links:
+  - title: Live demo
+    link: /haunted/
 page:
   - type: text
     data: Placeholder
