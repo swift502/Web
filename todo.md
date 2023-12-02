@@ -1,3 +1,2 @@
 - implement marvellous/wretched
 - add new projects
-- remove deprecated scrollY and frameborder attributes
