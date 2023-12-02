@@ -3,10 +3,14 @@
 # and in what order. Items listed here need to have a yml
 # data file with the same name in the data/projects/ folder.
 
+- marvellous-wretched
+- flyboy
+- text-adventure
 - cactus-series
 - website
 - milestone
 - dioramas
+- parkour
 - octarr
 - characters
 - sketchbook
