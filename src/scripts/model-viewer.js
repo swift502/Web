@@ -1,11 +1,8 @@
-function getRandomInt(min, max)
-{
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
+import * as Utilites from './utilities';
 
 // Get random model data
 const modelSettings = ASTRO_modelSettings;
-const modelIndex = getRandomInt(0, modelSettings.length - 1);
+const modelIndex = Utilites.getRandomInt(0, modelSettings.length - 1);
 const model = modelSettings[modelIndex];
 
 // Construct parameters
