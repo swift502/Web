@@ -1,7 +1,7 @@
+import modelSettings from '../data/model-settings.yml';
 import * as Utilites from './utilities';
 
 // Get random model data
-const modelSettings = ASTRO_modelSettings;
 const modelIndex = Utilites.getRandomInt(0, modelSettings.length - 1);
 const model = modelSettings[modelIndex];
 

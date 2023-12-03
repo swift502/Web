@@ -2,10 +2,6 @@
 import Layout from '../layouts/Default.astro';
 import BigButton from '../components/core/BigButton.astro';
 
-// Load data
-import modelSettings from '../data/model-settings.yml';
-import typewriterStrings from '../data/typewriter-strings.yml';
-
 // Layout variables
 const pageInfo = {
 	'titleAppend': '3D art and programming',
@@ -51,11 +47,6 @@ const pageInfo = {
 	</div>
 </Layout>
 
-<script define:vars={{modelSettings, typewriterStrings}}>
-	// Expose astro data to client scripts
-	window.ASTRO_modelSettings = modelSettings;
-	window.ASTRO_typewriterStrings = typewriterStrings;
-</script>
 <script type="module" src="/scripts/model-viewer.min.js"></script>
 <script>
 	import '../scripts/typewriter.js';

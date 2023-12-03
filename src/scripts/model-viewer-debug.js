@@ -1,3 +1,5 @@
+import modelSettings from '../data/model-settings.yml';
+
 let level = 0;
 let debugEnabled = false;
 
@@ -26,7 +28,7 @@ document.addEventListener('keypress', (event) =>
 			list.id = 'model-debug-list';
 			wrapper.appendChild(list);
 
-			ASTRO_modelSettings.forEach(model => {
+			modelSettings.forEach(model => {
 				let button = document.createElement('div');
 				button.classList.add('tile');
 				button.innerHTML += model.name;

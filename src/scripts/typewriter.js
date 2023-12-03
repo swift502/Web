@@ -1,4 +1,6 @@
-const aText = ASTRO_typewriterStrings;
+import typewriterStrings from '../data/typewriter-strings.yml';
+
+const aText = typewriterStrings;
 const iSpeed = 100;
 let iIndex = 0;
 let iArrLength = aText[0].length;
