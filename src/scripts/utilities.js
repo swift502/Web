@@ -12,16 +12,17 @@ export async function forEachProject(projectCallback)
 	for (let i = 0; i < projectsList.length; i++)
 	{
 		const projectName = projectsList[i];
-		const dataPath = '/src/data/projects/' + projectName + '.yml';
+		const dataPath = `/src/data/projects/${projectName}.yml`;
 
-		if (!(dataPath in projectsData)) {
-			logError('Data file not found for project: "' + projectName + '".');
-			continue;
+		if (dataPath in projectsData)
+		{
+			const projectData = await projectsData[dataPath]();
+			projectCallback(projectName, projectData);
 		}
-
-		const projectData = await projectsData[dataPath]();
-
-		projectCallback(projectName, projectData);
+		else
+		{
+			logError(`Data file not found for project "${projectName}"`);
+		}
 	}
 }
 
