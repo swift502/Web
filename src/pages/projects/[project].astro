@@ -3,13 +3,6 @@ import Layout from '../../layouts/Default.astro';
 import BigButton from '../../components/core/BigButton.astro';
 import * as Utilities from '../../scripts/utilities';
 
-// Content blocks
-import Image from '../../components/content_blocks/Image.astro';
-import Text from '../../components/content_blocks/Text.astro';
-import Video from '../../components/content_blocks/Video.astro';
-import Sketchfab from '../../components/content_blocks/Sketchfab.astro';
-import Youtube from '../../components/content_blocks/YouTube.astro';
-
 // Dynamic routing
 export async function getStaticPaths()
 {
@@ -28,29 +21,29 @@ export async function getStaticPaths()
 const { project } = Astro.params;
 const { projectData } = Astro.props;
 
-const componentLibrary = {
-	'image': Image,
-	'text': Text,
-	'video': Video,
-	'sketchfab': Sketchfab,
-	'youtube': Youtube
-}
+// Construct component library
+const componentsGlob = await Astro.glob('../../components/content_blocks/*.astro');
+let components = {};
+componentsGlob.forEach(component => {
+	let name = Utilities.extractFilename(component.file).toLowerCase();
+	components[name] = component.default
+});
 
-let contentBlocks = [];
+// Construct page content
+let pageContent = [];
 for (let i = 0; i < projectData.page.length; i++)
 {
-	const CBProperties = projectData.page[i];
+	const contentDefinition = projectData.page[i];
 	
-	if (!(CBProperties.type in componentLibrary)) {
-		Utilities.logError('Unknown content block type: "' + CBProperties.type + '".');
-		continue;
+	if (contentDefinition.type in components) {
+		pageContent.push({
+			'component': components[contentDefinition.type],
+			'properties': contentDefinition,
+		});
 	}
-
-	const CBData = {};
-	CBData['component'] = componentLibrary[CBProperties.type];
-	CBData['properties'] = CBProperties;
-
-	contentBlocks.push(CBData);
+	else {
+		Utilities.logError(`Unknown content type "${contentDefinition.type}" is defined in ${projectData.title}`);
+	}
 }
 
 // Layout variables
@@ -61,7 +54,6 @@ const pageInfo = {
 	'tab': 'projects',
 };
 ---
-
 <Layout pageInfo={pageInfo}>
 	<div class="project-detail-wrapper">
 		<div class="project-detail">
@@ -95,7 +87,7 @@ const pageInfo = {
 			)}
 
 			<!-- Content blocks -->
-			{contentBlocks.map((block, index) => {
+			{pageContent.map((block, index) => {
 				let Component = block.component;
 
 				let ComponentContentBlockData = {};

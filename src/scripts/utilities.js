@@ -53,3 +53,8 @@ export function constructPageTitle(pageInfo)
 		return pageTitle
 	}
 }
+
+export function extractFilename(path)
+{
+	return path.match('[\\w]+(?=\\.)')[0]
+}
