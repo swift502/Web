@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Checkout the repository using git
         uses: actions/checkout@v3
-      - name: Install, build, and upload the site
-        uses: withastro/action@v0
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v1
 
   deploy:
     needs: build
