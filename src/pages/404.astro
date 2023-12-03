@@ -1,11 +1,6 @@
 ---
-import Layout from '../layouts/Fullscreen.astro';
+import Layout from '../layouts/NoIndex.astro';
 import BigButton from '../components/core/BigButton.astro';
-
-import '@fontsource/catamaran/600.css';
-import '@fontsource/solway/400.css';
-import 'normalize.css';
-import '../styles/global.css';
 
 // Layout variables
 const pageInfo = {
@@ -14,32 +9,32 @@ const pageInfo = {
 ---
 
 <Layout pageInfo={pageInfo}>
-		<div class="content">
-			<model-viewer
-				src="/models/404.glb"
-				environment-image="/assets/env.hdr"
-				exposure="1.1"
-				autoplay
-				disable-pan
-				disable-zoom
-				min-camera-orbit="auto 80deg auto"
-				max-camera-orbit="auto 80deg auto"
-				camera-target="-0.45m 0.8m 0.08m"
-				field-of-view="37deg"
-				shadow-intensity="1"
-				shadow-softness="0"
-			/>
-		</div>
-		<div class="text-container">
-			<div class="title">404</div>
-			<div class="text">Page not found.</div>
-			<BigButton
-				text="Return home"
-				link="/"
-				icon="/assets/svg/home.svg"
-			/>
-		</div>
-		<script type="module" src="/scripts/model-viewer.min.js" />
+	<div class="content">
+		<model-viewer
+			src="/models/404.glb"
+			environment-image="/assets/env.hdr"
+			exposure="1.1"
+			autoplay
+			disable-pan
+			disable-zoom
+			min-camera-orbit="auto 80deg auto"
+			max-camera-orbit="auto 80deg auto"
+			camera-target="-0.45m 0.8m 0.08m"
+			field-of-view="37deg"
+			shadow-intensity="1"
+			shadow-softness="0"
+		/>
+	</div>
+	<div class="text-container">
+		<div class="title">404</div>
+		<div class="text">Page not found.</div>
+		<BigButton
+			text="Return home"
+			link="/"
+			icon="/assets/svg/home.svg"
+		/>
+	</div>
+	<script type="module" src="/scripts/model-viewer.min.js" />
 </Layout>
 
 <style>
