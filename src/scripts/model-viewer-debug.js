@@ -1,8 +1,8 @@
 let level = 0;
 let debugEnabled = false;
 
-document.addEventListener('keypress', (event) => {
-
+document.addEventListener('keypress', (event) =>
+{
 	if (!debugEnabled)
 	{
 		let code = event.code;
