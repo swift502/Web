@@ -1,23 +1,19 @@
 ---
+import Layout from '../layouts/Fullscreen.astro';
 import BigButton from '../components/core/BigButton.astro';
 
 import '@fontsource/catamaran/600.css';
 import '@fontsource/solway/400.css';
-
 import 'normalize.css';
 import '../styles/global.css';
+
+// Layout variables
+const pageInfo = {
+	'title': 'Page Not Found',
+};
 ---
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Page Not Found</title>
-		<meta name="robots" content="noindex">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<script is:inline src="/scripts/global.js" />
-	</head>
-	<body>
+<Layout pageInfo={pageInfo}>
 		<div class="content">
 			<model-viewer
 				src="/models/404.glb"
@@ -44,8 +40,7 @@ import '../styles/global.css';
 			/>
 		</div>
 		<script type="module" src="/scripts/model-viewer.min.js" />
-	</body>
-</html>
+</Layout>
 
 <style>
 	.text-container {

@@ -37,3 +37,19 @@ export async function forEachProject(projectCallback)
 		projectCallback(projectName, projectData);
 	}
 }
+
+export function constructPageTitle(pageInfo)
+{
+	if ('title' in pageInfo)
+	{
+		return pageInfo['title']
+	}
+	else
+	{
+		let pageTitle = 'Jan Bláha';
+		if ('titlePrepend' in pageInfo) pageTitle = `${pageInfo['titlePrepend']} - ${pageTitle}`;
+		if ('titleAppend' in pageInfo) pageTitle = `${pageTitle} - ${pageInfo['titleAppend']}`;
+
+		return pageTitle
+	}
+}

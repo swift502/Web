@@ -1,13 +1,15 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
+import Layout from "../../layouts/Default.astro";
 import BigButton from "../../components/core/BigButton.astro";
 
-const pageInfo = {};
-pageInfo['titlePrepend'] = 'Sketchbook demo archive'
-pageInfo['description'] = 'Browse through the demo history of Sketchbook, the three.js 3D playground.'
+// Layout variables
+const pageInfo = {
+	'titlePrepend': 'Sketchbook demo archive',
+	'description': 'Browse through the demo history of Sketchbook, the three.js 3D playground.',
+};
 ---
 
-<MainLayout pageInfo={pageInfo}>
+<Layout pageInfo={pageInfo}>
 	<div class="sketchbook-archive-wrapper">
 		<div class="center">
 			<h1>Sketchbook demo archive</h1>
@@ -26,7 +28,7 @@ pageInfo['description'] = 'Browse through the demo history of Sketchbook, the th
 			icon="/assets/svg/home.svg"
 		/>
 	</div>
-</MainLayout>
+</Layout>
 
 <style>
 	.sketchbook-archive-wrapper {

@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import Layout from '../../layouts/Default.astro';
 import BigButton from '../../components/core/BigButton.astro';
 import * as Utilities from '../../scripts/utilities';
 
@@ -54,14 +54,15 @@ for (let i = 0; i < projectData.page.length; i++)
 }
 
 // Layout variables
-const pageInfo = {};
-pageInfo['titlePrepend'] = projectData.title;
-pageInfo['description'] = projectData.description;
-pageInfo['image'] = `assets/projects/${project}/thumb.jpg`;
-pageInfo['tab'] = 'projects';
+const pageInfo = {
+	'titlePrepend': projectData.title,
+	'description': projectData.description,
+	'image': `assets/projects/${project}/thumb.jpg`,
+	'tab': 'projects',
+};
 ---
 
-<MainLayout pageInfo={pageInfo}>
+<Layout pageInfo={pageInfo}>
 	<div class="project-detail-wrapper">
 		<div class="project-detail">
 
@@ -119,7 +120,7 @@ pageInfo['tab'] = 'projects';
 			icon="/assets/svg/folder-open.svg"
 		/>
 	</div>
-</MainLayout>
+</Layout>
 
 <!-- Inline to instantly initialize all aspect containers -->
 <script is:inline src="/scripts/project-detail.js"/>
@@ -133,7 +134,7 @@ pageInfo['tab'] = 'projects';
 	.project-detail {
 		padding: 0 52px;
 		text-align: center;
-		min-height: calc(100vh - 366px);
+		min-height: calc(100vh - 348px);
 	}
 
 	h1 {
@@ -208,6 +209,10 @@ pageInfo['tab'] = 'projects';
 	@media (min-width: 2101px) {
 		.project-detail-wrapper {
 			max-width: 1200px;
+		}
+
+		.project-detail {
+			min-height: calc(100vh - 377px);
 		}
 	}
 </style>

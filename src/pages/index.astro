@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Default.astro';
 import BigButton from '../components/core/BigButton.astro';
 
 // Load data
@@ -7,13 +7,14 @@ import modelSettings from '../data/model-settings.yml';
 import typewriterStrings from '../data/typewriter-strings.yml';
 
 // Layout variables
-const pageInfo = {};
-pageInfo['titleAppend'] = '3D art and programming'
-pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
-pageInfo['tab'] = 'home';
+const pageInfo = {
+	'titleAppend': '3D art and programming',
+	'description': 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.',
+	'tab': 'home',
+};
 ---
 
-<MainLayout pageInfo={pageInfo}>
+<Layout pageInfo={pageInfo}>
 	<div class="homepage">
 		<h1 class="homepage-title">Jan Bláha</h1>
 		<div class="model-viewer-container">
@@ -48,7 +49,7 @@ pageInfo['tab'] = 'home';
 			</div>
 		</div>
 	</div>
-</MainLayout>
+</Layout>
 
 <script define:vars={{modelSettings, typewriterStrings}}>
 	// Expose astro data to client scripts

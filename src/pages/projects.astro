@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Default.astro';
 import ProjectTile from '../components/projects/ProjectTile.astro';
 import InactiveProjectTile from '../components/projects/InactiveProjectTile.astro';
 import * as Utilities from '../scripts/utilities';
@@ -17,13 +17,14 @@ const columns = 3;
 const gaps = (columns - (projects.length % columns)) % columns;
 
 // Layout variables
-const pageInfo = {};
-pageInfo['titlePrepend'] = 'Projects'
-pageInfo['description'] = 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.'
-pageInfo['tab'] = 'projects';
+const pageInfo = {
+	'titlePrepend': 'Projects',
+	'description': 'Portfolio of my 3D art and programming projects and experiments along with a breakdown of the creative process and technical challenges tied to each of them.',
+	'tab': 'projects',
+};
 ---
 
-<MainLayout pageInfo={pageInfo}>
+<Layout pageInfo={pageInfo}>
 	<div class="project-grid">
 		{projects.map((project) =>
 		{
@@ -37,7 +38,7 @@ pageInfo['tab'] = 'projects';
 			<InactiveProjectTile/>
 		)}
 	</div>
-</MainLayout>
+</Layout>
 
 <style>
 	.project-grid {
