@@ -1,29 +1,32 @@
-export async function forEachProject(projectCallback)
-{
-	// Projects list
-	const projectsListGlob = import.meta.glob('/src/data/project-index.yml');
-	const projectsListRaw = await projectsListGlob['/src/data/project-index.yml']();
-	const projectsList = projectsListRaw['default'];
+import projectIndex from '/src/data/project-index.yml';
 
-	// Projects data
-	const projectsData = import.meta.glob('/src/data/projects/*.yml');
+export async function getProjects(projectCallback)
+{
+	// Data
+	let projects = [];
+	const dataFiles = import.meta.glob('/src/data/projects/*.yml');
 
 	// Iterate
-	for (let i = 0; i < projectsList.length; i++)
+	for (let i = 0; i < projectIndex.length; i++)
 	{
-		const projectName = projectsList[i];
+		const projectName = projectIndex[i];
 		const dataPath = `/src/data/projects/${projectName}.yml`;
 
-		if (dataPath in projectsData)
+		if (dataPath in dataFiles)
 		{
-			const projectData = await projectsData[dataPath]();
-			projectCallback(projectName, projectData);
+			const projectData = await dataFiles[dataPath]();
+			projects.push({
+				'name': projectName,
+				'data': projectData,
+			})
 		}
 		else
 		{
 			logError(`Data file not found for project "${projectName}"`);
 		}
 	}
+
+	return projects
 }
 
 export function constructPageTitle(pageInfo)

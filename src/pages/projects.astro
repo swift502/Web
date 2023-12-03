@@ -5,14 +5,7 @@ import InactiveProjectTile from '../components/projects/InactiveProjectTile.astr
 import * as Utilities from '../scripts/utilities';
 
 // Project grid
-const projects = [];
-await Utilities.forEachProject((projectName, projectData) => {
-	projects.push({
-		'name': projectName,
-		'data': projectData
-	});
-});
-
+const projects = await Utilities.getProjects();
 const columns = 3;
 const gaps = (columns - (projects.length % columns)) % columns;
 

@@ -5,18 +5,14 @@ import * as Utilities from '../../scripts/utilities';
 
 // Dynamic routing
 export async function getStaticPaths() {
-	let paths = [];
-	await Utilities.forEachProject((projectName, projectData) => {
-		paths.push({
-			params: { project: projectName },
-			props: { projectData: projectData }
-		});
-	});
-
-	return paths;
+	const projects = await Utilities.getProjects();
+	return projects.map((project) => ({
+		params: { project: project.name },
+		props: { projectData: project.data }
+	}));
 }
 
-// Content block pre-processing
+// Parameters
 const { project } = Astro.params;
 const { projectData } = Astro.props;
 
@@ -30,10 +26,8 @@ componentsGlob.forEach(component => {
 
 // Construct page content
 let pageContent = [];
-for (let i = 0; i < projectData.page.length; i++)
-{
+for (let i = 0; i < projectData.page.length; i++) {
 	const contentDefinition = projectData.page[i];
-	
 	if (contentDefinition.type in components) {
 		pageContent.push({
 			'component': components[contentDefinition.type],
