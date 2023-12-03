@@ -26,12 +26,13 @@ document.addEventListener('keypress', (event) => {
 			list.id = 'model-debug-list';
 			wrapper.appendChild(list);
 
-			ASTRO_modelSettings.forEach(item => {
+			ASTRO_modelSettings.forEach(model => {
 				let button = document.createElement('div');
 				button.classList.add('tile');
-				button.innerHTML += item.name;
+				button.innerHTML += model.name;
 				button.onclick = () => {
-					document.querySelector('model-viewer').setAttribute('src', `models/${item.name}.glb`);
+					document.querySelector('model-viewer').setAttribute('src', `models/${model.name}.glb`);
+					document.querySelector('model-viewer').setAttribute('min-field-of-view', `${model.fov}deg`);
 				};
 
 				list.appendChild(button);
