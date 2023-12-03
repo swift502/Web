@@ -164,14 +164,25 @@ const pageInfo = {
 		}
 	}
 
+	// Update on window resize
 	window.addEventListener('resize', () => {
 		updateAspectContainers();
 	});
 
+	// Initial update
 	updateAspectContainers();
+	document.querySelector('body').style.opacity = '1';
 </script>
 
 <style>
+	h1 {
+		text-align: center;
+	}
+
+	body {
+		opacity: 0;
+	}
+
 	.project-detail-wrapper {
 		max-width: 1000px;
 		margin: 30px auto;
@@ -181,10 +192,6 @@ const pageInfo = {
 		padding: 0 52px;
 		text-align: center;
 		min-height: calc(100vh - 348px);
-	}
-
-	h1 {
-		text-align: center;
 	}
 
 	.back-to-projects-wrapper {
