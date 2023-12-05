@@ -6,7 +6,7 @@ const modelIndex = Utilites.getRandomInt(0, modelSettings.length - 1);
 const model = modelSettings[modelIndex];
 
 // Construct parameters
-const modelPath = `models/${model.name}.glb`;
+const modelPath = `/models/${model.name}.glb`;
 const modelFov = `${model.fov}deg`;
 
 // Set model viewer parameters
