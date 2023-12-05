@@ -3,9 +3,9 @@ description: Placeholder
 tags:
   - 2023
   - Blender
-links:
-  - title: Live demo
-    link: /crepuscular/
 page:
-  - type: text
-    data: Placeholder
+  - type: sketchfab
+    model: 8ecf2bd8d5424362a83013c6a2f55a65
+    desc: A pair of panorama models made in collaboration with [Coffeek](https://sketchfab.com/coffe0wolf). The character models were commissioned off, while I took care of the environments and posing.
+  - type: sketchfab
+    model: 86dc8daf52d04689a008d7ea85d420ec
