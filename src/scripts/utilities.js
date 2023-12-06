@@ -1,6 +1,6 @@
 import projectIndex from '/src/data/project-index.yml';
 
-export async function getProjects(projectCallback)
+export async function getProjects()
 {
 	// Data
 	let projects = [];
@@ -18,7 +18,7 @@ export async function getProjects(projectCallback)
 			projects.push({
 				'name': projectName,
 				'data': projectData,
-			})
+			});
 		}
 		else
 		{
@@ -26,14 +26,14 @@ export async function getProjects(projectCallback)
 		}
 	}
 
-	return projects
+	return projects;
 }
 
 export function constructPageTitle(pageInfo)
 {
 	if ('title' in pageInfo)
 	{
-		return pageInfo['title']
+		return pageInfo['title'];
 	}
 	else
 	{
@@ -41,7 +41,7 @@ export function constructPageTitle(pageInfo)
 		if ('titlePrepend' in pageInfo) pageTitle = `${pageInfo['titlePrepend']} - ${pageTitle}`;
 		if ('titleAppend' in pageInfo) pageTitle = `${pageTitle} - ${pageInfo['titleAppend']}`;
 
-		return pageTitle
+		return pageTitle;
 	}
 }
 
@@ -52,7 +52,7 @@ export function logError(message)
 
 export function extractFilename(path)
 {
-	return path.match('[\\w]+(?=\\.)')[0]
+	return path.match('[\\w]+(?=\\.)')[0];
 }
 
 export function getRandomInt(min, max)
