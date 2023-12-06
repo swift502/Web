@@ -12,5 +12,20 @@ links:
   - title: App Store
     link: https://apps.apple.com/us/app/flyboys/id1616669569
 page:
-  - type: text
-    data: Placeholder
+  - type: image
+    data: splash.jpg
+    desc: Flyboys is an adventure mobile game where you follow the legacy of Jan Kaspar, a legendary Czech aviation pioneer. I was in charge of creating 3D assets, the flight model, procedural terrain system and other integral parts of the game.
+  - type: image
+    data: garage.jpg
+  - type: image
+    data: build.jpg
+    desc: Bicycle customization, preview is updated in real time. The bicycle components are rendered offscreen with a sketch shader into a render texture, which is used as a base for the blueprint material.
+  - type: video
+    data: terrain.webm
+    desc: Early development footage showcasing the customizability of the procedurally generated terrain. The system asynchronously generates height points using perlin noise. Entities are then placed on the surface, reading terrain normals to compute their orientation.
+  - type: video
+    data: async.webm
+    desc: 3D assets are separately lazy loaded and unloaded in Unity coroutines. Model distribution was authored in Blender and exported as world chunks, allowing for hand crafted scenery to be placed on a procedurally generated terrain.
+  - type: video
+    data: urp.webm
+    desc: Two URP renderer features, fog and god rays, were adapted and optimized for the game.
