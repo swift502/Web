@@ -22,4 +22,4 @@ page:
     desc: The [Octarr](/projects/octarr/) data structure was used to quickly create level geometry. Since obstacle detection is completely universal, it works on generic, dynamically placed objects like this.
   - type: youtube
     data: Tb48E_hrXOw
-    desc: Combining everything together, I've created a sample level with enemy drones and turrets, item pickups, bases to destroy and NPC delivery tasks. The idea is that all tasks within the level have to be completed within the given time limit, which makes for a fun challenge.<br><br>While the project is nowhere near complete, creating all these systems has been a lot of fun and I hope to come back to it at some point.
+    desc: Combining everything together, I've created a sample level with enemy drones and turrets, item pickups, bases to destroy and NPC delivery tasks. The idea is that all tasks within the level have to be completed within the given time limit, which makes for a fun challenge.<br><br>While the project is nowhere near complete, creating all these systems has been a lot of fun and I hope to come back to it at some point in the future.
