@@ -17,8 +17,9 @@ let size = imageSize('./public/' + imagePath);
 	height={size.height}
 >
 	<img
-		class={"project-detail-image" + borderClass}
 		src={imagePath}
+		alt=""
+		class={"project-detail-image" + borderClass}
 		onload="fadeIn(this);"
 	/>
 	<MediaControls
