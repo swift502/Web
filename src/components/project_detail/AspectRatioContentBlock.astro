@@ -16,7 +16,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 		data-height={height}
 		data-first_padding={contentBlock.index == 0 ? 'true' : 'false'}
 		data-desc_padding={'desc' in contentBlock.properties ? 'true' : 'false'}
-		data-links_padding={project.hasLinks && contentBlock.index == 0 ? 'true' : 'false'}
+		data-links_padding={'links' in project.data && contentBlock.index == 0 ? 'true' : 'false'}
 	>
 		<slot/>
 	</div>

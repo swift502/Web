@@ -1,6 +1,6 @@
 import projectIndex from '/src/data/project-index.yml';
 
-export async function getProjects()
+export async function  getProjects()
 {
 	// Data
 	let projects = [];
@@ -14,10 +14,9 @@ export async function getProjects()
 
 		if (dataPath in dataFiles)
 		{
-			const projectData = await dataFiles[dataPath]();
 			projects.push({
 				'name': projectName,
-				'data': projectData,
+				'data': await dataFiles[dataPath](),
 			});
 		}
 		else
@@ -52,9 +51,7 @@ export function logError(message)
 
 export function extractFilename(path)
 {
-	// TODO Replace with
-	// String.raw`[^\\]+(?=\.\w+$)`
-	return path.match('[\\w]+(?=\\.)')[0];
+	return path.match(String.raw`[^\/]+(?=\.\w+$)`)[0];
 }
 
 export function getRandomInt(min, max)

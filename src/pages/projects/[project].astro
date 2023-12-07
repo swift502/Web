@@ -3,46 +3,29 @@ import Layout from '../../layouts/Default.astro';
 import BigButton from '../../components/core/BigButton.astro';
 import * as Utilities from '../../scripts/utilities';
 
+const { project } = Astro.props;
+
 // Dynamic routing
 export async function getStaticPaths() {
 	const projects = await Utilities.getProjects();
 	return projects.map((project) => ({
-		params: { project: project.name },
-		props: { projectData: project.data }
+		params: { project : project.name },
+		props: { project: project as any },
 	}));
 }
 
-// Parameters
-const { project } = Astro.params;
-const { projectData } = Astro.props;
-
-// Construct component library
-const componentsGlob = await Astro.glob('../../components/content_blocks/*.astro');
-let components = {};
-componentsGlob.forEach(component => {
-	let name = Utilities.extractFilename(component.file).toLowerCase();
-	components[name] = component.default
+// Construct content block library
+let contentBlocks = {};
+const contentBlocksGlob = await Astro.glob('../../components/content_blocks/*.astro');
+contentBlocksGlob.forEach(block => {
+	let name = Utilities.extractFilename(block.file).toLowerCase();
+	contentBlocks[name] = block.default
 });
-
-// Construct page content
-let pageContent = [];
-for (let i = 0; i < projectData.page.length; i++) {
-	const contentDefinition = projectData.page[i];
-	if (contentDefinition.type in components) {
-		pageContent.push({
-			'component': components[contentDefinition.type],
-			'properties': contentDefinition,
-		});
-	}
-	else {
-		Utilities.logError(`Unknown content type "${contentDefinition.type}" is defined in ${projectData.title}`);
-	}
-}
 
 // Layout variables
 const pageInfo = {
-	'titlePrepend': projectData.title,
-	'description': projectData.description,
+	'titlePrepend': project.data.title,
+	'description': project.data.description,
 	'image': `assets/projects/${project}/thumb.jpg`,
 	'tab': 'projects',
 };
@@ -53,22 +36,22 @@ const pageInfo = {
 		<div class="project-detail">
 
 			<!-- Title -->
-			<h1 class="project-title">{projectData.title}</h1>
+			<h1 class="project-title">{project.data.title}</h1>
 
 			<!-- Tags -->
 			<div class="tag-wrapper">
 				<div class="tag-row">
-				{projectData.tags.map((tag) => {
+				{project.data.tags.map((tag) => {
 					return <div class="tag">{tag}</div>
 				})}
 				</div>
 			</div>
 			
 			<!-- Links -->
-			{projectData.links && (
+			{project.data.links && (
 				<div>
 					<div class="tag-wrapper">
-					{projectData.links.map((link) => (
+					{project.data.links.map((link) => (
 						<>
 							<a class="tile link" href={link.link} target="_blank">
 								<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg" alt="" onload="fadeIn(this);"/>
@@ -80,22 +63,20 @@ const pageInfo = {
 				</div>
 			)}
 
-			<!-- Content blocks -->
-			{pageContent.map((block, index) => {
-				let Component = block.component;
-
-				let ComponentContentBlockData = {};
-				ComponentContentBlockData['properties'] = block.properties;
-				ComponentContentBlockData['index'] = index;
-
-				let ComponentProjectData = {};
-				ComponentProjectData['name'] = project;
-				ComponentProjectData['hasLinks'] = 'links' in projectData;
-				
-				return <Component
-					project={ComponentProjectData}
-					contentBlock={ComponentContentBlockData}
-				/>
+			{project.data.page.map((block, index) => {
+				if (block.type in contentBlocks) {
+					const Component = contentBlocks[block.type];
+					return <Component project={project}
+						contentBlock={{
+							'index': index,
+							'properties': block,
+						}}
+					/>
+				}
+				else {
+					Utilities.logError(`Unknown content type "${block.type}" is defined in ${project.data.title}`);
+					return null;
+				}
 			})}
 		</div>
 	</div>
