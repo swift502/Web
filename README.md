@@ -1,4 +1,4 @@
-# jblaha.art
+# Web
 
 Personal website built with [Astro](https://astro.build/).
 
