@@ -52,6 +52,7 @@ export function logError(message)
 
 export function extractFilename(path)
 {
+	// TODO Replace with [^\\]+(?=\.astro$)
 	return path.match('[\\w]+(?=\\.)')[0];
 }
 
