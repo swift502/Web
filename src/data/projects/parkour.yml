@@ -1,5 +1,5 @@
 title: Project Parkour
-description: Placeholder
+description: Experimental Godot engine project attempting to replicate gameplay mechanics found in the Mirror's Edge games. I began by creating a custom character controller with both first and third person view modes.
 tags:
   - 2021
   - Godot

@@ -1,5 +1,5 @@
 title: Flyboys
-description: Placeholder
+description: Flyboys is a mobile adventure game in which you follow the legacy of Jan Kaspar, a legendary Czech aviation pioneer.
 badge: Commercial
 tags:
   - 2023
@@ -25,7 +25,7 @@ page:
     desc: Early development footage showcasing the customizability of the procedurally generated terrain. The system asynchronously generates height points using perlin noise. Entities are then placed on the surface, reading terrain normals to compute their orientation.
   - type: video
     data: async.webm
-    desc: 3D assets are separately lazy loaded and unloaded in Unity coroutines. Model distribution was authored in Blender and exported as world chunks, allowing for hand crafted scenery to be placed on a procedurally generated terrain.
+    desc: 3D assets are lazy loaded and unloaded in Unity coroutines. Model distribution was authored in Blender and exported as world chunks, allowing for hand crafted scenery to be placed on a procedurally generated terrain.
   - type: video
     data: urp.webm
     desc: Two URP renderer features, fog and god rays, were adapted and optimized for the game.
