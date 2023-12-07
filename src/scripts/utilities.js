@@ -1,6 +1,6 @@
 import projectIndex from '/src/data/project-index.yml';
 
-export async function  getProjects()
+export async function getProjects()
 {
 	// Data
 	let projects = [];
