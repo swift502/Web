@@ -25,6 +25,7 @@ const pageInfo = {
 				shadow-intensity="1"
 				shadow-softness="0"
 				camera-controls
+				touch-action="pan-y"
 				interaction-prompt="none"
 				auto-rotate
 				auto-rotate-delay="0"
@@ -119,10 +120,6 @@ const pageInfo = {
 	}
 
 	@media (max-width: 776px) {
-		model-viewer {
-			pointer-events: none;
-		}
-
 		.homepage {
 			display: block;
 			min-width: 0;
