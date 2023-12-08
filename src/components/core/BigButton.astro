@@ -3,59 +3,59 @@ const { text, link, icon } = Astro.props
 ---
 
 <a href={link} class="big-button">
-    <span class="big-button-text">{text}</span>
-    <img src={icon} alt="" class="big-button-icon" onload="fadeIn(this);">
+	<span class="big-button-text">{text}</span>
+	<img src={icon} alt="" class="big-button-icon" onload="fadeIn(this);">
 </a>
 
 <style>
-    .big-button {
-        position: relative;
-        top: 0px;
-        background: #ffb900;
-        color: #523b00;
-        box-shadow: 0 6px 0 0 rgb(228, 158, 0);
-        display: inline-block;
-        user-select: none;
-        padding: 15px 22px;
-        outline: none;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+	.big-button {
+		position: relative;
+		top: 0px;
+		background: #ffb900;
+		color: #523b00;
+		box-shadow: 0 6px 0 0 rgb(228, 158, 0);
+		display: inline-block;
+		user-select: none;
+		padding: 15px 22px;
+		outline: none;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
 
-    .big-button:active {
-        top: 6px;
-        box-shadow: 0 0px 0 0 rgb(228, 158, 0);
-    }
+	.big-button:active {
+		top: 6px;
+		box-shadow: 0 0px 0 0 rgb(228, 158, 0);
+	}
 
-    .big-button-text {
-        font-weight: 700;
-        font-size: 22px;
-        margin-left: 34px;
-    }
+	.big-button-text {
+		font-weight: 700;
+		font-size: 22px;
+		margin-left: 34px;
+	}
 
-    .big-button-icon {
-        opacity: 0;
-        width: 24px;
-        /* right: 20px; */
-        left: 22px;
-        top: 18px;
-        position: absolute;
-    }
+	.big-button-icon {
+		opacity: 0;
+		width: 24px;
+		/* right: 20px; */
+		left: 22px;
+		top: 18px;
+		position: absolute;
+	}
 
-    @media (min-width: 2101px) {
-        .big-button {
-            padding: 16px 22px;
-        }
+	@media (min-width: 2101px) {
+		.big-button {
+			padding: 16px 22px;
+		}
 
-        .big-button-text {
-            font-size: 24px;
-            margin-left: 40px;
-        }
+		.big-button-text {
+			font-size: 24px;
+			margin-left: 40px;
+		}
 
-        .big-button-icon {
-            width: 28px;
-            top: 17px;
-        }
-    }
+		.big-button-icon {
+			width: 28px;
+			top: 17px;
+		}
+	}
 </style>

@@ -47,26 +47,16 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 
 	.content-description {
 		margin-top: 0px;
+		top: -5px;
 		margin-left: auto;
 		margin-right: auto;
 		line-height: initial;
 	}
 
-	p {
-		margin: 0px;
-		top: -5px;
-	}
-
 	@media (max-width: 776px) {
-		p {
+		.content-description {
 			top: 0px;
 			margin-bottom: 22px;
-		}
-	}
-
-	@media (max-width: 776px) {
-		.aspect-container {
-			background-size: 25%;
 		}
 	}
 </style>

@@ -34,15 +34,15 @@
 .tile.link {
 	margin: 0px 6px;
 	padding: 12px 20px;
-    top: 0px;
-    transition: all 0.1s ease;
+	top: 0px;
+	transition: all 0.1s ease;
 }
 
 .link-tile-icon {
-    position: absolute;
-    width: 15px;
-    top: 14px;
-    left: 17px;
+	position: absolute;
+	width: 15px;
+	top: 14px;
+	left: 17px;
 }
 
 .link-tile-text {
