@@ -1,56 +1,64 @@
-import typewriterStrings from '../data/typewriter-strings.yml';
+import lines from '../data/typewriter-strings.yml';
 
-const aText = typewriterStrings;
-const iSpeed = 100;
-let iIndex = 0;
-let iArrLength = aText[0].length;
-let iTextPos = 0;
-const archive = [];
+const currentLine = document.getElementById("typewriter");
+const history = document.getElementById('typewriter-history');
+
+const typingDelay = 100;
+const nextLineDelay = 500;
+const historyLength = 3;
+
+let lineIndex = 0;
+let letterIndex = 0;
 
 function typewriter()
 {
-	const destination = document.getElementById("typewriter");
+	currentLine.innerHTML = lines[lineIndex].substring(0, letterIndex) + "_";
 
-	destination.innerHTML = aText[iIndex].substring(0, iTextPos) + "_";
-	if (iTextPos++ == iArrLength)
+	if (letterIndex < lines[lineIndex].length)
 	{
-		iTextPos = 0;
-		const archiveText = aText[iIndex];
-		if (++iIndex == aText.length) iIndex = 0;
-		iArrLength = aText[iIndex].length;
-		setTimeout(function() {
-			pushArchive(archiveText);
-			typewriter();
-		}, 500);
+		// Advance letter
+		letterIndex++;
+		setTimeout(typewriter, typingDelay);
 	}
 	else
 	{
-		setTimeout(typewriter, iSpeed);
+		// Go to next line
+		letterIndex = 0;
+		const lastLine = lines[lineIndex];
+
+		lineIndex++;
+		if (lineIndex == lines.length) lineIndex = 0;
+
+		setTimeout(function() {
+			pushHistory(lastLine);
+			typewriter();
+		}, nextLineDelay);
 	}
 }
 
-function pushArchive(str)
+function pushHistory(content)
 {
 	const div = document.createElement('div');
-	div.innerText = str;
-	document.getElementById('typewriter-history').appendChild(div);
-	archive.unshift(div);
+	div.innerText = content;
+	history.appendChild(div);
+
+	if (history.children.length > historyLength)
+	{
+		history.removeChild(history.firstChild);
+	}
 
 	refreshTransparency();
 }
 
 function refreshTransparency()
 {
-	for (let i = 0; i < archive.length; i++)
-	{
-		const opacity = 1 - (0.25 * (i + 1));
-		archive[i].style.opacity = opacity;
-	}
+	let opacity = 1;
+	const opacityDelta = 1 / (historyLength + 1);
 
-	while (archive[archive.length - 1].style.opacity <= 0)
+	for (let i = history.children.length - 1; i >= 0; i--)
 	{
-		archive[archive.length - 1].outerHTML = "";
-		archive.pop();
+		opacity -= opacityDelta;
+		history.children[i].style.opacity = opacity;
 	}
 }
 
