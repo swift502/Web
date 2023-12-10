@@ -34,11 +34,8 @@ const pageInfo = {
 <Layout pageInfo={pageInfo}>
 	<div class="project-detail-wrapper">
 		<div class="project-detail">
-
-			<!-- Title -->
+			<!-- Info -->
 			<h1 class="project-title">{project.data.title}</h1>
-
-			<!-- Tags -->
 			<div class="tag-wrapper">
 				<div class="tag-row">
 					{project.data.tags.map((tag) =>
@@ -46,8 +43,7 @@ const pageInfo = {
 					)}
 				</div>
 			</div>
-			
-			<!-- Links -->
+			<!-- Tags -->
 			{project.data.links && (
 				<div>
 					<div class="tag-wrapper">
@@ -60,7 +56,7 @@ const pageInfo = {
 					</div>
 				</div>
 			)}
-
+			<!-- Content -->
 			{project.data.page.map((block, index) => {
 				if (block.type in contentBlocks) {
 					const Component = contentBlocks[block.type];

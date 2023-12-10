@@ -19,10 +19,11 @@ const pageInfo = {
 
 <Layout pageInfo={pageInfo}>
 	<div class="project-grid">
+		<!-- Tiles -->
 		{projects.map((project) =>
 			<ProjectTile project={project}/>
 		)}
-
+		<!-- Inactive tiles -->
 		{[...Array(gaps)].map(() =>
 			<InactiveProjectTile/>
 		)}
