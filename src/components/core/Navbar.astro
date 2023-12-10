@@ -63,12 +63,10 @@ function tabHighlight(tabName: string)
 		height: 63px;
 		background: white;
 		width: 100%;
-		padding: 0;
-		display: flex;
-		z-index: 100;
 		justify-content: center;
+		z-index: 100;
 		transition:
-			box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+			box-shadow 0.3s ease,
 			top 0.25s ease;
 	}
 
@@ -77,13 +75,16 @@ function tabHighlight(tabName: string)
 	}
 
 	.navigation {
-		white-space: nowrap;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 
 	.navigation-item {
 		position: relative;
-		user-select: none;
 		display: inline-block;
+		margin: 0px 3px;
+		user-select: none;
 		text-decoration: none;
 		font-family: 'Catamaran', sans-serif;
 		font-weight: 900;
