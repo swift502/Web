@@ -1,32 +1,30 @@
 ---
-const { projectName, projectData } = Astro.props
+const { project } = Astro.props
 ---
 
 <div class="tile-wrapper">
-	<a href={`/projects/${projectName}/`} class="project-tile">
+	<a href={`/projects/${project.name}/`} class="project-tile">
 		<div class="project-image-frame">
 			<img
-				src={"/assets/projects/" + projectName + "/thumb.jpg"}
-				alt={projectName}
+				src={"/assets/projects/" + project.name + "/thumb.jpg"}
+				alt={project.name}
 				class="project-image"
 				onload="fadeIn(this);"
 			/>
 		</div>
 		<div class="project-title">
-			{projectData.title}
+			{project.data.title}
 		</div>
 		<div class="project-tags">
-			{projectData.tags.map((tag) => {
+			{project.data.tags.map((tag) => {
 				return <span class="tag">{tag}</span>;
 			})}
 		</div>
-		{'badge' in projectData && (
-			<Fragment>
+			{'badge' in project.data && (
 				<div class="project-badges">
-					<span class={`badge ${projectData.badge.toLowerCase()}`}>{projectData.badge}</span>
+					<span class={`badge ${project.data.badge.toLowerCase()}`}>{project.data.badge}</span>
 				</div>
-			</Fragment>
-		)}
+			)}
 		</a>
 </div>
 

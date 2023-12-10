@@ -41,9 +41,9 @@ const pageInfo = {
 			<!-- Tags -->
 			<div class="tag-wrapper">
 				<div class="tag-row">
-				{project.data.tags.map((tag) => {
-					return <div class="tag">{tag}</div>
-				})}
+					{project.data.tags.map((tag) =>
+						<div class="tag">{tag}</div>
+					)}
 				</div>
 			</div>
 			
@@ -51,14 +51,12 @@ const pageInfo = {
 			{project.data.links && (
 				<div>
 					<div class="tag-wrapper">
-					{project.data.links.map((link) => (
-						<>
+						{project.data.links.map((link) =>
 							<a class="tile link" href={link.link} target="_blank">
 								<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg" alt="" onload="fadeIn(this);"/>
 								<div class="link-tile-text">{link.title}</div>
 							</a>
-						</>
-					))}
+						)}
 					</div>
 				</div>
 			)}

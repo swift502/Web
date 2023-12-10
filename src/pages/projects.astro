@@ -20,12 +20,8 @@ const pageInfo = {
 <Layout pageInfo={pageInfo}>
 	<div class="project-grid">
 		{projects.map((project) =>
-		{
-			return <ProjectTile
-				projectName={project.name}
-				projectData={project.data}
-			/>;
-		})}
+			<ProjectTile project={project}/>
+		)}
 
 		{[...Array(gaps)].map(() =>
 			<InactiveProjectTile/>
