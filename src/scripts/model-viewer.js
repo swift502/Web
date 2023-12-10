@@ -1,8 +1,8 @@
 import modelSettings from '../data/model-settings.yml';
-import * as Utilites from './utilities';
+import { getRandomInt } from './utilities';
 
 // Get random model data
-const modelIndex = Utilites.getRandomInt(0, modelSettings.length - 1);
+const modelIndex = getRandomInt(0, modelSettings.length - 1);
 const model = modelSettings[modelIndex];
 
 // Construct parameters

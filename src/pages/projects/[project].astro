@@ -1,13 +1,13 @@
 ---
 import Layout from '../../layouts/Default.astro';
 import BigButton from '../../components/core/BigButton.astro';
-import * as Utilities from '../../scripts/utilities';
+import { getProjects, extractFilename, logError } from '../../scripts/utilities';
 
 const { project } = Astro.props;
 
 // Dynamic routing
 export async function getStaticPaths() {
-	const projects = await Utilities.getProjects();
+	const projects = await getProjects();
 	return projects.map((project) => ({
 		params: { project : project.name },
 		props: { project: project as any },
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 let contentBlocks = {};
 const contentBlocksGlob = await Astro.glob('../../components/content_blocks/*.astro');
 contentBlocksGlob.forEach(block => {
-	let name = Utilities.extractFilename(block.file).toLowerCase();
+	let name = extractFilename(block.file).toLowerCase();
 	contentBlocks[name] = block.default
 });
 
@@ -74,7 +74,7 @@ const pageInfo = {
 					/>
 				}
 				else {
-					Utilities.logError(`Unknown content type "${block.type}" is defined in ${project.data.title}`);
+					logError(`Unknown content type "${block.type}" is defined in ${project.data.title}`);
 					return null;
 				}
 			})}

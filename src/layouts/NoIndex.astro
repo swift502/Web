@@ -1,5 +1,5 @@
 ---
-import * as Utilities from '../scripts/utilities';
+import { constructPageTitle } from '../scripts/utilities';
 
 import '@fontsource/catamaran/600.css';
 import '@fontsource/catamaran/900.css';
@@ -17,7 +17,7 @@ const { pageInfo } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>{Utilities.constructPageTitle(pageInfo)}</title>
+		<title>{constructPageTitle(pageInfo)}</title>
 		<meta name="robots" content="noindex">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<script is:inline src="/scripts/global.js" />

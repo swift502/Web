@@ -1,9 +1,9 @@
 ---
-import * as Utilities from '../../scripts/utilities';
+import { constructPageTitle } from '../../scripts/utilities';
 
 const { pageInfo } = Astro.props;
 
-let pageTitle = Utilities.constructPageTitle(pageInfo);
+let pageTitle = constructPageTitle(pageInfo);
 let pageImageSource = pageInfo.image ?? '/assets/social.jpg';
 const pageImage = import.meta.env.SITE + pageImageSource;
 ---

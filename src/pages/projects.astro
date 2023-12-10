@@ -2,10 +2,10 @@
 import Layout from '../layouts/Default.astro';
 import ProjectTile from '../components/projects/ProjectTile.astro';
 import InactiveProjectTile from '../components/projects/InactiveProjectTile.astro';
-import * as Utilities from '../scripts/utilities';
+import { getProjects } from '../scripts/utilities';
 
 // Project grid
-const projects = await Utilities.getProjects();
+const projects = await getProjects();
 const columns = 3;
 const gaps = (columns - (projects.length % columns)) % columns;
 
