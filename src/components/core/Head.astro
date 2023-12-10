@@ -4,7 +4,7 @@ import * as Utilities from '../../scripts/utilities';
 const { pageInfo } = Astro.props;
 
 let pageTitle = Utilities.constructPageTitle(pageInfo);
-let pageImageSource = pageInfo.image ?? 'assets/social.jpg';
+let pageImageSource = pageInfo.image ?? '/assets/social.jpg';
 const pageImage = import.meta.env.SITE + pageImageSource;
 ---
 
