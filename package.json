@@ -12,9 +12,9 @@
     "@fontsource/catamaran": "^5.0.18",
     "@fontsource/solway": "^5.0.8",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^4.0.3",
+    "astro": "^4.0.5",
     "image-size": "^1.0.2",
-    "marked": "^11.0.0",
+    "marked": "^11.1.0",
     "normalize.css": "^8.0.1"
   }
 }

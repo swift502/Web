@@ -1,4 +1,4 @@
-import projectIndex from '/src/data/project-index.yml';
+import projectIndex from '../data/project-index.yml';
 
 export async function getProjects()
 {
