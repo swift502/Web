@@ -1,5 +1,3 @@
-![](https://github.com/swift502/Web/actions/workflows/deploy.yml/badge.svg)
-
 # Web
 
 Personal website built with [Astro](https://astro.build/).
