@@ -2,11 +2,9 @@ import projectIndex from '../data/project-index.yml';
 
 export async function getProjects()
 {
-	// Data
 	let projects = [];
 	const dataFiles = import.meta.glob('/src/data/projects/*.yml');
 
-	// Iterate
 	for (let i = 0; i < projectIndex.length; i++)
 	{
 		const projectName = projectIndex[i];
@@ -30,18 +28,12 @@ export async function getProjects()
 
 export function constructPageTitle(pageInfo)
 {
-	if ('title' in pageInfo)
-	{
-		return pageInfo['title'];
-	}
-	else
-	{
-		let pageTitle = 'Jan Bláha';
-		if ('titlePrepend' in pageInfo) pageTitle = `${pageInfo['titlePrepend']} - ${pageTitle}`;
-		if ('titleAppend' in pageInfo) pageTitle = `${pageTitle} - ${pageInfo['titleAppend']}`;
+	let title = 'Jan Bláha';
+	if ('title' in pageInfo) title = pageInfo['title'];
+	if ('titlePrepend' in pageInfo) title = `${pageInfo['titlePrepend']} - ${title}`;
+	if ('titleAppend' in pageInfo) title = `${title} - ${pageInfo['titleAppend']}`;
 
-		return pageTitle;
-	}
+	return title;
 }
 
 export function logError(message)
