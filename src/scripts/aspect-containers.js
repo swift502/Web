@@ -44,7 +44,7 @@ function updateAspectContainers()
     {
         let desc = descs[i];
         let target = document.getElementById(desc.dataset.target);
-        desc.style.width = (target.offsetWidth - 62) + 'px';
+        desc.style.width = `${target.getBoundingClientRect().width}px`;
     }
 }
 
