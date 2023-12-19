@@ -6,7 +6,7 @@ Personal website built with [Astro](https://astro.build/).
 
 - using the [\<model-viewer\>](https://modelviewer.dev/) component to display 3D models
 - pages are generated using minimal YML project definitions
-- text has markdown support
+- markdown support
 - custom aspect ratio container component inspired by ArtStation image rendering, which maximizes it's size while maintaining it's aspect ratio and ensuring it's always fully contained within the screen
 
 ### Viewing a specific 3D model
