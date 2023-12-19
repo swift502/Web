@@ -5,13 +5,12 @@ import ContentBlock from './ContentBlock.astro';
 const { project, contentBlock, width, height } = Astro.props;
 
 const containerId = "aspect-ratio-content-block-" + contentBlock.index;
-const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 ---
 
 <ContentBlock>
 	<div 
 		id={containerId}
-		class={"aspect-container" + borderClass}
+		class="aspect-container border-radius-full"
 		data-width={width}
 		data-height={height}
 		data-first_padding={contentBlock.index == 0 ? 'true' : 'false'}
@@ -109,7 +108,6 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 	.content-description {
 		box-sizing: border-box;
 		margin-top: 0px;
-		top: -5px;
 		margin-left: auto;
 		margin-right: auto;
 		line-height: initial;
@@ -117,7 +115,6 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 
 	@media (max-width: 776px) {
 		.content-description {
-			top: 0px;
 			margin-bottom: 22px;
 		}
 	}
