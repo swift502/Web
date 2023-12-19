@@ -6,7 +6,7 @@ function updateAspectContainers()
     for (let i = 0; i < aspectContainers.length; i++)
     {
         let container = aspectContainers[i];
-        let aspectRatio = Number(container.dataset.width) / Number(container.dataset.height);
+        let aspectRatio = container.dataset.width / container.dataset.height;
 
         let padding = 180;
         if (container.dataset.first_padding === 'true') padding += 100;
