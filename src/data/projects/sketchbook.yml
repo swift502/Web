@@ -15,7 +15,7 @@ links:
 page:
   - type: image
     data: sketchbook_1.jpg
-    desc: A hobby project utilizing modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it yourself using any modern browser [here](/sketchbook/latest/).
+    desc: A hobby project utilizing modern web technologies to deliver a Grand Theft Auto sort of game on the web. Feel free to play it [here](/sketchbook/latest/).
   - type: youtube
     data: S0FDfh0Ft8c
     desc: Characters adopt a general state system and are optionally driven by an AI behavior. Vehicles are physics based and fully interactive. Using [three.js](https://github.com/mrdoob/three.js) for rendering and [cannon.js](https://github.com/schteppe/cannon.js) for physics, my logic connects everything together to form an interactive sandbox which runs on the web.

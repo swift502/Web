@@ -21,4 +21,6 @@ page:
     desc: "[Middleman](https://middlemanapp.com/) turned out to be a good Ruby based framework for building static websites. Robust and configurable. However, due to its slow development and dwindling userbase, it began to fall behind, and I felt that in order to future-proof this site, I should start looking for other solutions."
   - type: image
     data: v3.png
-    desc: And so I landed on [Astro](https://astro.build/), which was modern, scalable and rapidly growing. All that was needed was a project rewrite from Ruby to JSX, which only took about a week. The rewrite PR can be found [here](https://github.com/swift502/Web/pull/8).<br><br>After the rewrite, the website looks almost identical, but everything under the hood has changed and allowed for various performance optimizations and visual improvements. Feel free to check out this site's repository [on GitHub](https://github.com/swift502/Web)!
+    desc: |-
+      And so I landed on [Astro](https://astro.build/), which was modern, scalable and rapidly growing. All that was needed was a project rewrite from Ruby to JSX, which only took about a week. The rewrite PR can be found [here](https://github.com/swift502/Web/pull/8).
+      After the rewrite, the website looks almost identical, but everything under the hood has changed and allowed for various performance optimizations and visual improvements. Feel free to check out this site's repository [on GitHub](https://github.com/swift502/Web)!

@@ -1,5 +1,5 @@
 ---
-import { marked } from 'marked';
+import { renderMarkdown } from '../../scripts/utilities';
 import ContentBlock from './ContentBlock.astro';
 
 const { project, contentBlock, width, height } = Astro.props;
@@ -22,10 +22,10 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 	</div>
 
 	{'desc' in contentBlock.properties && (
-		<p
+		<div
 			class="content-description textarea"
 			data-target={containerId}
-			set:html={marked.parseInline(contentBlock.properties.desc)}
+			set:html={renderMarkdown(contentBlock.properties.desc)}
 		/>
 	)}
 </ContentBlock>

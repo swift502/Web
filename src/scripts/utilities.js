@@ -1,3 +1,4 @@
+import { marked } from 'marked';
 import projectIndex from '../data/project-index.yml';
 
 export async function getProjects()
@@ -49,4 +50,10 @@ export function extractFilename(path)
 export function getRandomInt(min, max)
 {
 	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+export function renderMarkdown(content)
+{
+	content = content.replace("\n", "\n\n");
+	return marked.parse(content, {'breaks': true});
 }

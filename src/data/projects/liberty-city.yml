@@ -7,4 +7,6 @@ tags:
 page:
   - type: youtube
     data: 9SJdowHJAPE
-    desc: BeamNG.drive port of GTA 3's Liberty City. I first extended [DragonFF](https://github.com/Parik27/DragonFF), an open source dff importer to be able to import entire map segments. The actual conversion process then involved a lot of script automated data structure conversion, generating path nodes and cleaning up geometry and material data.<br><br>The mod was even featured in this [Kotaku article](https://kotaku.com/gta-3s-liberty-city-now-in-crazy-driving-game-1836646442).
+    desc: |-
+      BeamNG.drive port of GTA 3's Liberty City. I first extended [DragonFF](https://github.com/Parik27/DragonFF), an open source dff importer to be able to import entire map segments. The actual conversion process then involved a lot of script automated data structure conversion, generating path nodes and cleaning up geometry and material data.
+      The mod was even featured in this [Kotaku article](https://kotaku.com/gta-3s-liberty-city-now-in-crazy-driving-game-1836646442).
