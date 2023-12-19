@@ -1,11 +1,15 @@
 ---
+import { renderMarkdown } from '../../scripts/utilities';
 import ContentBlock from '../project_detail/ContentBlock.astro';
 const { contentBlock } = Astro.props;
 ---
 
 <ContentBlock>
 	<div class="text-block">
-		<p class="textarea">{contentBlock.properties.data}</p>
+		<div
+			class="textarea"
+			set:html={renderMarkdown(contentBlock.properties.data)}
+		/>
 	</div>
 </ContentBlock>
 
