@@ -96,7 +96,6 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 		position: relative;
 		display: inline-block;
 		line-height: 0;
-		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 		
 		background: #eee;
 		background-position: center;
@@ -127,10 +126,6 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 	}
 
 	@media (max-width: 776px) {
-		.aspect-container {
-			box-shadow: none;
-		}
-
 		.border-radius-full,
 		.border-radius-top {
 			border-radius: 0px;
