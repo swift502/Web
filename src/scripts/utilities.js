@@ -55,5 +55,5 @@ export function getRandomInt(min, max)
 export function renderMarkdown(content)
 {
 	content = content.replace("\n", "\n\n");
-	return marked.parse(content, {'breaks': true});
+	return marked.parse(content);
 }
