@@ -105,7 +105,7 @@ const pageInfo = {
 
 	.back-to-projects-wrapper {
 		text-align: center;
-		margin: 60px 0px 50px;
+		margin: 50px 0px;
 	}
 
 	.project-title {
@@ -186,8 +186,8 @@ const pageInfo = {
 		text-align: left;
 		color: #222;
 		background: #fff;
-		border: 1px solid #ccc;
-		border-radius: 5px;
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+		border-radius: 10px;
 		line-height: normal;
 	}
 
@@ -200,27 +200,15 @@ const pageInfo = {
 		margin: 0px;
 	}
 
-	.border-radius-full,
-	.border-radius-full iframe,
-	.border-radius-full video {
-		border-radius: 5px;
-	}
-
 	@media (max-width: 776px) {
 		.textarea {
 			background: none;
-			border: none;
+			box-shadow: none;
 			padding-left: 22px;
 			padding-right: 22px;
 			padding-bottom: 0px;
 			width: 100% !important;
 			text-align: left;
-		}
-
-		.border-radius-full,
-		.border-radius-full iframe,
-		.border-radius-full video {
-			border-radius: 0px;
 		}
 	}
 
