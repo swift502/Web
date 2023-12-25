@@ -1,6 +1,6 @@
 # Web
 
-Personal website built with [Astro](https://github.com/withastro/astro).
+Personal website built with [astro](https://github.com/withastro/astro).
 
 ## Features
 
