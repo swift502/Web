@@ -64,7 +64,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 			else
 			{
 				// Mobile
-				width = window.innerWidth;
+				width = document.documentElement.clientWidth;
 				height = width / aspectRatio;
 			}
 
