@@ -30,8 +30,7 @@ export async function getProjects()
 
 export function constructPageTitle(pageInfo)
 {
-	let title = defaults.pageTitle;
-	if ('title' in pageInfo) title = pageInfo.title;
+	let title = pageInfo.title ?? defaults.pageTitle;
 	if ('titlePrepend' in pageInfo) title = `${pageInfo.titlePrepend} - ${title}`;
 	if ('titleAppend' in pageInfo) title = `${title} - ${pageInfo.titleAppend}`;
 
