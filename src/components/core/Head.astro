@@ -6,8 +6,7 @@ const { pageInfo } = Astro.props;
 
 const pageTitle = constructPageTitle(pageInfo);
 const pageDescription = pageInfo.description ?? defaults.pageDescription;
-const pageImageSource = pageInfo.image ?? defaults.pageImage;
-const pageImage = import.meta.env.SITE + pageImageSource;
+const pageImage = import.meta.env.SITE + (pageInfo.image ?? defaults.pageImage);
 ---
 
 <meta charset="utf-8">
