@@ -1,5 +1,5 @@
 title: Liz
-description: Character model based on musician Liz Harris. Guitar model and bass amps were borrowed from Blend Swap.
+description: Character sculpting, retopo and texturing practice project. Guitar model and bass amps were borrowed from Blend Swap.
 tags:
   - 2017
   - Blender
@@ -7,7 +7,7 @@ tags:
 page:
   - type: image
     data: liz_1.jpg
-    desc: Character model based on musician Liz Harris. Guitar model and bass amps were borrowed from Blend Swap.
+    desc: Character sculpting, retopo and texturing practice project. Guitar model and bass amps were borrowed from Blend Swap.
   - type: image
     data: liz_2.jpg
   - type: video
