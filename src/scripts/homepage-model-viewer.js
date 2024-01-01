@@ -1,4 +1,4 @@
-import modelList from '../data/homepage-models.yml';
+import modelList from '../data/models.yml';
 import { getRandomInt } from './utilities';
 const modelViewer = document.querySelector('model-viewer');
 
@@ -6,7 +6,7 @@ const modelViewer = document.querySelector('model-viewer');
 function setModel(index)
 {
 	const model = modelList[index];
-	modelViewer.setAttribute('src', `/models/${model.name}.glb`);
+	modelViewer.setAttribute('src', `/models/${model.name}`);
 	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
 }
 

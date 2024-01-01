@@ -21,7 +21,7 @@ export async function getProjects()
 		}
 		else
 		{
-			logError(`Data file not found for project "${projectName}"`);
+			logError(`Project file for "${projectName}" not found`);
 		}
 	}
 
