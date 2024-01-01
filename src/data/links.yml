@@ -1,0 +1,12 @@
+- name: Email
+  link: mailto:blaha.j502@gmail.com
+  icon: /assets/svg/envelope.svg
+- name: LinkedIn
+  link: https://www.linkedin.com/in/jan-bláha/
+  icon: /assets/svg/linkedin.svg
+- name: GitHub
+  link: https://github.com/swift502
+  icon: /assets/svg/github.svg
+- name: YouTube
+  link: https://youtube.com/c/swifterik
+  icon: /assets/svg/youtube.svg

@@ -1,21 +1,21 @@
 ---
+import tabs from '../../data/tabs.yml';
+
 const { pageInfo } = Astro.props;
 
-function tabHighlight(tabName: string)
+function tabHighlight(tab: any)
 {
-	if (pageInfo.tab == tabName) return ' highlighted';
-	else return '';
+	return (pageInfo.tab == tab.name.toLowerCase()) ? ' highlighted' : '';
 }
 ---
 
 <div id="navbar" class="navbar">
 	<div class="navigation">
-		<a href="/" class={'navigation-item' + tabHighlight('home')}>
-			Home
-		</a>
-		<a href="/projects/" class={'navigation-item' + tabHighlight('projects')}>
-			Projects
-		</a>
+		{tabs.map((tab) =>
+			<a href={tab.link} class={'navigation-item' + tabHighlight(tab)}>
+				{tab.name}
+			</a>
+		)}
 	</div>
 </div>
 
