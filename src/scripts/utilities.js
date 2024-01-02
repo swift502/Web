@@ -1,6 +1,6 @@
 import { marked } from 'marked';
 import projectIndex from '../data/project-index.yml';
-import defaults from '../data/defaults.yml';
+import siteData from '../data/site.yml';
 
 export async function getProjects()
 {
@@ -30,7 +30,7 @@ export async function getProjects()
 
 export function constructPageTitle(pageInfo)
 {
-	let title = pageInfo.title ?? defaults.pageTitle;
+	let title = pageInfo.title ?? siteData.title;
 	if ('titlePrepend' in pageInfo) title = `${pageInfo.titlePrepend} - ${title}`;
 	if ('titleAppend' in pageInfo) title = `${title} - ${pageInfo.titleAppend}`;
 
