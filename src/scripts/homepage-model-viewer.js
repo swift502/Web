@@ -1,5 +1,5 @@
 import modelList from '../data/models.yml';
-import { getRandomInt } from './utilities';
+import { getRandomInt, extractFilename } from './utilities';
 const modelViewer = document.querySelector('model-viewer');
 
 // Model setter
@@ -32,7 +32,7 @@ document.addEventListener('keypress', (event) =>
 		modelList.forEach((model, index) => {
 			let button = document.createElement('div');
 			button.classList.add('tile');
-			button.innerHTML += model.name;
+			button.innerHTML = extractFilename(model.name);
 			button.onclick = () => {
 				setModel(index);
 			};
