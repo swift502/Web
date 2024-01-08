@@ -12,8 +12,8 @@
     "@fontsource/catamaran": "^5.0.18",
     "@fontsource/solway": "^5.0.8",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^4.0.8",
-    "image-size": "^1.1.0",
+    "astro": "^4.1.1",
+    "image-size": "^1.1.1",
     "marked": "^11.1.1",
     "normalize.css": "^8.0.1"
   }
