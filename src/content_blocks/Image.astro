@@ -3,13 +3,13 @@ const { project, contentBlock } = Astro.props;
 
 import MediaControls from '../components/content_block/MediaControls.astro';
 import { imageSize } from 'image-size';
-import AspectRatioContentBlock from '../components/content_block/AspectContainer.astro';
+import AspectContainer from '../components/content_block/AspectContainer.astro';
 
 const imagePath = `/assets/projects/${project.name}/${contentBlock.properties.data}`
 let size = imageSize('./public/' + imagePath);
 ---
 
-<AspectRatioContentBlock
+<AspectContainer
 	project={project}
 	contentBlock={contentBlock}
 	width={size.width}
@@ -26,7 +26,7 @@ let size = imageSize('./public/' + imagePath);
 		path={imagePath}
 		desc={'desc' in contentBlock.properties}
 	/>
-</AspectRatioContentBlock>
+</AspectContainer>
 
 <style>
 	.project-detail-image {

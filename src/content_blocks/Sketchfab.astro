@@ -1,6 +1,6 @@
 ---
 import { logError } from "../scripts/utilities";
-import AspectRatioContentBlock from "../components/content_block/AspectContainer.astro";
+import AspectContainer from "../components/content_block/AspectContainer.astro";
 
 const { project, contentBlock } = Astro.props;
 
@@ -18,7 +18,7 @@ else {
 }
 ---
 
-<AspectRatioContentBlock
+<AspectContainer
 	project={project}
 	contentBlock={contentBlock}
 	width="16"
@@ -39,7 +39,7 @@ else {
 			onload="fadeIn(this);"
 		/>
 	</div>
-</AspectRatioContentBlock>
+</AspectContainer>
 
 <style>
 	iframe {

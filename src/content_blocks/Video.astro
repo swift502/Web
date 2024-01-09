@@ -1,5 +1,5 @@
 ---
-import AspectRatioContentBlock from "../components/content_block/AspectContainer.astro";
+import AspectContainer from "../components/content_block/AspectContainer.astro";
 import MediaControls from "../components/content_block/MediaControls.astro";
 
 const { project, contentBlock } = Astro.props;
@@ -9,7 +9,7 @@ const width = 'width' in contentBlock.properties ? contentBlock.properties.width
 const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
 ---
 
-<AspectRatioContentBlock
+<AspectContainer
 	project={project}
 	contentBlock={contentBlock}
 	width={width}
@@ -23,7 +23,7 @@ const height = 'height' in contentBlock.properties ? contentBlock.properties.hei
 		path={videoPath}
 		desc={contentBlock.properties.desc}
 	/>
-</AspectRatioContentBlock>
+</AspectContainer>
 
 <style>
 	video {
