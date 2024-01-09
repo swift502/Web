@@ -48,7 +48,7 @@ const pageInfo = {
 			{project.data.links && (
 				<div class="link-wrapper">
 					{project.data.links.map((link) =>
-						<a class="tile link" href={link.link} target="_blank">
+						<a class="tile link-tile" href={link.link} target="_blank">
 							<img class="link-tile-icon" src="/assets/svg/external-link-alt.svg" alt="" onload="fadeIn(this);"/>
 							<div class="link-tile-text">{link.title}</div>
 						</a>
@@ -137,6 +137,30 @@ const pageInfo = {
 
 	.link-tile-icon {
 		opacity: 0;
+	}
+
+	.link-tile {
+		margin: 0px 6px;
+		padding: 12px 20px;
+		top: 0px;
+		transition: all 0.1s ease;
+	}
+
+	.link-tile-icon {
+		position: absolute;
+		width: 15px;
+		top: 14px;
+		left: 17px;
+	}
+
+	.link-tile-text {
+		margin-left: 22px;
+	}
+
+	@media (max-width: 776px) {
+		.link-tile {
+			margin: 3px 22px;
+		}
 	}
 
 	@media (max-width: 776px) {

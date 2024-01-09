@@ -4,17 +4,15 @@ import '../../styles/tiles.css';
 ---
 
 <div class="footer">
-	<div class="link-row">
+	<div class="tile-row">
 		{links.map((link) =>
-			<div class="tile-wrapper">
-				<a href={link.link} target="_blank" title={link.name}>
-					<div class="tile"> 
-						<div class="tile-icon">
-							<img src={link.icon} alt="" onload="fadeIn(this);">
-						</div>
+			<a href={link.link} target="_blank" title={link.name}>
+				<div class="tile"> 
+					<div class="tile-icon">
+						<img src={link.icon} alt="" onload="fadeIn(this);">
 					</div>
-				</a>
-			</div>
+				</div>
+			</a>
 		)}
 	</div>
 </div>
@@ -26,7 +24,7 @@ import '../../styles/tiles.css';
 		pointer-events: none;
 	}
 
-	.footer .tile-wrapper {
+	.footer a {
 		pointer-events: all;
 	}
 

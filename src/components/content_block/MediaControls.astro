@@ -6,25 +6,21 @@ const descriptionClass = desc ? ' has-description' : '';
 ---
 
 <div class={"media-controls" + descriptionClass}>
-	<div class="link-row">
-		<div class="tile-wrapper">
-			<a download={name} href={path} target="_blank" title="Download">
-				<div class="tile">
-					<div class="tile-icon">
-						<img src="/assets/svg/download.svg" alt="" onload="fadeIn(this);">
-					</div>
+	<div class="tile-row">
+		<a download={name} href={path} target="_blank" title="Download">
+			<div class="tile">
+				<div class="tile-icon">
+					<img src="/assets/svg/download.svg" alt="" onload="fadeIn(this);">
 				</div>
-			</a>
-		</div>
-		<div class="tile-wrapper">
-			<a href={path} target="_blank" title="Fullscreen">
-				<div class="tile">
-					<div class="tile-icon">
-						<img src="/assets/svg/fullscreen.svg" alt="" onload="fadeIn(this);">
-					</div>
+			</div>
+		</a>
+		<a href={path} target="_blank" title="Fullscreen">
+			<div class="tile">
+				<div class="tile-icon">
+					<img src="/assets/svg/fullscreen.svg" alt="" onload="fadeIn(this);">
 				</div>
-			</a>
-		</div>
+			</div>
+		</a>
 	</div>
 </div>
 
