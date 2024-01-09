@@ -15,11 +15,12 @@ export async function getStaticPaths() {
 }
 
 // Construct content block library
-let contentBlocks = {};
-const contentBlocksGlob = await Astro.glob('../../components/content_blocks/*.astro');
-contentBlocksGlob.forEach(block => {
-	let name = extractFilename(block.file).toLowerCase();
-	contentBlocks[name] = block.default
+let contentBlockLibrary = {};
+await Astro.glob('../../content_blocks/*.astro').then((components) => {
+	components.forEach(block => {
+		let name = extractFilename(block.file).toLowerCase();
+		contentBlockLibrary[name] = block.default
+	});
 });
 
 // Layout variables
@@ -56,8 +57,8 @@ const pageInfo = {
 			)}
 			<!-- Content -->
 			{project.data.page.map((block, index) => {
-				if (block.type in contentBlocks) {
-					const Component = contentBlocks[block.type];
+				if (block.type in contentBlockLibrary) {
+					const Component = contentBlockLibrary[block.type];
 					return <Component project={project}
 						contentBlock={{
 							'index': index,

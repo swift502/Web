@@ -4,7 +4,7 @@ import ContentBlock from './ContentBlock.astro';
 
 const { project, contentBlock, width, height } = Astro.props;
 
-const containerId = "aspect-ratio-content-block-" + contentBlock.index;
+const containerId = "aspect-container-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 ---
 
