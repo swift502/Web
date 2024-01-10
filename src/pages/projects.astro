@@ -2,7 +2,7 @@
 import Layout from '../layouts/Default.astro';
 import ProjectTile from '../components/projects/ProjectTile.astro';
 import InactiveProjectTile from '../components/projects/InactiveProjectTile.astro';
-import { getProjects } from '../scripts/utilities';
+import { getProjects } from '../scripts/astro-helpers';
 
 // Project grid
 const projects = await getProjects();
