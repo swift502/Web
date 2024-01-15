@@ -19,12 +19,12 @@ const { project } = Astro.props
 			<span class="tag">{tag}</span>
 		)}
 	</div>
-		{'badge' in project.data && (
-			<div class="project-badges">
-				<span class={`badge ${project.data.badge.toLowerCase()}`}>{project.data.badge}</span>
-			</div>
-		)}
-	</a>
+	{'badge' in project.data && (
+		<div class="project-badges">
+			<span class={`badge ${project.data.badge.toLowerCase()}`}>{project.data.badge}</span>
+		</div>
+	)}
+</a>
 
 <style>
 	.project-tile {
