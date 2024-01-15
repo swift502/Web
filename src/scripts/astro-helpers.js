@@ -42,3 +42,8 @@ export function renderMarkdown(content)
 	content = content.replaceAll("\n", "\n\n");
 	return marked.parse(content);
 }
+
+export function logError(message)
+{
+	console.error(`\u001b[91m${message}\u001b[0m`);
+}
