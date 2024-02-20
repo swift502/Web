@@ -10,9 +10,9 @@ const { project } = Astro.props;
 // Dynamic routing
 export async function getStaticPaths() {
 	const projects = await getProjects();
-	return projects.map((project) => ({
+	return projects.map((project: any) => ({
 		params: { project : project.name },
-		props: { project: project as any },
+		props: { project: project },
 	}));
 }
 

@@ -27,6 +27,23 @@ hr {
 	text-align: center;
 }
 
+.border-radius-full {
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.border-radius-top {
+	overflow: hidden;
+	border-radius: 10px 10px 0px 0px;
+}
+
+@media (max-width: 776px) {
+	.border-radius-full,
+	.border-radius-top {
+		border-radius: 0px;
+	}
+}
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;

@@ -1,6 +1,6 @@
 ---
-import { renderMarkdown } from '../../scripts/astro-helpers';
 import ContentBlock from './ContentBlock.astro';
+import ContentDescription from './ContentDescription.astro';
 import '../../styles/textarea.css';
 
 const { project, contentBlock, width, height } = Astro.props;
@@ -21,14 +21,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 	>
 		<slot/>
 	</div>
-
-	{'desc' in contentBlock.properties && (
-		<div
-			class="content-description textarea"
-			data-target={containerId}
-			set:html={renderMarkdown(contentBlock.properties.desc)}
-		/>
-	)}
+	<ContentDescription contentBlock={contentBlock} parentId={containerId} />
 </ContentBlock>
 
 <script>
@@ -38,8 +31,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 <style>
 	.aspect-container {
 		position: relative;
-		display: inline-block;
-		line-height: 0;
+		/* display: inline-block; */
 		
 		background: #eee;
 		background-position: center;
@@ -48,35 +40,5 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 
 	.aspect-container:hover :global(.media-controls)  {
 		opacity: 1;
-	}
-
-	.content-description {
-		box-sizing: border-box;
-		border-radius: 0px 0px 10px 10px;
-		margin-top: 0px;
-		margin-left: auto;
-		margin-right: auto;
-		line-height: initial;
-	}
-
-	.border-radius-full {
-		overflow: hidden;
-		border-radius: 10px;
-	}
-
-	.border-radius-top {
-		overflow: hidden;
-		border-radius: 10px 10px 0px 0px;
-	}
-
-	@media (max-width: 776px) {
-		.border-radius-full,
-		.border-radius-top {
-			border-radius: 0px;
-		}
-
-		.content-description {
-			margin-bottom: 22px;
-		}
 	}
 </style>
