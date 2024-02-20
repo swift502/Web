@@ -6,7 +6,7 @@ import ContentDescription from "../components/content_block/ContentDescription.a
 
 const { project, contentBlock } = Astro.props;
 
-const html = await codeToHtml(contentBlock.properties.data, {
+const code = await codeToHtml(contentBlock.properties.data, {
   lang: 'javascript',
   theme: 'material-theme-lighter'
 })
@@ -21,7 +21,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         id={contentBlockId}
         class={"code-window" + borderClass}
         data-code={contentBlock.properties.data}
-        set:html={html}>
+        set:html={code}>
         <div class="code-file border-radius-full">
             <a href={contentBlock.properties.link} target="_blank">
                 {contentBlock.properties.file}
