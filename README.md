@@ -1,11 +1,11 @@
 # Web
 
-Personal website built with [astro](https://github.com/withastro/astro).
+Personal website built with [Astro](https://github.com/withastro/astro).
 
 ## Features
 
 - using the [\<model-viewer\>](https://github.com/google/model-viewer) component to display 3D models
-- using [marked](https://github.com/markedjs/marked) for markdown support
+- using [Marked](https://github.com/markedjs/marked) for markdown support
 - project pages are defined in [YAML data files](/src/data/projects/)
 - custom aspect ratio container component inspired by ArtStation image rendering, which maximizes it's size while maintaining it's aspect ratio and ensuring it's always fully contained within the screen
 
