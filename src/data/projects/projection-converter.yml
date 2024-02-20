@@ -1,7 +1,7 @@
 title: Projection converter
 description: Placeholder
 tags:
-  - 2021
+  - 2024
   - Python
   - GLSL
 links:
@@ -12,7 +12,7 @@ page:
     data: conversion.webm
     width: 1100
     height: 700
-    desc: Shader based projection converter. Converts between the equirectangular and mercator projections. Project is open source and published [on GitHub](https://github.com/swift502/EquimercConverter).
+    desc: Shader based projection converter. Converts between the equirectangular and mercator projections. Project is open source and published [on GitHub](https://github.com/swift502/EquimercConverter)!
   - type: code
     data: |-
       vec2 equi_to_merc(float u, float v)
@@ -33,7 +33,9 @@ page:
       }
     file: fragment_to_equirectangular.glsl
     link: https://github.com/swift502/EquimercConverter/blob/main/src/shaders/fragment_to_equirectangular.glsl
-    desc: Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
+    desc: |-
+      Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
+      Additionally, this implementation can also render with either nearest or linear texture sampling, letting you choose between a sharp or interpolated upscaling.
   - type: code
     data: |-
       def equi_to_merc(u, v):
@@ -57,4 +59,4 @@ page:
         return (x, y)
     file: cpu_render.py
     link: https://github.com/swift502/EquimercConverter/blob/main/src/cpu_render.py
-    desc: A CPU implementation also exists as a fallback, although with obvious downsides of poor performance and scalability.
+    desc: A CPU implementation using the [Pillow](https://github.com/python-pillow/Pillow) library exists as a fallback, although with obvious downsides of poor performance and scalability.
