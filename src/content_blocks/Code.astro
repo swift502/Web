@@ -1,0 +1,54 @@
+---
+import { codeToHtml } from 'shiki'
+
+import AspectContainer from "../components/content_block/AspectContainer.astro";
+import MediaControls from "../components/content_block/MediaControls.astro";
+
+const { project, contentBlock } = Astro.props;
+
+const html = await codeToHtml(contentBlock.properties.data, {
+  lang: 'javascript',
+  theme: 'material-theme-lighter'
+})
+
+---
+
+<AspectContainer
+	project={project}
+	contentBlock={contentBlock}
+	width=16
+	height=9
+>
+    <div
+        class="code-window"
+        set:html={html}>
+    </div>
+</AspectContainer>
+
+<style>
+    .code-window {
+        height: 100%;
+        /* overflow-y: scroll; */
+        /* overflow-y: visible; */
+    }
+</style>
+
+<style is:global>
+    pre {
+        height: 100%;
+        margin: 0;
+        padding: 20px 30px;
+        text-align: left;
+        box-sizing: border-box;
+        overflow-y: scroll;
+    }
+
+    pre, code {
+        line-height: normal;
+    }
+
+    code span {
+        font-size: 16px;
+        font-family: monospace;
+    }
+</style>

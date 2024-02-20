@@ -1,0 +1,35 @@
+title: Projection converter
+description: Placeholder
+tags:
+  - 2021
+  - Python
+  - GLSL
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/EquimercConverter
+page:
+  - type: image
+    data: thumb.jpg
+    desc: Shader based projection converter. Converts between the equirectangular and mercator projections.
+  - type: code
+    data: |-
+      vec2 equi_to_merc(float u, float v)
+      {
+          // uv to equirectangular
+          float lat = remap(u, 0, 1, 0, 2 * M_PI);
+          float lon = remap(v, 0, 1, -M_PI * 0.5, M_PI * 0.5);
+
+          // equirectangular to mercator
+          float x = lat;
+          float y = log(tan(M_PI / 4 + lon / 2));
+
+          // mercator to uv
+          x = remap(x, 0, 2 * M_PI, 0, 1);
+          y = remap(y, -M_PI, M_PI, 0, 1);
+
+          return vec2(x, y);
+      }
+    desc: Using the moderngl python library, the converter runs the input image through a remapping shader, providing instant conversion.
+  - type: image
+    data: thumb.jpg
+    desc: A CPU implementation also exists as a fallback, although with obvious downsides of worse performance
