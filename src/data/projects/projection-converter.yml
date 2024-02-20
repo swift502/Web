@@ -8,8 +8,10 @@ links:
   - title: GitHub page
     link: https://github.com/swift502/EquimercConverter
 page:
-  - type: image
-    data: thumb.jpg
+  - type: video
+    data: conversion.webm
+    width: 1100
+    height: 700
     desc: Shader based projection converter. Converts between the equirectangular and mercator projections.
   - type: code
     data: |-
@@ -29,7 +31,30 @@ page:
 
           return vec2(x, y);
       }
-    desc: Using the moderngl python library, the converter runs the input image through a remapping shader, providing instant conversion.
-  - type: image
-    data: thumb.jpg
-    desc: A CPU implementation also exists as a fallback, although with obvious downsides of worse performance
+    file: fragment_to_equirectangular.glsl
+    link: https://github.com/swift502/EquimercConverter/blob/main/src/shaders/fragment_to_equirectangular.glsl
+    desc: Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
+  - type: code
+    data: |-
+      def equi_to_merc(u, v):
+        # uv to equirectangular
+        lat = remap(u, 0, 1, 0, 2 * math.pi)
+        lon = remap(v, 0, 1, -math.pi * 0.5, math.pi * 0.5)
+
+        # equirectangular to mercator
+        x = lat
+        lon = clamp(lon, -MERC_MAX_LON, MERC_MAX_LON)
+        y = math.log(math.tan(math.pi / 4 + lon / 2))
+
+        # mercator to uv
+        x = remap(x, 0, 2 * math.pi, 0, 1)
+        y = remap(y, -math.pi, math.pi, 0, 1)
+
+        # clamp
+        x = clamp(x, 0, 1)
+        y = clamp(y, 0, 1)
+
+        return (x, y)
+    file: cpu_render.py
+    link: https://github.com/swift502/EquimercConverter/blob/main/src/cpu_render.py
+    desc: A CPU implementation also exists as a fallback, although with obvious downsides of poor performance and scalability.

@@ -1,8 +1,9 @@
 ---
 import { codeToHtml } from 'shiki'
 
-import AspectContainer from "../components/content_block/AspectContainer.astro";
-import MediaControls from "../components/content_block/MediaControls.astro";
+import ContentBlock from '../components/content_block/ContentBlock.astro';
+import ContentDescription from "../components/content_block/ContentDescription.astro";
+import '../styles/tiles.css';
 
 const { project, contentBlock } = Astro.props;
 
@@ -11,36 +12,126 @@ const html = await codeToHtml(contentBlock.properties.data, {
   theme: 'material-theme-lighter'
 })
 
+const contentBlockId = "code-block-" + contentBlock.index;
+const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
+
 ---
 
-<AspectContainer
-	project={project}
-	contentBlock={contentBlock}
-	width=16
-	height=9
->
+<ContentBlock>
     <div
-        class="code-window"
+        id={contentBlockId}
+        class={"code-window" + borderClass}
+        data-code={contentBlock.properties.data}
         set:html={html}>
+        <div class="code-clipboard" data-content-block={contentBlockId} title="Copy to clipboard">
+            <div class="tile">
+                <div id={contentBlockId + "-icon-clipboard"} class="tile-icon">
+                    <img src="/assets/svg/copy.svg" alt="" onload="fadeIn(this);">
+                </div>
+                <div id={contentBlockId + "-icon-done"} class="tile-icon" style="display: none;">
+                    <img src="/assets/svg/done.svg" alt="" onload="fadeIn(this);">
+                </div>
+            </div>
+        </div>
+        <a href={contentBlock.properties.link} class="code-file">{contentBlock.properties.file}</div>
     </div>
-</AspectContainer>
+    <ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
+</ContentBlock>
+
+<script>
+    const clipboardTimers = {};
+
+    let clipboards = document.getElementsByClassName("code-clipboard");
+    Array.from(clipboards).forEach(function(clipboard: HTMLElement) {
+        clipboard.onclick = () => {
+            copyToClipboard(clipboard.dataset.contentBlock);
+        };
+    });
+
+    function getClipboardIcon(element)
+    {
+        return document.getElementById(element + "-icon-clipboard");
+    }
+
+    function getDoneIcon(element)
+    {
+        return document.getElementById(element + "-icon-done");
+    }
+
+    function copyToClipboard(element)
+    {
+        navigator.clipboard.writeText(document.getElementById(element).dataset.code);
+
+        getClipboardIcon(element).style.display = "none";
+        getDoneIcon(element).style.display = "inline";
+
+        const timeout = setTimeout(() =>
+        {
+            resetClipboard(element);
+        }, 1000);
+
+        clipboardTimers[element] = timeout;
+    }
+
+    function resetClipboard(element)
+    {
+        getClipboardIcon(element).style.display = "inline";
+        getDoneIcon(element).style.display = "none";
+    }
+</script>
 
 <style>
     .code-window {
-        height: 100%;
+        position: relative;
+        /* height: 100%; */
         /* overflow-y: scroll; */
         /* overflow-y: visible; */
     }
+
+    .code-clipboard {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .code-file {
+        position: absolute;
+        font-size: 16px;
+        /* font-family: monospace; */
+        color: #90A4AE;
+        font-weight: normal;
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .code-file:hover {
+        text-decoration: underline;
+    }
+
+    .tile {
+		padding: 11px 12px;
+	}
+
+	.tile-icon {
+		height: 25px;
+	}
+
+	.tile-icon img {
+		height: 25px;
+		width: 25px;
+	}
+
 </style>
 
 <style is:global>
     pre {
-        height: 100%;
+        /* height: 100%; */
         margin: 0;
         padding: 20px 30px;
         text-align: left;
-        box-sizing: border-box;
-        overflow-y: scroll;
+        /* box-sizing: border-box; */
+        /* overflow-y: scroll; */
     }
 
     pre, code {
