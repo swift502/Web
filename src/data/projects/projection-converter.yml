@@ -12,7 +12,7 @@ page:
     data: conversion.webm
     width: 1100
     height: 700
-    desc: Shader based projection converter. Converts between the equirectangular and mercator projections. Can be used via a CLI or directly in Python. Check it out on [on GitHub](https://github.com/swift502/EquimercConverter)!
+    desc: A blazing fast, shader based image projection converter. Converts between the equirectangular and mercator projections. Can be used via a CLI or directly in Python. Check it out on [on GitHub](https://github.com/swift502/EquimercConverter)!
   - type: code
     data: |-
       vec2 equi_to_merc(float u, float v)
@@ -59,4 +59,6 @@ page:
         return (x, y)
     file: cpu_render.py
     link: https://github.com/swift502/EquimercConverter/blob/main/src/cpu_render.py
-    desc: A CPU implementation using the [Pillow](https://github.com/python-pillow/Pillow) library exists as a fallback, although with obvious downsides of poor performance and scalability.
+    desc: |-
+      A CPU implementation using the [Pillow](https://github.com/python-pillow/Pillow) library exists as a fallback, although with obvious downsides of poor performance and scalability.
+      This converter has served it's purpose for an internal game project, which used the mercator globe projection for it's game world. However this repository is a great base for any type of shader based image converter.
