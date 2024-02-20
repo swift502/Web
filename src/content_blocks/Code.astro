@@ -23,62 +23,10 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         class={"code-window" + borderClass}
         data-code={contentBlock.properties.data}
         set:html={html}>
-        <div class="code-clipboard" data-content-block={contentBlockId} title="Copy to clipboard">
-            <div class="tile">
-                <div id={contentBlockId + "-icon-clipboard"} class="tile-icon">
-                    <img src="/assets/svg/copy.svg" alt="" onload="fadeIn(this);">
-                </div>
-                <div id={contentBlockId + "-icon-done"} class="tile-icon" style="display: none;">
-                    <img src="/assets/svg/done.svg" alt="" onload="fadeIn(this);">
-                </div>
-            </div>
-        </div>
         <a href={contentBlock.properties.link} class="code-file">{contentBlock.properties.file}</div>
     </div>
     <ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
 </ContentBlock>
-
-<script>
-    const clipboardTimers = {};
-
-    let clipboards = document.getElementsByClassName("code-clipboard");
-    Array.from(clipboards).forEach(function(clipboard: HTMLElement) {
-        clipboard.onclick = () => {
-            copyToClipboard(clipboard.dataset.contentBlock);
-        };
-    });
-
-    function getClipboardIcon(element)
-    {
-        return document.getElementById(element + "-icon-clipboard");
-    }
-
-    function getDoneIcon(element)
-    {
-        return document.getElementById(element + "-icon-done");
-    }
-
-    function copyToClipboard(element)
-    {
-        navigator.clipboard.writeText(document.getElementById(element).dataset.code);
-
-        getClipboardIcon(element).style.display = "none";
-        getDoneIcon(element).style.display = "inline";
-
-        const timeout = setTimeout(() =>
-        {
-            resetClipboard(element);
-        }, 1000);
-
-        clipboardTimers[element] = timeout;
-    }
-
-    function resetClipboard(element)
-    {
-        getClipboardIcon(element).style.display = "inline";
-        getDoneIcon(element).style.display = "none";
-    }
-</script>
 
 <style>
     .code-window {
@@ -88,20 +36,13 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         /* overflow-y: visible; */
     }
 
-    .code-clipboard {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        cursor: pointer;
-    }
-
     .code-file {
         position: absolute;
         font-size: 16px;
         /* font-family: monospace; */
         color: #90A4AE;
         font-weight: normal;
-        bottom: 20px;
+        top: 20px;
         right: 10px;
     }
 
@@ -132,6 +73,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         text-align: left;
         /* box-sizing: border-box; */
         /* overflow-y: scroll; */
+        overflow: auto;
     }
 
     pre, code {

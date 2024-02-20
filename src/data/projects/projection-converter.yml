@@ -12,7 +12,7 @@ page:
     data: conversion.webm
     width: 1100
     height: 700
-    desc: Shader based projection converter. Converts between the equirectangular and mercator projections.
+    desc: Shader based projection converter. Converts between the equirectangular and mercator projections. Project is open source and published [on GitHub](https://github.com/swift502/EquimercConverter).
   - type: code
     data: |-
       vec2 equi_to_merc(float u, float v)
