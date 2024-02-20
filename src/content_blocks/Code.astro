@@ -1,0 +1,89 @@
+---
+import { codeToHtml } from 'shiki'
+
+import ContentBlock from '../components/content_block/ContentBlock.astro';
+import ContentDescription from "../components/content_block/ContentDescription.astro";
+
+const { project, contentBlock } = Astro.props;
+
+const code = await codeToHtml(contentBlock.properties.data, {
+  lang: 'javascript',
+  theme: 'material-theme-lighter'
+})
+
+const contentBlockId = "code-block-" + contentBlock.index;
+const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
+
+---
+
+<ContentBlock>
+    <div
+        id={contentBlockId}
+        class={"code-window" + borderClass}
+        data-code={contentBlock.properties.data}
+        set:html={code}>
+        <div class="code-file border-radius-full">
+            <a href={contentBlock.properties.link} target="_blank">
+                {contentBlock.properties.file}
+                <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
+            </a>
+        </div>
+    </div>
+    <ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
+</ContentBlock>
+
+<style>
+    .code-window {
+        position: relative;
+        width: 100%;
+    }
+
+    .code-file {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background: #FAFAFAAA;
+        padding: 14px 20px;
+    }
+
+    .code-file a {
+        font-size: 16px;
+        color: #90A4AE;
+        font-weight: normal;
+    }
+
+    .code-file a:hover {
+        text-decoration: underline;
+    }
+
+    .code-file-icon {
+        display: inline;
+        height: 12px;
+    }
+
+    @media (max-width: 776px) {
+		.code-file {
+            padding: 14px 20px 0px;
+			position: relative;
+            background: ##FAFAFA;
+            /* text-align: left; */
+            width: 100%;
+            box-sizing: border-box;
+		}
+	}
+
+</style>
+
+<style is:global>
+    pre {
+        margin: 0;
+        padding: 20px 30px;
+        text-align: left;
+        overflow: auto;
+    }
+
+    code span {
+        font-size: 16px;
+        font-family: monospace;
+    }
+</style>

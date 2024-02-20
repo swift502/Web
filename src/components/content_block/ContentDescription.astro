@@ -1,0 +1,26 @@
+---
+import { renderMarkdown } from '../../scripts/astro-helpers';
+const { contentBlock, parentId } = Astro.props;
+---
+
+{'desc' in contentBlock.properties && (
+    <div
+        class="content-description textarea"
+        data-target={parentId}
+        set:html={renderMarkdown(contentBlock.properties.desc)}
+    />
+)}
+
+
+<style>
+    .content-description {
+		box-sizing: border-box;
+		border-radius: 0px 0px 10px 10px;
+	}
+
+	@media (max-width: 776px) {
+		.content-description {
+			margin-bottom: 22px;
+		}
+	}
+</style>
