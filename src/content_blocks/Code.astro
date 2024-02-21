@@ -1,15 +1,15 @@
 ---
-import { codeToHtml } from 'shiki'
+import hljs from 'highlight.js';
+import 'highlight.js/styles/kimbie-light.min.css';
 
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import ContentDescription from "../components/content_block/ContentDescription.astro";
 
 const { project, contentBlock } = Astro.props;
 
-const code = await codeToHtml(contentBlock.properties.data, {
-  lang: 'javascript',
-  theme: 'material-theme-lighter'
-})
+const code = hljs.highlightAuto(
+    contentBlock.properties.data
+).value
 
 const contentBlockId = "code-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
@@ -19,15 +19,13 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 <ContentBlock>
     <div
         id={contentBlockId}
-        class={"code-window" + borderClass}
-        data-code={contentBlock.properties.data}
-        set:html={code}>
-        <div class="code-file border-radius-full">
-            <a href={contentBlock.properties.link} target="_blank">
-                {contentBlock.properties.file}
-                <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
-            </a>
-        </div>
+        class={"code-window hljs" + borderClass}
+        data-code={contentBlock.properties.data}>
+        <a class="code-file border-radius-full" href={contentBlock.properties.link} target="_blank">
+            {contentBlock.properties.file}
+            <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
+        </a>
+        <pre><code set:html={code}></code></pre>
     </div>
     <ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
 </ContentBlock>
@@ -36,23 +34,24 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
     .code-window {
         position: relative;
         width: 100%;
+        background: #FAFAFA;
     }
 
     .code-file {
+        font-family: 'Sono', sans-serif;
         position: absolute;
+        display: block;
         top: 0px;
         right: 0px;
-        background: #FAFAFAAA;
-        padding: 14px 20px;
-    }
-
-    .code-file a {
+        background: #F0F0F0;
+        padding: 10px 18px;
         font-size: 16px;
-        color: #90A4AE;
+        color: #84613D;
         font-weight: normal;
+        letter-spacing: -1px;
     }
 
-    .code-file a:hover {
+    .code-file:hover {
         text-decoration: underline;
     }
 
@@ -63,10 +62,8 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 
     @media (max-width: 776px) {
 		.code-file {
-            padding: 14px 20px 0px;
 			position: relative;
             background: ##FAFAFA;
-            /* text-align: left; */
             width: 100%;
             box-sizing: border-box;
 		}
@@ -82,8 +79,8 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         overflow: auto;
     }
 
-    code span {
+    code, span {
         font-size: 16px;
-        font-family: monospace;
+        font-family: 'Sono', sans-serif;
     }
 </style>
