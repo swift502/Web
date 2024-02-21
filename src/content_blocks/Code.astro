@@ -7,8 +7,9 @@ import ContentDescription from "../components/content_block/ContentDescription.a
 
 const { project, contentBlock } = Astro.props;
 
-const code = hljs.highlightAuto(
-    contentBlock.properties.data
+const code = hljs.highlight(
+    contentBlock.properties.data,
+    { language: contentBlock.properties.lang }
 ).value
 
 const contentBlockId = "code-block-" + contentBlock.index;
@@ -63,12 +64,12 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
     @media (max-width: 776px) {
 		.code-file {
 			position: relative;
-            background: ##FAFAFA;
+            background: none;
+            padding-bottom: 0;
             width: 100%;
             box-sizing: border-box;
 		}
 	}
-
 </style>
 
 <style is:global>

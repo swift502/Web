@@ -1,4 +1,4 @@
-title: Projection converter
+title: Map projection converter
 description: Placeholder
 tags:
   - 2024
@@ -32,8 +32,9 @@ page:
 
           return vec2(x, y);
       }
+    lang: glsl
     file: fragment_to_equirectangular.glsl
-    link: https://github.com/swift502/EquimercConverter/blob/main/src/shaders/fragment_to_equirectangular.glsl
+    link: https://github.com/swift502/EquimercConverter/blob/main/src/shaders/fragment_to_equirectangular.glsl#L14-L29
     desc: |-
       Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
       Additionally, this implementation can also render with either nearest or linear texture sampling, letting you choose between a sharp or interpolated upscaling.
@@ -58,6 +59,7 @@ page:
         y = clamp(y, 0, 1)
 
         return (x, y)
+    lang: python
     file: cpu_render.py
-    link: https://github.com/swift502/EquimercConverter/blob/main/src/cpu_render.py
+    link: https://github.com/swift502/EquimercConverter/blob/main/src/cpu_render.py#L13-L31
     desc: A CPU implementation using the [Pillow](https://github.com/python-pillow/Pillow) library exists as a fallback, although with obvious downsides of poor performance and scalability.
