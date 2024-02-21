@@ -10,7 +10,7 @@ const { project, contentBlock } = Astro.props;
 const code = hljs.highlight(
     contentBlock.properties.data,
     { language: contentBlock.properties.lang }
-).value
+).value;
 
 const contentBlockId = "code-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
@@ -59,6 +59,13 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         height: 12px;
     }
 
+    pre {
+        margin: 0;
+        padding: 20px 30px;
+        text-align: left;
+        overflow: auto;
+    }
+
     @media (max-width: 776px) {
 		.code-file {
 			position: relative;
@@ -71,13 +78,6 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 </style>
 
 <style is:global>
-    pre {
-        margin: 0;
-        padding: 20px 30px;
-        text-align: left;
-        overflow: auto;
-    }
-
     .code-window code, .code-window span {
         font-size: 16px;
         font-family: 'Sono', sans-serif;
