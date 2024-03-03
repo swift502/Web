@@ -21,6 +21,8 @@ document.addEventListener('keypress', (event) =>
 	if (debugCode[level] == event.code) level++;
 	if (level == debugCode.length)
 	{
+		level++;
+		
 		let wrapper = document.createElement('div');
 		wrapper.id = 'model-debug-wrapper';
 		document.querySelector('.footer').appendChild(wrapper);
