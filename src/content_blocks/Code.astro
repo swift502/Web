@@ -22,7 +22,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         id={contentBlockId}
         class={"code-window hljs" + borderClass}
         data-code={contentBlock.properties.data}>
-        <a class="code-file border-radius-full" href={contentBlock.properties.link} target="_blank">
+        <a class="code-file" href={contentBlock.properties.link} target="_blank">
             {contentBlock.properties.file}
             <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
         </a>
@@ -43,7 +43,6 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         display: block;
         top: 0px;
         right: 0px;
-        background: #F0F0F0;
         padding: 10px 18px;
         font-size: 16px;
         color: #84613D;
@@ -69,10 +68,9 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
     @media (max-width: 776px) {
 		.code-file {
 			position: relative;
-            background: none;
-            padding-bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
+			padding-bottom: 0;
+			width: 100%;
+			box-sizing: border-box;
 		}
 	}
 </style>
