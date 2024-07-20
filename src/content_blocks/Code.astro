@@ -1,16 +1,10 @@
 ---
-import hljs from 'highlight.js';
-import 'highlight.js/styles/kimbie-light.min.css';
+import { Code as CodeComponent } from 'astro:components';
 
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import ContentDescription from "../components/content_block/ContentDescription.astro";
 
 const { project, contentBlock } = Astro.props;
-
-const code = hljs.highlight(
-    contentBlock.properties.data,
-    { language: contentBlock.properties.lang }
-).value;
 
 const contentBlockId = "code-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
@@ -18,15 +12,12 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 ---
 
 <ContentBlock>
-    <div
-        id={contentBlockId}
-        class={"code-window hljs" + borderClass}
-        data-code={contentBlock.properties.data}>
-        <a class="code-file" href={contentBlock.properties.link} target="_blank">
-            {contentBlock.properties.file}
-            <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
-        </a>
-        <pre><code set:html={code}></code></pre>
+    <a class="code-file" href={contentBlock.properties.link} target="_blank">
+        {contentBlock.properties.file}
+        <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
+    </a>
+    <div id={contentBlockId} class={"code-window" + borderClass}>
+        <CodeComponent code={contentBlock.properties.data} lang={contentBlock.properties.lang} theme="catppuccin-frappe" />
     </div>
     <ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
 </ContentBlock>
@@ -35,17 +26,18 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
     .code-window {
         position: relative;
         width: 100%;
-        background: #FAFAFA;
     }
 
     .code-file {
-        position: absolute;
+        position: relative;
+        align-self: flex-start;
+        margin-bottom: -10px;
         display: block;
-        bottom: 0px;
-        right: 0px;
-        padding: 10px 18px;
+        background: #303446;
+        padding: 12px 18px 16px;
         font-size: 16px;
-        color: #84613D;
+        color: #fafafa;
+        border-radius: 8px 8px 0px 0px;
         font-weight: normal;
     }
 
@@ -55,6 +47,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 
     .code-file-icon {
         display: inline;
+        margin-left: 4px;
         height: 12px;
     }
 
@@ -69,8 +62,12 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 		.code-file {
 			position: relative;
 			padding-bottom: 0;
-			width: 100%;
+            margin-bottom: 0;
+            margin-left: 4px;
+			/* width: 100%; */
+            /* align-self: center; */
 			box-sizing: border-box;
+            border-radius: 5px 5px 0px 0px;
 		}
 	}
 </style>
