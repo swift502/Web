@@ -12,10 +12,12 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 ---
 
 <ContentBlock>
-    <a class="code-file" href={contentBlock.properties.link} target="_blank">
-        {contentBlock.properties.file}
-        <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
-    </a>
+    <div class="code-file">
+        <a class="code-file-tab" href={contentBlock.properties.link} target="_blank">
+            {contentBlock.properties.file}
+            <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
+        </a>
+    </div>
     <div id={contentBlockId} class={"code-window" + borderClass}>
         <CodeComponent code={contentBlock.properties.data} lang={contentBlock.properties.lang} theme="catppuccin-frappe" />
     </div>
@@ -29,19 +31,25 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
     }
 
     .code-file {
+        width: 100%;
+        text-align: left;
+    }
+
+    .code-file-tab {
+        display: inline-block;
         position: relative;
         align-self: flex-start;
         margin-bottom: -10px;
-        display: block;
         background: #303446;
         padding: 12px 18px 16px;
         font-size: 16px;
         color: #fafafa;
         border-radius: 8px 8px 0px 0px;
         font-weight: normal;
+        white-space: nowrap;
     }
 
-    .code-file:hover {
+    .code-file-tab:hover {
         text-decoration: underline;
     }
 
@@ -59,11 +67,14 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
     }
 
     @media (max-width: 776px) {
-		.code-file {
+        .code-file {
+            width: 100vw;
+            overflow: hidden;
+        }
+        
+		.code-file-tab {
 			position: relative;
-			padding-bottom: 0;
-            margin-bottom: 0;
-            margin-left: 4px;
+            margin-left: 10px;
 			box-sizing: border-box;
             border-radius: 5px 5px 0px 0px;
 		}
