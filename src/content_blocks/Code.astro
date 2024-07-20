@@ -12,12 +12,18 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 ---
 
 <ContentBlock>
-    <div class="code-file">
-        <a class="code-file-tab" href={contentBlock.properties.link} target="_blank">
-            {contentBlock.properties.file}
-            <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
-        </a>
-    </div>
+    {contentBlock.properties.file && (
+        <div class="code-file">
+            {contentBlock.properties.link ? (
+                <a class="code-file-tab link" href={contentBlock.properties.link} target="_blank">
+                    {contentBlock.properties.file}
+                    <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
+                </a>
+            ) : (
+                <div class="code-file-tab">{contentBlock.properties.file}</div>
+            )}
+        </div>
+    )}
     <div id={contentBlockId} class={"code-window" + borderClass}>
         <CodeComponent code={contentBlock.properties.data} lang={contentBlock.properties.lang} theme="catppuccin-frappe" />
     </div>
@@ -49,7 +55,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
         white-space: nowrap;
     }
 
-    .code-file-tab:hover {
+    .code-file-tab.link:hover {
         text-decoration: underline;
     }
 

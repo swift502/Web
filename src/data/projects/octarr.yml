@@ -13,6 +13,22 @@ page:
   - type: youtube
     data: E7m61IGjSDc
     desc: Soon enough I had a working iteration and could place voxel blocks in the world. The green lines show used octree nodes. Unlike multidimensional or jagged arrays, Octarr is memory friendly. You can write a data block at the 2^64 coordinate and not run out of memory. That was the main obstacle which I managed to overcome using this system.
+  - type: code
+    data: |-
+      // Create an octarr
+      public Octarr<Data> octarr = new Octarr<Data>();
+
+      // Write
+      octarr[10, -20, 30] = new Data();
+
+      // Read
+      Data data = octarr[10, -20, 30];
+
+      // Delete
+      octarr[10, -20, 30] = null;
+    lang: cs
+    desc: |-
+      Octarr carries a user specified data type. C# array indexers are utilized for data manipulation. Octarr's size completely unrestrained, therefore data can be written at any position.
   - type: youtube
     data: szhJG3i_F4Q
     desc: |-
