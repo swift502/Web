@@ -28,7 +28,7 @@ page:
       octarr[10, -20, 30] = null;
     lang: cs
     desc: |-
-      Octarr carries a user specified data type. C# array indexers are utilized for data manipulation. Octarr's size completely unrestrained, so there's no need to initialize array size.
+      Octarr carries a user specified data type, and C# array indexers are utilized for data manipulation. Octarr's size is completely dynamic, so there's no need to initialize array size before writing data.
   - type: youtube
     data: szhJG3i_F4Q
     desc: |-
