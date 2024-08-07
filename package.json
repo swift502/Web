@@ -13,9 +13,9 @@
     "@fontsource/solway": "^5.0.12",
     "@fontsource/sono": "^5.0.20",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^4.12.2",
+    "astro": "^4.13.1",
     "image-size": "^1.1.1",
-    "marked": "^13.0.2",
+    "marked": "^14.0.0",
     "normalize.css": "^8.0.1"
   }
 }
