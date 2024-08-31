@@ -9,13 +9,13 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.1.6",
-    "@fontsource/catamaran": "^5.0.20",
-    "@fontsource/solway": "^5.0.12",
-    "@fontsource/sono": "^5.0.20",
+    "@fontsource/catamaran": "^5.0.21",
+    "@fontsource/solway": "^5.0.13",
+    "@fontsource/sono": "^5.0.21",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^4.13.1",
+    "astro": "^4.15.1",
     "image-size": "^1.1.1",
-    "marked": "^14.0.0",
+    "marked": "^14.1.0",
     "normalize.css": "^8.0.1"
   }
 }

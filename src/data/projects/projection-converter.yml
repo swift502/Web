@@ -19,47 +19,36 @@ page:
       vec2 equi_to_merc(float u, float v)
       {
           // uv to equirectangular
-          float lat = remap(u, 0, 1, 0, 2 * M_PI);
-          float lon = remap(v, 0, 1, -M_PI * 0.5, M_PI * 0.5);
+          float lon = remap(v, 0, 1, -EQUI_LON, EQUI_LON);
 
           // equirectangular to mercator
-          float x = lat;
           float y = log(tan(M_PI / 4 + lon / 2));
 
           // mercator to uv
-          x = remap(x, 0, 2 * M_PI, 0, 1);
           y = remap(y, -M_PI, M_PI, 0, 1);
 
-          return vec2(x, y);
+          return vec2(u, y);
       }
     lang: glsl
     file: fragment_to_equirectangular.glsl
-    link: https://github.com/swift502/EquimercConverter/blob/main/src/shaders/fragment_to_equirectangular.glsl#L14-L29
+    link: https://github.com/swift502/EquimercConverter/blob/2f3c546e916eeb6ce33307887f1d1d09964ead3a/src/shaders/fragment_to_equirectangular.glsl#L16-L28
     desc: |-
       Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
       Additionally, this implementation can also render with either nearest or linear texture sampling, letting you choose between a sharp or interpolated upscaling.
   - type: code
     data: |-
-      def equi_to_merc(u, v):
-        # uv to equirectangular
-        lat = remap(u, 0, 1, 0, 2 * math.pi)
-        lon = remap(v, 0, 1, -math.pi * 0.5, math.pi * 0.5)
+      def merc_to_equi(u, v):
+          # uv to mercator
+          lon = remap(v, 0, 1, -math.pi, math.pi)
 
-        # equirectangular to mercator
-        x = lat
-        lon = clamp(lon, -MERC_MAX_LON, MERC_MAX_LON)
-        y = math.log(math.tan(math.pi / 4 + lon / 2))
+          # mercator to equirectangular
+          y = 2 * math.atan(math.pow(math.e, lon)) - math.pi * 0.5
 
-        # mercator to uv
-        x = remap(x, 0, 2 * math.pi, 0, 1)
-        y = remap(y, -math.pi, math.pi, 0, 1)
+          # equirectangular to uv
+          y = remap(y, -EQUI_LON, EQUI_LON, 0, 1)
 
-        # clamp
-        x = clamp(x, 0, 1)
-        y = clamp(y, 0, 1)
-
-        return (x, y)
+          return (u, y)
     lang: python
     file: cpu_render.py
-    link: https://github.com/swift502/EquimercConverter/blob/main/src/cpu_render.py#L13-L31
+    link: https://github.com/swift502/EquimercConverter/blob/2f3c546e916eeb6ce33307887f1d1d09964ead3a/src/cpu_render.py#L25-L35
     desc: A CPU implementation using the [Pillow](https://github.com/python-pillow/Pillow) library exists as a fallback, although with obvious downsides of poor performance and scalability.
