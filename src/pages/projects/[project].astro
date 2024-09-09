@@ -4,12 +4,13 @@ import BigButton from '../../components/core/BigButton.astro';
 import { getProjects, logError } from '../../scripts/astro-helpers';
 import { extractFilename } from '../../scripts/utilities';
 import '../../styles/tiles.css';
+import type { AstroInstance } from 'astro';
 
 const { project } = Astro.props;
 
 // Dynamic routing
 export async function getStaticPaths() {
-	const projects = await getProjects();
+	const projects = getProjects();
 	return projects.map((project: any) => ({
 		params: { project : project.name },
 		props: { project: project },
@@ -18,11 +19,9 @@ export async function getStaticPaths() {
 
 // Construct content block library
 let contentBlockLibrary = {};
-await Astro.glob('../../content_blocks/*.astro').then((components) => {
-	components.forEach(block => {
-		let name = extractFilename(block.file).toLowerCase();
-		contentBlockLibrary[name] = block.default
-	});
+Object.values(import.meta.glob('../../content_blocks/*.astro', { eager: true })).forEach((block: AstroInstance) => {
+	let name = extractFilename(block.file).toLowerCase();
+	contentBlockLibrary[name] = block.default
 });
 
 // Layout variables

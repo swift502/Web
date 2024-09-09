@@ -5,7 +5,7 @@ import InactiveProjectTile from '../../components/projects/InactiveProjectTile.a
 import { getProjects } from '../../scripts/astro-helpers';
 
 // Project grid
-const projects = await getProjects();
+const projects = getProjects();
 const columns = 3;
 const gaps = (columns - (projects.length % columns)) % columns;
 

@@ -2,10 +2,10 @@ import { marked } from 'marked';
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 
-export async function getProjects()
+export function getProjects()
 {
 	let projects = [];
-	const dataFiles = import.meta.glob('/src/data/projects/*.yml');
+	const dataFiles = import.meta.glob('/src/data/projects/*.yml', { eager: true });
 
 	for (let i = 0; i < projectIndex.length; i++)
 	{
@@ -16,7 +16,7 @@ export async function getProjects()
 		{
 			projects.push({
 				'name': projectName,
-				'data': await dataFiles[dataPath](),
+				'data': dataFiles[dataPath],
 			});
 		}
 		else
