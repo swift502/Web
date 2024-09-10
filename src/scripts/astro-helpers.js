@@ -1,4 +1,6 @@
 import { marked } from 'marked';
+import { extractFilename } from './utilities';
+
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 
@@ -26,6 +28,20 @@ export function getProjects()
 	}
 
 	return projects;
+}
+
+export function getContentBlockLibrary()
+{
+	const library = [];
+	const contentBlocks = import.meta.glob('../content_blocks/*.astro', { eager: true });
+	
+	Object.values(contentBlocks).forEach((block) =>
+	{
+		let name = extractFilename(block.file).toLowerCase();
+		library[name] = block.default
+	});
+
+	return library;
 }
 
 export function constructPageTitle(pageInfo)

@@ -31,18 +31,21 @@ document.addEventListener('keypress', (event) =>
 		list.id = 'model-debug-list';
 		wrapper.appendChild(list);
 
-		modelList.forEach((model, index) => {
+		modelList.forEach((model, index) =>
+		{
 			let button = document.createElement('div');
 			button.classList.add('tile');
 			button.innerHTML = extractFilename(model.name);
-			button.onclick = () => {
+			button.onclick = () =>
+			{
 				setModel(index);
 			};
 
 			list.appendChild(button);
 		});
 
-		setTimeout(() => {
+		setTimeout(() =>
+		{
 			wrapper.style.opacity = '1';
 			wrapper.style.top = '-70px';
 		}, 0);

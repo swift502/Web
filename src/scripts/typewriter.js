@@ -29,7 +29,8 @@ function typewriter()
 		lineIndex++;
 		if (lineIndex == lines.length) lineIndex = 0;
 
-		setTimeout(function() {
+		setTimeout(() =>
+		{
 			pushHistory(lastLine);
 			typewriter();
 		}, nextLineDelay);
