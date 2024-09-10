@@ -61,14 +61,14 @@ export function getContentBlockLibrary()
 	return library;
 }
 
-export function getPageInfo({title, titlePrepend, titleAppend, description, image, tab} : PageInfoOptions = {}) : PageInfo
+export function getPageInfo({title, titlePrepend, titleAppend, description, image, tab} : PageInfoOptions) : PageInfo
 {
 	const pageInfo: PageInfo = {};
 
 	// Title
 	pageInfo.title = title ?? siteData.title;
-	if (titlePrepend != null) pageInfo.title = `${titlePrepend} - ${pageInfo.title}`;
-	if (titleAppend != null) pageInfo.title = `${pageInfo.title} - ${titleAppend}`;
+	if (titlePrepend) pageInfo.title = `${titlePrepend} - ${pageInfo.title}`;
+	if (titleAppend) pageInfo.title = `${pageInfo.title} - ${titleAppend}`;
 
 	// Page info
 	pageInfo.description = description ?? siteData.description;
