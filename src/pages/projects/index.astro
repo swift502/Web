@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Default.astro';
 import ProjectTile from '../../components/projects/ProjectTile.astro';
 import InactiveProjectTile from '../../components/projects/InactiveProjectTile.astro';
-import { getProjects } from '../../scripts/astro-helpers';
+import { getProjects, getPageInfo } from '../../scripts/astro-helpers';
 
 // Project grid
 const projects = getProjects();
@@ -10,10 +10,10 @@ const columns = 3;
 const gaps = (columns - (projects.length % columns)) % columns;
 
 // Layout variables
-const pageInfo = {
-	'titlePrepend': 'Projects',
-	'tab': 'projects',
-};
+const pageInfo = getPageInfo({
+	titlePrepend: 'Projects',
+	tab: 'projects'
+});
 ---
 
 <Layout pageInfo={pageInfo}>

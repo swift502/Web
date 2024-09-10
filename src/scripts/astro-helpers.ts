@@ -3,6 +3,23 @@ import { extractFilename } from './utilities';
 
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
+import type { AstroInstance } from 'astro';
+
+export type PageInfo = {
+	title?: string,
+	description?: string,
+	image?: string,
+	tab?: string
+};
+
+type PageInfoOptions = {
+	title?: string,
+	titlePrepend?: string,
+	titleAppend?: string,
+	description?: string,
+	image?: string,
+	tab?: string
+};
 
 export function getProjects()
 {
@@ -35,7 +52,7 @@ export function getContentBlockLibrary()
 	const library = [];
 	const contentBlocks = import.meta.glob('../content_blocks/*.astro', { eager: true });
 	
-	Object.values(contentBlocks).forEach((block) =>
+	Object.values(contentBlocks).forEach((block: AstroInstance) =>
 	{
 		let name = extractFilename(block.file).toLowerCase();
 		library[name] = block.default
@@ -44,13 +61,21 @@ export function getContentBlockLibrary()
 	return library;
 }
 
-export function constructPageTitle(pageInfo)
+export function getPageInfo({title, titlePrepend, titleAppend, description, image, tab} : PageInfoOptions = {}) : PageInfo
 {
-	let title = pageInfo.title ?? siteData.title;
-	if ('titlePrepend' in pageInfo) title = `${pageInfo.titlePrepend} - ${title}`;
-	if ('titleAppend' in pageInfo) title = `${title} - ${pageInfo.titleAppend}`;
+	const pageInfo: PageInfo = {};
 
-	return title;
+	// Title
+	pageInfo.title = title ?? siteData.title;
+	if (titlePrepend != null) pageInfo.title = `${titlePrepend} - ${pageInfo.title}`;
+	if (titleAppend != null) pageInfo.title = `${pageInfo.title} - ${titleAppend}`;
+
+	// Page info
+	pageInfo.description = description ?? siteData.description;
+	pageInfo.image = import.meta.env.SITE + (image ?? siteData.image);
+	pageInfo.tab = tab;
+
+	return pageInfo;
 }
 
 export function renderMarkdown(content)

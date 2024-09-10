@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Default.astro';
 import BigButton from '../../components/core/BigButton.astro';
-import { getProjects, getContentBlockLibrary, logError } from '../../scripts/astro-helpers';
+import { getProjects, getContentBlockLibrary, logError, getPageInfo } from '../../scripts/astro-helpers';
 import '../../styles/tiles.css';
 
 const { project } = Astro.props;
@@ -21,12 +21,12 @@ export async function getStaticPaths()
 let contentBlockLibrary = getContentBlockLibrary();
 
 // Layout variables
-const pageInfo = {
-	'titlePrepend': project.data.title,
-	'description': project.data.description,
-	'image': `/assets/projects/${project.name}/thumb.jpg`,
-	'tab': 'projects',
-};
+const pageInfo = getPageInfo({
+	titlePrepend: project.data.title,
+	description: project.data.description,
+	image: `/assets/projects/${project.name}/thumb.jpg`,
+	tab: 'projects',
+});
 ---
 
 <Layout pageInfo={pageInfo}>

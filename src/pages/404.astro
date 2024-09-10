@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/NoIndex.astro';
 import BigButton from '../components/core/BigButton.astro';
+import { getPageInfo } from '../scripts/astro-helpers';
 
 // Layout variables
-const pageInfo = {
-	'title': 'Page Not Found',
-};
+const pageInfo = getPageInfo({
+	title: 'Page Not Found',
+});
 ---
 
 <Layout pageInfo={pageInfo}>

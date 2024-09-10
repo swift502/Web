@@ -1,6 +1,4 @@
 ---
-import { constructPageTitle } from '../scripts/astro-helpers';
-
 import '@fontsource/catamaran/600.css';
 import '@fontsource/catamaran/900.css';
 import '@fontsource/solway/400.css';
@@ -17,7 +15,7 @@ const { pageInfo } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>{constructPageTitle(pageInfo)}</title>
+		<title>{pageInfo.title}</title>
 		<meta name="robots" content="noindex">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<script is:inline src="/scripts/global.js" />
