@@ -17,7 +17,7 @@ const { pageInfo } = Astro.props;
 <title>{pageInfo.title}</title>
 <meta name="description" content={pageInfo.description}>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-{pageInfo.noIndex == true &&
+{pageInfo.noIndex &&
     <meta name="robots" content="noindex"/>
 }
 
