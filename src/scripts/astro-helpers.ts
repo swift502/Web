@@ -47,9 +47,9 @@ export function getProjects() : any[]
 	return projects;
 }
 
-export function getContentBlockLibrary() : AstroInstance[]
+export function getContentBlockLibrary() : any[]
 {
-	const library : AstroInstance[] = [];
+	const library = [];
 	const contentBlocks = import.meta.glob('../content_blocks/*.astro', { eager: true });
 	
 	Object.values(contentBlocks).forEach((block: AstroInstance) =>
