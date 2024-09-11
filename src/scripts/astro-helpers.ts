@@ -21,7 +21,7 @@ type PageInfoOptions = {
 	tab?: string
 };
 
-export function getProjects()
+export function getProjects() : any[]
 {
 	let projects = [];
 	const dataFiles = import.meta.glob('/src/data/projects/*.yml', { eager: true });
@@ -47,9 +47,9 @@ export function getProjects()
 	return projects;
 }
 
-export function getContentBlockLibrary()
+export function getContentBlockLibrary() : AstroInstance[]
 {
-	const library = [];
+	const library : AstroInstance[] = [];
 	const contentBlocks = import.meta.glob('../content_blocks/*.astro', { eager: true });
 	
 	Object.values(contentBlocks).forEach((block: AstroInstance) =>
@@ -78,13 +78,13 @@ export function getPageInfo({title, titlePrepend, titleAppend, description, imag
 	return pageInfo;
 }
 
-export function renderMarkdown(content)
+export function renderMarkdown(content: string) : string
 {
 	content = content.replaceAll("\n", "\n\n");
-	return marked.parse(content);
+	return marked.parse(content, { async: false });
 }
 
-export function logError(message)
+export function logError(message: string) : void
 {
 	console.error(`\u001b[91m${message}\u001b[0m`);
 }
