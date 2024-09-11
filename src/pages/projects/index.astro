@@ -19,13 +19,13 @@ const pageInfo = getPageInfo({
 <Layout pageInfo={pageInfo}>
 	<div class="project-grid">
 		<!-- Tiles -->
-		{projects.map((project) =>
+		{projects.map((project) => (
 			<ProjectTile project={project}/>
-		)}
+		))}
 		<!-- Inactive tiles -->
-		{[...Array(gaps)].map(() =>
+		{[...Array(gaps)].map(() => (
 			<InactiveProjectTile/>
-		)}
+		))}
 	</div>
 </Layout>
 
