@@ -11,7 +11,7 @@ const pageInfo = getPageInfo({
 ---
 
 <Layout pageInfo={pageInfo}>
-	<div class="content">
+	<div class="model-background">
 		<model-viewer
 			src="/models/404.glb"
 			environment-image="/assets/env.hdr"
@@ -68,7 +68,7 @@ const pageInfo = getPageInfo({
 		margin-bottom: 30px;
 	}
 
-	.content {
+	.model-background {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -82,7 +82,7 @@ const pageInfo = getPageInfo({
 	}
 
 	@media (max-width: 776px) {
-		.content {
+		.model-background {
 			display: none;
 		}
 
