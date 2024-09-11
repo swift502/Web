@@ -11,14 +11,14 @@ function tabHighlight(tab)
 
 <div id="navbar" class="navbar">
 	<div class="navigation">
-		{tabs.map((tab) =>
+		{tabs.map((tab) => (
 			<a
 				href={tab.link}
 				class={'navigation-item' + tabHighlight(tab)}
 			>
 				{tab.name}
 			</a>
-		)}
+		))}
 	</div>
 </div>
 

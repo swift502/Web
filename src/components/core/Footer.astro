@@ -5,7 +5,7 @@ import '../../styles/tiles.css';
 
 <div class="footer">
 	<div class="tile-row">
-		{links.map((link) =>
+		{links.map((link) => (
 			<a href={link.link} target="_blank" title={link.name}>
 				<div class="tile"> 
 					<div class="tile-icon">
@@ -13,7 +13,7 @@ import '../../styles/tiles.css';
 					</div>
 				</div>
 			</a>
-		)}
+		))}
 	</div>
 </div>
 
