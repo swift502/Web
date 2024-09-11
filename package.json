@@ -10,8 +10,8 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.1.6",
     "@fontsource/catamaran": "^5.0.22",
+    "@fontsource/fragment-mono": "^5.0.22",
     "@fontsource/solway": "^5.0.14",
-    "@fontsource/sono": "^5.0.22",
     "@rollup/plugin-yaml": "^4.1.2",
     "astro": "^5.0.0-alpha.6",
     "image-size": "^1.1.1",
