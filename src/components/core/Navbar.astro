@@ -1,6 +1,10 @@
 ---
 import tabs from '../../data/tabs.yml';
+import type { PageInfo } from '../../scripts/astro-helpers';
 
+interface Props {
+    pageInfo: PageInfo;
+}
 const { pageInfo } = Astro.props;
 
 function tabHighlight(tab)

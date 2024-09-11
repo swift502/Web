@@ -4,7 +4,7 @@ import { Code as CodeComponent } from 'astro:components';
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import ContentDescription from "../components/content_block/ContentDescription.astro";
 
-const { project, contentBlock } = Astro.props;
+const { contentBlock } = Astro.props;
 
 const contentBlockId = "code-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';

@@ -5,10 +5,14 @@ import '@fontsource/solway/400.css';
 import '@fontsource/solway/500.css';
 import '@fontsource/solway/700.css';
 import '@fontsource/sono/400.css';
-
 import 'normalize.css';
-import '../../styles/global.css';
 
+import '../../styles/global.css';
+import type { PageInfo } from '../../scripts/astro-helpers';
+
+interface Props {
+    pageInfo: PageInfo;
+}
 const { pageInfo } = Astro.props;
 ---
 
