@@ -1,0 +1,15 @@
+---
+import Head from '../components/core/Head.astro';
+
+const { pageInfo } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<Head pageInfo={pageInfo} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

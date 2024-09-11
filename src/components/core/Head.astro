@@ -1,4 +1,14 @@
 ---
+import '@fontsource/catamaran/600.css';
+import '@fontsource/catamaran/900.css';
+import '@fontsource/solway/400.css';
+import '@fontsource/solway/500.css';
+import '@fontsource/solway/700.css';
+import '@fontsource/sono/400.css';
+
+import 'normalize.css';
+import '../../styles/global.css';
+
 const { pageInfo } = Astro.props;
 ---
 
@@ -7,11 +17,20 @@ const { pageInfo } = Astro.props;
 <title>{pageInfo.title}</title>
 <meta name="description" content={pageInfo.description}>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{pageInfo.noIndex == true &&
+    <meta name="robots" content="noindex"/>
+}
 
 <meta property="og:title" content={pageInfo.title}>
 <meta property="og:url" content={Astro.url}>
 <meta property="og:description" content={pageInfo.description}>
-<meta property="og:type" content="website"/>
+<meta property="og:type" content="website">
 <meta property="og:image" content={pageInfo.image}>
 
-<script is:inline src="/scripts/global.js"/>
+<script is:inline>
+    function fadeIn(element)
+    {
+        element.style.animation = 'fadeIn 0.2s ease-out';
+        element.style.opacity = 1;
+    }
+</script>

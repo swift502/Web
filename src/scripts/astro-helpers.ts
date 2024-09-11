@@ -9,7 +9,8 @@ export type PageInfo = {
 	title?: string,
 	description?: string,
 	image?: string,
-	tab?: string
+	tab?: string,
+	noIndex?: boolean
 };
 
 type PageInfoOptions = {
@@ -18,7 +19,8 @@ type PageInfoOptions = {
 	titleAppend?: string,
 	description?: string,
 	image?: string,
-	tab?: string
+	tab?: string,
+	noIndex?: boolean
 };
 
 export function getProjects() : any[]
@@ -61,7 +63,7 @@ export function getContentBlockLibrary() : any[]
 	return library;
 }
 
-export function getPageInfo({title, titlePrepend, titleAppend, description, image, tab} : PageInfoOptions) : PageInfo
+export function getPageInfo({title, titlePrepend, titleAppend, description, image, tab, noIndex = false} : PageInfoOptions) : PageInfo
 {
 	const pageInfo: PageInfo = {};
 
@@ -70,10 +72,11 @@ export function getPageInfo({title, titlePrepend, titleAppend, description, imag
 	if (titlePrepend) pageInfo.title = `${titlePrepend} - ${pageInfo.title}`;
 	if (titleAppend) pageInfo.title = `${pageInfo.title} - ${titleAppend}`;
 
-	// Page info
+	// Info
 	pageInfo.description = description ?? siteData.description;
 	pageInfo.image = import.meta.env.SITE + (image ?? siteData.image);
 	pageInfo.tab = tab;
+	pageInfo.noIndex = noIndex;
 
 	return pageInfo;
 }
