@@ -1,24 +1,37 @@
 ---
-import { constructPageTitle } from '../../scripts/astro-helpers';
-import siteData from '../../data/site.yml';
+import '@fontsource/catamaran/600.css';
+import '@fontsource/catamaran/900.css';
+import '@fontsource/solway/400.css';
+import '@fontsource/solway/500.css';
+import '@fontsource/solway/700.css';
+import 'normalize.css';
 
+import '../../styles/global.css';
+import type { PageInfo } from '../../scripts/astro-helpers';
+
+interface Props { pageInfo: PageInfo; }
 const { pageInfo } = Astro.props;
-
-const pageTitle = constructPageTitle(pageInfo);
-const pageDescription = pageInfo.description ?? siteData.description;
-const pageImage = import.meta.env.SITE + (pageInfo.image ?? siteData.image);
 ---
 
 <meta charset="utf-8">
 
-<title>{pageTitle}</title>
-<meta name="description" content={pageDescription}>
+<title>{pageInfo.title}</title>
+<meta name="description" content={pageInfo.description}>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{pageInfo.noIndex && (
+    <meta name="robots" content="noindex"/>
+)}
 
-<meta property="og:title" content={pageTitle}>
+<meta property="og:title" content={pageInfo.title}>
 <meta property="og:url" content={Astro.url}>
-<meta property="og:description" content={pageDescription}>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content={pageImage}>
+<meta property="og:description" content={pageInfo.description}>
+<meta property="og:type" content="website">
+<meta property="og:image" content={pageInfo.image}>
 
-<script is:inline src="/scripts/global.js"/>
+<script is:inline>
+    function fadeIn(element)
+    {
+        element.style.animation = 'fadeIn 0.2s ease-out';
+        element.style.opacity = 1;
+    }
+</script>

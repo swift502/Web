@@ -1,10 +1,11 @@
 ---
+import '@fontsource/fragment-mono/400.css';
 import { Code as CodeComponent } from 'astro:components';
 
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import ContentDescription from "../components/content_block/ContentDescription.astro";
 
-const { project, contentBlock } = Astro.props;
+const { contentBlock } = Astro.props;
 
 const contentBlockId = "code-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
@@ -89,9 +90,8 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 
 <style is:global>
     .code-window code, .code-window span {
-        font-size: 16px;
-        font-family: 'Sono', sans-serif;
-        letter-spacing: -0.5px;
+        font-size: 15px;
+        font-family: "Fragment Mono";
         font-style: normal !important;
     }
 </style>

@@ -15,9 +15,9 @@ const { project } = Astro.props
 		{project.data.title}
 	</div>
 	<div class="project-tags">
-		{project.data.tags.map((tag) =>
+		{project.data.tags.map((tag) => (
 			<span class="tag">{tag}</span>
-		)}
+		))}
 	</div>
 	{'badge' in project.data && (
 		<div class="project-badges">
