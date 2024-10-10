@@ -21,7 +21,7 @@ const { pageInfo } = Astro.props;
 <link rel="icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
 {pageInfo.noIndex && (
-    <meta name="robots" content="noindex"/>
+	<meta name="robots" content="noindex"/>
 )}
 
 <meta property="og:title" content={pageInfo.title} />
@@ -31,9 +31,9 @@ const { pageInfo } = Astro.props;
 <meta property="og:image" content={pageInfo.image} />
 
 <script is:inline>
-    function fadeIn(element)
-    {
-        element.style.animation = 'fadeIn 0.2s ease-out';
-        element.style.opacity = 1;
-    }
+	function fadeIn(element)
+	{
+		element.style.animation = 'fadeIn 0.2s ease-out';
+		element.style.opacity = 1;
+	}
 </script>

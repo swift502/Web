@@ -4,16 +4,16 @@ const { contentBlock, parentId } = Astro.props;
 ---
 
 {'desc' in contentBlock.properties && (
-    <div
-        class="content-description textarea"
-        data-target={parentId}
-        set:html={renderMarkdown(contentBlock.properties.desc)}
-    />
+	<div
+		class="content-description textarea"
+		data-target={parentId}
+		set:html={renderMarkdown(contentBlock.properties.desc)}
+	/>
 )}
 
 
 <style>
-    .content-description {
+	.content-description {
 		box-sizing: border-box;
 		border-radius: 0px 0px 10px 10px;
 	}

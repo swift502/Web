@@ -13,85 +13,85 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 ---
 
 <ContentBlock>
-    {contentBlock.properties.file && (
-        <div class="code-file">
-            {contentBlock.properties.link ? (
-                <a class="code-file-tab link" href={contentBlock.properties.link} target="_blank">
-                    {contentBlock.properties.file}
-                    <img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
-                </a>
-            ) : (
-                <div class="code-file-tab">{contentBlock.properties.file}</div>
-            )}
-        </div>
-    )}
-    <div id={contentBlockId} class={"code-window" + borderClass}>
-        <CodeComponent code={contentBlock.properties.data} lang={contentBlock.properties.lang} theme="catppuccin-frappe" />
-    </div>
-    <ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
+	{contentBlock.properties.file && (
+		<div class="code-file">
+			{contentBlock.properties.link ? (
+				<a class="code-file-tab link" href={contentBlock.properties.link} target="_blank">
+					{contentBlock.properties.file}
+					<img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
+				</a>
+			) : (
+				<div class="code-file-tab">{contentBlock.properties.file}</div>
+			)}
+		</div>
+	)}
+	<div id={contentBlockId} class={"code-window" + borderClass}>
+		<CodeComponent code={contentBlock.properties.data} lang={contentBlock.properties.lang} theme="catppuccin-frappe" />
+	</div>
+	<ContentDescription contentBlock={contentBlock} parentId={contentBlockId} />
 </ContentBlock>
 
 <style>
-    .code-window {
-        position: relative;
-        width: 100%;
-    }
+	.code-window {
+		position: relative;
+		width: 100%;
+	}
 
-    .code-file {
-        width: 100%;
-        text-align: left;
-    }
+	.code-file {
+		width: 100%;
+		text-align: left;
+	}
 
-    .code-file-tab {
-        display: inline-block;
-        position: relative;
-        align-self: flex-start;
-        margin-bottom: -10px;
-        background: #303446;
-        padding: 12px 18px 16px;
-        font-size: 16px;
-        color: #fafafa;
-        border-radius: 8px 8px 0px 0px;
-        font-weight: normal;
-        white-space: nowrap;
-    }
+	.code-file-tab {
+		display: inline-block;
+		position: relative;
+		align-self: flex-start;
+		margin-bottom: -10px;
+		background: #303446;
+		padding: 12px 18px 16px;
+		font-size: 16px;
+		color: #fafafa;
+		border-radius: 8px 8px 0px 0px;
+		font-weight: normal;
+		white-space: nowrap;
+	}
 
-    .code-file-tab.link:hover {
-        text-decoration: underline;
-    }
+	.code-file-tab.link:hover {
+		text-decoration: underline;
+	}
 
-    .code-file-icon {
-        display: inline;
-        margin-left: 4px;
-        height: 12px;
-    }
+	.code-file-icon {
+		display: inline;
+		margin-left: 4px;
+		height: 12px;
+	}
 
-    pre {
-        margin: 0;
-        padding: 20px 30px;
-        text-align: left;
-        overflow: auto;
-    }
+	pre {
+		margin: 0;
+		padding: 20px 30px;
+		text-align: left;
+		overflow: auto;
+	}
 
-    @media (max-width: 776px) {
-        .code-file {
-            width: 100vw;
-            overflow: hidden;
-        }
-        
+	@media (max-width: 776px) {
+		.code-file {
+			width: 100vw;
+			overflow: hidden;
+		}
+		
 		.code-file-tab {
 			position: relative;
-            margin-left: 10px;
+			margin-left: 10px;
 			box-sizing: border-box;
-            border-radius: 5px 5px 0px 0px;
+			border-radius: 5px 5px 0px 0px;
 		}
 	}
 </style>
 
 <style is:global>
-    .code-window code, .code-window span {
-        font-size: 15px;
-        font-family: "Fragment Mono";
-        font-style: normal !important;
-    }
+	.code-window code, .code-window span {
+		font-size: 15px;
+		font-family: "Fragment Mono";
+		font-style: normal !important;
+	}
 </style>
