@@ -1,5 +1,5 @@
 title: Krtkus
-description: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+description: A custom design for an ortholinear keyboard. The PCB was designed in Kicad, and case in Blender. It's powered by Arduino Pro Micro running VIA compatible QMK.
 tags:
   - 2024
   - Kicad
