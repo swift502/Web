@@ -1,17 +1,8 @@
 ---
 import AspectContainer from "../components/content_block/AspectContainer.astro";
-import type { ProjectData, YoutubeProperties } from "../scripts/interfaces";
+import type { ContentBlockProps, YoutubeProperties } from "../scripts/interfaces";
 
-interface Props {
-	project: {
-		name: string;
-		data: ProjectData;
-	},
-	contentBlock: {
-		index: number;
-		properties: YoutubeProperties;
-	}
-}
+interface Props extends ContentBlockProps<YoutubeProperties> {}
 const { project, contentBlock } = Astro.props;
 
 const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';

@@ -23,6 +23,18 @@ export interface Link
     link: string;
 }
 
+export interface ContentBlockProps<T>
+{
+	project: {
+		name: string;
+		data: ProjectData;
+	},
+	contentBlock: {
+		index: number;
+		properties: T;
+	}
+}
+
 export interface CodeProperties
 {
     type: "code";

@@ -4,18 +4,9 @@ import { Code as CodeComponent } from 'astro:components';
 
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import ContentDescription from "../components/content_block/ContentDescription.astro";
-import type { ProjectData, CodeProperties } from '../scripts/interfaces';
+import type { ContentBlockProps, CodeProperties } from '../scripts/interfaces';
 
-interface Props {
-	project: {
-		name: string;
-		data: ProjectData;
-	},
-	contentBlock: {
-		index: number;
-		properties: CodeProperties;
-	}
-}
+interface Props extends ContentBlockProps<CodeProperties> {}
 const { contentBlock } = Astro.props;
 
 const contentBlockId = "code-block-" + contentBlock.index;
