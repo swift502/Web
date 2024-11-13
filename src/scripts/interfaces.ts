@@ -69,3 +69,21 @@ export interface YoutubeProperties
     data: string;
     desc?: string;
 }
+
+export type PageInfo = {
+	title?: string,
+	description?: string,
+	image?: string,
+	tab?: string,
+	noIndex?: boolean
+};
+
+export type PageInfoOptions = {
+	title?: string,
+	titlePrepend?: string,
+	titleAppend?: string,
+	description?: string,
+	image?: string,
+	tab?: string,
+	noIndex?: boolean
+};

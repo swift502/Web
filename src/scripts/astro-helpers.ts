@@ -4,25 +4,7 @@ import { extractFilename } from './utilities';
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 import type { AstroInstance } from 'astro';
-import type { ProjectData } from './interfaces';
-
-export type PageInfo = {
-	title?: string,
-	description?: string,
-	image?: string,
-	tab?: string,
-	noIndex?: boolean
-};
-
-type PageInfoOptions = {
-	title?: string,
-	titlePrepend?: string,
-	titleAppend?: string,
-	description?: string,
-	image?: string,
-	tab?: string,
-	noIndex?: boolean
-};
+import type { PageInfo, PageInfoOptions, ProjectData } from './interfaces';
 
 export function getProjects() : { name: string, data: ProjectData }[]
 {
