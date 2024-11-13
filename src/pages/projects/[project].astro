@@ -10,7 +10,7 @@ const { project } = Astro.props;
 export async function getStaticPaths()
 {
 	const projects = getProjects();
-	return projects.map((project: any) =>
+	return projects.map((project) =>
 	({
 		params: { project : project.name },
 		props: { project: project },

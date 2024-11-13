@@ -1,7 +1,18 @@
 ---
 import { logError } from "../scripts/astro-helpers.js";
 import AspectContainer from "../components/content_block/AspectContainer.astro";
+import type { ProjectData, SketchfabProperties } from "../scripts/interfaces";
 
+interface Props {
+	project: {
+		name: string;
+		data: ProjectData;
+	},
+	contentBlock: {
+		index: number;
+		properties: SketchfabProperties;
+	}
+}
 const { project, contentBlock } = Astro.props;
 
 const id = "sketchfab-" + contentBlock.index;

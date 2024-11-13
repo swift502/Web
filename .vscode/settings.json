@@ -1,0 +1,7 @@
+{
+  "yaml.schemas": {
+    "./src/schemas/project.schema.json": [
+      "/src/data/projects/*.yml"
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import { extractFilename } from './utilities';
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 import type { AstroInstance } from 'astro';
+import type { ProjectData } from './interfaces';
 
 export type PageInfo = {
 	title?: string,
@@ -23,7 +24,7 @@ type PageInfoOptions = {
 	noIndex?: boolean
 };
 
-export function getProjects() : any[]
+export function getProjects() : { name: string, data: ProjectData }[]
 {
 	let projects = [];
 	const dataFiles = import.meta.glob('/src/data/projects/*.yml', { eager: true });

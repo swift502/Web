@@ -2,7 +2,18 @@
 import { renderMarkdown } from '../scripts/astro-helpers';
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import '../styles/textarea.css';
+import type { ProjectData, TextProperties } from '../scripts/interfaces';
 
+interface Props {
+	project: {
+		name: string;
+		data: ProjectData;
+	},
+	contentBlock: {
+		index: number;
+		properties: TextProperties;
+	}
+}
 const { contentBlock } = Astro.props;
 ---
 

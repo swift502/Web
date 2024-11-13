@@ -9,7 +9,9 @@ import 'normalize.css';
 import '../../styles/global.css';
 import type { PageInfo } from '../../scripts/astro-helpers';
 
-interface Props { pageInfo: PageInfo; }
+interface Props {
+	pageInfo: PageInfo;
+}
 const { pageInfo } = Astro.props;
 ---
 

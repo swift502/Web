@@ -1,6 +1,17 @@
 ---
 import AspectContainer from "../components/content_block/AspectContainer.astro";
+import type { ProjectData, YoutubeProperties } from "../scripts/interfaces";
 
+interface Props {
+	project: {
+		name: string;
+		data: ProjectData;
+	},
+	contentBlock: {
+		index: number;
+		properties: YoutubeProperties;
+	}
+}
 const { project, contentBlock } = Astro.props;
 
 const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
@@ -15,7 +26,7 @@ const height = 'height' in contentBlock.properties ? contentBlock.properties.hei
 >
 	<iframe
 		src={`https://www.youtube-nocookie.com/embed/${contentBlock.properties.data}?rel=0`}
-		title="YouTube video player"
+		title="Youtube video player"
 		frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 		allowfullscreen
