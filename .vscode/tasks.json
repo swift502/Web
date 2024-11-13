@@ -21,10 +21,10 @@
 		},
 		{
 			"type": "npm",
-			"script": "preview",
+			"script": "generate-schema",
 			"problemMatcher": [],
-			"label": "preview",
-			"detail": "astro preview"
+			"label": "build schemas",
+			"detail": "ts-json-schema-generator"
 		}
 	]
 }
