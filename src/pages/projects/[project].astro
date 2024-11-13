@@ -4,8 +4,6 @@ import BigButton from '../../components/core/BigButton.astro';
 import { getProjects, getContentBlockLibrary, logError, getPageInfo } from '../../scripts/astro-helpers';
 import '../../styles/tiles.css';
 
-const { project } = Astro.props;
-
 // Dynamic routing
 export async function getStaticPaths()
 {
@@ -16,6 +14,8 @@ export async function getStaticPaths()
 		props: { project: project },
 	}));
 }
+
+const { project } = Astro.props;
 
 // Get content blocks
 let contentBlockLibrary = getContentBlockLibrary();
@@ -58,7 +58,8 @@ const pageInfo = getPageInfo({
 				if (block.type in contentBlockLibrary)
 				{
 					const Component = contentBlockLibrary[block.type];
-					return <Component project={project}
+					return <Component
+						project={project}
 						contentBlock={{
 							'index': index,
 							'properties': block,
