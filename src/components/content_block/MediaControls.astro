@@ -1,11 +1,10 @@
 ---
 import '../../styles/tiles.css';
 
-const { name, path, desc } = Astro.props;
-const descriptionClass = desc ? ' has-description' : '';
+const { name, path } = Astro.props;
 ---
 
-<div class={"media-controls" + descriptionClass}>
+<div class="media-controls">
 	<div class="tile-row">
 		<a download={name} href={path} target="_blank" title="Download">
 			<div class="tile">
@@ -32,10 +31,6 @@ const descriptionClass = desc ? ' has-description' : '';
 
 		opacity: 0;
 		transition: opacity 0.5s ease;
-	}
-
-	.media-controls.has-description {
-		bottom: 15px;
 	}
 
 	.media-controls .tile {
