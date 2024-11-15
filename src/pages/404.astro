@@ -25,6 +25,7 @@ const pageInfo = getPageInfo({
 			field-of-view="37deg"
 			shadow-intensity="1"
 			shadow-softness="0"
+			tone-mapping="aces"
 		/>
 	</div>
 	<div class="text-container">
@@ -36,7 +37,9 @@ const pageInfo = getPageInfo({
 			icon="/assets/svg/home.svg"
 		/>
 	</div>
-	<script type="module" src="/scripts/model-viewer.min.js" />
+	<script>
+		import '@google/model-viewer';
+	</script>
 </Layout>
 
 <style>

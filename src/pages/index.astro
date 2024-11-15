@@ -30,6 +30,7 @@ const pageInfo = getPageInfo({
 				auto-rotate
 				auto-rotate-delay="0"
 				rotation-per-second="-5deg"
+				tone-mapping="aces"
 			/>
 		</div>
 		<div class="homepage-info-panel">
@@ -48,8 +49,8 @@ const pageInfo = getPageInfo({
 	</div>
 </Layout>
 
-<script type="module" src="/scripts/model-viewer.min.js"></script>
 <script>
+	import '@google/model-viewer';
 	import '../scripts/homepage-model-viewer.js';
 	import '../scripts/typewriter.js';
 </script>
