@@ -7,7 +7,10 @@ export default defineConfig({
   site: 'https://jblaha.art',
   trailingSlash: 'always',
   vite: {
-    plugins: [yaml()]
+    plugins: [yaml()],
+    build: {
+      chunkSizeWarningLimit: 1000
+    }
   },
   integrations: [sitemap()]
 });

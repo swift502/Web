@@ -78,13 +78,16 @@ const pageInfo = getPageInfo({
 		left: -260px;
 		top: 0;
 		width: calc(100% + 260px);
-		height: calc(100% + 161px);
+		height: calc(100% + 163px);
 	}
 
 	model-viewer {
 		width: 100%;
 		height: 100%;
-		--progress-bar-height: 0px;
+	}
+
+	model-viewer::part(default-progress-bar) {
+		display: none;
 	}
 
 	.homepage-info-panel {
