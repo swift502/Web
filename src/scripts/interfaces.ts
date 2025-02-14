@@ -41,7 +41,6 @@ export interface CodeProperties
     data: string;
     lang: BuiltinLanguage | SpecialLanguage;
     file?: string;
-    link?: string;
     desc?: string;
 }
 

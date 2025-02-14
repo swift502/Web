@@ -16,14 +16,7 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 <ContentBlock>
 	{contentBlock.properties.file && (
 		<div class="code-file">
-			{contentBlock.properties.link ? (
-				<a class="code-file-tab link" href={contentBlock.properties.link} target="_blank">
-					{contentBlock.properties.file}
-					<img class="code-file-icon" src="/assets/svg/external-link-code.svg" alt="" onload="fadeIn(this);"/>
-				</a>
-			) : (
-				<div class="code-file-tab">{contentBlock.properties.file}</div>
-			)}
+			<div class="code-file-tab">{contentBlock.properties.file}</div>
 		</div>
 	)}
 	<div id={contentBlockId} class={"code-window" + borderClass}>

@@ -31,7 +31,6 @@ page:
       }
     lang: glsl
     file: fragment_to_equirectangular.glsl
-    link: https://github.com/swift502/EquimercConverter/blob/2f3c546e916eeb6ce33307887f1d1d09964ead3a/src/shaders/fragment_to_equirectangular.glsl#L16-L28
     desc: |-
       Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
       Additionally, this implementation can also render with either nearest or linear texture sampling, letting you choose between a sharp or interpolated upscaling.
@@ -50,5 +49,4 @@ page:
           return (u, y)
     lang: python
     file: cpu_render.py
-    link: https://github.com/swift502/EquimercConverter/blob/2f3c546e916eeb6ce33307887f1d1d09964ead3a/src/cpu_render.py#L25-L35
     desc: A CPU implementation using the [Pillow](https://github.com/python-pillow/Pillow) library exists as a fallback, although with obvious downsides of poor performance and scalability.

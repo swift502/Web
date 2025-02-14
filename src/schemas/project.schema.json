@@ -326,9 +326,6 @@
           ],
           "type": "string"
         },
-        "link": {
-          "type": "string"
-        },
         "type": {
           "const": "code",
           "type": "string"
