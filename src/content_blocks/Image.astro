@@ -1,6 +1,6 @@
 ---
 import MediaControls from '../components/content_block/MediaControls.astro';
-import { imageSize } from 'image-size';
+import { imageSizeFromFile } from 'image-size/fromFile';
 import AspectContainer from '../components/content_block/AspectContainer.astro';
 import type { ContentBlockProps, ImageProperties } from '../scripts/interfaces';
 
@@ -8,7 +8,7 @@ interface Props extends ContentBlockProps<ImageProperties> {}
 const { project, contentBlock } = Astro.props;
 
 const imagePath = `/assets/projects/${project.name}/${contentBlock.properties.data}`
-let size = imageSize('./public/' + imagePath);
+const size = await imageSizeFromFile('./public/' + imagePath);
 ---
 
 <AspectContainer
