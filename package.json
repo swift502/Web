@@ -20,7 +20,7 @@
     "@fontsource/catamaran": "^5.2.5",
     "@fontsource/fragment-mono": "^5.2.5",
     "@fontsource/solway": "^5.2.5",
-    "@google/model-viewer": "^4.0.0",
+    "@google/model-viewer": "^4.1.0",
     "normalize.css": "^8.0.1"
   }
 }
