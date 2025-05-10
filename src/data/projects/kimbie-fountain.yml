@@ -1,0 +1,42 @@
+title: Kimbie Fountain
+description: A Visual Studio Code theme designed to improve highlighting of .fountain files while using the Better Fountain extension. With the lack of modern cross-platform Fountain format editors, Visual Studio Code currently stands out as one of the better ones. However it's lacking in specialized themes.
+tags:
+  - 2025
+  - Visual Studio Code
+  - Theme
+links:
+  - title: Marketplace
+    link: https://marketplace.visualstudio.com/items?itemName=jan-blaha.kimbie-fountain-theme
+  - title: GitHub
+    link: https://github.com/swift502/KimbieFountain
+page:
+  - type: image
+    data: preview.png
+    desc: |-
+      A Visual Studio Code theme designed to improve highlighting of .fountain files while using the [Better Fountain](https://marketplace.visualstudio.com/items?itemName=piersdeseilligny.betterfountain) extension. With the lack of modern cross-platform Fountain format editors, Visual Studio Code currently stands out as one of the better ones. However it's lacking in specialized themes.
+      As a long time Kimbie Dark user, I decided to modify the syntax highlighting to make it work a little better, improve contrast issues and eliminate theme features unsuitable for screenwriting.
+  - type: code
+    data: |-
+      {
+        "scope": "string constant.character.escape",
+        "settings": {
+          "foreground": "#b27575" // Parentheticals
+        }
+      },
+      {
+        "scope": "entity.other.pagebreak",
+        "settings": {
+          "foreground": "#a67f68" // Page breaks
+        }
+      },
+      {
+        "scope": "constant.numeric.scene",
+        "settings": {
+          "foreground": "#b17b53" // Scene numbers
+        }
+      },
+    file: kimbie-fountain-color-theme.json
+    lang: json
+    desc: |-
+      Fortunately the source code of the built-in themes easy to find, and with a few modifications I managed to craft the perfect screenwriting VSCode theme, as niche as this use case might be.
+      The theme is now available as an extension in the Visual Studio Code Marketplace [here](https://marketplace.visualstudio.com/items?itemName=jan-blaha.kimbie-fountain-theme).
