@@ -9,11 +9,11 @@
     "generate-schema": "ts-json-schema-generator --path src/scripts/interfaces.ts --type ProjectData --out src/schemas/project.schema.json"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.5.0",
+    "@astrojs/sitemap": "^3.5.1",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^5.13.0",
+    "astro": "^5.13.5",
     "image-size": "^2.0.2",
-    "marked": "^16.1.2",
+    "marked": "^16.2.1",
     "ts-json-schema-generator": "^2.4.0"
   },
   "dependencies": {
