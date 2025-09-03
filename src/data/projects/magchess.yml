@@ -16,10 +16,10 @@ page:
     desc: After realizing that the SS49E hall effect sensor fits perfectly underneath each chessboard square, I knew I had to try this. I designed a PCB that can read 64 sensors via multiplexers. 4 sensors per read, 90 reads a second results in very disappointing 6 SPS for the entire board, but turns out it's just enough sample rate to play chess with.
   - type: image
     data: 3.webp
-    desc: Conveniently enough, 5x2mm neodymium magnets also happen to fit the bottom of the pieces. Each color gets a different polarity, and it turns out knowing the color of the pieces is enough information to extrapolate the entire progression of chess games from the initial state. And so all that was needed was an app to visualize the game state.
+    desc: Conveniently enough, 5x2mm neodymium magnets also happen to fit the bottom of the pieces. Each color gets a different polarity, and it turns out knowing the color of the pieces is enough information to extrapolate the entire progression of a chess game from its initial state. Only thing left was an app to visualize the game state.
   - type: image
     data: app.png
     desc: |-
-      The app shows the game state, warns about unexpected sensor states and has a sensor tab to help resolve which piece might be detected incorrectly.
-      The PGN for the current game can be copied to the clipboard or uploaded as a Gist via the GitHub CLI at any time. Online chess analyzers can then be used to figure out who made the first blunder and how many check mates you missed.
+      The Python app shows the game state, warns about unexpected sensor states and has a sensor tab to help resolve which piece might be detected incorrectly.
+      The PGN for the current game can be copied to the clipboard or uploaded to a Github Gist at any time. Online chess analyzers can then be used to figure out who made the first blunder or how many check mates you missed.
       Everything is open source and available to view over at the [Github page](https://github.com/swift502/MagChess)!
