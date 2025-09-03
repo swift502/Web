@@ -4,6 +4,7 @@ tags:
   - 2025
   - Python
   - Kicad
+  - Lego
 links:
   - title: GitHub page
     link: https://github.com/swift502/MagChess
@@ -21,5 +22,5 @@ page:
     data: app.png
     desc: |-
       The Python app shows the game state, warns about unexpected sensor states and has a sensor tab to help resolve which piece might be detected incorrectly.
-      The PGN for the current game can be copied to the clipboard or uploaded to a Github Gist at any time. Online chess analyzers can then be used to figure out who made the first blunder or how many check mates you missed.
+      The PGN for the current game can be copied to the clipboard or uploaded as a Github Gist at any time. Online chess analyzers can then be used to figure out who made the first blunder or how many check mates you missed.
       Everything is open source and available to view over at the [Github page](https://github.com/swift502/MagChess)!
