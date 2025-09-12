@@ -12,7 +12,7 @@ page:
     desc: Octarr is an endless 3D array system based on an octree. While working on a Godot project, I needed a way to easily store voxels in an otherwise polygonal world. This seemed like an interesting solution and an opportunity to understand how octrees work.
   - type: youtube
     data: E7m61IGjSDc
-    desc: Soon enough I had a working iteration and could place voxel blocks in the world. The green lines show used octree nodes. Unlike multidimensional or jagged arrays, Octarr is memory friendly. You can write a data block at the 2^64 coordinate and not run out of memory. That was the main obstacle which I managed to overcome using this system.
+    desc: Soon enough, I had a working iteration and could place voxel blocks in the world. The green lines show used octree nodes. Unlike multidimensional or jagged arrays, Octarr is memory friendly. You can write a data block at the 2^64 coordinate and not run out of memory. That was the main obstacle which I managed to overcome using this system.
   - type: code
     data: |-
       // Create an octarr

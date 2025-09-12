@@ -1,5 +1,5 @@
 title: Astro framework rewrite
-description: Back in 2020, I realized  I needed a place to host the demos of my Sketchbook project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos.
+description: Back in 2020, I realized I needed a place to host the demos of my Sketchbook project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos.
 tags:
   - 2022
   - HTML
@@ -12,13 +12,13 @@ links:
 page:
   - type: image
     data: v1.png
-    desc: Back in 2020, I realized  I needed a place to host the demos of my [Sketchbook](/projects/sketchbook/) project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos. And that's what the first version of this website was. Nothing special, just plain HTML and CSS with links to all the demo versions of Sketchbook.
+    desc: Back in 2020, I realized I needed a place to host the demos of my [Sketchbook](/projects/sketchbook/) project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos. And that's what the first version of this website was. Nothing special, just plain HTML and CSS with links to all the demo versions of Sketchbook.
   - type: image
     data: v2.png
     desc: As time went on, the number of projects I wanted to showcase in different ways grew. And so I decided to rebuild the Sketchbook demo archive into a full website which would allow me to showcase all of the different kinds of projects I involve myself in, be it graphics, programming, or video creation.
   - type: image
     data: middleman.png
-    desc: "[Middleman](https://middlemanapp.com/) turned out to be a good Ruby based framework for building static websites. Robust and configurable. However, due to its slow development and dwindling userbase, it began to fall behind, and I felt that in order to future-proof this site, I should start looking for other solutions."
+    desc: "[Middleman](https://middlemanapp.com/) turned out to be a good Ruby based framework for building static websites. Robust and configurable. However, due to its slow development and dwindling user base, it began to fall behind, and I felt that in order to future-proof this site, I should start looking for other solutions."
   - type: image
     data: v3.png
     desc: |-

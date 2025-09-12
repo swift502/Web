@@ -14,7 +14,7 @@ page:
     desc: I began by creating a custom character controller with both first and third person view modes. Next I created an obstacle detection system, the ability to vault, climb, hang from ledges, wallrun and many other parkour mechanics with placeholder animations.
   - type: video
     data: aiming.webm
-    desc: Characters have independently animated torso and legs, and view driven aim system.
+    desc: Characters have independently animated torso and legs, and a view-driven aim system.
     width: 800
     height: 1000
   - type: youtube

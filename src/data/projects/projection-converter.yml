@@ -32,7 +32,7 @@ page:
     lang: glsl
     file: fragment_to_equirectangular.glsl
     desc: |-
-      Using the [moderngl](https://github.com/moderngl/moderngl) python library, the converter runs the input image through a remapping shader. The shaders transform uv coordinates to latitude and longitude and then convert between the two projections.
+      Using the [moderngl](https://github.com/moderngl/moderngl) Python library, the converter runs the input image through a remapping shader. The shaders transform UV coordinates to latitude and longitude and then convert between the two projections.
       Additionally, this implementation can also render with either nearest or linear texture sampling, letting you choose between a sharp or interpolated upscaling.
   - type: code
     data: |-

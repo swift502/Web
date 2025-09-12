@@ -22,7 +22,7 @@ page:
     desc: Bicycle customization, preview is updated in real time. The bicycle components are rendered offscreen with a sketch shader into a render texture, which is used as a base for the blueprint material.
   - type: video
     data: terrain.webm
-    desc: Early development footage showcasing the customizability of the procedurally generated terrain. The system asynchronously generates height points using perlin noise. Entities are then placed on the surface, reading terrain normals to compute their orientation.
+    desc: Early development footage showcasing the customizability of the procedurally generated terrain. The system asynchronously generates height points using Perlin noise. Entities are then placed on the surface, reading terrain normals to compute their orientation.
   - type: video
     data: async.webm
     desc: 3D assets are lazy loaded and unloaded in Unity coroutines. Model distribution was authored in Blender and exported as world chunks, allowing for hand crafted scenery to be placed on a procedurally generated terrain.

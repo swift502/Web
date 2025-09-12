@@ -14,10 +14,10 @@ page:
     desc: Magnetic chess game detection and PGN export system. Designed to integrate with the Traditional Chess Lego Set.
   - type: image
     data: 2.webp
-    desc: After realizing that the SS49E hall effect sensor fits perfectly underneath each chessboard square, I had to give it a shot. I designed a PCB that can read 64 sensors via multiplexers. 4 sensors per read, 90 reads a second results in very disappointing 6 SPS for the entire board, but turns out it's just enough sample rate to play chess with.
+    desc: After realizing that the SS49E hall effect sensor fits perfectly underneath each chessboard square, I had to give it a shot. I designed a PCB that can read 64 sensors via multiplexers. 4 sensors per read, 90 reads a second results in a very disappointing 6 SPS for the entire board, but it turns out it's just enough of a sample rate to play chess with.
   - type: image
     data: 3.webp
-    desc: Conveniently enough, 5x2mm neodymium magnets also fit the bottom of the pieces. Each color gets a different polarity, and it turns out knowing the color of the pieces is just enough information to extrapolate the entire progression of a chess game from its initial state. Only thing left was an app to visualize the game state.
+    desc: Conveniently enough, 5x2mm neodymium magnets also fit the bottom of the pieces. Each color gets a different polarity, and it turns out knowing the color of the pieces is just enough information to extrapolate the entire progression of a chess game from its initial state. The only thing left was an app to visualize the game state.
   - type: image
     data: app.png
     desc: |-
@@ -26,5 +26,5 @@ page:
   - type: image
     data: scoreboard.png
     desc: |-
-      This Astro page shows a leaderboard and an archive of the played games. The PGNs of these games can be put into third party chess analyzers to figure out who made the first blunder or how many check mates were missed.
-      The source files for all components of this project, software and hardware, can be found on it's [Github page](https://github.com/swift502/MagChess)!
+      This Astro page shows a leaderboard and an archive of the played games. The PGNs of these games can be put into third-party chess analyzers to figure out who made the first blunder or how many checkmates were missed.
+      The source files for all components of this project, software and hardware, can be found on its [GitHub page](https://github.com/swift502/MagChess)!
