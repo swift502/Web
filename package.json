@@ -9,17 +9,17 @@
     "generate-schema": "ts-json-schema-generator --path src/scripts/interfaces.ts --type ProjectData --out src/schemas/project.schema.json"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.5.1",
+    "@astrojs/sitemap": "^3.6.0",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^5.13.7",
+    "astro": "^5.15.1",
     "image-size": "^2.0.2",
-    "marked": "^16.2.1",
+    "marked": "^16.4.1",
     "ts-json-schema-generator": "^2.4.0"
   },
   "dependencies": {
-    "@fontsource/catamaran": "^5.2.6",
-    "@fontsource/fragment-mono": "^5.2.6",
-    "@fontsource/solway": "^5.2.6",
+    "@fontsource/catamaran": "^5.2.8",
+    "@fontsource/fragment-mono": "^5.2.8",
+    "@fontsource/solway": "^5.2.8",
     "@google/model-viewer": "^4.1.0",
     "normalize.css": "^8.0.1"
   }

@@ -1,0 +1,24 @@
+title: Krtkus Retro
+description: 3D printed case for Krtkus in the style of the iconic IBM Model M. Designed in Blender and iterated on through 3D printing.
+tags:
+  - 2025
+  - Blender
+  - 3D Printing
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/KrtkusRetro
+  - title: Printables
+    link: https://www.printables.com/model/1457824
+page:
+  - type: image
+    data: 1.webp
+    desc: 3D printed case for Krtkus in the style of the iconic IBM Model M. Designed in Blender and iterated on through 3D printing.
+  - type: image
+    data: 2.webp
+    desc: The inner construction bends the PCB to give it some curvature, just like the Model M. And it even has foldable feet!
+  - type: image
+    data: 3.webp
+    desc: Here's the case mid-construction. Banana KS-33s, and the keycaps were salvaged from a Dell AT101W. The missing 2U spacebar was additionally also 3D printed.
+  - type: image
+    data: 4.webp
+    desc: More information can be found on the [GitHub page](https://github.com/swift502/KrtkusRetro). The case is also published on [Printables](https://www.printables.com/model/1457824) and all project components open sourced under CC0.
