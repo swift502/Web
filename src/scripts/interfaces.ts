@@ -11,7 +11,6 @@ export interface ProjectData
         CodeProperties |
         ImageProperties |
         SketchfabProperties |
-        TextProperties |
         VideoProperties |
         YoutubeProperties
     >;
@@ -57,12 +56,6 @@ export interface SketchfabProperties
     model?: string;
     collection?: string;
     desc?: string;
-}
-
-export interface TextProperties
-{
-    type: "text";
-    data: string;
 }
 
 export interface VideoProperties
