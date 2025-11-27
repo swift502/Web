@@ -50,6 +50,7 @@
             "cadence",
             "cairo",
             "cdc",
+            "cjs",
             "clarity",
             "clj",
             "clojure",
@@ -71,6 +72,7 @@
             "csharp",
             "css",
             "csv",
+            "cts",
             "cue",
             "cypher",
             "d",
@@ -139,6 +141,7 @@
             "html",
             "html-derivative",
             "http",
+            "hurl",
             "hxml",
             "hy",
             "imba",
@@ -158,6 +161,7 @@
             "jssm",
             "jsx",
             "julia",
+            "kdl",
             "kotlin",
             "kql",
             "kt",
@@ -187,9 +191,11 @@
             "mermaid",
             "mips",
             "mipsasm",
+            "mjs",
             "mmd",
             "mojo",
             "move",
+            "mts",
             "nar",
             "narrat",
             "nextflow",
@@ -203,10 +209,12 @@
             "objective-c",
             "objective-cpp",
             "ocaml",
+            "openscad",
             "pascal",
             "perl",
             "perl6",
             "php",
+            "pkl",
             "plsql",
             "po",
             "polar",
@@ -241,12 +249,14 @@
             "regexp",
             "rel",
             "riscv",
+            "rosmsg",
             "rs",
             "rst",
             "ruby",
             "rust",
             "sas",
             "sass",
+            "scad",
             "scala",
             "scheme",
             "scss",
@@ -303,6 +313,7 @@
             "vimscript",
             "vue",
             "vue-html",
+            "vue-vine",
             "vy",
             "vyper",
             "wasm",
@@ -324,6 +335,7 @@
             "text",
             "plaintext",
             "txt",
+            "plain",
             "ansi"
           ],
           "type": "string"
@@ -404,9 +416,6 @@
                 "$ref": "#/definitions/SketchfabProperties"
               },
               {
-                "$ref": "#/definitions/TextProperties"
-              },
-              {
                 "$ref": "#/definitions/VideoProperties"
               },
               {
@@ -455,23 +464,6 @@
       },
       "required": [
         "type"
-      ],
-      "type": "object"
-    },
-    "TextProperties": {
-      "additionalProperties": false,
-      "properties": {
-        "data": {
-          "type": "string"
-        },
-        "type": {
-          "const": "text",
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "data"
       ],
       "type": "object"
     },
