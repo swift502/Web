@@ -44,14 +44,17 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 		display: inline-block;
 		position: relative;
 		align-self: flex-start;
-		margin-bottom: -10px;
+		margin-bottom: -20px;
 		background: #32302f;
-		padding: 12px 18px 16px;
+		padding: 12px 18px 22px;
 		font-size: 16px;
 		color: #fafafa;
 		border-radius: 8px 8px 0px 0px;
 		font-weight: normal;
 		white-space: nowrap;
+		max-width: 100%;
+		box-sizing: border-box;
+		overflow: hidden;
 	}
 
 	.code-file-tab.link:hover {
@@ -69,12 +72,14 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 		padding: 20px 30px;
 		text-align: left;
 		overflow: auto;
+		outline: none;
 	}
 
 	@media (max-width: 776px) {
 		.code-file-tab {
 			position: relative;
 			margin-left: 10px;
+			max-width: calc(100% - 20px);
 			box-sizing: border-box;
 			border-radius: 5px 5px 0px 0px;
 		}
