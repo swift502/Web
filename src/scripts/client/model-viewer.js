@@ -1,10 +1,7 @@
+import cssInjection from '../../styles/model-viewer-injection.css?raw';
 const modelViewer = document.querySelector('model-viewer');
 
-// Disable outline
+// Inject shadow DOM CSS overrides
 const style = document.createElement('style');
-style.textContent = `
-	:focus-visible {
-		outline: none;
-	}
-`;
+style.textContent = cssInjection;
 modelViewer.shadowRoot.appendChild(style);
