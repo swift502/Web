@@ -9,6 +9,7 @@ const { project, contentBlock } = Astro.props;
 
 const imagePath = `/assets/projects/${project.name}/${contentBlock.properties.data}`
 const size = await imageSizeFromFile('./public/' + imagePath);
+const inset = contentBlock.properties.inset ? ' inset' : '';
 ---
 
 <AspectContainer
@@ -19,7 +20,7 @@ const size = await imageSizeFromFile('./public/' + imagePath);
 >
 	<img
 		src={imagePath}
-		class="project-detail-image"
+		class={"project-detail-image" + inset}
 		onload="fadeIn(this);"
 	/>
 	<MediaControls
@@ -33,5 +34,9 @@ const size = await imageSizeFromFile('./public/' + imagePath);
 		opacity: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	.project-detail-image.inset {
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 	}
 </style>

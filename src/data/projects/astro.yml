@@ -13,9 +13,11 @@ page:
   - type: image
     data: v1.png
     desc: Back in 2020, I realized I needed a place to host the demos of my [Sketchbook](/projects/sketchbook/) project. Since each iteration changed so much, it became clear it would be useful to have an archive of all the previous Sketchbook demos. And that's what the first version of this website was. Nothing special, just plain HTML and CSS with links to all the demo versions of Sketchbook.
+    inset: true
   - type: image
     data: v2.png
     desc: As time went on, the number of projects I wanted to showcase in different ways grew. And so I decided to rebuild the Sketchbook demo archive into a full website which would allow me to showcase all of the different kinds of projects I involve myself in, be it graphics, programming, or video creation.
+    inset: true
   - type: image
     data: middleman.png
     desc: "[Middleman](https://middlemanapp.com/) turned out to be a good Ruby based framework for building static websites. Robust and configurable. However, due to its slow development and dwindling user base, it began to fall behind, and I felt that in order to future-proof this site, I should start looking for other solutions."
@@ -24,3 +26,4 @@ page:
     desc: |-
       And so I landed on [Astro](https://astro.build/), which was modern, scalable and rapidly growing. All that was needed was a project rewrite from Ruby to JSX, which only took about a week. The rewrite PR can be found [here](https://github.com/swift502/Web/pull/8).
       After the rewrite, the website looks almost identical, but everything under the hood has changed and allowed for various performance optimizations and visual improvements. Feel free to check out this site's repository [on GitHub](https://github.com/swift502/Web)!
+    inset: true

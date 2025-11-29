@@ -7,12 +7,13 @@ const { project, contentBlock, width, height } = Astro.props;
 
 const containerId = "aspect-container-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
+const inset = contentBlock.properties.inset ? ' inset' : '';
 ---
 
 <ContentBlock>
 	<div 
 		id={containerId}
-		class={"aspect-container" + borderClass}
+		class={"aspect-container" + borderClass + inset}
 		data-width={width}
 		data-height={height}
 		data-first_padding={contentBlock.index == 0 ? 'true' : 'false'}
@@ -31,14 +32,24 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 <style>
 	.aspect-container {
 		position: relative;
-		/* display: inline-block; */
+		box-sizing: border-box;
 		
 		background: #eee;
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
+	.aspect-container.inset {
+		padding: 20px;
+	}
+
 	.aspect-container:hover :global(.media-controls)  {
 		opacity: 1;
+	}
+
+	@media (max-width: 776px) {
+		.aspect-container.inset {
+			padding: 10px;
+		}
 	}
 </style>

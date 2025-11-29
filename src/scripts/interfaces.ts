@@ -48,6 +48,7 @@ export interface ImageProperties
     type: "image";
     data: string;
     desc?: string;
+    inset?: boolean;
 }
 
 export interface SketchfabProperties

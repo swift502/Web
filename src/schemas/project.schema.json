@@ -361,6 +361,9 @@
         "desc": {
           "type": "string"
         },
+        "inset": {
+          "type": "boolean"
+        },
         "type": {
           "const": "image",
           "type": "string"
