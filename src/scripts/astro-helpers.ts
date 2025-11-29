@@ -1,8 +1,8 @@
 import { marked } from 'marked';
 import { extractFilename } from './utilities';
 
-import projectIndex from '../../data/project-index.yml';
-import siteData from '../../data/site.yml';
+import projectIndex from '../data/project-index.yml';
+import siteData from '../data/site.yml';
 import type { AstroInstance } from 'astro';
 import type { PageInfo, PageInfoOptions, ProjectData } from './interfaces';
 
@@ -35,7 +35,7 @@ export function getProjects() : { name: string, data: ProjectData }[]
 export function getContentBlockLibrary() : any[]
 {
 	const library = [];
-	const contentBlocks = import.meta.glob('../../content_blocks/*.astro', { eager: true });
+	const contentBlocks = import.meta.glob('/src/content_blocks/*.astro', { eager: true });
 	
 	Object.values(contentBlocks).forEach((block: AstroInstance) =>
 	{
