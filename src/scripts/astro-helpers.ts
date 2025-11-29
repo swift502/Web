@@ -4,7 +4,7 @@ import { extractFilename } from './utilities';
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 import type { AstroInstance } from 'astro';
-import type { PageInfo, PageInfoOptions, ProjectData } from './interfaces';
+import type { PageInfo, PageInfoInput, ProjectData } from './interfaces';
 
 export function getProjects() : { name: string, data: ProjectData }[]
 {
@@ -46,20 +46,20 @@ export function getContentBlockLibrary() : any[]
 	return library;
 }
 
-export function getPageInfo({title, titlePrepend, titleAppend, description, image, tab, noIndex = false} : PageInfoOptions) : PageInfo
+export function getPageInfo(input : PageInfoInput) : PageInfo
 {
 	const pageInfo: PageInfo = {};
 
 	// Title
-	pageInfo.title = title ?? siteData.title;
-	if (titlePrepend) pageInfo.title = `${titlePrepend} - ${pageInfo.title}`;
-	if (titleAppend) pageInfo.title = `${pageInfo.title} - ${titleAppend}`;
+	pageInfo.title = input.title ?? siteData.title;
+	if (input.titlePrepend) pageInfo.title = `${input.titlePrepend} - ${pageInfo.title}`;
+	if (input.titleAppend) pageInfo.title = `${pageInfo.title} - ${input.titleAppend}`;
 
 	// Info
-	pageInfo.description = description ?? siteData.description;
-	pageInfo.image = import.meta.env.SITE + (image ?? siteData.image);
-	pageInfo.tab = tab;
-	pageInfo.noIndex = noIndex;
+	pageInfo.description = input.description ?? siteData.description;
+	pageInfo.image = import.meta.env.SITE + (input.image ?? siteData.image);
+	pageInfo.tab = input.tab;
+	pageInfo.noIndex = input.noIndex;
 
 	return pageInfo;
 }

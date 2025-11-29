@@ -75,20 +75,17 @@ export interface YoutubeProperties
     desc?: string;
 }
 
-export type PageInfo = {
-	title?: string,
-	description?: string,
-	image?: string,
-	tab?: string,
-	noIndex?: boolean
-};
+export interface PageInfo
+{
+	title?: string;
+	description?: string;
+	image?: string;
+	tab?: string;
+	noIndex?: boolean;
+}
 
-export type PageInfoOptions = {
-	title?: string,
-	titlePrepend?: string,
-	titleAppend?: string,
-	description?: string,
-	image?: string,
-	tab?: string,
-	noIndex?: boolean
-};
+export interface PageInfoInput extends PageInfo
+{
+	titlePrepend?: string;
+	titleAppend?: string;
+}
