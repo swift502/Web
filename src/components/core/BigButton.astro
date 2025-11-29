@@ -4,7 +4,7 @@ const { text, link, icon } = Astro.props
 
 <a href={link} class="big-button">
 	<span class="big-button-text">{text}</span>
-	<img src={icon} alt="" class="big-button-icon" onload="fadeIn(this);"/>
+	<img src={icon} class="big-button-icon"/>
 </a>
 
 <style>
@@ -35,9 +35,7 @@ const { text, link, icon } = Astro.props
 	}
 
 	.big-button-icon {
-		opacity: 0;
 		width: 24px;
-		/* right: 20px; */
 		left: 22px;
 		top: 18px;
 		position: absolute;

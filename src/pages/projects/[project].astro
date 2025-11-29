@@ -46,7 +46,7 @@ const pageInfo = getPageInfo({
 				<div class="link-wrapper">
 					{project.data.links.map((link) => (
 						<a class="tile link-tile" href={link.link} target="_blank">
-							<img class="link-tile-icon" src="/assets/svg/external-link.svg" alt="" onload="fadeIn(this);"/>
+							<img class="link-tile-icon" src="/assets/svg/external-link.svg"/>
 							<div class="link-tile-text">{link.title}</div>
 						</a>
 					))}
@@ -134,10 +134,6 @@ const pageInfo = getPageInfo({
 		background: #f0f0f0;
 		border-radius: 4px;
 		margin: 0px 3px;
-	}
-
-	.link-tile-icon {
-		opacity: 0;
 	}
 
 	.link-tile {

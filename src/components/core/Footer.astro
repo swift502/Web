@@ -9,7 +9,7 @@ import '../../styles/tiles.css';
 			<a href={link.link} target="_blank" title={link.name}>
 				<div class="tile"> 
 					<div class="tile-icon">
-						<img src={link.icon} alt="" onload="fadeIn(this);"/>
+						<img src={link.icon}/>
 					</div>
 				</div>
 			</a>
@@ -33,7 +33,6 @@ import '../../styles/tiles.css';
 	}
 
 	.footer .tile-icon img {
-		opacity: 0;
 		width: 28px;
 		height: 28px;
 	}

@@ -15,22 +15,22 @@ interface Props {
 const { pageInfo } = Astro.props;
 ---
 
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 
 <title>{pageInfo.title}</title>
-<meta name="description" content={pageInfo.description} />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" href="/favicon.ico" />
-<meta name="generator" content={Astro.generator} />
+<meta name="description" content={pageInfo.description}/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/favicon.ico"/>
+<meta name="generator" content={Astro.generator}/>
 {pageInfo.noIndex && (
 	<meta name="robots" content="noindex"/>
 )}
 
-<meta property="og:title" content={pageInfo.title} />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:description" content={pageInfo.description} />
-<meta property="og:type" content="website" />
-<meta property="og:image" content={pageInfo.image} />
+<meta property="og:title" content={pageInfo.title}/>
+<meta property="og:url" content={Astro.url}/>
+<meta property="og:description" content={pageInfo.description}/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content={pageInfo.image}/>
 
 <script is:inline>
 	function fadeIn(element)

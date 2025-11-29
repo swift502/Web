@@ -2,6 +2,7 @@
 import Layout from '../layouts/FullScreen.astro';
 import BigButton from '../components/core/BigButton.astro';
 import { getPageInfo } from '../scripts/astro-helpers';
+import '../styles/model-viewer.css';
 
 // Layout variables
 const pageInfo = getPageInfo({
@@ -11,9 +12,8 @@ const pageInfo = getPageInfo({
 ---
 
 <Layout pageInfo={pageInfo}>
-	<div class="model-background">
+	<div class="model-viewer-container">
 		<model-viewer
-			src="/models/404.glb"
 			environment-image="/assets/env.hdr"
 			exposure="1.1"
 			autoplay
@@ -21,11 +21,13 @@ const pageInfo = getPageInfo({
 			disable-zoom
 			min-camera-orbit="auto 80deg auto"
 			max-camera-orbit="auto 80deg auto"
-			camera-target="-0.45m 0.8m 0.08m"
-			field-of-view="37deg"
 			shadow-intensity="1"
 			shadow-softness="0"
 			tone-mapping="aces"
+			onload="fadeIn(this);"
+			src="/models/404.glb"
+			camera-target="-0.45m 0.8m 0.08m"
+			field-of-view="37deg"
 		/>
 	</div>
 	<div class="text-container">
@@ -72,7 +74,7 @@ const pageInfo = getPageInfo({
 		margin-bottom: 30px;
 	}
 
-	.model-background {
+	.model-viewer-container {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -80,13 +82,8 @@ const pageInfo = getPageInfo({
 		height: 100%;
 	}
 
-	model-viewer {
-		width: 100%;
-		height: 100%;
-	}
-
 	@media (max-width: 776px) {
-		.model-background {
+		.model-viewer-container {
 			display: none;
 		}
 
