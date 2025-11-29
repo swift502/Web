@@ -27,16 +27,16 @@ function updateAspectContainers()
 				width = maxWidth;
 				height = width / aspectRatio;
 			}
+
+			container.style.height = height + 'px';
+			container.style.width = width + 'px';
 		}
 		else
 		{
 			// Mobile
-			width = document.documentElement.clientWidth;
-			height = width / aspectRatio;
+			container.style.width = '100%';
+			container.style.height = container.clientWidth / aspectRatio + 'px';
 		}
-
-		container.style.height = height + 'px';
-		container.style.width = width + 'px';
 	}
 
 	// Descriptions update
