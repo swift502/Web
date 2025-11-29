@@ -4,11 +4,11 @@ import { extractFilename } from './utilities';
 import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 import type { AstroInstance } from 'astro';
-import type { PageInfo, PageInfoInput, ProjectData } from './interfaces';
+import type { PageInfo, PageInfoInput, ProjectData, Project } from './interfaces';
 
-export function getProjects() : { name: string, data: ProjectData }[]
+export function getProjects()
 {
-	let projects = [];
+	let projects : Project[] = [];
 	const dataFiles = import.meta.glob('/src/data/projects/*.yml', { eager: true });
 
 	for (let i = 0; i < projectIndex.length; i++)
@@ -20,7 +20,7 @@ export function getProjects() : { name: string, data: ProjectData }[]
 		{
 			projects.push({
 				'name': projectName,
-				'data': dataFiles[dataPath],
+				'data': dataFiles[dataPath] as ProjectData,
 			});
 		}
 		else
@@ -32,7 +32,7 @@ export function getProjects() : { name: string, data: ProjectData }[]
 	return projects;
 }
 
-export function getContentBlockLibrary() : any[]
+export function getContentBlockLibrary()
 {
 	const library = [];
 	const contentBlocks = import.meta.glob('/src/content_blocks/*.astro', { eager: true });
@@ -46,7 +46,7 @@ export function getContentBlockLibrary() : any[]
 	return library;
 }
 
-export function getPageInfo(input : PageInfoInput) : PageInfo
+export function getPageInfo(input : PageInfoInput)
 {
 	const pageInfo: PageInfo = {};
 
@@ -64,13 +64,13 @@ export function getPageInfo(input : PageInfoInput) : PageInfo
 	return pageInfo;
 }
 
-export function renderMarkdown(content: string) : string
+export function renderMarkdown(content: string)
 {
 	content = content.replaceAll("\n", "\n\n");
 	return marked.parse(content, { async: false });
 }
 
-export function logError(message: string) : void
+export function logError(message: string)
 {
 	console.error(`\u001b[91m${message}\u001b[0m`);
 }

@@ -75,6 +75,12 @@ export interface YoutubeProperties
     desc?: string;
 }
 
+export interface Project
+{
+    name: string;
+    data: ProjectData;
+}
+
 export interface PageInfo
 {
 	title?: string;
