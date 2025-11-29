@@ -1,4 +1,4 @@
-import lines from '../data/typewriter.yml';
+import lines from '../../data/typewriter.yml';
 
 const currentLine = document.getElementById("typewriter");
 const history = document.getElementById('typewriter-history');

@@ -1,7 +1,7 @@
 ---
-import { logError } from "../scripts/astro-helpers.js";
+import { logError } from "../scripts/build/astro-helpers.js";
 import AspectContainer from "../components/content_block/AspectContainer.astro";
-import type { ContentBlockProps, SketchfabProperties } from "../scripts/interfaces";
+import type { ContentBlockProps, SketchfabProperties } from "../scripts/build/interfaces";
 
 interface Props extends ContentBlockProps<SketchfabProperties> {}
 const { project, contentBlock } = Astro.props;

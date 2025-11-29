@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Default.astro';
 import BigButton from '../components/core/BigButton.astro';
-import { getPageInfo } from '../scripts/astro-helpers';
+import { getPageInfo } from '../scripts/build/astro-helpers';
 import '../styles/model-viewer.css';
 
 // Layout variables
@@ -53,9 +53,9 @@ const pageInfo = getPageInfo({
 
 <script>
 	import '@google/model-viewer';
-	import '../scripts/model-viewer.js';
-	import '../scripts/model-viewer-homepage.js';
-	import '../scripts/typewriter.js';
+	import '../scripts/client/model-viewer.js';
+	import '../scripts/client/model-viewer-homepage.js';
+	import '../scripts/client/typewriter.js';
 </script>
 
 <style>

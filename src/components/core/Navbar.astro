@@ -1,6 +1,6 @@
 ---
 import tabs from '../../data/tabs.yml';
-import type { PageInfo } from '../../scripts/interfaces';
+import type { PageInfo } from '../../scripts/build/interfaces';
 
 interface Props {
 	pageInfo: PageInfo;
@@ -27,7 +27,7 @@ function tabHighlight(tab)
 </div>
 
 <script>
-	import '../../scripts/navbar.js';
+	import '../../scripts/client/navbar.js';
 </script>
 
 <style>

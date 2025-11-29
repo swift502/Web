@@ -1,5 +1,5 @@
-import modelList from '../data/models.yml';
-import { getRandomInt, extractFilename } from './utilities';
+import modelList from '../../data/models.yml';
+import { getRandomInt, extractFilename } from '../build/utilities';
 const modelViewer = document.querySelector('model-viewer');
 
 // Model setter
