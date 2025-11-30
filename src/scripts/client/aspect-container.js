@@ -1,6 +1,24 @@
 let aspectContainers = document.getElementsByClassName("aspect-container");
 let descs = document.getElementsByClassName("content-description");
 
+function getInsetHeight(width, height, container)
+{
+	let padding = getComputedStyle(container).padding;
+	padding = padding.replace('px', '');
+	console.log(padding);
+	padding = parseInt(padding) * 2;
+
+	const aspectRatio = width / height;
+	const insetWidth = width - padding;
+	const insetHeight = insetWidth / aspectRatio;
+
+	const newWidth = insetWidth + padding;
+	const newHeight = insetHeight + padding;
+	const newAspectRatio = newWidth / newHeight;
+
+	return width / newAspectRatio;
+}
+
 function updateAspectContainers()
 {
 	for (let i = 0; i < aspectContainers.length; i++)
@@ -28,14 +46,24 @@ function updateAspectContainers()
 				height = width / aspectRatio;
 			}
 
-			container.style.height = height + 'px';
+			if (container.dataset.inset === 'true')
+				height = getInsetHeight(width, height, container);
+
 			container.style.width = width + 'px';
+			container.style.height = height + 'px';
 		}
 		else
 		{
 			// Mobile
 			container.style.width = '100%';
-			container.style.height = container.clientWidth / aspectRatio + 'px';
+
+			width = container.clientWidth;
+			height = width / aspectRatio;
+
+			if (container.dataset.inset === 'true')
+				height = getInsetHeight(width, height, container);
+
+			container.style.height = height + 'px';
 		}
 	}
 
