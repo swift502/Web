@@ -37,6 +37,13 @@ const inset = contentBlock.properties.inset ? ' inset' : '';
 	}
 
 	.project-detail-image.inset {
+		margin-top: -2px;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	@media (max-width: 776px) {
+		.project-detail-image.inset {
+			margin-top: -1px;
+		}
 	}
 </style>
