@@ -37,7 +37,7 @@ const pageInfo = getPageInfo({
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height: calc(100vh - 307px);
+		min-height: calc(100vh - 311px);
 	}
 
 	.sketchbook-archive {
@@ -56,9 +56,15 @@ const pageInfo = getPageInfo({
 		margin: 44px 0px 50px;
 	}
 
+	@media (max-width: 776px) {
+		.sketchbook-archive-wrapper {
+			min-height: calc(100vh - 301px);
+		}
+	}
+
 	@media (min-width: 2101px) {
 		.sketchbook-archive-wrapper {
-			min-height: calc(100vh - 336px);
+			min-height: calc(100vh - 331px);
 		}
 	}
 </style>
