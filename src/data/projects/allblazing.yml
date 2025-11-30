@@ -1,0 +1,12 @@
+title: AllBlazing character set
+description: A low poly runner character set made for the AllBlazing running app by Mark Trewren. Characters follow the same style I came up with in Character experiments, just different outfits.
+badge: Commercial
+tags:
+  - 2022
+  - Blender
+page:
+  - type: sketchfab
+    model: 289db84c6b53438d9fb796e54c8dca2c
+    desc: |-
+      A low poly runner character set made for the AllBlazing app by Mark Trewren. The app focused on running motivation and tracking, but was unfortunately discontinued and is no longer available.
+      Characters follow the same style I came up with in [Character experiments](/projects/characters/), just feature different outfits. The intention was for the user to select a skin tone, outfit and accent color. Those choices would dynamically form a 3D user avatar, which you'd see on a map to show your current location.
