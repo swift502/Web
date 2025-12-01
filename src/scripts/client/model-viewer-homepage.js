@@ -2,12 +2,17 @@ import modelList from '../../data/models.yml';
 import { getRandomInt, extractFilename } from '../utilities';
 const modelViewer = document.querySelector('model-viewer');
 
-// Model setter
 function setModel(index)
 {
 	const model = modelList[index];
 	modelViewer.setAttribute('src', `/models/${model.name}`);
 	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
+}
+
+function showDebugMenu(element)
+{
+	element.style.opacity = '1';
+	element.style.top = '-70px';
 }
 
 // Initial random model
@@ -18,11 +23,13 @@ let level = 0;
 const debugCode = ['KeyD', 'KeyE', 'KeyB', 'KeyU', 'KeyG']
 document.addEventListener('keypress', (event) =>
 {
+	if (level == debugCode.length) return;
+
 	if (debugCode[level] == event.code) level++;
+	else level = 0;
+
 	if (level == debugCode.length)
 	{
-		level++;
-		
 		let wrapper = document.createElement('div');
 		wrapper.id = 'model-debug-wrapper';
 		document.querySelector('.footer').appendChild(wrapper);
@@ -44,10 +51,6 @@ document.addEventListener('keypress', (event) =>
 			list.appendChild(button);
 		});
 
-		setTimeout(() =>
-		{
-			wrapper.style.opacity = '1';
-			wrapper.style.top = '-70px';
-		}, 0);
+		setTimeout(() => showDebugMenu(wrapper), 0);
 	}
 });
