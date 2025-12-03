@@ -70,10 +70,7 @@ function updateAspectContainers()
 }
 
 // Update on window resize
-window.addEventListener('resize', () =>
-{
-	updateAspectContainers();
-});
+window.addEventListener('resize', updateAspectContainers);
 
 // Initial update
 updateAspectContainers();
