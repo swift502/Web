@@ -63,4 +63,5 @@ function refreshTransparency()
 	}
 }
 
+// Init
 typewriter();

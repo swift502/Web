@@ -1,7 +1,7 @@
-import cssInjection from '../../styles/model-viewer-injection.css?raw';
+import customStyles from '../../styles/model-viewer-injection.css?raw';
 const modelViewer = document.querySelector('model-viewer');
 
-// Inject shadow DOM CSS overrides
+// Custom iFrame css
 const style = document.createElement('style');
-style.textContent = cssInjection;
+style.textContent = customStyles;
 modelViewer.shadowRoot.appendChild(style);

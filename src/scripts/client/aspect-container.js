@@ -69,9 +69,9 @@ function updateAspectContainers()
 	}
 }
 
-// Update on window resize
+// Events
 window.addEventListener('resize', updateAspectContainers);
 
-// Initial update
+// Init
 updateAspectContainers();
 document.querySelector('body').style.opacity = '1';

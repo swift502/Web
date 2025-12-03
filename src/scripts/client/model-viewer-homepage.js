@@ -20,8 +20,8 @@ setModel(getRandomInt(0, modelList.length - 1));
 
 // Debug
 let level = 0;
-const debugCode = ['KeyD', 'KeyE', 'KeyB', 'KeyU', 'KeyG']
-document.addEventListener('keypress', (event) =>
+const debugCode = ['KeyD', 'KeyE', 'KeyB', 'KeyU', 'KeyG'];
+function onKeyPress(event)
 {
 	if (level == debugCode.length) return;
 
@@ -53,4 +53,7 @@ document.addEventListener('keypress', (event) =>
 
 		setTimeout(() => showDebugMenu(wrapper), 0);
 	}
-});
+}
+
+// Events
+document.addEventListener('keypress', onKeyPress);

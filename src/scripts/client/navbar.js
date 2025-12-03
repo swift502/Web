@@ -1,7 +1,7 @@
 let touchDevice = ('ontouchstart' in document.documentElement);
 let prevScrollpos = window.scrollY;
 
-window.addEventListener('scroll', () =>
+function onScroll()
 {
 	let navbar = document.getElementById("navbar");
 
@@ -31,4 +31,7 @@ window.addEventListener('scroll', () =>
 	{
 		navbar.classList.remove(navbarShadowClass);
 	}
-});
+}
+
+// Events
+window.addEventListener('scroll', onScroll);
