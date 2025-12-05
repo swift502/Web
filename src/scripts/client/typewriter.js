@@ -22,6 +22,7 @@ function typewriter()
 	}
 	else
 	{
+		// Advance line
 		setTimeout(goToNextLine, nextLineDelay);
 	}
 }
