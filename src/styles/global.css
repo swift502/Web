@@ -7,6 +7,10 @@ html {
 	overflow-y: scroll;
 }
 
+iframe {
+	border: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Catamaran', sans-serif;
 	font-weight: 900;
