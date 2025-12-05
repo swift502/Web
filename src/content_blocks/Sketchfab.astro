@@ -1,9 +1,9 @@
 ---
 import { logError } from "../scripts/astro-helpers.js";
 import AspectContainer from "../components/content_block/AspectContainer.astro";
-import type { ContentBlockProps, SketchfabProperties } from "../scripts/interfaces.js";
+import type { ContentBlockData, SketchfabProperties } from "../scripts/interfaces.js";
 
-interface Props extends ContentBlockProps<SketchfabProperties> {}
+interface Props extends ContentBlockData<SketchfabProperties> {}
 const { project, contentBlock } = Astro.props;
 
 const id = "sketchfab-" + contentBlock.index;
@@ -34,7 +34,6 @@ else
 			src={source}
 			id={id}
 			title="Sketchfab viewer"
-			frameborder="0"
 			allowfullscreen
 			allow="autoplay; fullscreen; xr-spatial-tracking"
 			xr-spatial-tracking
@@ -54,5 +53,6 @@ else
 		left: 0;
 		width: 100%;
 		height: 100%;
+		border: none;
 	}
 </style>

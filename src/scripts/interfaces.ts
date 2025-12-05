@@ -1,4 +1,4 @@
-import type { BuiltinLanguage, SpecialLanguage } from 'shiki';
+import type { BundledLanguage, SpecialLanguage } from 'shiki';
 
 export interface ProjectData
 {
@@ -22,7 +22,7 @@ export interface Link
     link: string;
 }
 
-export interface ContentBlockProps<T>
+export interface ContentBlockData<T>
 {
 	project: {
 		name: string;
@@ -38,7 +38,7 @@ export interface CodeProperties
 {
     type: "code";
     data: string;
-    lang: BuiltinLanguage | SpecialLanguage;
+    lang: BundledLanguage | SpecialLanguage;
     file?: string;
     desc?: string;
 }

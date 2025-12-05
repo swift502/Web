@@ -1,9 +1,9 @@
 ---
 import AspectContainer from "../components/content_block/AspectContainer.astro";
 import MediaControls from "../components/content_block/MediaControls.astro";
-import type { ContentBlockProps, VideoProperties } from "../scripts/interfaces";
+import type { ContentBlockData, VideoProperties } from "../scripts/interfaces";
 
-interface Props extends ContentBlockProps<VideoProperties> {}
+interface Props extends ContentBlockData<VideoProperties> {}
 const { project, contentBlock } = Astro.props;
 
 const videoPath = `/assets/projects/${project.name}/${contentBlock.properties.data}`;

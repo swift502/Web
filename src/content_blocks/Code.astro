@@ -4,9 +4,9 @@ import { Code as CodeComponent } from 'astro:components';
 
 import ContentBlock from '../components/content_block/ContentBlock.astro';
 import ContentDescription from "../components/content_block/ContentDescription.astro";
-import type { ContentBlockProps, CodeProperties } from '../scripts/interfaces';
+import type { ContentBlockData, CodeProperties } from '../scripts/interfaces';
 
-interface Props extends ContentBlockProps<CodeProperties> {}
+interface Props extends ContentBlockData<CodeProperties> {}
 const { contentBlock } = Astro.props;
 
 const contentBlockId = "code-block-" + contentBlock.index;
