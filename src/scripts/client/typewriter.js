@@ -22,19 +22,20 @@ function typewriter()
 	}
 	else
 	{
-		// Go to next line
-		letterIndex = 0;
-		const lastLine = lines[lineIndex];
-
-		lineIndex++;
-		if (lineIndex == lines.length) lineIndex = 0;
-
-		setTimeout(() =>
-		{
-			pushHistory(lastLine);
-			typewriter();
-		}, nextLineDelay);
+		setTimeout(goToNextLine, nextLineDelay);
 	}
+}
+
+function goToNextLine()
+{
+	letterIndex = 0;
+	const lastLine = lines[lineIndex];
+
+	lineIndex++;
+	if (lineIndex == lines.length) lineIndex = 0;
+
+	pushHistory(lastLine);
+	typewriter();
 }
 
 function pushHistory(content)
