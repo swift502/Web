@@ -14,13 +14,14 @@ const { contentBlock, parentId } = Astro.props;
 
 <style is:global>
 	.content-description {
-		box-sizing: border-box;
-		border-radius: 0px 0px 10px 10px;
+		display: block;
 		position: relative;
 		padding: 22px 30px;
+		box-sizing: border-box;
 		text-align: left;
 		color: #222;
 		background: #fff;
+		border-radius: 0px 0px 10px 10px;
 		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
 		line-height: normal;
 	}
@@ -30,7 +31,7 @@ const { contentBlock, parentId } = Astro.props;
 		margin-bottom: 14px;
 	}
 
-	.content-description p:last-child {
+	.content-description p:last-of-type {
 		margin: 0px;
 	}
 
@@ -38,14 +39,16 @@ const { contentBlock, parentId } = Astro.props;
 		.content-description {
 			background: none;
 			box-shadow: none;
-			padding-left: 22px;
-			padding-right: 22px;
+			padding: 22px;
 			padding-bottom: 0px;
-			width: 100% !important;
 			text-align: left;
 		}
 
-		.content-block:last-child .content-description {
+		.content-description {
+			margin-bottom: 22px;
+		}
+
+		.content-block:last-of-type .content-description {
 			margin-bottom: 0;
 		}
 	}
@@ -53,12 +56,6 @@ const { contentBlock, parentId } = Astro.props;
 	@media (min-width: 2101px) {
 		.content-description p {
 			font-size: 20px;
-		}
-	}
-
-	@media (max-width: 776px) {
-		.content-description {
-			margin-bottom: 22px;
 		}
 	}
 </style>
