@@ -9,7 +9,7 @@ import type { ContentBlockData, CodeProperties } from '../scripts/interfaces';
 interface Props extends ContentBlockData<CodeProperties> {}
 const { contentBlock } = Astro.props;
 
-const contentBlockId = "code-block-" + contentBlock.index;
+const containerId = "code-block-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 ---
 
@@ -19,14 +19,14 @@ const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : '
 			<div class="code-file-tab">{contentBlock.properties.file}</div>
 		</div>
 	)}
-	<div id={contentBlockId} class={"code-window" + borderClass}>
+	<div id={containerId} class={"code-window" + borderClass}>
 		<CodeComponent
 			code={contentBlock.properties.data}
 			lang={contentBlock.properties.lang}
 			theme="gruvbox-dark-soft"
 		/>
 	</div>
-	<ContentDescription contentBlock={contentBlock} parentId={contentBlockId}/>
+	<ContentDescription contentBlock={contentBlock} parentId={containerId}/>
 </ContentBlock>
 
 <style>

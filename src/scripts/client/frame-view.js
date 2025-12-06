@@ -1,4 +1,4 @@
-let aspectContainers = document.getElementsByClassName("aspect-container");
+let frameViews = document.getElementsByClassName("frame-view");
 let descs = document.getElementsByClassName("content-description");
 
 function getInsetHeight(width, aspectRatio, container)
@@ -14,9 +14,9 @@ function getInsetHeight(width, aspectRatio, container)
 
 function updateAspectContainers()
 {
-	for (let i = 0; i < aspectContainers.length; i++)
+	for (let i = 0; i < frameViews.length; i++)
 	{
-		let container = aspectContainers[i];
+		let container = frameViews[i];
 		let aspectRatio = container.dataset.width / container.dataset.height;
 
 		let padding = 180;

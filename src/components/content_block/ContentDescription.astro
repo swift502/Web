@@ -5,17 +5,55 @@ const { contentBlock, parentId } = Astro.props;
 
 {'desc' in contentBlock.properties && (
 	<div
-		class="content-description textarea"
+		class="content-description"
 		data-target={parentId}
 		set:html={renderMarkdown(contentBlock.properties.desc)}
 	/>
 )}
 
 
-<style>
+<style is:global>
 	.content-description {
 		box-sizing: border-box;
 		border-radius: 0px 0px 10px 10px;
+		position: relative;
+		padding: 22px 30px;
+		text-align: left;
+		color: #222;
+		background: #fff;
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+		line-height: normal;
+	}
+
+	.content-description p {
+		margin: 0px;
+		margin-bottom: 14px;
+	}
+
+	.content-description p:last-child {
+		margin: 0px;
+	}
+
+	@media (max-width: 776px) {
+		.content-description {
+			background: none;
+			box-shadow: none;
+			padding-left: 22px;
+			padding-right: 22px;
+			padding-bottom: 0px;
+			width: 100% !important;
+			text-align: left;
+		}
+
+		.content-block:last-child .content-description {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: 2101px) {
+		.content-description p {
+			font-size: 20px;
+		}
 	}
 
 	@media (max-width: 776px) {

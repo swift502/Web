@@ -1,49 +1,48 @@
 ---
 import { logError } from "../scripts/astro-helpers.js";
-import AspectContainer from "../components/content_block/AspectContainer.astro";
+import FrameView from "../components/content_block/FrameView.astro";
 import type { ContentBlockData, SketchfabProperties } from "../scripts/interfaces.js";
 
 interface Props extends ContentBlockData<SketchfabProperties> {}
 const { project, contentBlock } = Astro.props;
 
-const id = "sketchfab-" + contentBlock.index;
-let source;
+function getSourceUrl()
+{
+	if ('model' in contentBlock.properties)
+	{
+		return `https://sketchfab.com/models/${contentBlock.properties.model}/embed`;
+	}
+	else if ('collection' in contentBlock.properties)
+	{
+		return `https://sketchfab.com/playlists/embed?collection=${contentBlock.properties.collection}`;
+	}
+	else
+	{
+		logError(`Source was not defined for content block index "${contentBlock.index}"`);
+		return "";
+	}
+}
 
-if ('model' in contentBlock.properties)
-{
-	source = `https://sketchfab.com/models/${contentBlock.properties.model}/embed`;
-}
-else if ('collection' in contentBlock.properties)
-{
-	source = `https://sketchfab.com/playlists/embed?collection=${contentBlock.properties.collection}`;
-}
-else
-{
-	logError(`Source was not defined for content block "${id}"`);
-}
 ---
 
-<AspectContainer
+<FrameView
 	project={project}
 	contentBlock={contentBlock}
 	width="16"
 	height="9"
 >
-	<div class="sketchfab-embed-wrapper">
-		<iframe
-			src={source}
-			id={id}
-			title="Sketchfab viewer"
-			allowfullscreen
-			allow="autoplay; fullscreen; xr-spatial-tracking"
-			xr-spatial-tracking
-			execution-while-out-of-viewport
-			execution-while-not-rendered
-			web-share
-			onload="fadeIn(this);"
-		/>
-	</div>
-</AspectContainer>
+	<iframe
+		src={getSourceUrl()}
+		title="Sketchfab viewer"
+		allowfullscreen
+		allow="autoplay; fullscreen; xr-spatial-tracking"
+		xr-spatial-tracking
+		execution-while-out-of-viewport
+		execution-while-not-rendered
+		web-share
+		onload="fadeIn(this);"
+	/>
+</FrameView>
 
 <style>
 	iframe {

@@ -1,11 +1,10 @@
 ---
 import ContentBlock from './ContentBlock.astro';
 import ContentDescription from './ContentDescription.astro';
-import '../../styles/textarea.css';
 
 const { project, contentBlock, width, height } = Astro.props;
 
-const containerId = "aspect-container-" + contentBlock.index;
+const containerId = "frame-view-" + contentBlock.index;
 const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
 const insetClass = contentBlock.properties.inset ? ' inset' : '';
 ---
@@ -13,7 +12,7 @@ const insetClass = contentBlock.properties.inset ? ' inset' : '';
 <ContentBlock>
 	<div 
 		id={containerId}
-		class={"aspect-container" + borderClass + insetClass}
+		class={"frame-view" + borderClass + insetClass}
 		data-width={width}
 		data-height={height}
 		data-first_padding={contentBlock.index == 0 ? 'true' : 'false'}
@@ -27,11 +26,11 @@ const insetClass = contentBlock.properties.inset ? ' inset' : '';
 </ContentBlock>
 
 <script>
-	import '../../scripts/client/aspect-container.js';
+	import '../../scripts/client/frame-view.js';
 </script>
 
 <style>
-	.aspect-container {
+	.frame-view {
 		position: relative;
 		box-sizing: border-box;
 		
@@ -40,16 +39,16 @@ const insetClass = contentBlock.properties.inset ? ' inset' : '';
 		background-repeat: no-repeat;
 	}
 
-	.aspect-container.inset {
+	.frame-view.inset {
 		padding: 18px;
 	}
 
-	.aspect-container:hover :global(.media-controls)  {
+	.frame-view:hover :global(.media-controls)  {
 		opacity: 1;
 	}
 
 	@media (max-width: 776px) {
-		.aspect-container.inset {
+		.frame-view.inset {
 			padding: 9px;
 		}
 	}

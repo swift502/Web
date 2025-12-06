@@ -1,7 +1,7 @@
 ---
 import MediaControls from '../components/content_block/MediaControls.astro';
 import { imageSizeFromFile } from 'image-size/fromFile';
-import AspectContainer from '../components/content_block/AspectContainer.astro';
+import FrameView from '../components/content_block/FrameView.astro';
 import type { ContentBlockData, ImageProperties } from '../scripts/interfaces';
 
 interface Props extends ContentBlockData<ImageProperties> {}
@@ -12,7 +12,7 @@ const size = await imageSizeFromFile('./public/' + imagePath);
 const inset = contentBlock.properties.inset ? ' inset' : '';
 ---
 
-<AspectContainer
+<FrameView
 	project={project}
 	contentBlock={contentBlock}
 	width={size.width}
@@ -27,7 +27,7 @@ const inset = contentBlock.properties.inset ? ' inset' : '';
 		name={contentBlock.properties.data}
 		path={imagePath}
 	/>
-</AspectContainer>
+</FrameView>
 
 <style>
 	.project-detail-image {

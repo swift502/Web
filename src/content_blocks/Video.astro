@@ -1,5 +1,5 @@
 ---
-import AspectContainer from "../components/content_block/AspectContainer.astro";
+import FrameView from "../components/content_block/FrameView.astro";
 import MediaControls from "../components/content_block/MediaControls.astro";
 import type { ContentBlockData, VideoProperties } from "../scripts/interfaces";
 
@@ -11,7 +11,7 @@ const width = 'width' in contentBlock.properties ? contentBlock.properties.width
 const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
 ---
 
-<AspectContainer
+<FrameView
 	project={project}
 	contentBlock={contentBlock}
 	width={width}
@@ -24,7 +24,7 @@ const height = 'height' in contentBlock.properties ? contentBlock.properties.hei
 		name={contentBlock.properties.data}
 		path={videoPath}
 	/>
-</AspectContainer>
+</FrameView>
 
 <style>
 	video {

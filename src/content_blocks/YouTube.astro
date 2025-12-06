@@ -1,5 +1,5 @@
 ---
-import AspectContainer from "../components/content_block/AspectContainer.astro";
+import FrameView from "../components/content_block/FrameView.astro";
 import type { ContentBlockData, YoutubeProperties } from "../scripts/interfaces";
 
 interface Props extends ContentBlockData<YoutubeProperties> {}
@@ -9,7 +9,7 @@ const width = 'width' in contentBlock.properties ? contentBlock.properties.width
 const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
 ---
 
-<AspectContainer
+<FrameView
 	project={project}
 	contentBlock={contentBlock}
 	width={width}
@@ -22,7 +22,7 @@ const height = 'height' in contentBlock.properties ? contentBlock.properties.hei
 		allowfullscreen
 		onload="fadeIn(this);"
 	/>
-</AspectContainer>
+</FrameView>
 
 <style>
 	iframe {
