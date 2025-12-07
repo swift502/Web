@@ -14,6 +14,7 @@ function getInsetHeight(width, aspectRatio, container)
 
 function updateAspectContainers()
 {
+	// Frame views
 	for (let i = 0; i < frameViews.length; i++)
 	{
 		let container = frameViews[i];
@@ -60,7 +61,7 @@ function updateAspectContainers()
 		}
 	}
 
-	// Descriptions update
+	// Content descriptions
 	for (let i = 0; i < descs.length; i++)
 	{
 		let desc = descs[i];
