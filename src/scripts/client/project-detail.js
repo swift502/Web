@@ -1,6 +1,3 @@
-let frameViews = document.getElementsByClassName("frame-view");
-let descs = document.getElementsByClassName("content-description");
-
 function getInsetHeight(width, aspectRatio, container)
 {
 	let padding = getComputedStyle(container).padding;
@@ -14,23 +11,24 @@ function getInsetHeight(width, aspectRatio, container)
 
 function updateAspectContainers()
 {
-	// Frame views
+	let frameViews = document.getElementsByClassName("frame-view");
+	
 	for (let i = 0; i < frameViews.length; i++)
 	{
-		let container = frameViews[i];
-		let aspectRatio = container.dataset.width / container.dataset.height;
+		let frameView = frameViews[i];
+		let aspectRatio = frameView.dataset.width / frameView.dataset.height;
 
 		let padding = 180;
-		if (container.dataset.first_padding === 'true') padding += 100;
-		if (container.dataset.desc_padding === 'true') padding += 100;
-		if (container.dataset.links_padding === 'true') padding += 100;
+		if (frameView.dataset.first_padding === 'true') padding += 100;
+		if (frameView.dataset.desc_padding === 'true') padding += 100;
+		if (frameView.dataset.links_padding === 'true') padding += 100;
 
 		let width, height;
 
 		if (window.innerWidth > 776)
 		{
 			//Desktop
-			let maxWidth = container.parentElement.offsetWidth;
+			let maxWidth = frameView.parentElement.offsetWidth;
 			height = Math.max(window.innerHeight - padding, 400);
 			width = (height * aspectRatio);
 
@@ -40,39 +38,49 @@ function updateAspectContainers()
 				height = width / aspectRatio;
 			}
 
-			if (container.dataset.inset === 'true')
-				height = getInsetHeight(width, aspectRatio, container);
+			if (frameView.dataset.inset === 'true')
+				height = getInsetHeight(width, aspectRatio, frameView);
 
-			container.style.width = width + 'px';
-			container.style.height = height + 'px';
+			frameView.style.width = width + 'px';
+			frameView.style.height = height + 'px';
 		}
 		else
 		{
 			// Mobile
-			container.style.width = '100%';
+			frameView.style.width = '100%';
 
-			width = container.clientWidth;
+			width = frameView.clientWidth;
 			height = width / aspectRatio;
 
-			if (container.dataset.inset === 'true')
-				height = getInsetHeight(width, aspectRatio, container);
+			if (frameView.dataset.inset === 'true')
+				height = getInsetHeight(width, aspectRatio, frameView);
 
-			container.style.height = height + 'px';
+			frameView.style.height = height + 'px';
 		}
-	}
-
-	// Content descriptions
-	for (let i = 0; i < descs.length; i++)
-	{
-		let desc = descs[i];
-		let target = document.getElementById(desc.dataset.target);
-		desc.style.width = `${target.getBoundingClientRect().width}px`;
 	}
 }
 
+function updateContentDescriptions()
+{
+	let descriptions = document.getElementsByClassName("content-description");
+
+	for (let i = 0; i < descriptions.length; i++)
+	{
+		let description = descriptions[i];
+		let target = document.getElementById(description.dataset.target);
+		description.style.width = `${target.getBoundingClientRect().width}px`;
+	}
+}
+
+function update()
+{
+	updateAspectContainers();
+	updateContentDescriptions();
+}
+
 // Events
-window.addEventListener('resize', updateAspectContainers);
+window.addEventListener('resize', update);
 
 // Init
-updateAspectContainers();
+update();
 document.querySelector('body').style.opacity = '1';
