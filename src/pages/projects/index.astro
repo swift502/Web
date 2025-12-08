@@ -1,13 +1,10 @@
 ---
 import Layout from '../../layouts/Default.astro';
-import ProjectTile from '../../components/projects/ProjectTile.astro';
-import InactiveProjectTile from '../../components/projects/InactiveProjectTile.astro';
+import ProjectTile from '../../components/core/ProjectTile.astro';
 import { getProjects, getPageInfo } from '../../scripts/astro-helpers';
 
-// Project grid
+// Projects
 const projects = getProjects();
-const columns = 3;
-const gaps = (columns - (projects.length % columns)) % columns;
 
 // Layout variables
 const pageInfo = getPageInfo({
@@ -18,22 +15,17 @@ const pageInfo = getPageInfo({
 
 <Layout pageInfo={pageInfo}>
 	<div class="project-grid">
-		<!-- Tiles -->
 		{projects.map((project) => (
 			<ProjectTile project={project}/>
-		))}
-		<!-- Inactive tiles -->
-		{[...Array(gaps)].map(() => (
-			<InactiveProjectTile/>
 		))}
 	</div>
 </Layout>
 
 <style>
 	.project-grid {
-		margin: 50px auto 20px;
-		max-width: 1160px;
-		display: flex;
+		margin: 50px auto 0px;
+		display: grid;
+		grid-template-columns: auto auto auto;
 		justify-content: center;
 		flex-wrap: wrap;
 	}
@@ -41,14 +33,19 @@ const pageInfo = getPageInfo({
 	@media (max-width: 776px) {
 		.project-grid {
 			margin: 0;
-			margin-top: 10px;
 			display: block;
+		}
+	}
+
+	@media (max-width: 1150px) {
+		.project-grid {
+			grid-template-columns: auto auto;
 		}
 	}
 
 	@media (min-width: 2100px) {
 		.project-grid {
-			margin: 60px auto 20px;
+			margin: 60px auto 0px;
 		}
 	}
 </style>
