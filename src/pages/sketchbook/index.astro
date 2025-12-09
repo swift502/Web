@@ -3,6 +3,7 @@ import Layout from "../../layouts/Default.astro";
 import BigButton from "../../components/core/BigButton.astro";
 import '../../styles/tiles.css';
 import { getPageInfo } from "../../scripts/astro-helpers";
+import EndButtonPadding from "../../components/core/EndButtonPadding.astro";
 
 // Layout variables
 const pageInfo = getPageInfo({
@@ -23,13 +24,13 @@ const pageInfo = getPageInfo({
 			<div class="tile-wrapper"><a href="/sketchbook/0.1/"><div class="tile">0.1</div></a></div>
 		</div>
 	</div>
-	<div class="bottom-wrapper" slot="anchor-bottom">
+	<EndButtonPadding slot="anchor-bottom">
 		<BigButton
 			text="Return home"
 			link="/"
 			icon="/assets/svg/home.svg"
 		/>
-	</div>
+	</EndButtonPadding>
 </Layout>
 
 <style>
@@ -54,10 +55,5 @@ const pageInfo = getPageInfo({
 	.demo-list .tile-wrapper {
 		width: 100%;
 		margin: 16px auto;
-	}
-
-	.bottom-wrapper {
-		text-align: center;
-		margin: 10px 0px;
 	}
 </style>
