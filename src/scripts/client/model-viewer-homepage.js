@@ -12,7 +12,7 @@ function setModel(index)
 function showDebugMenu(element)
 {
 	element.style.opacity = '1';
-	element.style.top = '-70px';
+	element.style.top = '-40px';
 }
 
 // Initial random model

@@ -3,6 +3,10 @@
 	font-size: 18px;
 }
 
+html, body {
+	height: 100%;
+}
+
 html {
 	overflow-y: scroll;
 }
@@ -25,10 +29,6 @@ a {
 hr {
 	border: none;
 	border-top: 1px solid #ccc;
-}
-
-.center {
-	text-align: center;
 }
 
 .border-radius-full {

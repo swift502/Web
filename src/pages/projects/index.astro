@@ -27,19 +27,18 @@ const pageInfo = getPageInfo({
 		display: grid;
 		grid-template-columns: auto auto auto;
 		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	@media (max-width: 776px) {
-		.project-grid {
-			margin: 0;
-			display: block;
-		}
 	}
 
 	@media (max-width: 1150px) {
 		.project-grid {
 			grid-template-columns: auto auto;
+		}
+	}
+
+	@media (max-width: 776px) {
+		.project-grid {
+			grid-template-columns: auto;
+			margin: 10px auto 0px;
 		}
 	}
 

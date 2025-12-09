@@ -74,7 +74,7 @@ const pageInfo = getPageInfo({
 			})}
 		</div>
 	</div>
-	<div class="back-to-projects-wrapper">
+	<div class="bottom-wrapper" slot="anchor-bottom">
 		<BigButton
 			text="Back to projects"
 			link="/projects/"
@@ -104,12 +104,11 @@ const pageInfo = getPageInfo({
 	.project-detail {
 		padding: 0 52px;
 		text-align: center;
-		min-height: calc(100vh - 347px);
 	}
 
-	.back-to-projects-wrapper {
+	.bottom-wrapper {
 		text-align: center;
-		margin: 50px 0px;
+		margin: 20px auto 10px;
 	}
 
 	.project-title {
@@ -160,11 +159,14 @@ const pageInfo = getPageInfo({
 	@media (max-width: 776px) {
 		.project-detail {
 			padding: 0;
-			min-height: calc(100vh - 327px);
 		}
 
-		.image-center, .project-detail-wrapper {
-			margin: 0;
+		.bottom-wrapper {
+			margin: 20px auto 20px;
+		}
+
+		.project-detail-wrapper {
+			margin-top: 0;
 		}
 
 		.project-title {
@@ -188,10 +190,6 @@ const pageInfo = getPageInfo({
 	@media (min-width: 2100px) {
 		.project-detail-wrapper {
 			max-width: 1200px;
-		}
-
-		.project-detail {
-			min-height: calc(100vh - 367px);
 		}
 	}
 </style>

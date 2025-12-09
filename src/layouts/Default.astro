@@ -13,28 +13,22 @@ const { pageInfo } = Astro.props;
 	</head>
 	<body>
 		<Navbar pageInfo={pageInfo}/>
-		<div class="content">
+		<main>
 			<slot/>
-		</div>
+		</main>
+		<slot name="anchor-bottom"/>
 		<Footer/>
 	</body>
 </html>
 
 <style>
-	.content {
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	main {
 		padding-top: 64px;
-		min-height: calc(100vh - 202px);
-	}
-
-	@media (max-width: 776px) {
-		.content {
-			min-height: calc(100vh - 182px);
-		}
-	}
-
-	@media (min-width: 2100px) {
-		.content {
-			min-height: calc(100vh - 227px);
-		}
+		flex: 1;
 	}
 </style>

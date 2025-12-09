@@ -12,18 +12,18 @@ const pageInfo = getPageInfo({
 ---
 
 <Layout pageInfo={pageInfo}>
-	<div class="sketchbook-archive-wrapper">
-		<div class="center">
+	<div class="sketchbook-archive">
+		<div class="title">
 			<h1>Sketchbook demo archive</h1>
 		</div>
-		<div class="sketchbook-archive">
+		<div class="demo-list">
 			<div class="tile-wrapper"><a href="/sketchbook/0.4/"><div class="tile">0.4</div></a></div>
 			<div class="tile-wrapper"><a href="/sketchbook/0.3/"><div class="tile">0.3</div></a></div>
 			<div class="tile-wrapper"><a href="/sketchbook/0.2/"><div class="tile">0.2</div></a></div>
 			<div class="tile-wrapper"><a href="/sketchbook/0.1/"><div class="tile">0.1</div></a></div>
 		</div>
 	</div>
-	<div class="return-home-wrapper">
+	<div class="bottom-wrapper" slot="anchor-bottom">
 		<BigButton
 			text="Return home"
 			link="/"
@@ -33,38 +33,31 @@ const pageInfo = getPageInfo({
 </Layout>
 
 <style>
-	.sketchbook-archive-wrapper {
+	.sketchbook-archive {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height: calc(100vh - 311px);
+		height: 100%;
 	}
 
-	.sketchbook-archive {
+	.title {
+		text-align: center;
+	}
+
+	.demo-list {
 		text-align: center;
 		width: 100%;
 		max-width: 320px;
 		margin: 0 auto;
 	}
 
-	.sketchbook-archive .tile-wrapper {
+	.demo-list .tile-wrapper {
 		width: 100%;
 		margin: 16px auto;
 	}
-	.return-home-wrapper {
+
+	.bottom-wrapper {
 		text-align: center;
-		margin: 44px 0px 50px;
-	}
-
-	@media (max-width: 776px) {
-		.sketchbook-archive-wrapper {
-			min-height: calc(100vh - 301px);
-		}
-	}
-
-	@media (min-width: 2100px) {
-		.sketchbook-archive-wrapper {
-			min-height: calc(100vh - 331px);
-		}
+		margin: 10px 0px;
 	}
 </style>
