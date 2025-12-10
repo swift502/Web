@@ -15,7 +15,7 @@
     "@fontsource/solway": "^5.2.8",
     "@google/model-viewer": "^4.1.0",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^5.16.4",
+    "astro": "^5.16.5",
     "html-to-text": "^9.0.5",
     "image-size": "^2.0.2",
     "marked": "^17.0.1",
