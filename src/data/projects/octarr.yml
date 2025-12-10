@@ -1,5 +1,4 @@
 title: Octarr
-description: Octarr is an endless 3D array system based on an octree. While working on a Godot project, I needed a way to easily store voxels in an otherwise polygonal world.
 tags:
   - 2021
   - C#

@@ -397,9 +397,6 @@
         "badge": {
           "type": "string"
         },
-        "description": {
-          "type": "string"
-        },
         "links": {
           "items": {
             "$ref": "#/definitions/Link"
@@ -443,7 +440,6 @@
       },
       "required": [
         "title",
-        "description",
         "page"
       ],
       "type": "object"

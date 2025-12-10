@@ -1,5 +1,4 @@
 title: Map projection converter
-description: A blazing fast, shader based image projection converter. Converts between the equirectangular and mercator projections. Can be used via a CLI or directly in Python.
 tags:
   - 2024
   - Python

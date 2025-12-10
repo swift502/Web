@@ -3,7 +3,6 @@ import type { BundledLanguage, SpecialLanguage } from 'shiki';
 export interface ProjectData
 {
     title: string;
-    description: string;
     badge?: string;
     tags?: Array<string | number>;
     links?: Link[];

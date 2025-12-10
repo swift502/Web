@@ -1,5 +1,4 @@
 title: GTA 3 mod for BeamNG.drive
-description: BeamNG.drive port of GTA 3's Liberty City. I first extended DragonFF, an open-source DFF importer to be able to import entire map segments.
 tags:
   - 2019
   - Python

@@ -1,4 +1,5 @@
 import { marked } from 'marked';
+import { htmlToText } from "html-to-text";
 import { extractFilename } from './utilities';
 
 import projectIndex from '../data/project-index.yml';
@@ -62,6 +63,39 @@ export function getPageInfo(input : PageInfoInput)
 	pageInfo.noIndex = input.noIndex;
 
 	return pageInfo;
+}
+
+export function extractProjectDescription(project: Project)
+{
+	let desc = "";
+	project.data.page.forEach(block =>
+	{
+		if (block.desc) desc += block.desc.replaceAll("\n", " ") + " ";
+	});
+
+	if (desc.length > 0)
+	{
+		desc = renderMarkdown(desc);
+		desc = htmlToText(desc, {
+			wordwrap: false,
+			selectors: [
+				{ selector: 'a', options: { ignoreHref: true } },
+			],
+		});
+
+		if (desc.length > 160)
+		{
+			desc = desc.slice(0, 160);
+			desc = desc.slice(0, desc.lastIndexOf(" "));
+			desc += '...';
+		}
+
+		return desc;
+	}
+	else
+	{
+		return undefined;
+	}
 }
 
 export function renderMarkdown(content: string)
