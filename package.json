@@ -8,14 +8,14 @@
     "astro": "astro",
     "generate-schema": "ts-json-schema-generator --path src/scripts/interfaces.ts --type ProjectData --out src/schemas/project.schema.json"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/catamaran": "^5.2.8",
     "@fontsource/fragment-mono": "^5.2.8",
     "@fontsource/solway": "^5.2.8",
     "@google/model-viewer": "^4.1.0",
     "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^5.16.3",
+    "astro": "^5.16.4",
     "image-size": "^2.0.2",
     "marked": "^17.0.1",
     "normalize.css": "^8.0.1",
