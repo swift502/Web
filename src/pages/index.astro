@@ -3,6 +3,7 @@ import Layout from '../layouts/Default.astro';
 import BigButton from '../components/core/BigButton.astro';
 import { getPageInfo } from '../scripts/astro-helpers';
 import '../styles/model-viewer-common.css';
+import '../styles/model-viewer-debug.css';
 
 // Layout variables
 const pageInfo = getPageInfo({
@@ -157,41 +158,5 @@ const pageInfo = getPageInfo({
 			left: -300px;
 			width: calc(100% + 300px);
 		}
-	}
-</style>
-
-<style is:global>
-	#model-debug-wrapper {
-		position: absolute;
-		width: 100%;
-		top: -30px;
-		pointer-events: none;
-		display: flex;
-		justify-content: center;
-		opacity: 0;
-		transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.0);
-	}
-
-	#model-debug-list {
-		display: flex;
-		padding: 5px 8px;
-		border-radius: 3px;
-		background: #0002;
-		border-radius: 500px;
-	}
-
-	#model-debug-list div {
-		display: flex;
-		width: 28px;
-		height: 26px;
-		font-size: 17px;
-		border-radius: 500px;
-		justify-content: center;
-		align-items: center;
-		color: #333;
-		padding: 6px;
-		margin: 3px;
-		pointer-events: all;
-		cursor: pointer;
 	}
 </style>

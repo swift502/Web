@@ -72,15 +72,15 @@ function updateContentDescriptions()
 	}
 }
 
-function update()
+function onResize()
 {
 	updateAspectContainers();
 	updateContentDescriptions();
 }
 
 // Events
-window.addEventListener('resize', update);
+window.addEventListener('resize', onResize);
 
 // Init
-update();
+onResize();
 document.querySelector('body').style.opacity = '1';

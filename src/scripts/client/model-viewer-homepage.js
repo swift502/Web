@@ -9,18 +9,9 @@ function setModel(index)
 	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
 }
 
-function showDebugMenu(element)
-{
-	element.style.opacity = '1';
-	element.style.top = '-40px';
-}
-
-// Initial random model
-setModel(getRandomInt(0, modelList.length - 1));
-
 // Debug
-let level = 0;
 const debugCode = ['KeyD', 'KeyE', 'KeyB', 'KeyU', 'KeyG'];
+let level = 0;
 function onKeyPress(event)
 {
 	if (level == debugCode.length) return;
@@ -30,18 +21,18 @@ function onKeyPress(event)
 
 	if (level == debugCode.length)
 	{
-		let wrapper = document.createElement('div');
-		wrapper.id = 'model-debug-wrapper';
-		document.querySelector('.footer').appendChild(wrapper);
+		let container = document.createElement('div');
+		container.id = 'model-debug';
+		document.querySelector('body').appendChild(container);
 
 		let list = document.createElement('div');
-		list.id = 'model-debug-list';
-		wrapper.appendChild(list);
+		list.classList.add('model-debug-list');
+		container.appendChild(list);
 
 		modelList.forEach((model, index) =>
 		{
 			let button = document.createElement('div');
-			button.classList.add('tile');
+			button.classList.add('model-debug-item', 'tile');
 			button.innerHTML = extractFilename(model.name);
 			button.onclick = () =>
 			{
@@ -50,10 +41,11 @@ function onKeyPress(event)
 
 			list.appendChild(button);
 		});
-
-		setTimeout(() => showDebugMenu(wrapper), 0);
 	}
 }
 
 // Events
 document.addEventListener('keypress', onKeyPress);
+
+// Init
+setModel(getRandomInt(0, modelList.length - 1));

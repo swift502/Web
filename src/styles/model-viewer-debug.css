@@ -1,0 +1,44 @@
+#model-debug {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    bottom: 110px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    animation: modelDebugReveal 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.0) forwards;
+}
+
+.model-debug-list {
+    display: flex;
+    padding: 5px 8px;
+    border-radius: 3px;
+    background: #0002;
+    border-radius: 500px;
+}
+
+.model-debug-item {
+    display: flex;
+    width: 28px;
+    height: 26px;
+    font-size: 17px;
+    border-radius: 500px;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 6px;
+    margin: 3px;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+@keyframes modelDebugReveal {
+    from {
+        bottom: 110px;
+        opacity: 0;
+    }
+    to {
+        bottom: 130px;
+        opacity: 1;
+    }
+}
