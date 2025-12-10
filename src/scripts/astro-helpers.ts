@@ -68,6 +68,8 @@ export function getPageInfo(input : PageInfoInput)
 export function extractProjectDescription(project: Project)
 {
 	let desc = "";
+
+	// Gather all usable text
 	project.data.page.forEach(block =>
 	{
 		if (block.desc) desc += block.desc.replaceAll("\n", " ") + " ";
@@ -75,6 +77,7 @@ export function extractProjectDescription(project: Project)
 
 	if (desc.length > 0)
 	{
+		// Strip markdown tags
 		desc = renderMarkdown(desc);
 		desc = htmlToText(desc, {
 			wordwrap: false,
@@ -83,6 +86,7 @@ export function extractProjectDescription(project: Project)
 			],
 		});
 
+		// Trim to 160 characters
 		if (desc.length > 160)
 		{
 			desc = desc.slice(0, 160);
@@ -94,7 +98,7 @@ export function extractProjectDescription(project: Project)
 	}
 	else
 	{
-		return undefined;
+		return null;
 	}
 }
 
