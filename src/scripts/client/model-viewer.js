@@ -1,7 +1,6 @@
-import customStyles from '../../styles/model-viewer-injection.css?raw';
 const modelViewer = document.querySelector('model-viewer');
 
 // Apply custom css
 const style = document.createElement('style');
-style.textContent = customStyles;
+style.textContent = ':focus-visible { outline: none; }';
 modelViewer.shadowRoot.appendChild(style);

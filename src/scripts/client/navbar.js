@@ -1,10 +1,10 @@
-let touchDevice = ('ontouchstart' in document.documentElement);
+const navbar = document.getElementById("navbar");
+const shadowClass = "shadow";
+const touchDevice = ('ontouchstart' in document.documentElement);
 let prevScrollpos = window.scrollY;
 
 function onScroll()
 {
-	let navbar = document.getElementById("navbar");
-
 	if (touchDevice)
 	{
 		let currentScrollPos = window.scrollY;
@@ -19,17 +19,16 @@ function onScroll()
 		prevScrollpos = currentScrollPos;
 	}
 
-	let navbarShadowClass = "shadow";
 	if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
 	{
-		if (!navbar.classList.contains(navbarShadowClass))
+		if (!navbar.classList.contains(shadowClass))
 		{
-			navbar.classList.add(navbarShadowClass);
+			navbar.classList.add(shadowClass);
 		}
 	}
-	else if (navbar.classList.contains(navbarShadowClass))
+	else if (navbar.classList.contains(shadowClass))
 	{
-		navbar.classList.remove(navbarShadowClass);
+		navbar.classList.remove(shadowClass);
 	}
 }
 

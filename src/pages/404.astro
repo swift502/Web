@@ -2,7 +2,6 @@
 import Layout from '../layouts/FullScreen.astro';
 import BigButton from '../components/core/BigButton.astro';
 import { getPageInfo } from '../scripts/astro-helpers';
-import '../styles/model-viewer-common.css';
 
 // Layout variables
 const pageInfo = getPageInfo({
@@ -41,7 +40,7 @@ const pageInfo = getPageInfo({
 	</div>
 	<script>
 		import '@google/model-viewer';
-		import '../scripts/client/model-viewer-common.js';
+		import '../scripts/client/model-viewer.js';
 	</script>
 </Layout>
 

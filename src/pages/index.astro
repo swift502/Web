@@ -2,8 +2,6 @@
 import Layout from '../layouts/Default.astro';
 import BigButton from '../components/core/BigButton.astro';
 import { getPageInfo } from '../scripts/astro-helpers';
-import '../styles/model-viewer-common.css';
-import '../styles/model-viewer-debug.css';
 
 // Layout variables
 const pageInfo = getPageInfo({
@@ -54,7 +52,7 @@ const pageInfo = getPageInfo({
 
 <script>
 	import '@google/model-viewer';
-	import '../scripts/client/model-viewer-common.js';
+	import '../scripts/client/model-viewer.js';
 	import '../scripts/client/model-viewer-homepage.js';
 	import '../scripts/client/typewriter.js';
 </script>
@@ -157,6 +155,53 @@ const pageInfo = getPageInfo({
 		.model-viewer-container {
 			left: -300px;
 			width: calc(100% + 300px);
+		}
+	}
+</style>
+
+<style is:global>
+	#model-debug {
+		position: absolute;
+		opacity: 0;
+		width: 100%;
+		bottom: 110px;
+		pointer-events: none;
+		display: flex;
+		justify-content: center;
+		animation: modelDebugReveal 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.0) forwards;
+	}
+
+	.model-debug-list {
+		display: flex;
+		padding: 5px 8px;
+		border-radius: 3px;
+		background: #0002;
+		border-radius: 500px;
+	}
+
+	.model-debug-item {
+		display: flex;
+		width: 28px;
+		height: 26px;
+		font-size: 17px;
+		border-radius: 500px;
+		justify-content: center;
+		align-items: center;
+		color: #333;
+		padding: 6px;
+		margin: 3px;
+		pointer-events: all;
+		cursor: pointer;
+	}
+
+	@keyframes modelDebugReveal {
+		from {
+			bottom: 110px;
+			opacity: 0;
+		}
+		to {
+			bottom: 130px;
+			opacity: 1;
 		}
 	}
 </style>

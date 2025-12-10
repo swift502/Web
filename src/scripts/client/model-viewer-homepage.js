@@ -1,12 +1,11 @@
-import modelList from '../../data/models.yml';
+import models from '../../data/models.yml';
 import { getRandomInt, extractFilename } from '../utilities';
-const modelViewer = document.querySelector('model-viewer');
 
 function setModel(index)
 {
-	const model = modelList[index];
-	modelViewer.setAttribute('src', `/models/${model.name}`);
-	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
+	const modelViewer = document.querySelector('model-viewer');
+	modelViewer.setAttribute('src', `/models/${models[index].name}`);
+	modelViewer.setAttribute('min-field-of-view', `${models[index].fov}deg`);
 }
 
 // Debug
@@ -29,15 +28,12 @@ function onKeyPress(event)
 		list.classList.add('model-debug-list');
 		container.appendChild(list);
 
-		modelList.forEach((model, index) =>
+		models.forEach((model, index) =>
 		{
 			let button = document.createElement('div');
 			button.classList.add('model-debug-item', 'tile');
 			button.innerHTML = extractFilename(model.name);
-			button.onclick = () =>
-			{
-				setModel(index);
-			};
+			button.addEventListener('click', () => setModel(index));
 
 			list.appendChild(button);
 		});
@@ -48,4 +44,4 @@ function onKeyPress(event)
 document.addEventListener('keypress', onKeyPress);
 
 // Init
-setModel(getRandomInt(0, modelList.length - 1));
+setModel(getRandomInt(0, models.length - 1));
