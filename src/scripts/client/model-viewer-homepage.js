@@ -1,6 +1,7 @@
 import models from '../../data/models.yml';
 import { getRandomInt, extractFilename } from '../utilities';
 
+// Functions
 function setModel(index)
 {
 	const modelViewer = document.querySelector('model-viewer');
