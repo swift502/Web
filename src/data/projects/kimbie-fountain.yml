@@ -32,7 +32,7 @@ page:
         "settings": {
           "foreground": "#b17b53" // Scene numbers
         }
-      },
+      }
     file: kimbie-fountain-color-theme.json
     lang: json
     desc: |-
