@@ -1,5 +1,5 @@
 import { marked } from 'marked';
-import { htmlToText } from "html-to-text";
+import removeMarkdown from "remove-markdown";
 import { extractFilename } from './utilities';
 
 import projectIndex from '../data/project-index.yml';
@@ -68,8 +68,6 @@ export function getPageInfo(input : PageInfoInput)
 export function extractProjectDescription(project: Project)
 {
 	let desc = "";
-
-	// Gather all usable text
 	project.data.page.forEach(block =>
 	{
 		if (block.desc) desc += block.desc.replaceAll("\n", " ") + " ";
@@ -77,17 +75,9 @@ export function extractProjectDescription(project: Project)
 
 	if (desc.length > 0)
 	{
-		// Strip markdown tags
-		// TODO https://www.npmjs.com/package/remove-markdown
-		desc = renderMarkdown(desc);
-		desc = htmlToText(desc, {
-			wordwrap: false,
-			selectors: [
-				{ selector: 'a', options: { ignoreHref: true } },
-			],
-		});
+		desc = desc.trim();
+		desc = removeMarkdown(desc);
 
-		// Trim to 160 characters
 		if (desc.length > 160)
 		{
 			desc = desc.slice(0, 160);
