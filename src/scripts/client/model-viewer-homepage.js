@@ -5,8 +5,9 @@ import { getRandomInt, extractFilename } from '../utilities';
 function setModel(index)
 {
 	const modelViewer = document.querySelector('model-viewer');
-	modelViewer.setAttribute('src', `/models/${models[index].name}`);
-	modelViewer.setAttribute('min-field-of-view', `${models[index].fov}deg`);
+	const model = models[index];
+	modelViewer.setAttribute('src', `/models/${model.name}`);
+	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
 }
 
 // Debug
@@ -35,7 +36,7 @@ function onKeyPress(event)
 			button.classList.add('model-debug-item', 'tile');
 			button.innerHTML = extractFilename(model.name);
 			button.addEventListener('click', () => setModel(index));
-
+			
 			list.appendChild(button);
 		});
 	}
