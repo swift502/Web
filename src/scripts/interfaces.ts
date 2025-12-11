@@ -29,10 +29,7 @@ export interface Link
 
 export interface ContentBlockData<T>
 {
-	project: {
-		name: string;
-		data: ProjectData;
-	},
+	project: Project,
 	contentBlock: {
 		index: number;
 		properties: T;
