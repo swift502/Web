@@ -6,7 +6,7 @@ tags:
 page:
   - type: youtube
     data: 6RmJsTnhSH4
-    desc: Animated launch trailers for World of Airports game updates. Directed by Jakub Kadlec and produced by myself. Usually done within 1-2 weeks using a very iterative workflow to ensure we're on the same page. Each idea needs to be fun and set a theme for its respective update.
+    desc: Animated launch trailers for World of Airports game updates. Directed by Jakub Kadlec and produced by myself. Usually done within 1-2 weeks using a very iterative workflow to ensure we're on the same page. Each trailer should be fun while setting a theme for its respective update.
   - type: youtube
     data: unCyvzXYpgI
     desc: The trailers often deal with vastly different scales, going from eye an close-up to showing the entire airport in a single shot. These transitions require the camera acceleration to follow a smooth exponential curve, so the movement feel natural.
