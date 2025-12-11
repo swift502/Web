@@ -15,9 +15,9 @@ const insetClass = contentBlock.properties.inset ? ' inset' : '';
 		class={"frame-view" + borderClass + insetClass}
 		data-width={width}
 		data-height={height}
-		data-first_padding={contentBlock.index == 0 ? 'true' : 'false'}
-		data-desc_padding={'desc' in contentBlock.properties ? 'true' : 'false'}
-		data-links_padding={'links' in project.data && contentBlock.index == 0 ? 'true' : 'false'}
+		data-first-padding={contentBlock.index == 0 ? 'true' : 'false'}
+		data-desc-padding={'desc' in contentBlock.properties ? 'true' : 'false'}
+		data-links-padding={'links' in project.data && contentBlock.index == 0 ? 'true' : 'false'}
 		data-inset={contentBlock.properties.inset ?? false}
 	>
 		<slot/>

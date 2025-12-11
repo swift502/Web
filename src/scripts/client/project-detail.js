@@ -19,9 +19,9 @@ function updateAspectContainers()
 		let aspectRatio = frameView.dataset.width / frameView.dataset.height;
 
 		let padding = 180;
-		if (frameView.dataset.first_padding === 'true') padding += 100;
-		if (frameView.dataset.desc_padding === 'true') padding += 100;
-		if (frameView.dataset.links_padding === 'true') padding += 100;
+		if (frameView.dataset.firstPadding === 'true') padding += 100;
+		if (frameView.dataset.descPadding === 'true') padding += 100;
+		if (frameView.dataset.linksPadding === 'true') padding += 100;
 
 		let width, height;
 
