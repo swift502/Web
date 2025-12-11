@@ -24,7 +24,7 @@ function onKeyPress(event)
 	{
 		let container = document.createElement('div');
 		container.id = 'model-debug';
-		document.querySelector('body').appendChild(container);
+		document.querySelector('.footer').appendChild(container);
 
 		let list = document.createElement('div');
 		list.classList.add('model-debug-list');

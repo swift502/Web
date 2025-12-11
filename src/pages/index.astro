@@ -164,7 +164,6 @@ const pageInfo = getPageInfo({
 		position: absolute;
 		opacity: 0;
 		width: 100%;
-		bottom: 110px;
 		pointer-events: none;
 		display: flex;
 		justify-content: center;
@@ -196,11 +195,11 @@ const pageInfo = getPageInfo({
 
 	@keyframes modelDebugReveal {
 		from {
-			bottom: 110px;
+			top: -30px;
 			opacity: 0;
 		}
 		to {
-			bottom: 130px;
+			top: -50px;
 			opacity: 1;
 		}
 	}
