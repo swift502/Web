@@ -36,5 +36,5 @@ page:
     file: kimbie-fountain-color-theme.json
     lang: json
     desc: |-
-      Fortunately, the source code of the built-in themes is easy to find, and with a few modifications I managed to craft the perfect screenwriting VSCode theme, as niche as this use case might be.
+      Fortunately, the source code of the built-in themes is easy to find, and with a few modifications I managed to make my perfect screenwriting VSCode theme, as niche as this use case might be.
       The theme is now available as an extension in the Visual Studio Code Marketplace [here](https://marketplace.visualstudio.com/items?itemName=jan-blaha.kimbie-fountain-theme).
