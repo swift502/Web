@@ -78,6 +78,7 @@ export function extractProjectDescription(project: Project)
 	if (desc.length > 0)
 	{
 		// Strip markdown tags
+		// TODO https://www.npmjs.com/package/remove-markdown
 		desc = renderMarkdown(desc);
 		desc = htmlToText(desc, {
 			wordwrap: false,

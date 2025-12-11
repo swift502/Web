@@ -1,5 +1,11 @@
 import type { BundledLanguage, SpecialLanguage } from 'shiki';
 
+export interface Project
+{
+    name: string;
+    data: ProjectData;
+}
+
 export interface ProjectData
 {
     title: string;
@@ -72,12 +78,6 @@ export interface YoutubeProperties
     type: "youtube";
     data: string;
     desc?: string;
-}
-
-export interface Project
-{
-    name: string;
-    data: ProjectData;
 }
 
 export interface PageInfo
