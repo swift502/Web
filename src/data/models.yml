@@ -1,30 +1,30 @@
-- name: 1.glb
+- file: 1.glb
   fov: 35
-- name: 2.glb
+- file: 2.glb
   fov: 37
-- name: 3.glb
+- file: 3.glb
   fov: 37
-- name: 4.glb
+- file: 4.glb
   fov: 38
-- name: 5.glb
+- file: 5.glb
   fov: 40
-- name: 6.glb
+- file: 6.glb
   fov: 38
-- name: 7.glb
+- file: 7.glb
   fov: 40
-- name: 8.glb
+- file: 8.glb
   fov: 39
-- name: 9.glb
+- file: 9.glb
   fov: 38
-- name: 10.glb
+- file: 10.glb
   fov: 37
-- name: 11.glb
+- file: 11.glb
   fov: 41
-- name: 12.glb
+- file: 12.glb
   fov: 33
-- name: 13.glb
+- file: 13.glb
   fov: 36
-- name: 14.glb
+- file: 14.glb
   fov: 40
-- name: 15.glb
+- file: 15.glb
   fov: 39

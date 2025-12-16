@@ -6,7 +6,7 @@ function setModel(index)
 {
 	const modelViewer = document.querySelector('model-viewer');
 	const model = models[index];
-	modelViewer.setAttribute('src', `/models/${model.name}`);
+	modelViewer.setAttribute('src', `/models/${model.file}`);
 	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
 }
 
@@ -34,7 +34,7 @@ function onKeyPress(event)
 		{
 			let button = document.createElement('div');
 			button.classList.add('model-debug-item', 'tile');
-			button.innerHTML = extractFilename(model.name);
+			button.innerHTML = extractFilename(model.file);
 			button.addEventListener('click', () => setModel(index));
 			
 			list.appendChild(button);
