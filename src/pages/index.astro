@@ -59,7 +59,6 @@ const pageInfo = getPageInfo({
 
 <style>
 	.homepage {
-		min-height: 420px;
 		margin: auto;
 		height: 100%;
 		display: flex;
@@ -160,6 +159,11 @@ const pageInfo = getPageInfo({
 </style>
 
 <style is:global>
+	body {
+		position: relative;
+		min-height: 640px;
+	}
+
 	#model-debug {
 		position: absolute;
 		opacity: 0;
