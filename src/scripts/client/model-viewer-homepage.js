@@ -6,9 +6,11 @@ function setModel(index)
 {
 	const modelViewer = document.querySelector('model-viewer');
 	const model = models[index];
+	const distance = 100 / model.zoom;
+
 	modelViewer.setAttribute('src', `/models/${model.file}`);
-	modelViewer.setAttribute('min-camera-orbit', `auto 80deg ${model.zoom}m`);
-	modelViewer.setAttribute('max-camera-orbit', `auto 80deg ${model.zoom}m`);
+	modelViewer.setAttribute('min-camera-orbit', `auto 80deg ${distance}m`);
+	modelViewer.setAttribute('max-camera-orbit', `auto 80deg ${distance}m`);
 }
 
 // Debug
