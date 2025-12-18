@@ -7,7 +7,8 @@ function setModel(index)
 	const modelViewer = document.querySelector('model-viewer');
 	const model = models[index];
 	modelViewer.setAttribute('src', `/models/${model.file}`);
-	modelViewer.setAttribute('min-field-of-view', `${model.fov}deg`);
+	modelViewer.setAttribute('min-camera-orbit', `auto 80deg ${model.zoom}m`);
+	modelViewer.setAttribute('max-camera-orbit', `auto 80deg ${model.zoom}m`);
 }
 
 // Debug

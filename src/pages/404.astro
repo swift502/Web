@@ -18,15 +18,17 @@ const pageInfo = getPageInfo({
 			autoplay
 			disable-pan
 			disable-zoom
-			min-camera-orbit="auto 80deg auto"
-			max-camera-orbit="auto 80deg auto"
+			min-field-of-view="0deg"
+			max-field-of-view="180deg"
+			field-of-view="35deg"
 			shadow-intensity="1"
 			shadow-softness="0"
 			tone-mapping="aces"
 			onload="fadeIn(this)"
 			src="/models/404.glb"
 			camera-target="-0.45m 0.8m 0.08m"
-			field-of-view="37deg"
+			min-camera-orbit="auto 80deg 3m"
+			max-camera-orbit="auto 80deg 3m"
 		/>
 	</div>
 	<div class="text-container">
