@@ -1,23 +1,23 @@
 - file: 1.glb
-  zoom: 33
+  zoom: 34
 - file: 2.glb
   zoom: 33
 - file: 3.glb
-  zoom: 33
+  zoom: 34
 - file: 4.glb
   zoom: 37
 - file: 5.glb
-  zoom: 30
+  zoom: 31
 - file: 6.glb
   zoom: 32
 - file: 7.glb
-  zoom: 30
+  zoom: 31
 - file: 8.glb
   zoom: 32
 - file: 9.glb
   zoom: 31
 - file: 10.glb
-  zoom: 32
+  zoom: 33
 - file: 11.glb
   zoom: 38
 - file: 12.glb
@@ -27,6 +27,6 @@
 - file: 14.glb
   zoom: 33
 - file: 15.glb
-  zoom: 33
+  zoom: 34
 - file: 16.glb
-  zoom: 31
+  zoom: 32

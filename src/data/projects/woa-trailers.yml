@@ -1,15 +1,14 @@
 title: WoA Launch trailers
-badge: Commercial
 tags:
   - 2025
   - Blender
 page:
   - type: youtube
     data: 6RmJsTnhSH4
-    desc: Animated launch trailers for World of Airports game updates. I'm responsible for creating the scenes in Blender, animating, rendering and editing the videos, while Jakub Kadlec provides direction and music. Usually made within 1-2 weeks using a very iterative workflow to ensure we're always on the same page.
+    desc: Animated launch trailers for World of Airports game updates, directed by Jakub Kadlec. I was responsible for creating the scenes in Blender, animating, rendering and editing the videos. Usually made within 1-2 weeks using a very iterative workflow to ensure we're always on the same page.
   - type: youtube
-    data: unCyvzXYpgI
-    desc: The trailers often deal with vastly different scales, going from eye close-ups to showing the entire airport in a single shot. These transitions require the camera acceleration to follow an exponential curve, so the movement feels natural.
+    data: cmyqJAX_J2k
+    desc: The trailers often deal with vastly different scales, going from eye close-ups to showing the entire airport in a single shot. These transitions require the camera to follow specific exponential acceleration curves while moving upwards, so the motion feels natural.
   - type: youtube
     data: dgM7HRk_Jm8
-    desc: While the airports are always made up of game assets, we often utilize Google 3D Tiles to fill in the surrounding landscapes.
+    desc: The airports are always made up of game assets, but we utilize Google 3D Tiles to fill in the surrounding landscapes.
