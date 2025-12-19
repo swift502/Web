@@ -15,11 +15,9 @@ const pageInfo = getPageInfo({
 		<h1 class="homepage-title">Jan Bláha</h1>
 		<div class="model-viewer-container">
 			<model-viewer
+				autoplay
 				environment-image="/assets/env.hdr"
 				exposure="1.1"
-				autoplay
-				disable-pan
-				disable-zoom
 				min-field-of-view="0deg"
 				max-field-of-view="180deg"
 				field-of-view="40deg"
@@ -28,6 +26,8 @@ const pageInfo = getPageInfo({
 				tone-mapping="aces"
 				onload="fadeIn(this)"
 				camera-controls
+				disable-pan
+				disable-zoom
 				touch-action="pan-y"
 				interaction-prompt="none"
 				auto-rotate
