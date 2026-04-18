@@ -11,19 +11,19 @@ import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 export async function getProjects()
 {
-	let projects : Project[] = [];
+	const projects: Project[] = [];
 	const content = await getCollection('projects');
-	const contentDict = Object.fromEntries(content.map(project => [project.id, project]));
 
-	projectIndex.forEach((projectEntry: string) =>
+	projectIndex.forEach((entry: string) =>
 	{
-		if (!contentDict.hasOwnProperty(projectEntry))
+		const project = content.find(p => p.id === entry);
+
+		if (!project)
 		{
-			logError(`Project file for "${projectEntry}" not found`);
+			logError(`Project file for "${entry}" not found`);
 			return;
 		}
 
-		const project = contentDict[projectEntry];
 		projects.push({
 			'name': project.id,
 			'data': project.data as ProjectData,
