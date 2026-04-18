@@ -10,7 +10,7 @@ export interface ProjectData
 {
     title: string;
     badge?: string;
-    tags?: Array<string | number>;
+    tags: Array<string | number>;
     links?: Link[];
     page: Array<
         CodeProperties |

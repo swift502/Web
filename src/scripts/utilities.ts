@@ -1,6 +1,8 @@
 export function extractFilename(path: string)
 {
-	return path.match(String.raw`[^\/]+(?=\.\w+$)`)[0];
+	const match = path.match(String.raw`[^\/]+(?=\.\w+$)`);
+	if (match === null) throw new Error("No filename found in path: " + path);
+	return match[0];
 }
 
 export function getRandomInt(min: number, max: number)

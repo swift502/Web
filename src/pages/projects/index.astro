@@ -4,7 +4,7 @@ import ProjectTile from '../../components/ProjectTile.astro';
 import { getProjects, getPageInfo } from '../../scripts/astro-helpers';
 
 // Projects
-const projects = getProjects();
+const projects = await getProjects();
 
 // Layout variables
 const pageInfo = getPageInfo({

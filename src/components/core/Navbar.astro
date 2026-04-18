@@ -7,7 +7,7 @@ interface Props {
 }
 const { pageInfo } = Astro.props;
 
-function tabHighlight(tab)
+function tabHighlight(tab: any)
 {
 	return pageInfo.tab == tab.id ? ' highlighted' : '';
 }
@@ -15,7 +15,7 @@ function tabHighlight(tab)
 
 <div id="navbar" class="navbar">
 	<div class="navigation">
-		{tabs.map((tab) => (
+		{tabs.map((tab: any) => (
 			<a
 				href={tab.link}
 				class={'navigation-item' + tabHighlight(tab)}

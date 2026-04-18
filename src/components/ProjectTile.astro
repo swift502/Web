@@ -1,5 +1,8 @@
 ---
-const { project } = Astro.props
+import type { Project } from '../scripts/interfaces'
+
+interface Props { project: Project }
+const { project } = Astro.props;
 ---
 
 <a href={`/projects/${project.name}/`} class="project-tile">
@@ -19,7 +22,7 @@ const { project } = Astro.props
 			<span class="tag">{tag}</span>
 		))}
 	</div>
-	{'badge' in project.data && (
+	{project.data.badge && (
 		<div class="project-badges">
 			<span class={`badge ${project.data.badge.toLowerCase()}`}>{project.data.badge}</span>
 		</div>

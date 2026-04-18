@@ -6,37 +6,37 @@ import projectIndex from '../data/project-index.yml';
 import siteData from '../data/site.yml';
 import type { AstroInstance } from 'astro';
 import type { PageInfo, PageInfoInput, ProjectData, Project } from './interfaces';
+import { getCollection } from 'astro:content';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
-export function getProjects()
+export async function getProjects()
 {
 	let projects : Project[] = [];
-	const dataFiles = import.meta.glob('/src/data/projects/*.yml', { eager: true });
+	const content = await getCollection('projects');
+	const contentDict = Object.fromEntries(content.map(project => [project.id, project]));
 
-	for (let i = 0; i < projectIndex.length; i++)
+	projectIndex.forEach((projectEntry: string) =>
 	{
-		const projectName = projectIndex[i];
-		const dataPath = `/src/data/projects/${projectName}.yml`;
+		if (!contentDict.hasOwnProperty(projectEntry))
+		{
+			logError(`Project file for "${projectEntry}" not found`);
+			return;
+		}
 
-		if (dataPath in dataFiles)
-		{
-			projects.push({
-				'name': projectName,
-				'data': dataFiles[dataPath] as ProjectData,
-			});
-		}
-		else
-		{
-			logError(`Project file for "${projectName}" not found`);
-		}
-	}
+		const project = contentDict[projectEntry];
+		projects.push({
+			'name': project.id,
+			'data': project.data as ProjectData,
+		});
+	});
 
 	return projects;
 }
 
 export function getContentBlockLibrary()
 {
-	const library = [];
-	const contentBlocks = import.meta.glob('/src/content_blocks/*.astro', { eager: true });
+	const library: Record<string, AstroComponentFactory> = {};
+	const contentBlocks: Record<string, AstroInstance> = import.meta.glob('/src/content_blocks/*.astro', { eager: true });
 	
 	Object.values(contentBlocks).forEach((block: AstroInstance) =>
 	{
@@ -70,7 +70,7 @@ export function extractProjectDescription(project: Project)
 	let desc = "";
 	project.data.page.forEach(block =>
 	{
-		if ('desc' in block) desc += block.desc.replaceAll("\n", " ") + " ";
+		if (block.desc) desc += block.desc.replaceAll("\n", " ") + " ";
 	});
 
 	if (desc.length > 0)
@@ -89,7 +89,7 @@ export function extractProjectDescription(project: Project)
 	}
 	else
 	{
-		return null;
+		return undefined;
 	}
 }
 

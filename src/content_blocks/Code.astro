@@ -10,7 +10,7 @@ interface Props extends ContentBlockData<CodeProperties> {}
 const { contentBlock } = Astro.props;
 
 const containerId = "code-block-" + contentBlock.index;
-const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
+const borderClass = contentBlock.properties.desc ? ' border-radius-top' : ' border-radius-full';
 ---
 
 <ContentBlock>

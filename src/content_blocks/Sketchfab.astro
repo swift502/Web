@@ -8,10 +8,10 @@ const { project, contentBlock } = Astro.props;
 
 function getSourceUrl()
 {
-	if ('model' in contentBlock.properties)
+	if (contentBlock.properties.model)
 		return `https://sketchfab.com/models/${contentBlock.properties.model}/embed`;
 
-	if ('collection' in contentBlock.properties)
+	if (contentBlock.properties.collection)
 		return `https://sketchfab.com/playlists/embed?collection=${contentBlock.properties.collection}`;
 
 	logError(`Source was not defined for content block index "${contentBlock.index}"`);

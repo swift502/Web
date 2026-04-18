@@ -5,7 +5,7 @@ import ContentDescription from './ContentDescription.astro';
 const { project, contentBlock, width, height } = Astro.props;
 
 const containerId = "frame-view-" + contentBlock.index;
-const borderClass = 'desc' in contentBlock.properties ? ' border-radius-top' : ' border-radius-full';
+const borderClass = contentBlock.properties.desc ? ' border-radius-top' : ' border-radius-full';
 const insetClass = contentBlock.properties.inset ? ' inset' : '';
 ---
 
@@ -16,8 +16,8 @@ const insetClass = contentBlock.properties.inset ? ' inset' : '';
 		data-width={width}
 		data-height={height}
 		data-first-padding={contentBlock.index == 0 ? 'true' : 'false'}
-		data-desc-padding={'desc' in contentBlock.properties ? 'true' : 'false'}
-		data-links-padding={'links' in project.data && contentBlock.index == 0 ? 'true' : 'false'}
+		data-desc-padding={contentBlock.properties.desc ? 'true' : 'false'}
+		data-links-padding={project.data.links && contentBlock.index == 0 ? 'true' : 'false'}
 		data-inset={contentBlock.properties.inset ?? false}
 	>
 		<slot/>

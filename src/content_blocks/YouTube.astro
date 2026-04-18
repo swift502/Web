@@ -4,16 +4,13 @@ import type { ContentBlockData, YoutubeProperties } from "../scripts/interfaces"
 
 interface Props extends ContentBlockData<YoutubeProperties> {}
 const { project, contentBlock } = Astro.props;
-
-const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
-const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
 ---
 
 <FrameView
 	project={project}
 	contentBlock={contentBlock}
-	width={width}
-	height={height}
+	width=16
+	height=9
 >
 	<iframe
 		src={`https://www.youtube-nocookie.com/embed/${contentBlock.properties.data}?rel=0`}

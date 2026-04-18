@@ -4,11 +4,15 @@ import BigButton from '../../components/BigButton.astro';
 import { getProjects, getContentBlockLibrary, logError, getPageInfo, extractProjectDescription } from '../../scripts/astro-helpers';
 import '../../styles/tiles.css';
 import EndButtonPadding from '../../components/EndButtonPadding.astro';
+// import { getCollection/*, getEntry*/ } from 'astro:content';
+import type { Project, ProjectData } from '../../scripts/interfaces';
 
 // Dynamic routing
 export async function getStaticPaths()
 {
-	const projects = getProjects();
+	const projects = await getProjects();
+
+	// const projects = getProjects();
 	return projects.map((project) =>
 	({
 		params: { project : project.name },
@@ -37,7 +41,7 @@ const pageInfo = getPageInfo({
 			<h1 class="project-title">{project.data.title}</h1>
 			<div class="tag-wrapper">
 				<div class="tag-row">
-					{project.data.tags.map((tag) => (
+					{project.data.tags.map((tag: any) => (
 						<div class="tag">{tag}</div>
 					))}
 				</div>
@@ -45,7 +49,7 @@ const pageInfo = getPageInfo({
 			<!-- Links -->
 			{project.data.links && (
 				<div class="link-wrapper">
-					{project.data.links.map((link) => (
+					{project.data.links.map((link: any) => (
 						<a class="tile link-tile" href={link.link} target="_blank">
 							<img class="link-tile-icon" src="/assets/svg/external-link.svg"/>
 							<div class="link-tile-text">{link.title}</div>

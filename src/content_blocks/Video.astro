@@ -7,8 +7,8 @@ interface Props extends ContentBlockData<VideoProperties> {}
 const { project, contentBlock } = Astro.props;
 
 const videoPath = `/assets/projects/${project.name}/${contentBlock.properties.data}`;
-const width = 'width' in contentBlock.properties ? contentBlock.properties.width : '16';
-const height = 'height' in contentBlock.properties ? contentBlock.properties.height : '9';
+const width = contentBlock.properties.width ?? '16';
+const height = contentBlock.properties.height ?? '9';
 ---
 
 <FrameView

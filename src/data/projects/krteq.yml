@@ -1,0 +1,27 @@
+title: Krteq
+tags:
+  - 2026
+  - Kicad
+  - Blender
+  - QMK
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/Krteq
+page:
+  - type: image
+    data: 1.jpg
+    desc: |-
+      A custom design for an ortholinear keyboard. The PCB was designed in Kicad, and case in Blender. It's powered by Arduino Pro Micro running VIA-compatible QMK.
+      The board is completely open source. The PCB, case and firmware are available on the project's [GitHub page](https://github.com/swift502/Krtkus).
+  - type: image
+    data: 2.jpg
+    desc: The layout is designed to be more accessible than classic 5x12, reducing the need for layers for certain commonly used keys and shortcuts.
+  - type: image
+    data: 3.jpg
+    desc: The printed case has a fixed 7-degree tilt. This version has no plate, but I'd love to introduce one in future iterations.
+  - type: image
+    data: 4.jpg
+  - type: image
+    data: 5.jpg
+  - type: image
+    data: 6.jpg
