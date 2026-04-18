@@ -11,7 +11,7 @@ page:
   - type: image
     data: 1.jpg
     desc: |-
-      Another custom design for an ortholinear keyboard. Krteq is a successor to [Krtkus](/projects/krtkus/), learning from its lessons to make a design that's easier to build, more maintainable, better encapsulated and overall a more complete product.
+      New improved version of my favorite keyboard. Krteq is a successor to [Krtkus](/projects/krtkus/), learning from its lessons to make a design that's easier to build, more maintainable, better encapsulated and overall a more complete product.
       Just like Krtkus, the board is completely open source. The PCB, case and firmware are available on the project's [GitHub page](https://github.com/swift502/Krteq).
   - type: image
     data: 2.jpg
