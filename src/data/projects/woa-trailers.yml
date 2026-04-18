@@ -5,10 +5,10 @@ tags:
 page:
   - type: youtube
     data: 6RmJsTnhSH4
-    desc: Animated launch trailers for World of Airports game updates, directed by Jakub Kadlec. I was responsible for creating the scenes in Blender, animating, rendering and editing the videos. Usually made within 1-2 weeks using a very iterative workflow to ensure we're always on the same page.
+    desc: Animated launch trailers for World of Airports game updates, directed by Jakub Kadlec. I was responsible for creating the scenes in Blender, animating, rendering and editing the videos.
   - type: youtube
     data: cmyqJAX_J2k
-    desc: The trailers often deal with vastly different scales, going from eye close-ups to showing the entire airport in a single shot. These transitions require the camera to follow specific exponential acceleration curves while moving upwards, so the motion feels natural.
+    desc: Each short video is produced within 1-2 weeks using a very iterative workflow to ensure we're always on the same page.
   - type: youtube
-    data: dgM7HRk_Jm8
-    desc: The airports are always made up of game assets, but we utilize Google 3D Tiles to fill in the surrounding landscapes.
+    data: BQCRCQman4I
+    desc: The videos often deal with vastly different scales, going from intense close-ups to showing the entire airport in a single shot.
