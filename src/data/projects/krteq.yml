@@ -11,17 +11,28 @@ page:
   - type: image
     data: 1.jpg
     desc: |-
-      A custom design for an ortholinear keyboard. The PCB was designed in Kicad, and case in Blender. It's powered by Arduino Pro Micro running VIA-compatible QMK.
-      The board is completely open source. The PCB, case and firmware are available on the project's [GitHub page](https://github.com/swift502/Krtkus).
+      Another custom design for an ortholinear keyboard. Krteq is a successor to [Krtkus](/projects/krtkus/), learning from its lessons to make a design that's easier to build, more maintainable, better encapsulated and overall a more complete product.
+      Just like Krtkus, the board is completely open source. The PCB, case and firmware are available on the project's [GitHub page](https://github.com/swift502/Krteq).
   - type: image
     data: 2.jpg
-    desc: The layout is designed to be more accessible than classic 5x12, reducing the need for layers for certain commonly used keys and shortcuts.
+    desc: |-
+      Krteq upgrades Krtkus' Pro Micro to a Raspberry Pi Pico, in order to get enough GPIOs for the new backlight and indicator LEDs.
+      And for switches, I went with KS-33Bs instead of traditional KS-33s to make manufacturing of the hotswap low profile PCB a little easier, as we can use standard MX hotswap sockets (even cheap off-brand versions) instead of the special Gateron low profile ones.
   - type: image
     data: 3.jpg
-    desc: The printed case has a fixed 7-degree tilt. This version has no plate, but I'd love to introduce one in future iterations.
+    desc: |-
+      Finding good keycaps remains the biggest challenge, I went with Tai-Hao Thins and my favorite Keychron LSA ABS. Still I wish there was a lot more color options for low profile keycaps.
+      Tai Hao do their best, but then forget to offer a 2u keycap for their color sets, making them unusable for my build. And finding nice matching color combinations for only black and white keycap sets is pretty difficult.
   - type: image
     data: 4.jpg
+    desc: |-
+      One of the biggest upgrades over Krtkus is a much nicer USB port orientation and position, and USB-C as opposed to Micro-B.
+      The MCU is finally hidden inside, protected from dust and connected to the outside by a sturdy panel mount cable, which further protects the Pico's onboard USB port from snapping.
   - type: image
     data: 5.jpg
+    desc: |-
+      Now featuring a spacebar stabilizer! Unbelievable.
   - type: image
     data: 6.jpg
+    desc: |-
+      On launch, Krteq only features a simple white backlight, because I wanted to play it safe, and go with a simple solution that I can't mess up. But now that it works, I'd love to implement proper RGB with all effects for the next revision.

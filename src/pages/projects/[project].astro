@@ -4,15 +4,12 @@ import BigButton from '../../components/BigButton.astro';
 import { getProjects, getContentBlockLibrary, logError, getPageInfo, extractProjectDescription } from '../../scripts/astro-helpers';
 import '../../styles/tiles.css';
 import EndButtonPadding from '../../components/EndButtonPadding.astro';
-// import { getCollection/*, getEntry*/ } from 'astro:content';
-import type { Project, ProjectData } from '../../scripts/interfaces';
+import type { Project } from '../../scripts/interfaces';
 
 // Dynamic routing
 export async function getStaticPaths()
 {
 	const projects = await getProjects();
-
-	// const projects = getProjects();
 	return projects.map((project) =>
 	({
 		params: { project : project.name },
