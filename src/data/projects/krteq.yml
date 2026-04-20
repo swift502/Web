@@ -11,7 +11,7 @@ page:
   - type: image
     data: 1.jpg
     desc: |-
-      Krteq is a new, improved version of my first keyboard [Krtkus](/projects/krtkus/), learning from its lessons to make a design that's easier to build, more maintainable and better encapsulated.
+      Krteq is a new, improved version of my first keyboard [Krtkus](/projects/krtkus/), learning from its lessons to make a design that's easier to build, is more maintainable and much more complete.
       Just like Krtkus, the board is completely open source. The PCB, case and firmware are available on the project's [GitHub page](https://github.com/swift502/Krteq).
   - type: image
     data: 2.jpg
@@ -35,4 +35,4 @@ page:
   - type: image
     data: 6.jpg
     desc: |-
-      On launch, Krteq only features a simple white backlight, because I wanted to play it safe, and go with a simple solution that I can't mess up. But now that it works, I'd love to implement proper RGB with all effects for the next revision.
+      On launch, Krteq only features a simple white backlight, because I wanted a simple safe solution that was going to work. But now that it works, I'd love to implement proper RGB with all effects for the next revision.
