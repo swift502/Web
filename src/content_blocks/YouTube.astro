@@ -2,18 +2,19 @@
 import FrameView from "../components/project_detail/FrameView.astro";
 import type { ContentBlockData, YoutubeProperties } from "../scripts/interfaces";
 
-interface Props extends ContentBlockData<YoutubeProperties> {}
-const { project, contentBlock } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<YoutubeProperties>;
+}
+const { blockData } = Astro.props;
 ---
 
 <FrameView
-	project={project}
-	contentBlock={contentBlock}
-	width=16
-	height=9
+	blockData={blockData}
+	width={16}
+	height={9}
 >
 	<iframe
-		src={`https://www.youtube-nocookie.com/embed/${contentBlock.properties.data}?rel=0`}
+		src={`https://www.youtube-nocookie.com/embed/${blockData.properties.data}?rel=0`}
 		title="Youtube video player"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 		allowfullscreen

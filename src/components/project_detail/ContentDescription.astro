@@ -1,14 +1,19 @@
 ---
 import { renderMarkdown } from '../../scripts/astro-helpers';
+import type { ContentBlockData } from '../../scripts/interfaces';
 
-const { contentBlock, parentId } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<any>;
+	parentId: string;
+}
+const { blockData, parentId } = Astro.props;
 ---
 
-{contentBlock.properties.desc && (
+{blockData.properties.desc && (
 	<div
 		class="content-description"
 		data-target={parentId}
-		set:html={renderMarkdown(contentBlock.properties.desc)}
+		set:html={renderMarkdown(blockData.properties.desc)}
 	/>
 )}
 

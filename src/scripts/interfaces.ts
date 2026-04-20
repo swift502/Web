@@ -29,11 +29,9 @@ export interface Link
 
 export interface ContentBlockData<T>
 {
-	project: Project,
-	contentBlock: {
-		index: number;
-		properties: T;
-	}
+	project: Project;
+    index: number;
+	properties: T;
 }
 
 export interface CodeProperties

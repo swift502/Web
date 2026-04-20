@@ -1,12 +1,18 @@
 ---
 import ContentBlock from './ContentBlock.astro';
 import ContentDescription from './ContentDescription.astro';
+import type { ContentBlockData } from '../../scripts/interfaces';
 
-const { project, contentBlock, width, height } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<any>;
+	width: number;
+	height: number;
+}
+const { blockData, width, height } = Astro.props;
 
-const containerId = "frame-view-" + contentBlock.index;
-const borderClass = contentBlock.properties.desc ? ' border-radius-top' : ' border-radius-full';
-const insetClass = contentBlock.properties.inset ? ' inset' : '';
+const containerId = "frame-view-" + blockData.index;
+const borderClass = blockData.properties.desc ? ' border-radius-top' : ' border-radius-full';
+const insetClass = blockData.properties.inset ? ' inset' : '';
 ---
 
 <ContentBlock>
@@ -15,14 +21,14 @@ const insetClass = contentBlock.properties.inset ? ' inset' : '';
 		class={"frame-view" + borderClass + insetClass}
 		data-width={width}
 		data-height={height}
-		data-first-padding={contentBlock.index == 0 ? 'true' : 'false'}
-		data-desc-padding={contentBlock.properties.desc ? 'true' : 'false'}
-		data-links-padding={project.data.links && contentBlock.index == 0 ? 'true' : 'false'}
-		data-inset={contentBlock.properties.inset ?? false}
+		data-first-padding={blockData.index == 0 ? 'true' : 'false'}
+		data-desc-padding={blockData.properties.desc ? 'true' : 'false'}
+		data-links-padding={blockData.project.data.links && blockData.index == 0 ? 'true' : 'false'}
+		data-inset={blockData.properties.inset ?? false}
 	>
 		<slot/>
 	</div>
-	<ContentDescription contentBlock={contentBlock} parentId={containerId}/>
+	<ContentDescription blockData={blockData} parentId={containerId}/>
 </ContentBlock>
 
 <style>

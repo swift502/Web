@@ -6,27 +6,29 @@ import ContentBlock from '../components/project_detail/ContentBlock.astro';
 import ContentDescription from "../components/project_detail/ContentDescription.astro";
 import type { ContentBlockData, CodeProperties } from '../scripts/interfaces';
 
-interface Props extends ContentBlockData<CodeProperties> {}
-const { contentBlock } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<CodeProperties>;
+}
+const { blockData } = Astro.props;
 
-const containerId = "code-block-" + contentBlock.index;
-const borderClass = contentBlock.properties.desc ? ' border-radius-top' : ' border-radius-full';
+const containerId = "code-block-" + blockData.index;
+const borderClass = blockData.properties.desc ? ' border-radius-top' : ' border-radius-full';
 ---
 
 <ContentBlock>
-	{contentBlock.properties.file && (
+	{blockData.properties.file && (
 		<div class="code-file">
-			<div class="code-file-tab">{contentBlock.properties.file}</div>
+			<div class="code-file-tab">{blockData.properties.file}</div>
 		</div>
 	)}
 	<div id={containerId} class={"code-window" + borderClass}>
 		<CodeComponent
-			code={contentBlock.properties.data}
-			lang={contentBlock.properties.lang}
+			code={blockData.properties.data}
+			lang={blockData.properties.lang}
 			theme="gruvbox-dark-soft"
 		/>
 	</div>
-	<ContentDescription contentBlock={contentBlock} parentId={containerId}/>
+	<ContentDescription blockData={blockData} parentId={containerId}/>
 </ContentBlock>
 
 <style>

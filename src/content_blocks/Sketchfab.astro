@@ -3,28 +3,29 @@ import { logError } from "../scripts/astro-helpers.js";
 import FrameView from "../components/project_detail/FrameView.astro";
 import type { ContentBlockData, SketchfabProperties } from "../scripts/interfaces.js";
 
-interface Props extends ContentBlockData<SketchfabProperties> {}
-const { project, contentBlock } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<SketchfabProperties>;
+}
+const { blockData } = Astro.props;
 
 function getSourceUrl()
 {
-	if (contentBlock.properties.model)
-		return `https://sketchfab.com/models/${contentBlock.properties.model}/embed`;
+	if (blockData.properties.model)
+		return `https://sketchfab.com/models/${blockData.properties.model}/embed`;
 
-	if (contentBlock.properties.collection)
-		return `https://sketchfab.com/playlists/embed?collection=${contentBlock.properties.collection}`;
+	if (blockData.properties.collection)
+		return `https://sketchfab.com/playlists/embed?collection=${blockData.properties.collection}`;
 
-	logError(`Source was not defined for content block index "${contentBlock.index}"`);
+	logError(`Source was not defined for content block index "${blockData.index}"`);
 	return "";
 }
 
 ---
 
 <FrameView
-	project={project}
-	contentBlock={contentBlock}
-	width="16"
-	height="9"
+	blockData={blockData}
+	width={16}
+	height={9}
 >
 	<iframe
 		src={getSourceUrl()}

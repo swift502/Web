@@ -3,17 +3,18 @@ import FrameView from "../components/project_detail/FrameView.astro";
 import MediaControls from "../components/project_detail/MediaControls.astro";
 import type { ContentBlockData, VideoProperties } from "../scripts/interfaces";
 
-interface Props extends ContentBlockData<VideoProperties> {}
-const { project, contentBlock } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<VideoProperties>;
+}
+const { blockData } = Astro.props;
 
-const videoPath = `/assets/projects/${project.name}/${contentBlock.properties.data}`;
-const width = contentBlock.properties.width ?? '16';
-const height = contentBlock.properties.height ?? '9';
+const videoPath = `/assets/projects/${blockData.project.name}/${blockData.properties.data}`;
+const width = blockData.properties.width ?? 16;
+const height = blockData.properties.height ?? 9;
 ---
 
 <FrameView
-	project={project}
-	contentBlock={contentBlock}
+	blockData={blockData}
 	width={width}
 	height={height}
 >
@@ -21,7 +22,7 @@ const height = contentBlock.properties.height ?? '9';
 		<source src={videoPath} type="video/webm"/>
 	</video>
 	<MediaControls
-		name={contentBlock.properties.data}
+		name={blockData.properties.data}
 		path={videoPath}
 	/>
 </FrameView>

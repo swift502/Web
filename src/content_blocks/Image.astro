@@ -4,17 +4,18 @@ import { imageSizeFromFile } from 'image-size/fromFile';
 import FrameView from '../components/project_detail/FrameView.astro';
 import type { ContentBlockData, ImageProperties } from '../scripts/interfaces';
 
-interface Props extends ContentBlockData<ImageProperties> {}
-const { project, contentBlock } = Astro.props;
+interface Props {
+	blockData: ContentBlockData<ImageProperties>;
+}
+const { blockData } = Astro.props;
 
-const imagePath = `/assets/projects/${project.name}/${contentBlock.properties.data}`
+const imagePath = `/assets/projects/${blockData.project.name}/${blockData.properties.data}`
 const size = await imageSizeFromFile('./public/' + imagePath);
-const inset = contentBlock.properties.inset ? ' inset' : '';
+const inset = blockData.properties.inset ? ' inset' : '';
 ---
 
 <FrameView
-	project={project}
-	contentBlock={contentBlock}
+	blockData={blockData}
 	width={size.width}
 	height={size.height}
 >
@@ -24,7 +25,7 @@ const inset = contentBlock.properties.inset ? ' inset' : '';
 		onload="fadeIn(this)"
 	/>
 	<MediaControls
-		name={contentBlock.properties.data}
+		name={blockData.properties.data}
 		path={imagePath}
 	/>
 </FrameView>
