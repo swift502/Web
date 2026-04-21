@@ -9,8 +9,6 @@ links:
 page:
   - type: video
     data: conversion.webm
-    width: 1100
-    height: 700
     desc: |-
       A blazing fast, shader based image projection converter. Converts between the equirectangular and mercator projections. Can be used via a CLI or directly in Python. Check it out on [on GitHub](https://github.com/swift502/EquimercConverter)!
   - type: code

@@ -492,15 +492,9 @@
         "desc": {
           "type": "string"
         },
-        "height": {
-          "type": "number"
-        },
         "type": {
           "const": "video",
           "type": "string"
-        },
-        "width": {
-          "type": "number"
         }
       },
       "required": [

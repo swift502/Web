@@ -14,8 +14,6 @@ page:
   - type: video
     data: aiming.webm
     desc: Characters have independently animated torso and legs, and a view-driven aim system.
-    width: 800
-    height: 1000
   - type: youtube
     data: E7m61IGjSDc
     desc: The [Octarr](/projects/octarr/) data structure was used to quickly create level geometry. Since obstacle detection is completely universal, it works on generic, dynamically placed objects like this.

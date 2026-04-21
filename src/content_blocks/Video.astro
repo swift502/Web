@@ -1,6 +1,7 @@
 ---
 import FrameView from "../components/project_detail/FrameView.astro";
 import MediaControls from "../components/project_detail/MediaControls.astro";
+import { getVideoResolution } from "@oscnord/get-video-resolution";
 import type { ContentBlockData, VideoProperties } from "../scripts/interfaces";
 
 interface Props {
@@ -9,14 +10,13 @@ interface Props {
 const { blockData } = Astro.props;
 
 const videoPath = `/assets/projects/${blockData.project.name}/${blockData.properties.data}`;
-const width = blockData.properties.width ?? 16;
-const height = blockData.properties.height ?? 9;
+const size = await getVideoResolution('./public' + videoPath, /* TODO: Remove when fix is merged */ {});
 ---
 
 <FrameView
 	blockData={blockData}
-	width={width}
-	height={height}
+	width={size.width}
+	height={size.height}
 >
 	<video autoplay muted loop onloadeddata="fadeIn(this)">
 		<source src={videoPath} type="video/webm"/>

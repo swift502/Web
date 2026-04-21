@@ -64,8 +64,6 @@ export interface VideoProperties
     type: "video";
     data: string;
     desc?: string;
-    width?: number;
-    height?: number;
 }
 
 export interface YoutubeProperties
