@@ -10,7 +10,7 @@ interface Props {
 const { blockData } = Astro.props;
 
 const videoPath = `/assets/projects/${blockData.project.name}/${blockData.properties.data}`;
-const size = await getVideoResolution('./public' + videoPath, /* TODO: Remove when fix is merged */ {});
+const size = await getVideoResolution('./public' + videoPath);
 ---
 
 <FrameView
