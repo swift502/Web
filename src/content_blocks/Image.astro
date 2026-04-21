@@ -10,7 +10,7 @@ interface Props {
 const { blockData } = Astro.props;
 
 const imagePath = `/assets/projects/${blockData.project.name}/${blockData.properties.data}`
-const size = await imageSizeFromFile('./public/' + imagePath);
+const size = await imageSizeFromFile('./public' + imagePath);
 const inset = blockData.properties.inset ? ' inset' : '';
 ---
 
