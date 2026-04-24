@@ -10,14 +10,16 @@ const { blockData } = Astro.props;
 
 function getSourceUrl()
 {
-	if (blockData.properties.model)
+	if (blockData.properties.model) {
 		return `https://sketchfab.com/models/${blockData.properties.model}/embed`;
-
-	if (blockData.properties.collection)
+	}
+	else if (blockData.properties.collection) {
 		return `https://sketchfab.com/playlists/embed?collection=${blockData.properties.collection}`;
-
-	logError(`Source was not defined for content block index "${blockData.index}"`);
-	return "";
+	}
+	else {
+		logError(`Source was not defined for content block index "${blockData.index}"`);
+		return "";
+	}
 }
 
 ---
