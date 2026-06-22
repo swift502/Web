@@ -9,18 +9,18 @@
     "generate-schema": "ts-json-schema-generator --path src/scripts/interfaces.ts --type ProjectData --out src/schemas/project.schema.json"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/catamaran": "^5.2.8",
     "@fontsource/fragment-mono": "^5.2.8",
     "@fontsource/solway": "^5.2.8",
-    "@google/model-viewer": "^4.2.0",
-    "@oscnord/get-video-resolution": "^2.3.0",
-    "@rollup/plugin-yaml": "^4.1.2",
-    "astro": "^6.2.1",
+    "@google/model-viewer": "^4.3.1",
+    "@oscnord/get-video-resolution": "^2.3.1",
+    "@rollup/plugin-yaml": "^5.0.0",
+    "astro": "^7.0.0",
     "image-size": "^2.0.2",
-    "marked": "^18.0.2",
+    "marked": "^18.0.5",
     "normalize.css": "^8.0.1",
-    "remove-markdown": "^0.6.3",
+    "remove-markdown": "^0.6.4",
     "ts-json-schema-generator": "^2.9.0"
   }
 }
