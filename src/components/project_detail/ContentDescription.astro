@@ -47,6 +47,10 @@ const { blockData, parentId } = Astro.props;
 </style>
 
 <style is:global>
+	.content-description * {
+		font-size: 18px;
+	}
+
 	.content-description p {
 		margin: 0px;
 		margin-bottom: 14px;
@@ -63,7 +67,7 @@ const { blockData, parentId } = Astro.props;
 	}
 
 	@media (min-width: 2100px) {
-		.content-description p {
+		.content-description * {
 			font-size: 20px;
 		}
 	}

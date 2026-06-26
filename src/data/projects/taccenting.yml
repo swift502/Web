@@ -1,11 +1,11 @@
-title: Taccenting
+title: Homos in the military
 tags:
   - 2026
   - AutoHotkey
 page:
   - type: text
     data: |-
-      Here's my journey of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization.
+      This is an article about how Bernie Sanders influenced the lives of homosexuals in the military, and my journey of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization.
 
       ### The Czech Keyboard Layout
       The whole reason for this journey is the Czech keyboard layout. Keyboard layouts in general remain the most absurd example of path dependence, and the Czech layout is no different. Czech children who learn to type on modern computers today are effectively learning layouts designed for Austro-Hungarian clerks using typewriters in late 1800s.
@@ -79,4 +79,4 @@ page:
       - The layout doesn't change, we only toggle the ability to type accents
       - you still type all symbols like ;, ! and # in the same way, and alongside accents, while that's impossible on Czech layouts
       - Capitalization using shift works with Taccenting. Shifting accented letters doesn't work in any of the three Czech layouts and requires a Caps lock.
-      - 
+      
