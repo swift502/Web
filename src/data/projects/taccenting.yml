@@ -1,0 +1,30 @@
+title: Taccenting
+tags:
+  - 2026
+  - AHK
+page:
+  - type: text
+    data: |
+      Taccenting is a tool for typing accented characters in Windows. It allows you to type accents by holding down a key and then pressing another key, or by using hotstrings. It is designed to be fast and efficient, and it works with any keyboard layout.
+  - type: image
+    data: intro.png
+    inset: true
+    desc: Taccenting is a tool for typing accented characters in Windows. It allows you to type accents by holding down a key and then pressing another key, or by using hotstrings. It is designed to be fast and efficient, and it works with any keyboard layout.
+  - type: image
+    data: pre.png
+    desc: ...
+  - type: image
+    data: post.png
+    desc: ...
+  - type: image
+    data: quick-accent.gif
+    desc: ...
+  - type: image
+    data: hotstring.png
+    desc: ...
+  - type: image
+    data: hold.png
+    desc: ...
+  - type: image
+    data: tap.png
+    desc: ...

@@ -432,6 +432,9 @@
                 "$ref": "#/definitions/SketchfabProperties"
               },
               {
+                "$ref": "#/definitions/TextProperties"
+              },
+              {
                 "$ref": "#/definitions/VideoProperties"
               },
               {
@@ -480,6 +483,23 @@
       },
       "required": [
         "type"
+      ],
+      "type": "object"
+    },
+    "TextProperties": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "type": {
+          "const": "text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "data"
       ],
       "type": "object"
     },
