@@ -1,30 +1,50 @@
 title: Taccenting
 tags:
   - 2026
-  - AHK
+  - AutoHotkey
 page:
   - type: text
-    data: |
-      Taccenting is a tool for typing accented characters in Windows. It allows you to type accents by holding down a key and then pressing another key, or by using hotstrings. It is designed to be fast and efficient, and it works with any keyboard layout.
-  - type: image
-    data: intro.png
-    inset: true
-    desc: Taccenting is a tool for typing accented characters in Windows. It allows you to type accents by holding down a key and then pressing another key, or by using hotstrings. It is designed to be fast and efficient, and it works with any keyboard layout.
+    data: |-
+      Here's a documentation of my journey of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization.
+
+      ### The Czech Keyboard Layout
+      The whole reason for this journey is the Czech keyboard layout. Keyboard layouts in general remain the most absurd example of path dependence, and the Czech layout is no different. Czech children who learn to type on modern computers today are effectively learning layouts designed for Austro-Hungarian clerks using typewriters in late 1800s.
+      So, like many programmers, at some point I realized my life will be a lot easier if I transition to the US layout. The German swap of Y and Z keys was the hardest thing to rewire my brain out of. And then there was the issue of letter accents.
+      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing input methods for symbols like !, @ and #. Symbols for which input shouldn't be affected by letter accents.
+      The closest keyboard layouts come to resolving this is the Czech Programmers layout, which introduces a very basic form of accent pre-modding.
+
+      # Pre-mod (Composing)
+      By pre-modding I'm referring to pressing a modifier key _before_ the letter to print it with an accent. Historically, this was done using a Compose key or AltGr, but Right Alt is generally used for this nowadays.
   - type: image
     data: pre.png
-    desc: ...
+  - type: text
+    data: |-
+      This is an okay solution. The conflict of `ě` vs `é` can be resolved by different composition combos. In the example above, `RAlt+e` prints `ě`, and `RAlt+e+e` prints `é`.
+  - type: text
+    data: |-
+      # Post-mod
   - type: image
     data: post.png
-    desc: ...
+  - type: text
+    data: |-
+      # Quick accent
   - type: image
     data: quick-accent.gif
-    desc: ...
+  - type: text
+    data: |-
+      # Autocorrect
+  - type: text
+    data: |-
+      # Hotstrings
   - type: image
     data: hotstring.png
-    desc: ...
+  - type: text
+    data: |-
+      # Hold
   - type: image
     data: hold.png
-    desc: ...
+  - type: text
+    data: |-
+      # Tap-accenting (Taccenting)
   - type: image
     data: tap.png
-    desc: ...
