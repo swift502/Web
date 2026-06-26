@@ -10,44 +10,31 @@ const { blockData } = Astro.props;
 ---
 
 <ContentBlock>
-	<div class="text-block" set:html={renderMarkdown(blockData.properties.data)} />
+	<div class="text-block markdown" set:html={renderMarkdown(blockData.properties.data)} />
 </ContentBlock>
 
 <style>
 	.text-block {
 		width: 100%;
-		text-align: left;
-		color: #222;
-		line-height: normal;
-		font-size: 19px;
 	}
 
 	@media (max-width: 776px) {
 		.text-block {
-            font-size: 18px;
 			padding: 22px;
-			padding-bottom: 0px;
+			/* padding-bottom: 0px; */
 			box-sizing: border-box;
 		}
-	}
 
-	@media (min-width: 2100px) {
-		.text-block {
-			font-size: 21px;
+		.content-block:last-of-type .text-block {
+			padding-bottom: 0;
 		}
 	}
 </style>
 
 <style is:global>
-	.text-block p {
-		font-size: inherit;
+	@media (max-width: 776px) {
+		.content-block:last-of-type .text-block {
+			padding-bottom: 0;
+		}
 	}
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    h3 {
-        font-size: 1.17em;
-    }
 </style>

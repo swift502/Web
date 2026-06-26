@@ -11,7 +11,7 @@ const { blockData, parentId } = Astro.props;
 
 {blockData.properties.desc && (
 	<div
-		class="content-description"
+		class="content-description markdown"
 		data-target={parentId}
 		set:html={renderMarkdown(blockData.properties.desc)}
 	/>
@@ -23,12 +23,9 @@ const { blockData, parentId } = Astro.props;
 		position: relative;
 		padding: 22px 30px;
 		box-sizing: border-box;
-		text-align: left;
-		color: #222;
 		background: #fff;
 		border-radius: 0px 0px 10px 10px;
 		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
-		line-height: normal;
 	}
 
 	@media (max-width: 776px) {
@@ -37,38 +34,15 @@ const { blockData, parentId } = Astro.props;
 			box-shadow: none;
 			padding: 22px;
 			padding-bottom: 0px;
-			text-align: left;
-		}
-
-		.content-description {
 			margin-bottom: 22px;
 		}
 	}
 </style>
 
 <style is:global>
-	.content-description * {
-		font-size: 18px;
-	}
-
-	.content-description p {
-		margin: 0px;
-		margin-bottom: 14px;
-	}
-
-	.content-description p:last-of-type {
-		margin: 0px;
-	}
-
 	@media (max-width: 776px) {
 		.content-block:last-of-type .content-description {
 			margin-bottom: 0;
-		}
-	}
-
-	@media (min-width: 2100px) {
-		.content-description * {
-			font-size: 20px;
 		}
 	}
 </style>
