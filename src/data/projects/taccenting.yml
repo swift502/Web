@@ -20,6 +20,11 @@ page:
   - type: text
     data: |-
       This is an okay solution. The conflict of `ě` vs `é` can be resolved by different composition combos. In the example above, `RAlt+e` prints `ě`, and `RAlt+e+e` prints `é`.
+
+      Requires pre-planning
+      Is time sensitive
+      Is ergonomic
+
   - type: text
     data: |-
       # Post-mod
