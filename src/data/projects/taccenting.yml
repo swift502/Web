@@ -5,13 +5,13 @@ tags:
 page:
   - type: text
     data: |-
-      Here's a documentation of my journey of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization.
+      Here's my journey of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization.
 
       ### The Czech Keyboard Layout
       The whole reason for this journey is the Czech keyboard layout. Keyboard layouts in general remain the most absurd example of path dependence, and the Czech layout is no different. Czech children who learn to type on modern computers today are effectively learning layouts designed for Austro-Hungarian clerks using typewriters in late 1800s.
-      So, like many programmers, at some point I realized my life will be a lot easier if I transition to the US layout. The German swap of Y and Z keys was the hardest thing to rewire my brain out of. And then there was the issue of letter accents.
-      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing input methods for symbols like !, @ and #. Symbols for which input shouldn't be affected by letter accents.
-      The closest keyboard layouts come to resolving this is the Czech Programmers layout, which introduces a very basic form of accent pre-modding.
+      So, like many programmers, at some point I realized my life will be a lot easier if I transition to the US layout. The German swap of Y and Z keys was the most difficult thing to rewire my brain out of. And then there was the issue of letter accents.
+      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing input methods for symbols like `;`, `!` and `#`. Symbols for which input should absolutely not be affected by letter accents.
+      The closest keyboard layouts come to resolving this is the Czech Programmers layout, which introduces a basic form of accent pre-modding.
 
       # Pre-mod (Composing)
       By pre-modding I'm referring to pressing a modifier key _before_ the letter to print it with an accent. Historically, this was done using a Compose key or AltGr, but Right Alt is generally used for this nowadays.
@@ -19,37 +19,64 @@ page:
     data: pre.png
   - type: text
     data: |-
-      This is an okay solution. The conflict of `ě` vs `é` can be resolved by different composition combos. In the example above, `RAlt+e` prints `ě`, and `RAlt+e+e` prints `é`.
+      This method is a good starting point. The conflict of `ě` vs `é` can be resolved by different composition combos. In the example above, `RAlt+e` prints `ě`, while `RAlt+e+e` prints the less common `é`.
+      What I didn't like about this approach is that it requires planning ahead. In handwriting, accents are always written _after_ the letter itself. And while it's likely possible to rewire the brain to think if the letter ahead needs an accent, it by no means feels intuitive. Which is why I experimented with post-modding.
 
-      Requires pre-planning
-      Is time sensitive
-      Is ergonomic
+      # Post-mod
+      By this I mean pressing a modifier key _after_ the letter to retroactively add an accent. Second accent variants are then done using multiple taps of the modifier key. E.g. `e+RAlt+RAlt` prints the second accent variant of `e`.
+  - type: image
+    data: post.png
 
   - type: text
     data: |-
-      # Post-mod
+      # Hotstrings
+      Now, this method is allegedly wonderful for French accents, showing that all these things are language specific.
+      Problem with rollover
   - type: image
-    data: post.png
+    data: hotstring.png
+
+  - type: text
+    data: |-
+      # Hold
+      So I focused on the ergonomic part, and tried holding a key for accent. Hold for one interval to get an accent. Two intervals re-print the character as a second accent variation.
+      Unsurprisingly, the interval time amount is not just hard to get right, it's impossible. The hold interval should at the same time be as short as possible, to not waste your time while typing, but also be as long as possible, so you have a large time window in which to select the accent variant you want, and release the key to print it. It's a push-pull contradiction that's impossible to resolve.
+  - type: image
+    data: hold.png
+
   - type: text
     data: |-
       # Quick accent
+      This method is pretty good. While holding a letter, press the activation key. Press it again for the next accent variant.
   - type: image
     data: quick-accent.gif
   - type: text
     data: |-
+      My personal gripe is time and rollolver
       # Autocorrect
-  - type: text
-    data: |-
-      # Hotstrings
-  - type: image
-    data: hotstring.png
-  - type: text
-    data: |-
-      # Hold
-  - type: image
-    data: hold.png
+      Autocorrect certainly deserves an honorable mention, because it does exist, is ubiquitous on mobile, and largely seems to serve it's purpose.
+      The issue with autocorrect is that it always relies on prediction, and as such can't allow you to do unpredictable things. That's acceptable on phones, but we're specifically interested in generic keyboard input methodology that could theoretically be implemented on any OS, for any keyboard, and used in any way. Autocorrect is not that. It is highly dependent on implementation details and input modality.
+      Bottom line is, autocorrect exists on PC in multiple forms, and can probably be used to input accents. But it's a far more abstract and fuzzy system than what I'd personally be comfortable with. The only autocorrect system I can imagine would fulfill my strict criteria of determinism and infallability is one which would read your mind, so it would always correct to the specific string of symbols you meant to type. At which point, we could probably get rid of typing altogether and solely use mindreading to type.
+
   - type: text
     data: |-
       # Tap-accenting (Taccenting)
+      Coming from Hold, if only there was a way to let the user determine the tap interval interactively. Be as fast, or slow as you want, and the system would follow along. What if...
   - type: image
     data: tap.png
+  - type: text
+    data: |-
+      Tapping for accents is the only system I've tried, which:
+      - Doesn't require planning ahead
+      - Is not time sensitive
+      - Is equally ergonomic on every keyboard
+
+      Negatives:
+      -
+      -
+      -
+
+      And so the question you might ask: have we really resolved anything? If we still have to switch to this tapping mode, what's the difference between that and just switching to a Czech keyboard layout:
+      - The layout doesn't change, we only toggle the ability to type accents
+      - you still type all symbols like ;, ! and # in the same way, and alongside accents, while that's impossible on Czech layouts
+      - Capitalization using shift works with Taccenting. Shifting accented letters doesn't work in any of the three Czech layouts and requires a Caps lock.
+      - 
