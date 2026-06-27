@@ -8,13 +8,13 @@ page:
       This article documents my journey, so far, of finding an optimal accent input method for Czech letter accents. And a few tidbits from the fascinating history of keyboard standardization.
 
       ## The Czech Keyboard Layout
-      The whole reason for this journey is the Czech keyboard layout. Keyboard layouts in general remain the most absurd example of path dependence, and the Czech layout is no different. Czech children who learn to type on modern computers today are effectively learning layouts designed for late 1800s Austro-Hungarian clerks using typewriters.
+      The whole reason for this journey is the Czech keyboard layout. Aspects of keyboard design remain among the most absurd examples of path dependence, key stagger especially, and the Czech keyboard layout is no exception. Czech children who learn to type on modern computers today are effectively learning layouts designed for late 1800s Austro-Hungarian clerks using typewriters.
       So, like many programmers, at some point I realized my life will be a lot easier if I, at least, transition to the US layout. The German swap of Y and Z keys was the most difficult thing to rewire my brain out of. And then there was the issue of letter accents.
       By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing the input method for symbols like `;`, `!` and `#`. Symbols which should in no way be affected by letter accents.
       The closest keyboard layouts come to resolving this is the Czech Programmers layout, which introduces a basic form of accent pre-modding.
 
       # Pre-mod (Composing)
-      By pre-modding I just mean pressing a modifier key _before_ the letter to print it with an accent. Historically, Compose key or AltGr served as the modifier, but Right Alt is a popular choice for this nowadays.
+      By pre-modding I just mean pressing a modifier key _before_ the letter to print it with an accent. Historically, Compose key has sometimes been used, but Right Alt (or AltGr) remains a popular choice for this nowadays.
   - type: image
     data: pre.png
   - type: text
