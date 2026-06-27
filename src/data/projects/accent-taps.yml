@@ -10,7 +10,7 @@ page:
       ## The Czech Keyboard Layout
       The whole reason for this journey is the Czech keyboard layout. Keyboard layouts in general remain the most absurd example of path dependence, and the Czech layout is no different. Czech children who learn to type on modern computers today are effectively learning layouts designed for late 1800s Austro-Hungarian clerks using typewriters.
       So, like many programmers, at some point I realized my life will be a lot easier if I, at least, transition to the US layout. The German swap of Y and Z keys was the most difficult thing to rewire my brain out of. And then there was the issue of letter accents.
-      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing input method for symbols like `;`, `!` and `#`. Symbols which should in no way be affected by letter accents.
+      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing the input method for symbols like `;`, `!` and `#`. Symbols which should in no way be affected by letter accents.
       The closest keyboard layouts come to resolving this is the Czech Programmers layout, which introduces a basic form of accent pre-modding.
 
       # Pre-mod (Composing)
@@ -20,7 +20,7 @@ page:
   - type: text
     data: |-
       This method is a good starting point. The conflict of `ě` vs `é` can be resolved by different compose combos. In the example above, <kbd>RAlt</kbd> + <kbd>e</kbd> prints `ě`, while <kbd>RAlt</kbd> + <kbd>e</kbd> + <kbd>e</kbd> prints the less common `é`.
-      What I didn't like about this approach is that it requires planning ahead. In handwriting, accents are always written _after_ the letter itself. And while it's likely possible to rewire the brain to think if the letter ahead needs an accent, it by no means feels intuitive. Which is why I experimented with post-modding.
+      What I didn't like about this approach is that it requires planning ahead. In handwriting, accents are always written _after_ the letter itself. And while it's likely possible to rewire the brain to think about whether the letter ahead needs an accent, it by no means feels intuitive. Which is why I experimented with post-modding.
 
       # Post-mod
       By this I mean pressing a modifier key _after_ the letter to retroactively change its accent. Other accent variants are then done using multiple taps of the modifier key. E.g. <kbd>e</kbd> + <kbd>RAlt</kbd> + <kbd>RAlt</kbd> prints the second accent variant, and we can keep looping through the accent variants.
@@ -28,7 +28,7 @@ page:
     data: post.png
   - type: text
     data: |-
-      I used post-modding for a while, and liked it a lot more than pre-modding. But the biggest issue I found was ergonomics. Whatever modifier key you choose, the distance to each letter will vary, some accents can be triggered one handed, while others are more involved. And it never felt natural or intuitive to reach over for a special key. It always felt it interrupted my writing flow.
+      I used post-modding for a while, and liked it a lot more than pre-modding. But the biggest issue I found was ergonomics. Whatever modifier key you choose, the distance to each letter will vary, some accents can be triggered one handed, while others are more involved. And it never felt natural or intuitive to reach over for a special key. It always felt like it interrupted my writing flow.
       Maybe that's obvious. Composing had historically been used for special symbols and sequences, only triggered every once in a while. I don't think it was ever meant to be used this way. But at this point it was the best method I had. But I kept looking for others.
 
       # Hotstrings
@@ -40,7 +40,7 @@ page:
     data: |-
       The idea is that pressing a combo left of <kbd>e</kbd> gives you one accent, and right of <kbd>e</kbd> gives you another. And because they're linked to the <kbd>e</kbd> key, it's much more ergonomic and intuitive than pressing a special distant modifier key.
       Unfortunately, I immediately had an issue mapping all the Czech accents onto suitable hotstrings. The top row needs 9 accents mapped onto only 7 keys, all right next to each other, and there just isn't enough space to map them all horizontally. I suppose you could map them vertically in different ways, but that kind of ruins the elegance of the idea.
-      On top of that, I found typing using this method creates issue when typing with rollover. You have to tweak the time window to be tight enough so it allows for rollover, but wide enough so it reliably registers hitting the two keys at the same time.
+      On top of that, I found that typing using this method creates issues when typing with rollover. You have to tweak the time window to be tight enough so it allows for rollover, but wide enough so it reliably registers hitting the two keys at the same time.
       Ultimately hotstrings are a very interesting system, just didn't find them suitable for my particular use case.
 
       # Hold
@@ -63,8 +63,8 @@ page:
 
       # Autocorrect
       Autocorrect certainly deserves an honorable mention, because it does exist, is ubiquitous on mobile, and largely seems to serve its purpose.
-      The issue with autocorrect is that it relies on prediction, and as such, doesn't work for typing unpredictable things like unusual accented words or slang. That's acceptable on phones, but I'm specifically interested in generic keyboard input methods that could theoretically be implemented on any OS, for any keyboard, and be used to reliably and consistently type anything. Autocorrect is not that. It's quality and function highly depends on implementation details and input modality.
-      The only autocorrect system I can imagine would fulfill my strict criteria of determinism and infallability is one which would read your mind, so it would always correct to the specific string of symbols you meant to type. At which point, we could probably get rid of typing altogether and solely use mindreading to type.
+      The issue with autocorrect is that it relies on prediction, and as such, doesn't work for typing unpredictable things like unusual accented words or slang. That's acceptable on phones, but I'm specifically interested in generic keyboard input methods that could theoretically be implemented on any OS, for any keyboard, and be used to reliably and consistently type anything. Autocorrect is not that. Its quality and function highly depend on implementation details and input modality.
+      The only autocorrect system I can imagine would fulfill my strict criteria of determinism and infallibility is one which would read your mind, so it would always correct to the specific string of symbols you meant to type. At which point, we could probably get rid of typing altogether and solely use mindreading to type.
       Bottom line is, autocorrect exists on PC in multiple forms, and can probably be used to input accents, but it's such an abstract and fuzzy system that I'm personally not comfortable using it for that purpose.
       
       # Accent tapping
@@ -103,7 +103,7 @@ page:
       - `ěě`
       - `éé`
 
-      That means in order to type `éé` we have to press <kbd>e</kbd> 6 times, that's pretty bad. Which is why we're lucky that it doesn't appear anywhere in the Czech language. Same goes for and `úú`, the only other two-variant letter.
+      That means in order to type `éé` we have to press <kbd>e</kbd> 6 times, that's pretty bad. Which is why we're lucky that it doesn't appear anywhere in the Czech language. The same goes for `úú`, the only other two-variant letter.
 
       ## The worst edge case
 
