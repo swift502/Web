@@ -5,7 +5,7 @@ tags:
 page:
   - type: text
     data: |-
-      This article documents my journey, so far, of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization. And apologies to any drummers who wander in here. We're here to talk about a very different kind of accent taps.
+      This article documents my journey (so far) of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization. And apologies to any drummers who wander in here. We're here to talk about a very different kind of accent taps.
 
       ## The Czech Keyboard Layout
       The whole reason for this journey is the Czech keyboard layout. Aspects of keyboard design remain among the most absurd examples of path dependence, key stagger especially, and the Czech keyboard layout is no exception. Czech children who learn to type on modern computers today are effectively learning layouts designed for late 1800s Austro-Hungarian clerks using typewriters.
