@@ -103,7 +103,7 @@ page:
       - `ěě`
       - `éé`
 
-      That means in order to type `éé` we have to press <kbd>e</kbd> 6 times. That's pretty bad. Which is why we're lucky that it doesn't appear anywhere in the Czech language. The same goes for `úú`, the only other two-variant letter.
+      That means in order to type `éé` we have to press <kbd>e</kbd> 6 times. That's pretty bad. Which is why we're lucky that it doesn't appear anywhere in the Czech language. The same goes for `úú`, the only other two-variant letter. Effectively, all 5-tap and 6-tap combos don't appear anywhere in the Czech language, limiting the longest combos to 4 taps. However 4 taps still always produce 2 letters. So really 3 taps is the longest single letter combo we ever require.
 
       ## The worst edge case
 
@@ -121,7 +121,7 @@ page:
       But then, have we really resolved anything? If we still have to toggle this tapping mode, why is tapping better than just toggling to a Czech keyboard layout?
       1. With tapping, the layout doesn't change. We only toggle the ability to type accents. Switching layouts changes the entire layout, including things completely unrelated to accents. With tapping, typing symbols like `;`, `!` and `#` stays perfectly consistent.
       2. Next, capitalization of accented letters is much more consistent with tapping. On Czech layouts, <kbd>Shift</kbd> capitalization only works in combination with the individual acute and caron keys, but direct accented letter mappings are limited to Caps Lock.
-      3. Lastly and most importantly, I believe the accent mapping on Czech layouts is simply obsolete. Accented letters replaced numbers on typewriters, because back in typewriter days people didn't need `@` to type email addresses, `#` to denote markdown headings, and brackets for programming. Nowadays, the convenience of the standard US number row mapping is just as important as Czech letter accents and should be used together. Further, the placements of some accents like `ů` and `ú` in Czech layouts are completely arbitrary and follow no logical pattern. Much like key stagger, we're dealing with a historical artifact that deserves to be reinvented. And while my solution isn't perfect, I believe it's a big step in the right direction.
+      3. Lastly and most importantly, I believe accent mapping on Czech layouts is simply obsolete. The reason accented letters took priority over symbols on typewriters is because back in typewriter days people didn't need access to `@` to type email addresses, `#` to denote markdown headings, and brackets for programming. Nowadays, the convenience of the standard US number row mapping is just as important as Czech letter accents and should be used together. Further, the placements of some accents like `ů` and `ú` in Czech layouts are completely arbitrary and follow no logical pattern. Much like key stagger, we're dealing with a historical artifact that deserves to be reinvented. And while my solution isn't perfect, I believe it's a big step in the right direction.
       
       # In closing
       For now, I use tapping daily and haven't looked back since, but I'm also still thinking about this and searching for the perfect solution without the last few drawbacks.
