@@ -5,12 +5,12 @@ tags:
 page:
   - type: text
     data: |-
-      This article documents my journey, so far, of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization. And apologies to any drummers who wander in here, we're here to talk about a very different kind of accent taps.
+      This article documents my journey, so far, of finding an optimal accent input method for Czech letter accents, and a few tidbits from the fascinating history of keyboard standardization. And apologies to any drummers who wander in here. We're here to talk about a very different kind of accent taps.
 
       ## The Czech Keyboard Layout
       The whole reason for this journey is the Czech keyboard layout. Aspects of keyboard design remain among the most absurd examples of path dependence, key stagger especially, and the Czech keyboard layout is no exception. Czech children who learn to type on modern computers today are effectively learning layouts designed for late 1800s Austro-Hungarian clerks using typewriters.
-      So, like many programmers, at some point I realized my life will be a lot easier if I, at least, transition to the US layout. The German swap of Y and Z keys was the most difficult thing to rewire my brain out of. And then there was the issue of letter accents.
-      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages, you're completely changing the input method for symbols like `;`, `!` and `#`. Symbols which should in no way be affected by letter accents.
+      So, like many programmers, at some point I realized my life will be a lot easier if I at least transition to the US layout. The German swap of Y and Z keys was the most difficult thing to rewire my brain out of. And then there was the issue of letter accents.
+      By default, you have the choice of swapping to a Czech layout whenever you need to type Czech. The issue with swapping to the default Czech layout is you're not swapping languages. You're completely changing the input method for symbols like `;`, `!` and `#`. Symbols which should in no way be affected by letter accents.
       The closest keyboard layouts come to resolving this is the Czech Programmers layout, which introduces a basic form of accent pre-modding.
 
       # Pre-mod (Composing)
@@ -28,11 +28,11 @@ page:
     data: post.png
   - type: text
     data: |-
-      I used post-modding for a while, and liked it a lot more than pre-modding. But the biggest issue I found was ergonomics. Whatever modifier key you choose, the distance to each letter will vary, some accents can be triggered one handed, while others are more involved. And it never felt natural or intuitive to reach over for a special key. It always felt like it interrupted my writing flow.
+      I used post-modding for a while and liked it a lot more than pre-modding. But the biggest issue I found was ergonomics. Whatever modifier key you choose, the distance to each letter will vary. Some accents can be triggered one handed, while others are more involved. And it never felt natural or intuitive to reach over for a special key. It always felt like it interrupted my writing flow.
       Maybe that's obvious. Composing had historically been used for special symbols and sequences, only triggered every once in a while. I don't think it was ever meant to be used this way. But at this point it was the best method I had. But I kept looking for others.
 
       # Hotstrings
-      I encountered hotstrings on a Reddit post from a French user. This method is allegedly a great fit for French accents and I was very curious how it worked.
+      I encountered hotstrings on a Reddit post from a French user. This method is allegedly a great fit for French accents, and I was very curious how it worked.
       By pressing two letter combos, in any order, you can output an accented symbol. Turns out AutoHotkey even natively supports this functionality.
   - type: image
     data: hotstring.png
@@ -41,7 +41,7 @@ page:
       The idea is that pressing a combo left of <kbd>e</kbd> gives you one accent, and right of <kbd>e</kbd> gives you another. And because they're linked to the <kbd>e</kbd> key, it's much more ergonomic and intuitive than pressing a special distant modifier key.
       Unfortunately, I immediately had an issue mapping all the Czech accents onto suitable hotstrings. The top row needs 9 accents mapped onto only 7 keys, all right next to each other, and there just isn't enough space to map them all horizontally. I suppose you could map them vertically in different ways, but that kind of ruins the elegance of the idea.
       On top of that, I found that typing using this method creates issues when typing with rollover. You have to tweak the time window to be tight enough so it allows for rollover, but wide enough so it reliably registers hitting the two keys at the same time.
-      Ultimately hotstrings are a very interesting system, just didn't find them suitable for my particular use case.
+      Ultimately, hotstrings are a very interesting system, I just didn't find them suitable for my particular use case.
 
       # Hold
       Inspired by how hotstrings kept the proximity to the combos to their respective keys, I wondered if we could encode the entire functionality within the keys themselves. So next I tried holding a key to cycle through its accents.
@@ -59,13 +59,13 @@ page:
     data: quick-accent.gif
   - type: text
     data: |-
-      Effectively it's post-modding with pretty UI to go with it. But I found it had the same issues as post-modding - breaks the flow of typing, and can interfere when you type with rollover, especially if you go with <kbd>Space</kbd> as the suggested activation key.
+      Effectively it's post-modding with pretty UI to go with it. But I found it had the same issues as post-modding, breaking the flow of typing and interfering when you type with rollover, especially if you go with <kbd>Space</kbd> as the suggested activation key.
 
       # Autocorrect
       Autocorrect certainly deserves an honorable mention, because it does exist, is ubiquitous on mobile, and largely seems to serve its purpose.
       The issue with autocorrect is that it relies on prediction, and as such, doesn't work for typing unpredictable things like unusual accented words or slang. That's acceptable on phones, but I'm specifically interested in generic keyboard input methods that could theoretically be implemented on any OS, for any keyboard, and be used to reliably and consistently type anything. Autocorrect is not that. Its quality and function highly depend on implementation details and input modality.
       The only autocorrect system I can imagine would fulfill my strict criteria of determinism and infallibility is one which would read your mind, so it would always correct to the specific string of symbols you meant to type. At which point, we could probably get rid of typing altogether and solely use mindreading to type.
-      Bottom line is, autocorrect exists on PC in multiple forms, and can probably be used to input accents, but it's such an abstract and fuzzy system that I'm personally not comfortable using it for that purpose.
+      Bottom line is, autocorrect exists on PC in multiple forms and can probably be used to input accents, but it's such an abstract and fuzzy system that I'm personally not comfortable using it for that purpose.
       
       # Accent tapping
       Now for the final and the best method I found specifically for typing accented letters in the Czech language.
@@ -74,7 +74,7 @@ page:
     data: tap.png
   - type: text
     data: |-
-      Turns out this is very intuitive, very ergonomic and very reliable. Because there's no time limits or skill requirements, it's very hard to make a mistake.
+      Turns out this is very intuitive, very ergonomic, and very reliable. Because there's no time limits or skill requirements, it's very hard to make a mistake.
 
       Tapping for accents is the only system I've tried, which:
       - Doesn't require planning ahead
@@ -103,7 +103,7 @@ page:
       - `ěě`
       - `éé`
 
-      That means in order to type `éé` we have to press <kbd>e</kbd> 6 times, that's pretty bad. Which is why we're lucky that it doesn't appear anywhere in the Czech language. The same goes for `úú`, the only other two-variant letter.
+      That means in order to type `éé` we have to press <kbd>e</kbd> 6 times. That's pretty bad. Which is why we're lucky that it doesn't appear anywhere in the Czech language. The same goes for `úú`, the only other two-variant letter.
 
       ## The worst edge case
 
@@ -121,8 +121,8 @@ page:
       But then, have we really resolved anything? If we still have to toggle this tapping mode, why is tapping better than just toggling to a Czech keyboard layout?
       1. With tapping, the layout doesn't change. We only toggle the ability to type accents. Switching layouts changes the entire layout, including things completely unrelated to accents. With tapping, typing symbols like `;`, `!` and `#` stays perfectly consistent.
       2. Next, capitalization of accented letters is much more consistent with tapping. On Czech layouts, <kbd>Shift</kbd> capitalization only works in combination with the individual acute and caron keys, but direct accented letter mappings are limited to Caps Lock.
-      3. Lastly and most importantly, I believe the accent mapping on Czech layouts is simply obsolete. Accented letters replaced numbers on typewriters, because back in typewriter days people didn't need `@` to type email addresses, `#` to denote markdown headings and brackets for programming. Nowadays, the convenience of the standard US number row mapping is just as important as Czech letter accents, and should be used together. Further, the placements of some accents like `ů` and `ú` in Czech layouts are completely arbitrary and follow no logical pattern. Much like key stagger, we're dealing with a historical artifact that deserves to be reinvented. And while my solution isn't perfect, I believe it's a big step in the right direction.
+      3. Lastly and most importantly, I believe the accent mapping on Czech layouts is simply obsolete. Accented letters replaced numbers on typewriters, because back in typewriter days people didn't need `@` to type email addresses, `#` to denote markdown headings, and brackets for programming. Nowadays, the convenience of the standard US number row mapping is just as important as Czech letter accents and should be used together. Further, the placements of some accents like `ů` and `ú` in Czech layouts are completely arbitrary and follow no logical pattern. Much like key stagger, we're dealing with a historical artifact that deserves to be reinvented. And while my solution isn't perfect, I believe it's a big step in the right direction.
       
       # In closing
       For now, I use tapping daily and haven't looked back since, but I'm also still thinking about this and searching for the perfect solution without the last few drawbacks.
-      AHK scripts for each of the methods I mention are available in my personal [GitHub repository](https://github.com/swift502/AutoHotkey). Feel free to try them if you're interested. Most of the scripts aren't polished but they're functional and act as good demos of the methods. The most polished one is the tapping method.
+      AHK scripts for each of the methods I mention are available in my personal [GitHub repository](https://github.com/swift502/AutoHotkey). Feel free to try them if you're interested. Most of the scripts aren't polished, but they're functional and act as good demos of the methods. The most polished one is the tapping method.
