@@ -92,7 +92,7 @@ page:
       - `ss`
       - `šš`
 
-      This sequence allows us to type `vyšší povinnost` with only a few extra taps. It absolutely is a tradeoff, but acceptable given the rarity of these cases.
+      This sequence allows us to type `vyšší povinnost` with only a single extra tap for `nn`. It absolutely is a tradeoff, but acceptable given the rarity of these cases.
 
       Double accent variants are worse:
 
