@@ -70,7 +70,8 @@ export function extractProjectDescription(project: Project)
 	let desc = "";
 	project.data.page.forEach(block =>
 	{
-		if (block.desc) desc += block.desc.replaceAll("\n", " ") + " ";
+		const text = block.type === "text" ? block.data : block.desc;
+		if (text) desc += text.replaceAll("\n", " ") + " ";
 	});
 
 	if (desc.length > 0)
