@@ -16,7 +16,7 @@
     "@google/model-viewer": "^4.3.1",
     "@oscnord/get-video-resolution": "^2.3.1",
     "@rollup/plugin-yaml": "^5.0.0",
-    "astro": "^7.0.0",
+    "astro": "^7.0.7",
     "image-size": "^2.0.2",
     "marked": "^18.0.5",
     "normalize.css": "^8.0.1",
