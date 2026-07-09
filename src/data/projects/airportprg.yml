@@ -20,7 +20,7 @@ page:
     desc: I was in charge of establishing the game's art style, creating all 3D assets, writing shaders, writing movement and pathfinding logic for passengers, and creating the introductory tutorial.
   - type: image
     data: prg_3.jpg
-    desc: I modelled and textured 11 unique airplanes with simple metallic mask implementation and normal maps.
+    desc: I modelled and textured 11 unique airplanes with a custom metallic mask implementation and normal maps.
   - type: image
     data: prg_4.jpg
   - type: image

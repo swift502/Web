@@ -10,5 +10,5 @@ page:
   - type: video
     data: paint_wars.webm
     desc: |-
-      Simple 2D game written in C# and Windows Forms. One of my first programming projects made for a school assignment in October 2015. While simple in nature, the project features custom entity collision detection, particle physics, enemy AI and a chunk-based, randomized, repeating world. An entirely separate Windows Forms application was used as a world editor to design the world chunks.
+      Simple 2D game written in C# and Windows Forms. One of my first programming projects made for a school assignment in October 2015. The project features custom entity collision detection, particle physics, enemy AI and a chunk-based, randomized, repeating world. An entirely separate Windows Forms application was used as a world editor to design the world chunks.
       Source code and a playable build are available at the [GitHub repository](https://github.com/swift502/PaintWars).
