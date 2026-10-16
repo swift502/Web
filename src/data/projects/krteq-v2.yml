@@ -1,0 +1,24 @@
+title: Krteq 2.0
+tags:
+  - 2026
+  - Kicad
+  - Blender
+  - QMK
+links:
+  - title: GitHub page
+    link: https://github.com/swift502/Krteq
+page:
+  - type: image
+    data: 1.webp
+    desc: |-
+      Version 2.0 of [Krteq](/projects/krteq/). Lots of lessons learned and definitely my most polished design yet.
+  - type: image
+    data: 3.webp
+    desc: |-
+      Added full RGB backlight and an OLED display replacing the simple indicator LEDs. The display can still display show num, caps and scroll indicators, but also other fun stuff.
+  - type: image
+    data: 2.webp
+    desc: |-
+      The internals are now significantly more complicated and the board is unfortunately slightly more difficult to build, but that seems to be the price of making the design tailored to the keyboard's specific needs.
+  - type: image
+    data: 4.webp
