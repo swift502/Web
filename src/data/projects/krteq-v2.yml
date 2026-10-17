@@ -22,4 +22,4 @@ page:
       The internals are now significantly more complicated and the board is unfortunately slightly more difficult to build, but that seems to be the price of making the design tailored to the keyboard's specific needs.
   - type: image
     data: 4.webp
-    desc: The chocolate Gaterons look very chocolate.
+    desc: Chocolate Gaterons look very chocolate.
