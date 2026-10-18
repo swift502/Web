@@ -15,7 +15,7 @@ page:
   - type: image
     data: 3.webp
     desc: |-
-      Added full RGB backlight and an OLED display replacing the simple indicator LEDs. The display can still display show num, caps and scroll indicators, but also other fun stuff.
+      Added full RGB backlight and an OLED display replacing the simple indicator LEDs. The display can still show `num`, `caps` and `scroll` indicators, but also other fun stuff.
   - type: image
     data: 2.webp
     desc: |-
