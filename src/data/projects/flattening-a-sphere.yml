@@ -1,0 +1,54 @@
+title: Flattening a sphere
+tags:
+  - Unity
+  - C#
+  - H3
+page:
+  - type: text
+    data: System designed for an unreleased game that seamlessly displays the entire planet as a flat hexagonal grid
+  - type: code
+    data: |-
+          public void HexWorldAlgorithm()
+          {
+              ExpandByNeighbors();
+              FillHoles();
+              InitHexagons();
+              RefreshFog();
+          #if UNITY_EDITOR
+              DebugRefresh();
+          #endif
+              RefreshHexagonVisuals();
+          }
+    lang: cs
+  - type: text
+    data: |-
+      This project relates to an unreleased game that was supposed to allow the player to fly an airplane around the entire planet on a hexagonal grid. Initially we ran through many failed experiments.
+    
+      Mapping the planet as a plain rectangle using the equirectangular or mercator mapping had been attempted, but were abandoned due to the game's requirement for accurate distances between real world locations. The shortest flight path from Finland to Alaska is over the north pole, and mapping the planet onto a plain hexagonal rectangle just breaks that premise in any practical implementation, and the workarounds to compensate for that behavior would be exceedingly complex.
+    
+      Eventually we found Uber's H3 Spatial Index, and liked it's obvious benefits being variable resolution and a very clever indexing and interlinking of hexagons.
+
+      The downside being it "still" contained pentagons, which is the main issue with the approach of covering a sphere with a hexagonal grid. Of course pentagons are mathematically unavoidable in that scenario, so ultimately we caved in and tried to work with the H3 index to create a playable hexagon system. The system had to be lightweight so that it would run on mobile devices, independent on H3 resolution, and as seamless as possible, ideally allowing the player to circle the planet as many times as they want over and over again.
+
+      H3 does offer a local IJ coordinate system, which looks promising at first glance. However it relies on having a reference anchor hex, and when it inevitably breaks around a pentagon, there's no elegant recourse to remedy the damage, other than getting a completely new IJ system from the current hexagon, which can be completely different from your previous one, dealing with the nearby pentagon tear differently, having a different orientation, etc. In implementation attempts, the IJ grid turned out too unreliable for our purposes, as you'd ultimately expect, because you can't deterministically index a hexagonal grid wrapping a sphere. It is fluid and it shifts dynamically as you traverse the world. Our system must constantly adapt and only work with absolutely reliable information. That information is a list of cell neighbors, which every H3 cell can provide.
+
+      The plan was then as follows:
+      - select an anchor hexagon
+      - grow outwards solely based on its neighbors, and neighbors of neighbors
+      - triangulate new neighboring cells by having existing correct cells unanimously "agree" on their new neighbor
+      - stop any conflicting and inconsistent data from contributing to the grid
+
+      This system works so well because it's extremely generic and is built on the presumption of the data inevitably being inconsistent and conflicting, and rigorously filters it to only allow the reliable information to contribute to the final picture.
+
+      ### It is infinite
+
+      At high resolutions, we can circle the planet around infinitely. Neighbors keep expanding in the direction of travel independently of any indexing. The only focus is perfect neighbor consistency.
+
+      And on the other extreme end of a very low resolution, well, hexagon duplicates **are allowed**. The entire planet can repeat dozens of times on screen, and we continue to move around unperturbed, as long as neighbor consistency is maintained.
+
+      ### It's compatible with pentagons
+
+      
+
+
+      
